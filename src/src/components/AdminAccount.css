@@ -1,0 +1,46 @@
+.staff_member_container {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-row-gap: 5px;
+	width: 75%;
+	margin: 150px auto 50px auto;
+	border-radius: 4px;
+	/* padding: 8px; */
+	font-size: 20px;
+	background: #D2F7F3;
+}
+.employee_contact_list {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	width: 75%;
+	margin: 0px auto 50px auto;
+	border: solid black;
+	border-radius: 4px;
+	padding: 10px;
+	background-color: #668295;
+	font-size: 20px;
+}
+
+.employee_contact_row {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-row-gap: 10px;
+	border: solid black;
+	border-radius: 4px;
+	padding: 10px;
+	background-color: #668295;
+	font-size: 20px;
+}
+
+.employee_contact_row li {
+	list-style-type: none;
+}
+
+
+.contact_list {
+	border-bottom: solid white;
+	text-align: left;
+	/* padding: 3px */
+	height: 30px;
+	padding-left: 8px
+}

@@ -1,0 +1,29 @@
+.main_container {
+	width: 450px;
+	margin: auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.employees_fieldset {
+	margin-top: 80px;
+	border-radius: 5px;
+}
+
+.employee_info {
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+
+.employee_position {
+	font-weight: 400;
+}
+
+.add-btn {
+	float: right;
+	font-size: 25px;
+}
+
+/* .add-btn:hover {
+
+} */

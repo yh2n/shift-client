@@ -1,0 +1,22 @@
+.contact_availability_container {
+    display: grid;
+    max-width: 960px;
+    margin: 150px auto;
+    grid-template-columns: repeat(7, 135px);
+    grid-row-gap: 2px;
+    grid-column-gap: 1px;
+}
+
+.contact_availability_day, .contact_availability_shift {
+    padding: 30px;
+    border: solid black;
+    text-align: center;
+}
+
+.unavailable {
+    opacity: 0.1
+}
+
+.available {
+    opacity:1
+}

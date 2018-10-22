@@ -1,0 +1,40 @@
+.registration-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 35px;
+	height: 90vh;
+}
+
+.registration-form fieldset {
+	border-radius: 4px;
+	margin-bottom: 20px;
+}
+
+.registration-form label {
+    display: block; 
+    margin-bottom: 5px;
+}
+
+.registration-form input {
+    display: block; 
+	font-size: 25px;
+	width: 250px;
+	margin-bottom: 30px;
+	margin-top: 20px;
+	padding-left: 5px;
+}
+
+
+.registration-btn {
+	width: 100%;
+	padding: 15px;
+	border-radius: 4px;
+	background-color: white;
+}
+
+
+
+/*.login-redirect {
+	text-align: center;
+}*/

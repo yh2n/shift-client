@@ -1,0 +1,81 @@
+.login-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 90vh;
+	flex-direction: column;
+}
+
+.login-form fieldset {
+	border-radius: 4px;
+}
+
+.login-form label {
+    display: block; 
+    margin-bottom: 5px;
+}
+
+.login-form input {
+    display: block; 
+    font-size: 25px;
+	width: 250px;
+	margin-bottom: 30px;
+	margin-top: 20px;
+	padding-left: 5px;
+}
+
+.log_in_button {
+	width: 100%;
+	padding: 15px;
+	background-color: white;
+}
+
+.account_redirect_field {
+	display: grid;
+	margin-bottom: 40px;
+}
+
+.login_redirect {
+	font-size: 20px;
+	font-weight: 150;
+	width: 100%;
+}
+
+.form_error {
+	color: red;
+}
+
+.acct_redirect_field {
+	display: flex;
+	border-radius: 4px;
+	margin-bottom: 8px;
+	justify-content: center;
+	width: 287.5px
+}
+
+.log_redirect {
+	background: #112138;
+	opacity: 0.2;
+ 	color: #D2F7F3;
+	border: none;
+	font-size: 20px;
+	font-weight: 150;
+	margin-top: 15px;
+	padding: 10px 40px 10px 40px
+}
+
+.log_redirect:hover {
+	background: blue;;
+}
+
+
+.selected_account {
+	background: #D2F7F3;
+	opacity: 1;
+	color: #13A1AB;
+}
+
+.selected_account:hover {
+	background: #D2F7F3;
+	cursor: not-allowed;
+}

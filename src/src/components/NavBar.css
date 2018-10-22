@@ -1,0 +1,21 @@
+.nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: #112138;
+    height: 50px;
+}
+
+.redirect_button {
+    height: 35px;
+    width: 90px;
+    margin-right: 10px;
+}
+
+.logo {
+    flex-grow: 1;
+    margin-left: 15px;
+    font-size: 28px;
+    font-weight: 150;
+    color: #19D9E6;
+}

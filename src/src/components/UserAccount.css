@@ -1,0 +1,11 @@
+.user_page {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.user_menu {
+	width: 15%;
+	border: solid black;
+
+}
+

@@ -1,0 +1,26 @@
+.admin_employee_list {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	margin: 100px auto 50px auto
+}
+
+.error_message {
+	display: block;
+	color: #dee6c4;
+	font-size: 20px;
+	margin: 200px auto 200px auto;
+}
+
+.admin_employee_row {
+	border: solid black;
+	border-radius: 4px;
+	padding: 5px;
+	margin: 3px;
+	background-color: #668295;
+	font-size: 20px;
+}
+
+.admin_employee_row li {
+	list-style-type: none;
+}

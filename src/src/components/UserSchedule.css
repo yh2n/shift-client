@@ -1,0 +1,99 @@
+.user_schedule_container {
+  display: grid;
+  max-width: 960px;
+  margin: 150px auto;
+  grid-template-columns: 165px repeat(7, 135px);
+  grid-row-gap: 2px;
+  grid-column-gap: 1px;
+  margin-bottom: 40px;
+}
+
+/* .current_schedule_prompt {
+  margin-left: auto;
+} */
+
+.user_schedule_container div, .user_schedule_container button {
+  /* color: #129482; */
+  /* padding: 10px; */
+  /* border: solid black; */
+  /* text-align: center; */
+}
+
+.user_schedule_btns {
+  background: #D2F7F3;
+  color: #112138;
+}
+
+.user_schedule_position {
+  background: #203c64;
+  text-align: center;
+  color: #D2F7F3;
+}
+
+.user_schedule_name {
+  background: #112138;
+  color: white;
+  text-align: center;
+}
+
+.contact_links {
+  color: white;
+  text-decoration: none;
+}
+
+.contact_links:hover {
+  color: #129482;
+}
+
+.logged_in {
+  background: #c0a115;
+  color: #112138;
+  text-align: center;
+}
+.user_schedule_days {
+  background: #203c64;
+  color: #D2F7F3;
+  text-align: center;
+}
+
+.user_day_number {
+  color: #129482;
+}
+.user_current_month {
+  text-align: right;
+  font-size: 40px;
+  margin: 0px 10px 40px 0px;
+  color: #112138;
+}
+.user_year {
+  text-align: left;
+  font-size: 40px;
+  margin: 0px 0px 40px 10px;
+  color: #112138;
+}
+
+.current {
+  background: #c0a115;
+  color: #112138;
+  text-align: center;
+}
+
+.user_schedule_shifts {
+  border:  solid #112138;
+}
+
+li {
+  list-style-type: none
+}
+
+.green {
+  color: rgb(33, 206, 33);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.red {
+  color: red;
+  font-weight: bold;
+  font-size: 18px;
+}

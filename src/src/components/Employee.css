@@ -1,0 +1,15 @@
+.employee_input_div {
+    margin-top: 15px;
+}
+.employee-list_reset-btn, .employee-list_save-btn{
+	margin-left: 15px;
+}
+
+.employee-list_edit-btn, .employee-list_reset-btn, .employee-list_save-btn{
+    font-size: 15px;
+    background: #fff;
+}
+
+.employee-list_input {
+    font-weight: 150;
+}

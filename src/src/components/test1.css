@@ -1,0 +1,25 @@
+.user_schedule_container-test {
+    display: grid;
+    max-width: 960px;
+    margin: 150px auto;
+    grid-template-columns: 165px repeat(7, 135px);
+    grid-row-gap: 2px;
+    grid-column-gap: 1px;
+  }
+  
+  .user_schedule_container-test div, .user_schedule_container-test button {
+    color: #129482;
+    padding: 30px;
+    border: solid black;
+    text-align: center;
+  }
+  
+  .user_schedule_position-test {
+    background: #112138;
+    color: white;
+  }
+  
+  .user_schedule_row-test {
+    background: #112138;
+    color: #129482;
+  }
