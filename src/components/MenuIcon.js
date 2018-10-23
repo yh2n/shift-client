@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import {clearAuth} from '../actions/auth';
-import {clearAuthToken} from '../local_storage';
+import {clearAuthToken} from '../../local_storage';
 import moment from 'moment';
 import './MenuIcon.css';
 

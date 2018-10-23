@@ -1,7 +1,7 @@
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 import thunk from 'redux-thunk';
-import { loadAuthToken } from './local_storage';
+import { loadAuthToken } from '../local_storage';
 import authReducer from './src/reducers/auth';
 import protectedDataReducer from './src/reducers/protected_data';
 import employeeReducer from './src/reducers/fetch_employees';
