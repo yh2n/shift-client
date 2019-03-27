@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import EmployeeRow from './EmployeeRow';
-import MenuIcon from './MenuIcon';
+import AccountNav from './AccountNav';
 import AdminMenuModal from './AdminMenuModal';
 import ContactLabels from './ContactLabels';
 import { fetchEmployees } from '../actions/fetch_employees';
@@ -30,7 +30,7 @@ export  class AdminAccount extends Component {
         return (
             <div>
 				<div>
-					<MenuIcon onClick={this.toggleMenuModal}/>
+					<AccountNav onClick={this.toggleMenuModal}/>
 					<AdminMenuModal
 						show={this.state.isDisplayed}
 						onClose={this.toggleMenuModal}

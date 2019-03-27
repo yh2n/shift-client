@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import Employee from './Employee';
-import MenuIcon from './MenuIcon';
+import AccountNav from './AccountNav';
 import AdminMenuModal from './AdminMenuModal';
 
 import './Employees.css';
@@ -37,7 +37,7 @@ export class RegisterEmployee extends Component {
 	render() {
 		return (
 			<div>
-				<MenuIcon onClick={this.toggleMenuModal}/>
+				<AccountNav onClick={this.toggleMenuModal}/>
 				<AdminMenuModal
 						show={this.state.isDisplayed}
 						onClose={this.toggleMenuModal}

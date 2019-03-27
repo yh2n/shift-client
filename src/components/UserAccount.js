@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import EmployeeInfoModal from './EmployeeInfoForm';
-import MenuIcon from './MenuIcon';
+import AccountNav from './AccountNav';
 import UserMenuModal from './UserMenuModal';
 import './UserAccount.css';
 
@@ -21,7 +21,7 @@ export default class UserAccount extends Component {
 	render() {
 		return (
 			<div className="user_page">
-				<MenuIcon onClick={this.toggleModal}/>
+				<AccountNav onClick={this.toggleModal}/>
 				<UserMenuModal
 					show={this.state.isOpen}
 					onClose={this.toggleModal}

@@ -77,7 +77,7 @@ export class UserEmployeeRow extends Component {
     }
     render() {
         const MondayShifts = (
-                <ul>
+                <ul key="monday_shifts">
                     <li 
                         key="mo_br"
                         className={this.state.schedule.Mo_br_need_cover ? "red" : ""}
@@ -107,7 +107,7 @@ export class UserEmployeeRow extends Component {
                 </ul>
             )
         const TuesdayShifts = (
-                <ul>
+                <ul key="tuesday_shifts">
                     <li 
                         key="tu_br"
                         className={this.state.schedule.Tu_br_need_cover ? "red" : ""}
@@ -131,7 +131,7 @@ export class UserEmployeeRow extends Component {
                 </ul>
             )
         const WednesdayShifts = (
-                <ul>
+                <ul key="wednesday_shifts">
                     <li 
                         key="we_br"
                         className={this.state.schedule.We_br_need_cover ? "red" : ""}
@@ -155,7 +155,7 @@ export class UserEmployeeRow extends Component {
                 </ul>
             )
         const ThursdayShifts = (
-                <ul>
+                <ul key="thursday_shifts">
                     <li 
                         key="th_br"
                         className={this.state.schedule.Th_br_need_cover ? "red" : ""}
@@ -179,7 +179,7 @@ export class UserEmployeeRow extends Component {
                 </ul>
             )
         const FridayShifts = (
-                <ul>
+                <ul key="friday_shifts">
                     <li 
                         key="fr_br"
                         className={this.state.schedule.Fr_br_need_cover ? "red" : ""}
@@ -203,7 +203,7 @@ export class UserEmployeeRow extends Component {
                 </ul>
             )
         const SaturdayShifts = (
-                <ul>
+                <ul key="saturday_shifts">
                     <li 
                         key="sa_br"
                         className={this.state.schedule.Sa_br_need_cover ? "red" : ""}
@@ -227,7 +227,7 @@ export class UserEmployeeRow extends Component {
                 </ul>
             )
         const SundayShifts = (
-                <ul>
+                <ul key="sunday_shifts">
                     <li 
                         key="su_br"
                         className={this.state.schedule.Su_br_need_cover ? "red" : ""}

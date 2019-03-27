@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MenuIcon from './MenuIcon';
+import AccountNav from './AccountNav';
 import AdminMenuModal from './AdminMenuModal';
 import EmployeeAvailability from './EmployeeAvailability';
 import { Link } from 'react-router-dom';
@@ -22,7 +22,7 @@ export default class EmployeeAvailabilityPage extends Component {
     render() {
         return (
             <div>
-                <MenuIcon onClick={this.toggleModal}/>
+                <AccountNav onClick={this.toggleModal}/>
 				<AdminMenuModal
 					show={this.state.isOpen}
                     onClose={this.toggleModal}

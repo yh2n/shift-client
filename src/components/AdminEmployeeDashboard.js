@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MenuIcon from './MenuIcon';
+import AccountNav from './AccountNav';
 import { API_BASE_URL } from '../config';
 import { Link } from 'react-router-dom';
 import AdminMenuModal from './AdminMenuModal';
@@ -87,7 +87,7 @@ export default class AdminEmployeeDashboard extends Component {
         return (
 			<div>
 				<div>
-					<MenuIcon onClick={this.toggleMenuModal}/>
+					<AccountNav onClick={this.toggleMenuModal}/>
 					<AdminMenuModal
 							show={this.state.isDisplayed}
 							onClose={this.toggleMenuModal}

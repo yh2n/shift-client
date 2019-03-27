@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { reduxForm, Field, focus } from 'redux-form';
 import { registerAdmin } from '../actions/register_admin';
 import { login } from '../actions/auth';
-import {required, nonEmpty, matches, length, isTrimmed} from '../../validators';
+import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 
 import Input from './Input';
 

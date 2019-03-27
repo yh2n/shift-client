@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import ContactLabels from './ContactLabels';
 import ContactRow from './ContactRow';
 
-import MenuIcon from './MenuIcon';
+import AccountNav from './AccountNav';
 import UserMenuModal from './UserMenuModal';
 
 import { fetchEmployees } from '../actions/fetch_employees';
@@ -33,7 +33,7 @@ export class Contacts extends Component {
         return (
 			<div>
 				<div>
-					<MenuIcon onClick={this.toggleModal}/>
+					<AccountNav onClick={this.toggleModal}/>
 					<UserMenuModal
 						show={this.state.isOpen}
 						onClose={this.toggleModal}

@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import moment from 'moment';
 import UserEmployeeRow from './UserEmployeeRow';
 import UserEmployeeRowNext from './UserEmployeeRow_next';
-import MenuIcon from './MenuIcon';
+import AccounttNav from './AccountNav';
 import UserMenuModal from './UserMenuModal';
 
 import { fetchEmployees } from '../actions/fetch_employees';
@@ -15,32 +15,34 @@ const currentUser = localStorage.getItem('id');
 
 export class MonthRow extends Component {
     render() {
-        return [
-            <div></div>,
-            <div></div>,
-            <div></div>,
-            <div className="user_current_month">{moment().format("MMMM").toUpperCase()}</div>,
-            <div className="user_year">{moment().format("YYYY")}</div>,
-            <div></div>,
-            <div></div>,
-            <div></div>
-        ]
+        return (
+            <>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div className="user_current_month">{moment().format("MMMM").toUpperCase()}</div>
+                <div className="user_year">{moment().format("YYYY")}</div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </>
+        )
     }
 }
 
 export class CurrentWeekDayRow extends Component {
     render() {
         return (
-            [
-                <div key="day-row_position"className="user_schedule_position"></div>,	
-                <div key="day-row_Mo"className={moment().day(1).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Mon <span className={moment().day(1).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment().day(1).format("Do")}</span></div>,	
-                <div key="day-row_Tu"className={moment().day(2).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Tue <span className={moment().day(2).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment().day(2).format("Do")}</span></div>,,	
-                <div key="day-row_We"className={moment().day(3).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Wed <span className={moment().day(3).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment().day(3).format("Do")}</span></div>,,	
-                <div key="day-row_Th"className={moment().day(4).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Thu <span className={moment().day(4).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment().day(4).format("Do")}</span></div>,,
-                <div key="day-row_Fr"className={moment().day(5).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Fri <span className={moment().day(5).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment().day(5).format("Do")}</span></div>,,	
-                <div key="day-row_Sa"className={moment().day(6).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Sat <span className={moment().day(6).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment().day(6).format("Do")}</span></div>,,	
-                <div key="day-row_Su"className={moment().day(7).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Sun <span className={moment().day(7).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment().day(7).format("Do")}</span></div>,
-            ]
+            <>
+                <div key="day-row_position"className="user_schedule_position"></div>	
+                <div key="day-row_Mo"className={moment().day(1).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Mon <span className={moment().day(1).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment().day(1).format("Do")}</span></div>                
+                <div key="day-row_Tu"className={moment().day(2).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Tue <span className={moment().day(2).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment().day(2).format("Do")}</span></div>	
+                <div key="day-row_We"className={moment().day(3).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Wed <span className={moment().day(3).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment().day(3).format("Do")}</span></div>	
+                <div key="day-row_Th"className={moment().day(4).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Thu <span className={moment().day(4).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment().day(4).format("Do")}</span></div>
+                <div key="day-row_Fr"className={moment().day(5).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Fri <span className={moment().day(5).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment().day(5).format("Do")}</span></div>	
+                <div key="day-row_Sa"className={moment().day(6).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Sat <span className={moment().day(6).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment().day(6).format("Do")}</span></div>	
+                <div key="day-row_Su"className={moment().day(7).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Sun <span className={moment().day(7).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment().day(7).format("Do")}</span></div>            
+            </>
         )
     }
 }
@@ -48,16 +50,16 @@ export class CurrentWeekDayRow extends Component {
 export class FollowingWeekDayRow extends Component {
     render() {
         return (
-            [
-                <div key="day-row_position"className="user_schedule_position"></div>,	
-                <div key="day-row_Mo"className="user_schedule_days">Mon <span className="user_day_number">{moment().day(8).format("Do")}</span></div>,	
-                <div key="day-row_Tu"className="user_schedule_days">Tue <span className="user_day_number">{moment().day(9).format("Do")}</span></div>,	
-                <div key="day-row_We"className="user_schedule_days">Wed <span className="user_day_number">{moment().day(10).format("Do")}</span></div>,	
-                <div key="day-row_Th"className="user_schedule_days">Thu <span className="user_day_number">{moment().day(11).format("Do")}</span></div>,	
-                <div key="day-row_Fr"className="user_schedule_days">Fri <span className="user_day_number">{moment().day(12).format("Do")}</span></div>,	
-                <div key="day-row_Sa"className="user_schedule_days">Sat <span className="user_day_number">{moment().day(13).format("Do")}</span></div>,	
+            <>
+                <div key="day-row_position"className="user_schedule_position"></div>	
+                <div key="day-row_Mo"className="user_schedule_days">Mon <span className="user_day_number">{moment().day(8).format("Do")}</span></div>	
+                <div key="day-row_Tu"className="user_schedule_days">Tue <span className="user_day_number">{moment().day(9).format("Do")}</span></div>	
+                <div key="day-row_We"className="user_schedule_days">Wed <span className="user_day_number">{moment().day(10).format("Do")}</span></div>	
+                <div key="day-row_Th"className="user_schedule_days">Thu <span className="user_day_number">{moment().day(11).format("Do")}</span></div>	
+                <div key="day-row_Fr"className="user_schedule_days">Fri <span className="user_day_number">{moment().day(12).format("Do")}</span></div>	
+                <div key="day-row_Sa"className="user_schedule_days">Sat <span className="user_day_number">{moment().day(13).format("Do")}</span></div>	
                 <div key="day-row_Su"className="user_schedule_days">Sun <span className="user_day_number">{moment().day(14).format("Do")}</span></div>
-			]
+			</>
         )
     }
 }
@@ -65,16 +67,16 @@ export class FollowingWeekDayRow extends Component {
 export class PositionRow extends Component {
     render() {
         return (
-            [
-                <div key="positon-row_position"className="user_schedule_position">{this.props.position}</div>,	
-                <div key="positon-row_Mo"className="user_schedule_days"></div>,	
-                <div key="positon-row_Tu"className="user_schedule_days"></div>,	
-                <div key="positon-row_We"className="user_schedule_days"></div>,	
-                <div key="positon-row_Th"className="user_schedule_days"></div>,	
-                <div key="positon-row_Fr"className="user_schedule_days"></div>,	
-                <div key="positon-row_Sa"className="user_schedule_days"></div>,	
+            <>
+                <div key="positon-row_position"className="user_schedule_position">{this.props.position}</div>	
+                <div key="positon-row_Mo"className="user_schedule_days"></div>	
+                <div key="positon-row_Tu"className="user_schedule_days"></div>	
+                <div key="positon-row_We"className="user_schedule_days"></div>	
+                <div key="positon-row_Th"className="user_schedule_days"></div>	
+                <div key="positon-row_Fr"className="user_schedule_days"></div>	
+                <div key="positon-row_Sa"className="user_schedule_days"></div>	
                 <div key="positon-row_Su"className="user_schedule_days"></div>
-			]
+			</>
         )
     }
 }
@@ -379,7 +381,7 @@ export class Schedule extends Component {
 		return(
 			<div>
                 <div>
-                    <MenuIcon 
+                    <AccounttNav 
                         onClick={this.toggleModal}
                         name={currentUser}
                     />

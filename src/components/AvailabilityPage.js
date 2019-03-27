@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Availability from './Availability';
-import MenuIcon from './MenuIcon';
+import AccountNav from './AccountNav';
 import UserMenuModal from './UserMenuModal';
 import './Availability.css';
 
@@ -23,7 +23,7 @@ export default class AvailabilityPage extends Component {
 	render() {
 		return (
 			<div>
-				<MenuIcon onClick={() => this.toggleModal()}/>
+				<AccountNav onClick={() => this.toggleModal()}/>
 				<UserMenuModal
 					show={this.state.isOpen}
 					onClose={this.toggleModal}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MenuIcon from './MenuIcon';
+import AccountNav from './AccountNav';
 import UserMenuModal from './UserMenuModal';
 import ContactAvailability from './ContactAvailability';
 
@@ -24,7 +24,7 @@ export default class ContactAvailabilityPage extends Component {
         let username = localStorage.getItem("username");
         return (
             <div>
-                <MenuIcon onClick={this.toggleModal}/>
+                <AccountNav onClick={this.toggleModal}/>
 				<UserMenuModal
 					show={this.state.isOpen}
                     onClose={this.toggleModal}

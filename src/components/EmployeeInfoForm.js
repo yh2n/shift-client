@@ -45,12 +45,12 @@ export class EmployeeInfoModal extends Component {
 	}
 
 	loadEmployee() {
-		employee => this.setState({
-			loading: true,
-			error: null,
-			value: employee.position,
-			//firstName: employee.firstName
-		})
+		// employee => this.setState({
+		// 	loading: true,
+		// 	error: null,
+		// 	value: employee.position,
+		// 	//firstName: employee.firstName
+		// })
 		fetch(`${API_BASE_URL}/admin/employee/${currentUserId}`)
 		.then(res => {
 			if(!res.ok) {
