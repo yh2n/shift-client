@@ -430,7 +430,7 @@ export class Schedule extends Component {
                         <PositionRow key="schedule_sommeliers" position="Sommeliers"/>
                         {sommelierRow_next}
                         <PositionRow key="schedule_bartenders" position="Bartenders"/>
-                        {bartenderRow}
+                        {bartenderRow_next}
                         <PositionRow key="schedule_barbacks" position="Barbacks"/>
                         {barbackRow_next}
                         <PositionRow key="schedule_servers" position="Servers" />
