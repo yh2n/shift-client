@@ -5,6 +5,6 @@ import AccountNav from './AccountNav';
 
 describe('<AccountNav />', () => {
     it('Renders without crashing', () => {
-        shallow(<MenuIcon />);
+        shallow(<AccountNav />);
     });
 });
