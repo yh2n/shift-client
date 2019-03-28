@@ -22,11 +22,7 @@ export default class AdminEmployeeDashboard extends Component {
 		this.loadEmployee();
 	}
 
-	loadEmployee() {
-		this.setState({
-			loading: true,
-			error: null
-		})
+	loadEmployee() {this.setState({loading: true,error: null})
 		let id = this.props.match.params.id
 		console.log("logging id", id);
 		fetch(`${API_BASE_URL}/admin/employee/${id}`)
