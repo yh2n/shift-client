@@ -2,6 +2,13 @@ language: node_js
 node_js: node
 cache:
   directories:
-    - node_modules
+  - node_modules
 env:
-  - CI=true
+- CI=true
+deploy:
+  provider: heroku
+  api_key:
+    secure: QyN9eF5KsOgKJF3DzZFPPKT+0lTTYSEP89fMCNTiiLWHqFIFs/WBTzyvBvtJk4SkaNGYObA5UF+62LKk/867ptbSVr3tNw8v9t5c0kEY9cz6GuEIsK6UnZuhKufLtvKtUYM5WV51l+PA2V1y2zl8u7UtRsrSq4+YSrn0WPjrjF/8ena3gHGS+0sr/gxzoZtroHFNySvRbmtA4qgtpVZaaRcavI45LO89/XpWPGejo/051Y6o9B5UKk/adFlFuY7WUH0ZUaK1l1TzOvjfKLasrP0oCvYBBZM3lqfnV5d2KgnWmGzkc1glQGaUDw67F4kC04HisrUCk1HCMwBQBXPd5QXiXm1/ZQM/l4Im8gDrE+oSQlRZYGEaoypFZWXGDJud9gk+Xvzao4qtrWm9j3nTThh464CUa8h0m5fBKhm2xjGsEWNHNJ9RK8r3Pm4Ijjw1y1HZAs4sTH994PZO8TcH/tMUnfB/bNh4Iw4VwQxS7th/wieIerFF/L/E4oxltRCzz0wdnGQTV1qJqNOKbdLvtQQCmA/P8U0VG8UVY1q3QRDLT5fBtaJJxz+bvTeGh/tB6fmF0b5CBknTULbyighLdwd7d1405A3BGdlKMwaxZqkICUV8VC8wXn+6GXnCLL6KXEvOH9sdd5yyPWUZoF5MoVpTTVou+IGB4ao2nmnFshA=
+  app: shrouded-lake-21155
+  on:
+    repo: yh2n/shift-client
