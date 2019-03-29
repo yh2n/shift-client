@@ -11,6 +11,7 @@ export class AccountNav extends Component{
         console.log("logging out")
         this.props.dispatch(clearAuth());
         clearAuthToken();
+        localStorage.removeItem("currentUser")
     }
 
     render() {
