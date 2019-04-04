@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { API_BASE_URL } from '../config';
+import { promised } from 'q';
 
 export class UserEmployeeRow extends Component {
     constructor(props) {
@@ -17,30 +18,41 @@ export class UserEmployeeRow extends Component {
         this.fetchSchedule();
     }
 
-    componentDidUpdate() {
-        this.setAvailability();
-    }
+    // componentDidUpdate() {
+    //     this.setAvailability();
+    // }
 
     fetchSchedule = () => {
-        let id = this.props.id;
-        console.log(id);
+        let { id, name } = this.props;
+        let employees = this.props.employees.employees;
         this.setState({
             loading: true,
         })
         console.log(this.state);
-        return fetch(`${API_BASE_URL}/employee/${id}/schedule`)
+        return fetch(`${API_BASE_URL}/employee/${id}/schedule`, {
+        method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            })
             .then(res => {
-                console.log(id);
-                console.log(this.props.name)
+                console.log(res);
+                console.log(this.state);
                 if (!res.ok) {
                     return Promise.reject(res.statusText);
                 }
-                return res.json();
-            })
-            .then(schedule => {
-                this.setState({
-                    schedule,
-                    loading: false
+                return res.json()
+                .then(json => {
+                    // without this promise => empty response Object
+                    // https://stackoverflow.com/questions/36840396/react-fetch-gives-an-empty-response-body
+                    console.log(`++++++++++++ RES IS ${JSON.stringify(json)}`);
+                    // after filtering request server-side, we get array of length 1
+                    let schedule = json[0];
+                    console.table(schedule);
+                    this.setState({
+                        schedule
+                    });
                 })
             })
             .catch(err => {
@@ -48,33 +60,33 @@ export class UserEmployeeRow extends Component {
                     error: 'Could not load schedule',
                     loading: false
                 })
-                console.log(this.state.error, err)
+                console.log(`${this.state.error} –––––––––––– ${err}`)
             })
     }
 
-    setAvailability = () => {
-        console.log("change(s) submitted");
-        let employees = this.props.employees.employees;
-        console.table(employees);
-        console.log(JSON.stringify(this.state.schedule));
-        let id = this.props.id;
-        console.log(id, this.props.name);
-        console.log(this.state.schedule);
-        return fetch(`${API_BASE_URL}/employee/${id}/schedule`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
+    // setAvailability = () => {
+    //     console.log("change(s) submitted");
+    //     let employees = this.props.employees.employees;
+    //     console.table(employees);
+    //     console.log(JSON.stringify(this.state.schedule));
+    //     let id = this.props.id;
+    //     console.log(id, this.props.name);
+    //     console.log(this.state.schedule);
+    //     return fetch(`${API_BASE_URL}/employee/${id}/schedule`, {
+    //         method: 'PUT',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //             'Accept': 'application/json'
+    //         },
             
-            body: JSON.stringify(this.state.schedule),
-            //credentials: 'same-origin',
-            //mode: 'cors'
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }
+    //         body: JSON.stringify(this.state.schedule),
+    //         //credentials: 'same-origin',
+    //         //mode: 'cors'
+    //         })
+    //         .catch(err => {
+    //             console.log(err)
+    //         })
+    // }
     render() {
         const MondayShifts = (
                 <ul key="monday_shifts">
@@ -251,32 +263,34 @@ export class UserEmployeeRow extends Component {
                 </ul>
             )
         
-        return [
+        return (
+            <>
                 <div className={this.props.className}>
                     {this.props.name}
-                </div>,
+                </div>
                 <div className="user_schedule_btns" key="Monday">
                     {MondayShifts}
-                </div>,
+                </div>
                 <div className="user_schedule_btns" key="Tuesday">
                     {TuesdayShifts}
-                </div>,
+                </div>
                 <div className="user_schedule_btns" key="Wednesday">
                     {WednesdayShifts}
-                </div>,
+                </div>
                 <div className="user_schedule_btns" key="Thursday">
                     {ThursdayShifts}
-                </div>,
+                </div>
                 <div className="user_schedule_btns" key="Friday">
                     {FridayShifts}
-                </div>,
+                </div>
                 <div className="user_schedule_btns" key="Saturday">
                     {SaturdayShifts}
-                </div>,
+                </div>
                 <div className="user_schedule_btns" key="Sunday">
                     {SundayShifts}
                 </div>
-        ]
+            </>
+        )
     }
 }
 
