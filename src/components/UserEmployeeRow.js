@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { API_BASE_URL } from '../config';
+import moment from 'moment'
 
 export class UserEmployeeRow extends Component {
     constructor(props) {
@@ -10,21 +11,14 @@ export class UserEmployeeRow extends Component {
             schedule: {},
             loading: false,
             error: null,
-            value: this.props.value
         })
     }
     
     componentDidMount() {
+        this.setState({value: this.props.value})
         this.fetchSchedule()
         console.log(this.state.value)
     }
-    
-    componentWillReceiveProps(nextProps) {
-        this.setState({value: nextProps.value});
-        console.log(this.state.value)
-        this.fetchSchedule();
-    }
-
     
     // componentDidUpdate() {
         //     this.setAvailability();
@@ -33,12 +27,13 @@ export class UserEmployeeRow extends Component {
         fetchSchedule = () => {
             console.log(`!!!!!!!!!!!!!!!!${this.state.value}`)
             let { id, name } = this.props;
+            let currentWeek = JSON.stringify((moment().week() - 1))
             let employees = this.props.employees.employees;
             this.setState({
                 loading: true,
         })
         console.log(this.state);
-        return fetch(`${API_BASE_URL}/employee/${id}/schedule/${this.state.value}`, {
+        return fetch(`${API_BASE_URL}/employee/${id}/schedule/${currentWeek}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

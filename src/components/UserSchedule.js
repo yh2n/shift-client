@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import UserEmployeeRow from './UserEmployeeRow';
-import UserEmployeeRowNext from './UserEmployeeRow_next';
+import UserEmployeeRowSelected from './UserEmployeeRowSelected';
 import AccounttNav from './AccountNav';
 import UserMenuModal from './UserMenuModal';
 import { API_BASE_URL } from '../config';
@@ -34,16 +34,17 @@ export class MonthRow extends Component {
 
 export class CurrentWeekDayRow extends Component {
     render() {
+        let currentWeek = (moment().week() - 1)
         return (
             <>
                 <div key="day-row_position"className="user_schedule_position"></div>	
-                <div key="day-row_Mo"className={moment().day(1).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Mon <span className={moment().day(1).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment().day(1).format("Do")}</span></div>                
-                <div key="day-row_Tu"className={moment().day(2).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Tue <span className={moment().day(2).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment().day(2).format("Do")}</span></div>	
-                <div key="day-row_We"className={moment().day(3).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Wed <span className={moment().day(3).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment().day(3).format("Do")}</span></div>	
-                <div key="day-row_Th"className={moment().day(4).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Thu <span className={moment().day(4).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment().day(4).format("Do")}</span></div>
-                <div key="day-row_Fr"className={moment().day(5).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Fri <span className={moment().day(5).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment().day(5).format("Do")}</span></div>	
-                <div key="day-row_Sa"className={moment().day(6).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Sat <span className={moment().day(6).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment().day(6).format("Do")}</span></div>	
-                <div key="day-row_Su"className={moment().day(7).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Sun <span className={moment().day(7).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment().day(7).format("Do")}</span></div>            
+                <div key="day-row_Mo"className={moment().day(1).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Mon <span className={moment().day(1).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment('2019').add(`${currentWeek}`, 'weeks').add(0, 'days').format("Do")}</span></div>                
+                <div key="day-row_Tu"className={moment().day(2).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Tue <span className={moment().day(2).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment('2019').add(`${currentWeek}`, 'weeks').add(1, 'days').format("Do")}</span></div>	
+                <div key="day-row_We"className={moment().day(3).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Wed <span className={moment().day(3).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment('2019').add(`${currentWeek}`, 'weeks').add(2, 'days').format("Do")}</span></div>	
+                <div key="day-row_Th"className={moment().day(4).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Thu <span className={moment().day(4).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment('2019').add(`${currentWeek}`, 'weeks').add(3, 'days').format("Do")}</span></div>
+                <div key="day-row_Fr"className={moment().day(5).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Fri <span className={moment().day(5).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment('2019').add(`${currentWeek}`, 'weeks').add(4, 'days').format("Do")}</span></div>	
+                <div key="day-row_Sa"className={moment().day(6).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Sat <span className={moment().day(6).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment('2019').add(`${currentWeek}`, 'weeks').add(5, 'days').format("Do")}</span></div>	
+                <div key="day-row_Su"className={moment().day(7).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>Sun <span className={moment().day(7).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>{moment('2019').add(`${currentWeek}`, 'weeks').add(6, 'days').format("Do")}</span></div>            
             </>
         )
     }
@@ -51,16 +52,17 @@ export class CurrentWeekDayRow extends Component {
 
 export class SelectedWeekDayRow extends Component {
     render() {
+        let selectedWeek = this.props.value
         return (
             <>
                 <div key="day-row_position"className="user_schedule_position"></div>	
-                <div key="day-row_Mo"className="user_schedule_days">Mon <span className="user_day_number">{moment().day(8).format("Do")}</span></div>	
-                <div key="day-row_Tu"className="user_schedule_days">Tue <span className="user_day_number">{moment().day(9).format("Do")}</span></div>	
-                <div key="day-row_We"className="user_schedule_days">Wed <span className="user_day_number">{moment().day(10).format("Do")}</span></div>	
-                <div key="day-row_Th"className="user_schedule_days">Thu <span className="user_day_number">{moment().day(11).format("Do")}</span></div>	
-                <div key="day-row_Fr"className="user_schedule_days">Fri <span className="user_day_number">{moment().day(12).format("Do")}</span></div>	
-                <div key="day-row_Sa"className="user_schedule_days">Sat <span className="user_day_number">{moment().day(13).format("Do")}</span></div>	
-                <div key="day-row_Su"className="user_schedule_days">Sun <span className="user_day_number">{moment().day(14).format("Do")}</span></div>
+                <div key="day-row_Mo"className="user_schedule_days">Mon <span className="user_day_number">{moment('2019').add(`${selectedWeek}`, 'weeks').add(0, 'days').format("Do")}</span></div>	
+                <div key="day-row_Tu"className="user_schedule_days">Tue <span className="user_day_number">{moment('2019').add(`${selectedWeek}`, 'weeks').add(1, 'days').format("Do")}</span></div>	
+                <div key="day-row_We"className="user_schedule_days">Wed <span className="user_day_number">{moment('2019').add(`${selectedWeek}`, 'weeks').add(2, 'days').format("Do")}</span></div>	
+                <div key="day-row_Th"className="user_schedule_days">Thu <span className="user_day_number">{moment('2019').add(`${selectedWeek}`, 'weeks').add(3, 'days').format("Do")}</span></div>	
+                <div key="day-row_Fr"className="user_schedule_days">Fri <span className="user_day_number">{moment('2019').add(`${selectedWeek}`, 'weeks').add(4, 'days').format("Do")}</span></div>	
+                <div key="day-row_Sa"className="user_schedule_days">Sat <span className="user_day_number">{moment('2019').add(`${selectedWeek}`, 'weeks').add(5, 'days').format("Do")}</span></div>	
+                <div key="day-row_Su"className="user_schedule_days">Sun <span className="user_day_number">{moment('2019').add(`${selectedWeek}`, 'weeks').add(6, 'days').format("Do")}</span></div>
 			</>
         )
     }
@@ -89,7 +91,7 @@ export class Schedule extends Component {
 
 		this.state = {
             isOpen : false, 
-            value: 2,
+            value: 14,
             loading: false,
             error: null
 		}
@@ -131,7 +133,7 @@ export class Schedule extends Component {
 
         let barbackRow_next = (
             barbacks.map(barback => (
-                    <UserEmployeeRowNext
+                    <UserEmployeeRowSelected
                         key={`${barback.id}_next`}
                         name={barback.id === currentUser ? barback.firstName  : <Link className="contact_links" to={`/admin/employee/${barback.id}`}>{barback.firstName}</Link>}
                         className={barback.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
@@ -160,7 +162,7 @@ export class Schedule extends Component {
 
         let bartenderRow_next = (
             bartenders.map(bartender => (
-                    <UserEmployeeRowNext
+                    <UserEmployeeRowSelected
                         key={`${bartender.id}_next`}
                         name={bartender.id === currentUser ? bartender.firstName  : <Link className="contact_links" to={`/admin/employee/${bartender.id}`}>{bartender.firstName}</Link>}
                         className={bartender.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
@@ -191,7 +193,7 @@ export class Schedule extends Component {
 
         let busserRow_next = (
             bussers.map(busser => (
-                    <UserEmployeeRowNext
+                    <UserEmployeeRowSelected
                         key={`${busser.id}_next`}
                         name={busser.id === currentUser ? busser.firstName  : <Link className="contact_links" to={`/admin/employee/${busser.id}`}>{busser.firstName}</Link>}
                         className={busser.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
@@ -221,7 +223,7 @@ export class Schedule extends Component {
 
         let captainRow_next = (
             captains.map(captain => (
-                    <UserEmployeeRowNext
+                    <UserEmployeeRowSelected
                         key={`${captain.id}_next`}
                         name={captain.id === currentUser ? captain.firstName  : <Link className="contact_links" to={`/admin/employee/${captain.id}`}>{captain.firstName}</Link>}
                         className={captain.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
@@ -250,7 +252,7 @@ export class Schedule extends Component {
 
         let hostRow_next = (
             hosts.map(host => (
-                    <UserEmployeeRowNext
+                    <UserEmployeeRowSelected
                         key={`${host.id}_next`}
                         name={host.id === currentUser ? host.firstName  : <Link className="contact_links" to={`/admin/employee/${host.id}`}>{host.firstName}</Link>}
                         className={host.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
@@ -280,7 +282,7 @@ export class Schedule extends Component {
 
         let maitreDRow_next = (
             maitre_ds.map(maitre_d => (
-                    <UserEmployeeRowNext
+                    <UserEmployeeRowSelected
                         key={`${maitre_d.id}_next`}
                         name={maitre_d.id === currentUser ? maitre_d.firstName  : <Link className="contact_links" to={`/admin/employee/${maitre_d.id}`}>{maitre_d.firstName}</Link>}
                         className={maitre_d.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
@@ -310,7 +312,7 @@ export class Schedule extends Component {
 
         let managerRow_next = (
             managers.map(manager => (
-                    <UserEmployeeRowNext
+                    <UserEmployeeRowSelected
                         key={`${manager.id}_next`}
                         name={manager.id === currentUser ? manager.firstName : <Link className="contact_links" to ={`/admin/employee/${manager.id}`}>{manager.firstName}</Link>}
                         className={manager.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
@@ -340,7 +342,7 @@ export class Schedule extends Component {
 
         let runnerRow_next = (
             runners.map(runner => (
-                    <UserEmployeeRowNext
+                    <UserEmployeeRowSelected
                         key={`${runner.id}_next`}
                         name={runner.id === currentUser ? runner.firstName : <Link className="contact_links" to ={`/admin/employee/${runner.id}`}>{runner.firstName}</Link>}
                         className={runner.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
@@ -369,7 +371,7 @@ export class Schedule extends Component {
 
         let serverRow_next = (
             servers.map(server => (
-                    <UserEmployeeRowNext
+                    <UserEmployeeRowSelected
                         key={`${server.id}_next`}
                         name={server.id === currentUser ? server.firstName : <Link className="contact_links" to ={`/admin/employee/${server.id}`}>{server.firstName}</Link>}
                         className={server.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
@@ -399,7 +401,7 @@ export class Schedule extends Component {
 
         let sommelierRow_next = (
             sommeliers.map(sommelier => (
-                    <UserEmployeeRowNext
+                    <UserEmployeeRowSelected
                         key={`${sommelier.id}_next`}
                         name={sommelier.id === currentUser ? sommelier.firstName : <Link className="contact_links" to ={`/admin/employee/${sommelier.id}`}>{sommelier.firstName}</Link>}
                         className={sommelier.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
@@ -410,6 +412,8 @@ export class Schedule extends Component {
                 )
             )
         )
+
+        let currentWeek = (moment().week() - 1)
 		return(
 			<div>
                 <div>
@@ -422,9 +426,6 @@ export class Schedule extends Component {
                         onClose={this.toggleModal}
                     />
                 </div>
-				<div className="current_schedule_prompt">
-                    
-				</div>
         	    <div className="user_schedule_container">
                     <MonthRow />
                     <CurrentWeekDayRow />
@@ -450,16 +451,19 @@ export class Schedule extends Component {
                         {busserRow}
                 </div>
                     <select value={this.state.value} onChange={this.handleChange}>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
+                        <option value="14">{moment('2019').add(14, 'weeks').format(" M/D/YYYY")}</option>
+                        <option value="15">{moment('2019').add(15, 'weeks').format(" M/D/YYYY")}</option>
                     </select>
                     <p>{this.state.value}</p>
                     <div>
-                        Week of: {JSON.stringify(moment('2019').add(`${this.state.value}`, 'weeks').format("dddd, MMMM Do YYYY"))}
+                        <p>{currentWeek}</p>
+                        <p> </p>
+                        {/* <p>{JSON.stringify(moment('2019').add(`${currentWeek}`, 'weeks').add(4, 'days').format(" M/D/YYYY"))}</p> */}
+                        <p>{moment('2019').add(`${currentWeek}`, 'weeks').add(4, 'days').format("D")}</p>
                     </div>
                 <div className="user_schedule_container">
                     <MonthRow />
-                    <SelectedWeekDayRow />
+                    <SelectedWeekDayRow value={this.state.value}/>
                         <PositionRow position="Managers"/>
                         {managerRow_next}
                         <PositionRow key="schedule_captains_next" position="Captains"/>
