@@ -1,9 +1,11 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import moment from 'moment';
 import UserEmployeeRow from './UserEmployeeRow';
 import UserEmployeeRowNext from './UserEmployeeRow_next';
 import AccounttNav from './AccountNav';
 import UserMenuModal from './UserMenuModal';
+import { API_BASE_URL } from '../config';
+
 
 import { fetchEmployees } from '../actions/fetch_employees';
 import { connect } from 'react-redux';
@@ -47,7 +49,7 @@ export class CurrentWeekDayRow extends Component {
     }
 }
 
-export class FollowingWeekDayRow extends Component {
+export class SelectedWeekDayRow extends Component {
     render() {
         return (
             <>
@@ -86,7 +88,10 @@ export class Schedule extends Component {
 		super(props);
 
 		this.state = {
-			isOpen : false
+            isOpen : false, 
+            value: 2,
+            loading: false,
+            error: null
 		}
 	}	
         
@@ -94,13 +99,20 @@ export class Schedule extends Component {
         this.props.dispatch(fetchEmployees())
     }
 
+    handleChange = (e) => {
+        this.setState({value: e.target.value})
+        console.log(this.state.value, e.target.value)
+    }
 	toggleModal = () => {
 		this.setState({
 			isOpen: !this.state.isOpen
 		});
-	}
+    }
+    
 	render() {
         const employees = this.props.employees.employees;
+        console.log(employees);
+
 
         let barbacks = employees.filter(employee => employee.position === "Barback")
         let barbackRow = (
@@ -111,6 +123,7 @@ export class Schedule extends Component {
                             className={barback.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={barback.id}
                             schedule={barback.schedule}
+                            value={this.state.value}
                         />
                     )
                 )
@@ -124,6 +137,7 @@ export class Schedule extends Component {
                         className={barback.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={barback.id}
                         schedule={barback.next_schedule}
+                        value={this.state.value}
                     />
                 )
             )
@@ -138,6 +152,7 @@ export class Schedule extends Component {
                             className={bartender.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={bartender.id}
                             schedule={bartender.schedule}
+                            value={this.state.value}
                         />
                     )
                 )
@@ -146,11 +161,12 @@ export class Schedule extends Component {
         let bartenderRow_next = (
             bartenders.map(bartender => (
                     <UserEmployeeRowNext
-                        key={`{bartender.id}_next`}
+                        key={`${bartender.id}_next`}
                         name={bartender.id === currentUser ? bartender.firstName  : <Link className="contact_links" to={`/admin/employee/${bartender.id}`}>{bartender.firstName}</Link>}
                         className={bartender.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={bartender.id}
                         schedule={bartender.next_schedule}
+                        value={this.state.value}
                     />
                 )
             )
@@ -167,6 +183,7 @@ export class Schedule extends Component {
                             className={busser.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={busser.id}
                             schedule={busser.schedule}
+                            value={this.state.value}
                         />
                     )
                 )
@@ -175,11 +192,12 @@ export class Schedule extends Component {
         let busserRow_next = (
             bussers.map(busser => (
                     <UserEmployeeRowNext
-                        key={`{busser.id}_next`}
+                        key={`${busser.id}_next`}
                         name={busser.id === currentUser ? busser.firstName  : <Link className="contact_links" to={`/admin/employee/${busser.id}`}>{busser.firstName}</Link>}
                         className={busser.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={busser.id}
                         schedule={busser.next_schedule}
+                        value={this.state.value}
                     />
                 )
             )
@@ -195,6 +213,7 @@ export class Schedule extends Component {
                             className={captain.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={captain.id}
                             schedule={captain.schedule}
+                            value={this.state.value}
                         />
                     )
                 )
@@ -203,11 +222,12 @@ export class Schedule extends Component {
         let captainRow_next = (
             captains.map(captain => (
                     <UserEmployeeRowNext
-                        key={`{captain.id}_next`}
+                        key={`${captain.id}_next`}
                         name={captain.id === currentUser ? captain.firstName  : <Link className="contact_links" to={`/admin/employee/${captain.id}`}>{captain.firstName}</Link>}
                         className={captain.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={captain.id}
                         schedule={captain.next_schedule}
+                        value={this.state.value}
                     />
                 )
             )
@@ -222,6 +242,7 @@ export class Schedule extends Component {
                             className={host.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={host.id}
                             schedule={host.schedule}
+                            value={this.state.value}
                         />
                     )
                 )
@@ -230,11 +251,12 @@ export class Schedule extends Component {
         let hostRow_next = (
             hosts.map(host => (
                     <UserEmployeeRowNext
-                        key={`{host.id}_next`}
+                        key={`${host.id}_next`}
                         name={host.id === currentUser ? host.firstName  : <Link className="contact_links" to={`/admin/employee/${host.id}`}>{host.firstName}</Link>}
                         className={host.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={host.id}
                         schedule={host.next_schedule}
+                        value={this.state.value}
                     />
                 )
             )
@@ -250,6 +272,7 @@ export class Schedule extends Component {
                             className={maitre_d.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={maitre_d.id}
                             schedule={maitre_d.schedule}
+                            value={this.state.value}
                         />
                     )
                 )
@@ -258,18 +281,19 @@ export class Schedule extends Component {
         let maitreDRow_next = (
             maitre_ds.map(maitre_d => (
                     <UserEmployeeRowNext
-                        key={`{maitre_d.id}_next`}
+                        key={`${maitre_d.id}_next`}
                         name={maitre_d.id === currentUser ? maitre_d.firstName  : <Link className="contact_links" to={`/admin/employee/${maitre_d.id}`}>{maitre_d.firstName}</Link>}
                         className={maitre_d.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={maitre_d.id}
                         schedule={maitre_d.next_schedule}
+                        value={this.state.value}
                     />
                 )
             )
         )
 
 
-        let managers = employees.filter(employee => employee.position === "Manager")
+        let managers = employees.filter(employee => employee.position === "Manager");
         let managerRow = (
                 managers.map(manager => (
                         <UserEmployeeRow
@@ -278,6 +302,7 @@ export class Schedule extends Component {
                             className={manager.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={manager.id}
                             schedule={manager.schedule}
+                            value={this.state.value}
                         />
                     )
                 )
@@ -286,11 +311,12 @@ export class Schedule extends Component {
         let managerRow_next = (
             managers.map(manager => (
                     <UserEmployeeRowNext
-                        key={`{manager.id}_next`}
+                        key={`${manager.id}_next`}
                         name={manager.id === currentUser ? manager.firstName : <Link className="contact_links" to ={`/admin/employee/${manager.id}`}>{manager.firstName}</Link>}
                         className={manager.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={manager.id}
                         schedule={manager.next_schedule}
+                        value={this.state.value}
                     />
                 )
             )
@@ -306,6 +332,7 @@ export class Schedule extends Component {
                             className={runner.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={runner.id}
                             schedule={runner.schedule}
+                            value={this.state.value}
                         />
                     )
                 )
@@ -314,11 +341,12 @@ export class Schedule extends Component {
         let runnerRow_next = (
             runners.map(runner => (
                     <UserEmployeeRowNext
-                        key={`{runner.id}_next`}
+                        key={`${runner.id}_next`}
                         name={runner.id === currentUser ? runner.firstName : <Link className="contact_links" to ={`/admin/employee/${runner.id}`}>{runner.firstName}</Link>}
                         className={runner.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={runner.id}
                         schedule={runner.next_schedule}
+                        value={this.state.value}
                     />
                 )
             )
@@ -333,6 +361,7 @@ export class Schedule extends Component {
                             className={server.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={server.id}
                             schedule={server.schedule}
+                            value={this.state.value}
                         />
                     )
                 )
@@ -341,11 +370,12 @@ export class Schedule extends Component {
         let serverRow_next = (
             servers.map(server => (
                     <UserEmployeeRowNext
-                        key={`{server.id}_next`}
+                        key={`${server.id}_next`}
                         name={server.id === currentUser ? server.firstName : <Link className="contact_links" to ={`/admin/employee/${server.id}`}>{server.firstName}</Link>}
                         className={server.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={server.id}
                         schedule={server.next_schedule}
+                        value={this.state.value}
                     />
                 )
             )
@@ -361,6 +391,7 @@ export class Schedule extends Component {
                             className={sommelier.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={sommelier.id}
                             schedule={sommelier.schedule}
+                            value={this.state.value}
                         />
                     )
                 )
@@ -369,11 +400,12 @@ export class Schedule extends Component {
         let sommelierRow_next = (
             sommeliers.map(sommelier => (
                     <UserEmployeeRowNext
-                        key={`{sommelier.id}_next`}
+                        key={`${sommelier.id}_next`}
                         name={sommelier.id === currentUser ? sommelier.firstName : <Link className="contact_links" to ={`/admin/employee/${sommelier.id}`}>{sommelier.firstName}</Link>}
                         className={sommelier.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={sommelier.id}
                         schedule={sommelier.next_schedule}
+                        value={this.state.value}
                     />
                 )
             )
@@ -417,27 +449,36 @@ export class Schedule extends Component {
                         <PositionRow key="schedule_bussers" position="Bussers"/>
                         {busserRow}
                 </div>
+                    <select value={this.state.value} onChange={this.handleChange}>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                    <p>{this.state.value}</p>
+                    <div>
+                        Week of: {JSON.stringify(moment('2019').add(`${this.state.value}`, 'weeks').format("dddd, MMMM Do YYYY"))}
+                    </div>
                 <div className="user_schedule_container">
-                    <FollowingWeekDayRow />
+                    <MonthRow />
+                    <SelectedWeekDayRow />
                         <PositionRow position="Managers"/>
                         {managerRow_next}
-                        <PositionRow key="schedule_captains" position="Captains"/>
+                        <PositionRow key="schedule_captains_next" position="Captains"/>
                         {captainRow_next}
-                        <PositionRow key="schedule_maitre-d" position="Maître d'"/>
+                        <PositionRow key="schedule_maitre-d_next" position="Maître d'"/>
                         {maitreDRow_next}
-                        <PositionRow key="schedule_host-staff" position="Host staff"/>
+                        <PositionRow key="schedule_host-staff_next" position="Host staff"/>
                         {hostRow_next}
-                        <PositionRow key="schedule_sommeliers" position="Sommeliers"/>
+                        <PositionRow key="schedule_sommeliers_next" position="Sommeliers"/>
                         {sommelierRow_next}
-                        <PositionRow key="schedule_bartenders" position="Bartenders"/>
+                        <PositionRow key="schedule_bartenders_next" position="Bartenders"/>
                         {bartenderRow_next}
-                        <PositionRow key="schedule_barbacks" position="Barbacks"/>
+                        <PositionRow key="schedule_barbacks_next" position="Barbacks"/>
                         {barbackRow_next}
-                        <PositionRow key="schedule_servers" position="Servers" />
+                        <PositionRow key="schedule_servers_next" position="Servers" />
                         {serverRow_next}
-                        <PositionRow key="schedule_runners" position="Runners"/>
+                        <PositionRow key="schedule_runners_next" position="Runners"/>
                         {runnerRow_next}
-                        <PositionRow key="schedule_bussers" position="Bussers"/>
+                        <PositionRow key="schedule_bussers_next" position="Bussers"/>
                         {busserRow_next}
                 </div>
             </div>

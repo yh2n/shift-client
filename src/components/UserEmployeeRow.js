@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { API_BASE_URL } from '../config';
-import { promised } from 'q';
 
 export class UserEmployeeRow extends Component {
     constructor(props) {
@@ -10,35 +9,43 @@ export class UserEmployeeRow extends Component {
         this.state = ({
             schedule: {},
             loading: false,
-            error: null
+            error: null,
+            value: this.props.value
         })
     }
-
+    
     componentDidMount() {
+        this.fetchSchedule()
+        console.log(this.state.value)
+    }
+    
+    componentWillReceiveProps(nextProps) {
+        this.setState({value: nextProps.value});
+        console.log(this.state.value)
         this.fetchSchedule();
     }
 
+    
     // componentDidUpdate() {
-    //     this.setAvailability();
-    // }
-
-    fetchSchedule = () => {
-        let { id, name } = this.props;
-        let employees = this.props.employees.employees;
-        this.setState({
-            loading: true,
+        //     this.setAvailability();
+        // }
+        
+        fetchSchedule = () => {
+            console.log(`!!!!!!!!!!!!!!!!${this.state.value}`)
+            let { id, name } = this.props;
+            let employees = this.props.employees.employees;
+            this.setState({
+                loading: true,
         })
         console.log(this.state);
-        return fetch(`${API_BASE_URL}/employee/${id}/schedule`, {
-        method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
+        return fetch(`${API_BASE_URL}/employee/${id}/schedule/${this.state.value}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
                 }
             })
             .then(res => {
-                console.log(res);
-                console.log(this.state);
                 if (!res.ok) {
                     return Promise.reject(res.statusText);
                 }
@@ -46,10 +53,10 @@ export class UserEmployeeRow extends Component {
                 .then(json => {
                     // without this promise => empty response Object
                     // https://stackoverflow.com/questions/36840396/react-fetch-gives-an-empty-response-body
-                    console.log(`++++++++++++ RES IS ${JSON.stringify(json)}`);
+                    // console.log(`++++++++++++ RES IS ${JSON.stringify(json)}`);
                     // after filtering request server-side, we get array of length 1
                     let schedule = json[0];
-                    console.table(schedule);
+                    // console.table(schedule);
                     this.setState({
                         schedule
                     });
