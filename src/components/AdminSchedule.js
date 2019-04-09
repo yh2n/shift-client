@@ -2,63 +2,23 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import AccountNav from './AccountNav';
 import AdminMenuModal from './AdminMenuModal';
+import MonthRow from './MonthRow';
+import PositionRow from './PositionRow';
 import AdminEmployeeRow from './AdminEmployeeRow';
 import AdminEmployeeRowNext from './AdminEmployeeRow_next';
+import CurrentWeekDayRow from './CurrentWeekDayRow';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchEmployees } from '../actions/fetch_employees';
 import './AdminSchedule.css';
 
-export class MonthRow extends Component {
-    render() {
-        return (
-            <>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div className="admin_current_month">{moment().format("MMMM").toUpperCase()}</div>
-                <div className="admin_year">{moment().format("YYYY")}</div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </>
-        )
-    }
-}
 
-export class CurrentWeekDayRow extends Component {
-    render() {
-        const days = [1, 2, 3, 4, 5, 6, 7];
-        const generateDate = days.map((day, index) => `<div key="day-row_{index}" className="admin_schedule_days_name">{moment().day({day}).format("ddd")} <span className="day_number">{moment().day({day}).format("Do")}</span></div>,`)
-        return (
-            <>
-                <div key="day-row_position_current" className="admin_schedule_position"></div>,	
-                <div key="day-row_1" className="admin_schedule_days_name">{moment().day(1).format("ddd")} <span className="admin_day_number">{moment().day(1).format("Do")}</span></div>
-                <div 
-                    key="day-row_2" 
-                    className={moment().day(2).format("Do") === moment().format("Do") ? "admin_schedule_days_name current" : "admin_schedule_days_name"}
-                >
-                    {moment().day(2).format("ddd")} <span className="admin_day_number">{moment().day(2).format("Do")}</span></div>,
-                <div key="day-row_3" 
-                    className={moment().day(3).format("Do") === moment().format("Do") ? "admin_schedule_days_name current" : "admin_schedule_days_name"}>{moment().day(3).format("ddd")} <span className="admin_day_number">{moment().day(3).format("Do")}</span></div>
-                <div key="day-row_4" 
-                    className="admin_schedule_days_name">{moment().day(4).format("ddd")} <span className="admin_day_number">{moment().day(4).format("Do")}</span></div>
-                <div key="day-row_5" 
-                    className="admin_schedule_days_name">{moment().day(5).format("ddd")} <span className="admin_day_number">{moment().day(5).format("Do")}</span></div>
-                <div key="day-row_6"
-                    className="admin_schedule_days_name">{moment().day(6).format("ddd")} <span className="admin_day_number">{moment().day(6).format("Do")}</span></div>
-                <div key="day-row_7" 
-                    className="admin_schedule_days_name">{moment().day(7).format("ddd")} <span className="admin_day_number">{moment().day(7).format("Do")}</span></div>
-            </>
-        )
-    }
-}
 
-export class FollowingWeekDayRow extends Component {
+export class SelectedWeekDayRow extends Component {
     render() {
         return (
             <>
-                <div key="day-row_position_following" className="admin_schedule_position"></div>,	
+                <div key="day-row_position_following" className="admin_schedule_position"></div>
                 <div key="day-row_Mo_following" className="admin_schedule_days_name">Mon <span className="admin_day_number">{moment().day(8).format("Do")}</span></div>	
                 <div key="day-row_Tu_following" className="admin_schedule_days_name">Tue <span className="admin_day_number">{moment().day(9).format("Do")}</span></div>	
                 <div key="day-row_We_following" className="admin_schedule_days_name">Wed <span className="admin_day_number">{moment().day(10).format("Do")}</span></div>	
@@ -71,22 +31,6 @@ export class FollowingWeekDayRow extends Component {
     }
 }
 
-export class PositionRow extends Component {
-    render() {
-        return (
-            <>
-                <div key="position-row_position" className="admin_schedule_position">{this.props.position}</div>
-                <div key="position-row_Mo"  className="admin_schedule_days_name"></div>	
-                <div key="position-row_Tu"  className="admin_schedule_days_name"></div>	
-                <div key="position-row_We"  className="admin_schedule_days_name"></div>	
-                <div key="position-row_Th"  className="admin_schedule_days_name"></div>	
-                <div key="position-row_Fr"  className="admin_schedule_days_name"></div>	
-                <div key="position-row_Sa"  className="admin_schedule_days_name"></div>	
-                <div key="position-row_Su"  className="admin_schedule_days_name"></div>
-            </>
-        )
-    }
-}
 
 
 export class Schedule extends Component {
@@ -422,7 +366,7 @@ export class Schedule extends Component {
                     {busserRow}
                 </div>
                 <div key="admin_schedule_container" className="admin_schedule_container">
-                    <FollowingWeekDayRow className="day_row"/>
+                    <SelectedWeekDayRow className="day_row"/>
                     <PositionRow position="Managers"/>
                     {managerRow_next}
                     <PositionRow key="schedule_captains" position="Captains"/>

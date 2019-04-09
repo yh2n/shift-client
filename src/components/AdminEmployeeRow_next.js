@@ -19,14 +19,14 @@ export class AdminEmployeeRowNext extends Component {
         this.fetchSchedule();
     }
 
-    componentDidUpdate() {
-        console.log("updated");
-        // schedule => this.setState({
-        //     schedule
-        // });
-        console.log(this.state.next_schedule);
-        this.setSchedule();
-    }
+    // componentDidUpdate() {
+    //     console.log("updated");
+    //     // schedule => this.setState({
+    //     //     schedule
+    //     // });
+    //     console.log(this.state.next_schedule);
+    //     this.setSchedule();
+    // }
 
     fetchSchedule = () => {
         let id = this.props.id;
@@ -35,7 +35,7 @@ export class AdminEmployeeRowNext extends Component {
             loading: true,
         })
         console.log(this.state);
-        return fetch(`${API_BASE_URL}/employee/${id}/next_schedule`)
+        return fetch(`${API_BASE_URL}/employee/${id}/schedule/15`)
             .then(res => {
                 console.log(id);
                 console.log(this.props.name)

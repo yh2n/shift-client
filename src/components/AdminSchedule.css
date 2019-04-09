@@ -21,6 +21,9 @@
 }
 
 .admin_schedule_name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #203c64;
   color: #D2F7F3;
 }
