@@ -103,3 +103,13 @@
 .admin_day_number {
   color: #2463A1;
 }
+
+
+
+.select {
+  background: blueviolet
+}
+
+.select:active {
+  background: blueviolet
+}
