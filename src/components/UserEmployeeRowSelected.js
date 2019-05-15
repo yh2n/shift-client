@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { API_BASE_URL } from '../config';
 
-export class UserEmployeeRowSelected extends Component {
+export default class UserEmployeeRowSelected extends Component {
     constructor(props) {
         super(props);
 
@@ -10,29 +9,28 @@ export class UserEmployeeRowSelected extends Component {
             schedule: {},
             loading: false,
             error: null,
-            value: this.props.value
         })
     }
 
     componentDidMount() {
         this.fetchSchedule();
+        console.log(this.props.value)
     }
 
-    componentWillReceiveProps(nextProps) {
-        this.setState({value: nextProps.value});
-        console.log(this.state.value)
-        this.fetchSchedule();
+    componentDidUpdate(prevProps) {
+        if(this.props.value !== prevProps.value) {
+            this.fetchSchedule()
+        }
+        return null;
     }
 
     fetchSchedule = () => {
-        console.log(`!!!!!!!!!!!!!!!!${this.state.value}`)
         let { id, name } = this.props;
-        let employees = this.props.employees.employees;
         this.setState({
             loading: true,
     })
     console.log(this.state);
-    return fetch(`${API_BASE_URL}/employee/${id}/schedule/${this.state.value}`, {
+    return fetch(`${API_BASE_URL}/employee/${id}/schedule/${this.props.value}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -47,10 +45,8 @@ export class UserEmployeeRowSelected extends Component {
             .then(json => {
                 // without this promise => empty response Object
                 // https://stackoverflow.com/questions/36840396/react-fetch-gives-an-empty-response-body
-                // console.log(`++++++++++++ RES IS ${JSON.stringify(json)}`);
                 // after filtering request server-side, we get array of length 1
                 let schedule = json[0];
-                // console.table(schedule);
                 this.setState({
                     schedule
                 });
@@ -153,9 +149,3 @@ export class UserEmployeeRowSelected extends Component {
         )
     }
 }
-
-const mapStateToProps = state => ({
-	employees: state.employees
-})
-
-export default connect(mapStateToProps)(UserEmployeeRowSelected)

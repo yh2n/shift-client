@@ -45,13 +45,7 @@ export class EmployeeInfoModal extends Component {
 	}
 
 	loadEmployee() {
-		// employee => this.setState({
-		// 	loading: true,
-		// 	error: null,
-		// 	value: employee.position,
-		// 	//firstName: employee.firstName
-		// })
-		fetch(`${API_BASE_URL}/admin/employee/${currentUserId}`)
+		fetch(`${API_BASE_URL}/employee/employee/${currentUserId}`)
 		.then(res => {
 			if(!res.ok) {
 				return Promise.reject(res.statusText);
@@ -65,6 +59,7 @@ export class EmployeeInfoModal extends Component {
 				loading: false,
 			})
 			console.log(this.state.value, this.state.employee.firstName, this.state.employee.address.address_1)
+			console.log(this.state.employee)
 			})
 			.catch(err => {
 				this.setState({
@@ -116,7 +111,7 @@ export class EmployeeInfoModal extends Component {
 							name="firstName" 
 							placeholder="First Name"
 							//allows initialization from state
-							//defaultValue={this.state.employee.firstName}
+							defaultValue={this.state.employee.firstName}
 							onChange={this.handleChange}
 							pristine={false}
 						/>
@@ -124,7 +119,7 @@ export class EmployeeInfoModal extends Component {
 						<Field
 							component={Input}
 							name="lastName" 
-							defaultValue={this.state.employee.lastName}
+							value={this.state.employee.lastName}
 							placeholder="Last Name"
 						/>
 
@@ -240,3 +235,4 @@ export default connect(mapStateToprops)(EmployeeInfoModal)
 // 		position: this.state.value
 // 	}
 // })(EmployeeInfoModal)
+

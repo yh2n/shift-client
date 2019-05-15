@@ -1,34 +1,19 @@
-.background {
+.landing_page {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh
+    height: 100vh;
+    width: 100vw;
+    color: grey;
+    font-family: 'Quattrocento Sans', sans-serif;
+    background: url(../images/IMG_0098.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-
-.box {
+.instructions {
     display: flex;
     flex-direction: column;
-    border-radius: 4px;
-    width: 350px;
+
 }
-
-.user_redirect {
-    height: 80px;
-    width: 100%;
-    font-size: 25px;
-    background-color: #D2F7F3;
-    color: #112138;
-}
-
-/* .admin {
-    border-bottom: 1px solid #13A1AB;
-}
-
-.employee {
-    border-top: 1px solid #13A1AB;
-} */
-
-/* .admin:hover, .employee:hover {
-    background: #19D9E6;
-} */

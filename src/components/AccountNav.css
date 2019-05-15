@@ -1,6 +1,6 @@
 .account_nav {
     display: flex;
-    background: #112138;
+    background: rgba(17, 33, 56, 1);
     align-items: center;
     position: fixed;
     width: 100%;

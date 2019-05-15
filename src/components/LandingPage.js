@@ -1,25 +1,37 @@
 import React, { Component } from 'react';
-import NavBar from './NavBar';
-import HomePage from './HomePage';
 
 import './LandingPage.css';
-import { Link } from 'react-router-dom';
 
 
 export default class LandingPage extends Component {
+    state = {  }
     render() {
         return (
             <>
-                <NavBar 
-                    text="Sign up"
-                    component="RegistrationPage"
-                    to='/registration'
-                />
-                <div className="background">
-                    <div className="box">
-                        <Link to='/admin/login'><button className="user_redirect admin">Login as admin</button></Link>
-                        <Link to='/login'><button className="user_redirect employee">Login as employee</button></Link>
-                    </div>
+                <div className="landing_page">
+                    Welcome to Shift!!
+                </div>
+                <div className="instructions">
+                    <p>
+                        Check the demo!
+                    </p>  
+                    <p>
+                    "On the other hand, we denounce with righteous 
+                    indignation and dislike men who are so beguiled 
+                    and demoralized by the charms of pleasure of the moment, 
+                    so blinded by desire, that they cannot foresee the pain 
+                    and trouble that are bound to ensue; and equal blame belongs to
+                    those who fail in their duty through weakness of will, which is 
+                    the same as saying through shrinking from toil and pain. These 
+                    cases are perfectly simple and easy to distinguish. In a free hour, 
+                    when our power of choice is untrammelled and when nothing prevents 
+                    our being able to do what we like best, every pleasure is to be welcomed 
+                    and every pain avoided. But in certain circumstances and owing to the claims 
+                    of duty or the obligations of business it will frequently occur that pleasures 
+                    have to be repudiated and annoyances accepted. The wise man therefore always holds 
+                    in these matters to this principle of selection: he rejects pleasures to secure other 
+                    greater pleasures, or else he endures pains to avoid worse pains." 
+                    </p>
                 </div>
             </>
         );

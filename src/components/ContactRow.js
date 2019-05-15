@@ -5,9 +5,6 @@ import { fetchEmployees } from '../actions/fetch_employees';
 
 
 export class ContactRow extends Component {
-	constructor(props) {
-		super(props);
-	}
 	componentDidMount() {
 		this.props.dispatch(fetchEmployees())
 	}

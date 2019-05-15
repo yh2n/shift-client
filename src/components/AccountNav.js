@@ -15,9 +15,9 @@ export class AccountNav extends Component{
     }
 
     render() {
-        if (!this.props.loggedIn) {
-            return <Redirect to='/login' />;
-        }
+        // if (!this.props.loggedIn) {
+        //     return <Redirect to='/login' />;
+        // }
         let currentUser = localStorage.getItem('currentUser')
         return(
             <div className="account_nav">
