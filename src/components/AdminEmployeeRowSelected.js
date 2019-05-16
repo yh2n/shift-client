@@ -24,9 +24,6 @@ export default class AdminEmployeeRowSelected extends Component {
             this.fetchSchedule()
 
         }
-        // else if(this.props.newValue !== prevProps.newValue) {
-        //     this.resetSchedule()
-        // }
         else if(this.props.submittedCount !== prevProps.submittedCount) {
             // this.setSchedule()
             console.log("submitted")
@@ -70,13 +67,10 @@ export default class AdminEmployeeRowSelected extends Component {
 
     setSchedule = () => {
         console.log("change(s) submitted");
-        // let employees = this.props.employees.employees;
-        // console.table(employees);
         console.log(JSON.stringify(this.state.schedule));
         let id = this.props.id;
         console.log(id, this.props.name);
         console.log(this.state.schedule);
-        //      !!!!!!!!!     this.setState({[schedule[week]]: value})
         return fetch(`${API_BASE_URL}/employee/${id}/schedule/${this.props.newValue}`, {
             method: 'PUT',
             headers: {
@@ -93,66 +87,7 @@ export default class AdminEmployeeRowSelected extends Component {
             })
     }
 
-    resetSchedule = () => {
-        console.log(`---------------NEW SCHEDULE CREATED ${(this.props.newValue)}`)
-        this.setState({
-            schedule: {
-            week: this.props.newValue,
-            Mo_breakfast: false,
-            Mo_br_need_cover: false,
-            Mo_lunch: false,
-            Mo_lunch_need_cover: false,
-            Mo_dinner: false,
-            Mo_dinner_need_cover: false,
-            Mo_can_cover: false,
-            Tu_breakfas: false,
-            Tu_br_need_cover: false,
-            Tu_lunch: false,
-            Tu_lunch_need_cover: false,
-            Tu_dinner: false,
-            Tu_dinner_need_cover: false,
-            Tu_can_cover: false,
-            We_breakfast: false,
-            We_br_need_cover: false,
-            We_lunch: false,
-            We_lunch_need_cover: false,
-            We_dinner: false,
-            We_dinner_need_cover: false,
-            We_can_cover: false,
-            Th_breakfast: false,
-            Th_br_need_cover: false,
-            Th_lunch: false,
-            Th_lunch_need_cover: false,
-            Th_dinner: false,
-            Th_dinner_need_cover: false,
-            Th_can_cover: false,
-            Fr_breakfast: false,
-            Fr_br_need_cover: false,
-            Fr_lunch: false,
-            Fr_lunch_need_cover: false,
-            Fr_dinner: false,
-            Fr_dinner_need_cover: false,
-            Fr_can_cover: false,
-            Sa_breakfast: false,
-            Sa_br_need_cover: false,
-            Sa_brunch: false,
-            Sa_brunch_need_cover: false,
-            Sa_dinner: false,
-            Sa_dinner_need_cover: false,
-            Sa_can_cover: false,
-            Su_breakfast: false,
-            Su_br_need_cover: false,
-            Su_brunch: false,
-            Su_brunch_need_cover: false,
-            Su_dinner: false,
-            Su_dinner_need_cover: false,
-            Su_can_cover: false
-            }
-        })
-    }
-
     render() {
-        // console.log(this.state);
         console.log(`***********************${JSON.stringify(this.state.schedule)}`);
 
         return (
