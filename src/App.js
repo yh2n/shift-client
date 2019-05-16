@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import moment from 'moment';
+
 import AdminAccount from './components/AdminAccount';
 import AdminEmployeeDashboard from './components/AdminEmployeeDashboard';
 import AdminLogin from './components/AdminLogin';
@@ -11,14 +13,26 @@ import Contacts from './components/Contacts';
 import ContactAvailabilityPage from './components/ContactAvailabilityPage';
 import EmployeeAvailabilityPage from './components/EmployeeAvailabilityPage';
 import HomePage from './components/HomePage';
-import LandingPage from './components/LandingPage';
 import NotFound from './components/NotFound';
+import LandingPage from './components/LandingPage';
 import RegistrationPage from './components/RegistrationPage';
 import RegisterEmployee from './components/RegisterEmployee';
 import UserAccount from './components/UserAccount';
 import UserSchedule from './components/UserSchedule';
 
 import './App.css';
+
+// First day of week is Monday: 1 //
+//doy is calculated as 7 + dow - janX, where janX is the first day of January 
+//that must belong to the first week of the year. //
+// First week of year must start with January 7th: 7 + 1 - 7 = 1
+moment.updateLocale('en', {
+  week: {
+    dow: 1,
+    doy: 1
+  },
+})
+
 
 class App extends Component {
   render() {
