@@ -9,7 +9,6 @@ export default class AdminEmployeeRowSelected extends Component {
 
         this.state = ({
             schedule: {},
-            loading: false,
             error: null
         })
     }
@@ -22,10 +21,10 @@ export default class AdminEmployeeRowSelected extends Component {
     componentDidUpdate(prevProps) {
         if(this.props.newValue !== prevProps.newValue) {
             this.fetchSchedule()
-
+            console.log(this.state.schedule)
         }
         else if(this.props.submittedCount !== prevProps.submittedCount) {
-            // this.setSchedule()
+            this.setSchedule()
             console.log("submitted")
         }
         return;
@@ -33,37 +32,33 @@ export default class AdminEmployeeRowSelected extends Component {
 
     fetchSchedule = () => {
         let { id, newValue } = this.props;
-        this.setState({
-            loading: true,
-    })
-    console.log(this.state);
-    return fetch(`${API_BASE_URL}/employee/${id}/selected-schedule/${newValue}`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-            }
-        })
-        .then(res => {
-            if (!res.ok) {
-                return Promise.reject(res.statusText);
-            }
-            return res.json()
-            .then(json => {
-                let schedule = json[0];
+        console.log(this.state);
+        return fetch(`${API_BASE_URL}/employee/${id}/selected-schedule/${newValue}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+                }
+            })
+            .then(res => {
+                if (!res.ok) {
+                    return Promise.reject(res.statusText);
+                }
+                return res.json()
+                .then(json => {
+                    let schedule = json[0];
+                    this.setState({
+                        schedule
+                    });
+                })
+            })
+            .catch(err => {
                 this.setState({
-                    schedule
-                });
+                    error: 'Could not load schedule'
+                })
+                console.log(`${this.state.error} –––––––––––– ${err}`)
             })
-        })
-        .catch(err => {
-            this.setState({
-                error: 'Could not load schedule',
-                loading: false
-            })
-            console.log(`${this.state.error} –––––––––––– ${err}`)
-        })
-}
+    }
 
     setSchedule = () => {
         console.log("change(s) submitted");
@@ -77,10 +72,7 @@ export default class AdminEmployeeRowSelected extends Component {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
-            
-            body: JSON.stringify(this.state.schedule),
-            //credentials: 'same-origin',
-            //mode: 'cors'
+            body: JSON.stringify(this.state.schedule)
             })
             .catch(err => {
                 console.log(err)
