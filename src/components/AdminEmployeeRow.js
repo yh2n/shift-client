@@ -9,7 +9,6 @@ export default class AdminEmployeeRow extends Component {
 
         this.state = ({
             schedule: {},
-            loading: false,
             error: null,
             currentWeek: moment().week()
         })
@@ -21,63 +20,33 @@ export default class AdminEmployeeRow extends Component {
 
     fetchSchedule = () => {
         let { id } = this.props;
-        this.setState({
-            loading: true,
-    })
-    console.log(this.state);
-    return fetch(`${API_BASE_URL}/employee/${id}/schedule/${this.state.currentWeek}`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-            }
-        })
-        .then(res => {
-            if (!res.ok) {
-                return Promise.reject(res.statusText);
-            }
-            return res.json()
-            .then(json => {
-                let schedule = json[0];
+        console.log(this.state);
+        return fetch(`${API_BASE_URL}/employee/${id}/schedule/${this.state.currentWeek}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+                }
+            })
+            .then(res => {
+                if (!res.ok) {
+                    return Promise.reject(res.statusText);
+                }
+                return res.json()
+                .then(json => {
+                    let schedule = json[0];
+                    this.setState({
+                        schedule
+                    });
+                })
+            })
+            .catch(err => {
                 this.setState({
-                    schedule
-                });
+                    error: 'Could not load schedule...'
+                })
+                console.log(`${this.state.error} –––––––––––– ${err}`)
             })
-        })
-        .catch(err => {
-            this.setState({
-                error: 'Could not load schedule',
-                loading: false
-            })
-            console.log(`${this.state.error} –––––––––––– ${err}`)
-        })
-}
-
-
-    // setSchedule = () => {
-    //     console.log("change(s) submitted");
-    //     let employees = this.props.employees.employees;
-    //     console.table(employees);
-    //     console.log(JSON.stringify(this.state.schedule));
-    //     let id = this.props.id;
-    //     console.log(id, this.props.name);
-    //     return fetch(`${API_BASE_URL}/employee/${id}/schedule`, {
-    //         method: 'PUT',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //             'Accept': 'application/json'
-    //         },
-            
-    //         // body: JSON.stringify(this.state.schedule),
-    //         //credentials: 'same-origin',
-    //         //mode: 'cors'
-    //         })
-    //         .catch(err => {
-    //             console.log(err)
-    //         })
-    // }
-
-
+    }
     render() {
         const MondayShifts = (
             <ul key="monday_shifts">

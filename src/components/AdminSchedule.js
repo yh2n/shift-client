@@ -24,15 +24,13 @@ export class Schedule extends Component {
 		this.state = {
             isOpen : false,
             toggled: false,
-            value: moment().week(),
-            newValue: moment().week(),
+            selectedWeek: moment().week(),
             submittedCount: 0
 		}
     }
     
     componentDidMount() {
         this.props.dispatch(fetchEmployees())
-        console.log(this.state.newValue)
     }
 		
 	toggleModal = () => {
@@ -42,19 +40,18 @@ export class Schedule extends Component {
     }
 
     handleScheduleSelection = (e) => {
-        this.setState({newValue: e.target.value})
-        console.log(this.state.newValue)
+        this.setState({selectedWeek: e.target.value})
+        console.log(this.state.selectedWeek)
     }
 
-    submitSchedule = () => {
-        this.setState((prevState, submittedCount) => {
-            return {submittedCount: prevState.submittedCount + 1}
+    incrementCountProps = () => {
+        this.setState(prevState => {
+            return {submittedCount: prevState.submittedCount +1}
         })
         console.log(this.state.submittedCount)
     }
 
 	render() {
-        console.log(`---------------------${this.state.value}`)
         const employees = this.props.employees.employees;
         
         let barbacks = employees.filter(employee => employee.position === "Barback")
@@ -87,8 +84,8 @@ export class Schedule extends Component {
                                 </Link>
                                 }
                             id={barback.id}
-                            newValue={this.state.newValue}
-                            submitted={this.state.submitted}
+                            selectedWeek={this.state.selectedWeek}
+                            submittedCount={this.state.submittedCount}
                         />
                     )
                 )
@@ -116,8 +113,8 @@ export class Schedule extends Component {
                             className={bartender.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             name={bartender.firstName}
                             id={bartender.id}
-                            newValue={this.state.newValue}
-                            submitted={this.state.submitted}
+                            selectedWeek={this.state.selectedWeek}
+                            submittedCount={this.state.submittedCount}
                         />
                     )
                 )
@@ -145,8 +142,8 @@ export class Schedule extends Component {
                             className={busser.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             name={busser.firstName}
                             id={busser.id}
-                            newValue={this.state.newValue}
-                            submitted={this.state.submitted}
+                            selectedWeek={this.state.selectedWeek}
+                            submittedCount={this.state.submittedCount}
                         />
                     )
                 )
@@ -174,8 +171,8 @@ export class Schedule extends Component {
                             className={captain.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             name={captain.firstName}
                             id={captain.id}
-                            newValue={this.state.newValue}
-                            submitted={this.state.submitted}
+                            selectedWeek={this.state.selectedWeek}
+                            submittedCount={this.state.submittedCount}
                         />
                     )
                 )
@@ -203,8 +200,8 @@ export class Schedule extends Component {
                             className={host.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             name={host.firstName}
                             id={host.id}
-                            newValue={this.state.newValue}
-                            submitted={this.state.submitted}
+                            selectedWeek={this.state.selectedWeek}
+                            submittedCount={this.state.submittedCount}
                         />
                     )
                 )
@@ -232,8 +229,8 @@ export class Schedule extends Component {
                             className={maitre_d.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             name={maitre_d.firstName}
                             id={maitre_d.id}
-                            newValue={this.state.newValue}
-                            submitted={this.state.submitted}
+                            selectedWeek={this.state.selectedWeek}
+                            submittedCount={this.state.submittedCount}
                         />
                     )
                 )
@@ -261,8 +258,8 @@ export class Schedule extends Component {
                             className={manager.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             name={manager.firstName}
                             id={manager.id}
-                            newValue={this.state.newValue}
-                            submitted={this.state.submitted}
+                            selectedWeek={this.state.selectedWeek}
+                            submittedCount={this.state.submittedCount}
                         />
                     )
                 )
@@ -290,8 +287,8 @@ export class Schedule extends Component {
                             className={runner.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             name={runner.firstName}
                             id={runner.id}
-                            newValue={this.state.newValue}
-                            submitted={this.state.submitted}
+                            selectedWeek={this.state.selectedWeek}
+                            submittedCount={this.state.submittedCount}
                         />
                     )
                 )
@@ -319,8 +316,8 @@ export class Schedule extends Component {
                             className={server.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             name={server.firstName}
                             id={server.id}
-                            newValue={this.state.newValue}
-                            submitted={this.state.submitted}
+                            selectedWeek={this.state.selectedWeek}
+                            submittedCount={this.state.submittedCount}
                         />
                     )
                 )
@@ -348,8 +345,8 @@ export class Schedule extends Component {
                             className={sommelier.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             name={sommelier.firstName}
                             id={sommelier.id}
-                            newValue={this.state.newValue}
-                            submitted={this.state.submitted}
+                            selectedWeek={this.state.selectedWeek}
+                            submittedCount={this.state.submittedCount}
                         />
                     )
                 )
@@ -391,9 +388,9 @@ export class Schedule extends Component {
                     {busserRow}
                 </div>
                 <ScheduleSelect value={this.state.newValue} onChange={this.handleScheduleSelection}/>
-                <button onClick={this.submitSchedule}>Save</button>
+                <button onClick={this.incrementCountProps}>Save</button>
                 <div className="admin_schedule_container">
-                    <SelectedWeekDayRow className="day_row" newValue={this.state.newValue}/>
+                    <SelectedWeekDayRow className="day_row" selectedWeek={this.state.selectedWeek}/>
                     <PositionRow position="Managers"/>
                     {managerRow_selected}
                     <PositionRow key="schedule_captains" position="Captains"/>

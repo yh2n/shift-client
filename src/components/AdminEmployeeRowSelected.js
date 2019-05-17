@@ -19,21 +19,21 @@ export default class AdminEmployeeRowSelected extends Component {
     }
 
     componentDidUpdate(prevProps) {
-        if(this.props.newValue !== prevProps.newValue) {
+        if(this.props.selectedWeek !== prevProps.selectedWeek) {
             this.fetchSchedule()
             console.log(this.state.schedule)
         }
         else if(this.props.submittedCount !== prevProps.submittedCount) {
-            this.setSchedule()
+            this.submitSchedule()
             console.log("submitted")
         }
         return;
     }
 
     fetchSchedule = () => {
-        let { id, newValue } = this.props;
+        let { id, selectedWeek } = this.props;
         console.log(this.state);
-        return fetch(`${API_BASE_URL}/employee/${id}/selected-schedule/${newValue}`, {
+        return fetch(`${API_BASE_URL}/employee/${id}/selected-schedule/${selectedWeek}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -60,13 +60,13 @@ export default class AdminEmployeeRowSelected extends Component {
             })
     }
 
-    setSchedule = () => {
+    submitSchedule = () => {
         console.log("change(s) submitted");
         console.log(JSON.stringify(this.state.schedule));
         let id = this.props.id;
         console.log(id, this.props.name);
         console.log(this.state.schedule);
-        return fetch(`${API_BASE_URL}/employee/${id}/schedule/${this.props.newValue}`, {
+        return fetch(`${API_BASE_URL}/employee/${id}/schedule/${this.props.selectedWeek}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

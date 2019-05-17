@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 
 const SelectedWeekDayRow = (props) => {
-    let selectedWeek = props.newValue
+    let selectedWeek = props.selectedWeek
     return(
         <>
             <div key="day-row_position"className="user_schedule_position"></div>	
