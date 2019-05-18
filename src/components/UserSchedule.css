@@ -1,5 +1,6 @@
 .user_schedule_container {
   display: grid;
+  width: 80%;
   max-width: 960px;
   margin: 150px auto;
   grid-template-columns: 165px repeat(7, 135px);

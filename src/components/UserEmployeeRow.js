@@ -20,9 +20,9 @@ export class UserEmployeeRow extends Component {
         console.log(this.state.value)
     }
     
-    // componentDidUpdate() {
-        //     this.setAvailability();
-        // }
+    componentDidUpdate() {
+            this.setAvailability();
+        }
         
         fetchSchedule = () => {
             console.log(`!!!!!!!!!!!!!!!!${this.state.value}`)
@@ -33,7 +33,7 @@ export class UserEmployeeRow extends Component {
                 loading: true,
         })
         console.log(this.state);
-        return fetch(`${API_BASE_URL}/employee/${id}/schedule/${currentWeek}`, {
+        return fetch(`${API_BASE_URL}/employee/${id}/schedule/14`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -66,29 +66,29 @@ export class UserEmployeeRow extends Component {
             })
     }
 
-    // setAvailability = () => {
-    //     console.log("change(s) submitted");
-    //     let employees = this.props.employees.employees;
-    //     console.table(employees);
-    //     console.log(JSON.stringify(this.state.schedule));
-    //     let id = this.props.id;
-    //     console.log(id, this.props.name);
-    //     console.log(this.state.schedule);
-    //     return fetch(`${API_BASE_URL}/employee/${id}/schedule`, {
-    //         method: 'PUT',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //             'Accept': 'application/json'
-    //         },
+    setAvailability = () => {
+        console.log("change(s) submitted");
+        let employees = this.props.employees.employees;
+        console.table(employees);
+        console.log(JSON.stringify(this.state.schedule));
+        let id = this.props.id;
+        console.log(id, this.props.name);
+        console.log(this.state.schedule);
+        return fetch(`${API_BASE_URL}/employee/${id}/schedule/14`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
             
-    //         body: JSON.stringify(this.state.schedule),
-    //         //credentials: 'same-origin',
-    //         //mode: 'cors'
-    //         })
-    //         .catch(err => {
-    //             console.log(err)
-    //         })
-    // }
+            body: JSON.stringify(this.state.schedule),
+            //credentials: 'same-origin',
+            //mode: 'cors'
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
     render() {
         const MondayShifts = (
                 <ul key="monday_shifts">
