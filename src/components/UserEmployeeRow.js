@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { API_BASE_URL } from '../config';
-import moment from 'moment'
+import moment from 'moment';
+
+let currentWeek = (moment().week())
 
 export class UserEmployeeRow extends Component {
     constructor(props) {
@@ -15,19 +17,16 @@ export class UserEmployeeRow extends Component {
     }
     
     componentDidMount() {
-        this.setState({value: this.props.value})
         this.fetchSchedule()
-        console.log(this.state.value)
     }
     
-    componentDidUpdate() {
-            this.setAvailability();
-        }
+    // componentDidUpdate() {
+    //         this.setAvailability();
+    //     }
         
         fetchSchedule = () => {
-            console.log(`!!!!!!!!!!!!!!!!${this.state.value}`)
+            console.log(`!!!!!!!!!!!!!!!!${currentWeek}`)
             let { id, name } = this.props;
-            let currentWeek = JSON.stringify((moment().week() - 1))
             let employees = this.props.employees.employees;
             this.setState({
                 loading: true,
@@ -67,14 +66,13 @@ export class UserEmployeeRow extends Component {
     }
 
     setAvailability = () => {
-        console.log("change(s) submitted");
+        console.log("change(s) submitted!!!!!!!!!!!");
         let employees = this.props.employees.employees;
         console.table(employees);
         console.log(JSON.stringify(this.state.schedule));
         let id = this.props.id;
         console.log(id, this.props.name);
-        console.log(this.state.schedule);
-        return fetch(`${API_BASE_URL}/employee/${id}/schedule/14`, {
+        return fetch(`${API_BASE_URL}/employee/${id}/schedule/${this.state.currentWeek}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

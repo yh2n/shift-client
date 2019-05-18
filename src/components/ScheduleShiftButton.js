@@ -2,47 +2,50 @@ import React, { Component } from 'react';
 
 export class WeekShiftButton extends Component {
     render() {
-        return [
-            <button 
-                key={"breakfast"}
-                type="edit"
-                className={this.props.breakfastSelected ? "schedule_btn off" : "schedule_btn selected" }
-                onClick={() => {
-                    console.log(this.props);
-                        this.props.toggleBreakfast();
-                    }}
-            >
-                Breakfast
-            </button>,
-            <button 
-                key={"lunch"}
-                type="edit" 
-                className={this.props.lunchSelected ? "schedule_btn off" : "schedule_btn selected" }
-                onClick={() => {
-                    console.log(this.props);
-                        this.props.toggleLunch()
-                    }}
-                    >
-                Lunch
-            </button>,
-            <button
-                key={"dinner"}
-                type="edit"
-                className={this.props.dinnerSelected ? "schedule_btn off" : "schedule_btn selected" }
+        return (
+            <>
+                <button 
+                    key={"breakfast"}
+                    type="edit"
+                    className={this.props.breakfastSelected ? "schedule_btn off" : "schedule_btn selected" }
                     onClick={() => {
                         console.log(this.props);
-                        return (
-                                    this.props.toggleDinner())
-                                }}
+                            this.props.toggleBreakfast();
+                        }}
                 >
-                Dinner
-            </button>
-        ]
+                    Breakfast
+                </button>
+                <button 
+                    key={"lunch"}
+                    type="edit" 
+                    className={this.props.lunchSelected ? "schedule_btn off" : "schedule_btn selected" }
+                    onClick={() => {
+                        console.log(this.props);
+                            this.props.toggleLunch()
+                        }}
+                        >
+                    Lunch
+                </button>
+                <button
+                    key={"dinner"}
+                    type="edit"
+                    className={this.props.dinnerSelected ? "schedule_btn off" : "schedule_btn selected" }
+                        onClick={() => {
+                            console.log(this.props);
+                            return (
+                                        this.props.toggleDinner())
+                                    }}
+                    >
+                    Dinner
+                </button>
+            </>
+        )
       }
     }
 export class WeekendShiftButton extends Component {
     render() {
-        return [
+        return (
+            <>
                 <button
                     key={"breakfast"} 
                     className={this.props.breakfastSelected? "schedule_btn off" : "schedule_btn selected" }
@@ -53,7 +56,7 @@ export class WeekendShiftButton extends Component {
                         }}
                 >
                     Breakfast
-                </button>,
+                </button>
                 <button 
                         key={"brunch"}
                         className={this.props.brunchSelected? "schedule_btn off" : "schedule_btn selected" }
@@ -64,7 +67,7 @@ export class WeekendShiftButton extends Component {
                             }}
                 >
                     Brunch
-                </button>,
+                </button>
                 <button 
                         key={"dinner"}
                         className={this.props.dinnerSelected? "schedule_btn off" : "schedule_btn selected" }
@@ -76,7 +79,8 @@ export class WeekendShiftButton extends Component {
                 >
                     Dinner
                 </button>
-        ]
+            </>
+        )
       }
     }
 

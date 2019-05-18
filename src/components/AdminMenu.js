@@ -22,7 +22,7 @@ export default class AdminMenu extends Component {
                             type="button" 
                             onClick={this.props.onAdd}
                         >
-                            <i class="material-icons">schedule</i> Schedule  
+                            <i className="material-icons">schedule</i> Schedule  
                         </button>
                     </Link>
                     <Link to='/admin/employee_database' style={{ textDecoration: 'none' }}>
@@ -31,7 +31,7 @@ export default class AdminMenu extends Component {
                             type="button" 
                             onClick={this.props.onAdd}
                         >
-                            <i class="material-icons">group</i> Staff 
+                            <i className="material-icons">group</i> Staff 
                         </button>
                     </Link>
                     <Link to='/admin/register_employee' style={{ textDecoration: 'none' }}>
@@ -39,7 +39,7 @@ export default class AdminMenu extends Component {
                         className="menu_modal_employee_redirect"
                         type="button"
                     >
-                        <i class="material-icons">group_add</i> New hire
+                        <i className="material-icons">group_add</i> New hire
                     </button>
                     </Link>
                 </div>
