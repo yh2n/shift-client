@@ -7,7 +7,7 @@ import PositionRow from './PositionRow';
 import AdminEmployeeRow from './AdminEmployeeRow';
 import AdminEmployeeRowSelected from './AdminEmployeeRowSelected';
 import CurrentWeekDayRow from './CurrentWeekDayRow';
-import ScheduleSelect from './ScheduleSelect'
+import ScheduleSelect from './ScheduleSelect';
 import SelectedWeekDayRow from './SelectedWeekDayRow';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
