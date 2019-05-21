@@ -29,6 +29,7 @@ export class Schedule extends Component {
             isOpen : false, 
             currentWeek:  moment().week(),
             selectedWeek: moment().week(),
+            submittedCount: 0,
             error: null
 		}
 	}	
@@ -46,6 +47,13 @@ export class Schedule extends Component {
 			isOpen: !this.state.isOpen
 		});
     }
+
+    incrementCountProps = () => {
+        this.setState(prevState => {
+            return { submittedCount: prevState.submittedCount + 1 }
+        })
+        console.log(this.state.submittedCount)
+    }
     
 	render() {
         const employees = this.props.employees.employees;
@@ -62,6 +70,7 @@ export class Schedule extends Component {
                             className={barback.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={barback.id}
                             schedule={barback.schedule}
+                            submittedCount={this.state.submittedCount}
                         />
                     )
                 )
@@ -90,6 +99,7 @@ export class Schedule extends Component {
                             className={bartender.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={bartender.id}
                             schedule={bartender.schedule}
+                            submittedCount={this.state.submittedCount}
                         />
                     )
                 )
@@ -120,6 +130,7 @@ export class Schedule extends Component {
                             className={busser.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={busser.id}
                             schedule={busser.schedule}
+                            submittedCount={this.state.submittedCount}
                         />
                     )
                 )
@@ -149,6 +160,7 @@ export class Schedule extends Component {
                             className={captain.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={captain.id}
                             schedule={captain.schedule}
+                            submittedCount={this.state.submittedCount}
                         />
                     )
                 )
@@ -177,6 +189,7 @@ export class Schedule extends Component {
                             className={host.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={host.id}
                             schedule={host.schedule}
+                            submittedCount={this.state.submittedCount}
                         />
                     )
                 )
@@ -206,6 +219,7 @@ export class Schedule extends Component {
                             className={maitre_d.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={maitre_d.id}
                             schedule={maitre_d.schedule}
+                            submittedCount={this.state.submittedCount}
                         />
                     )
                 )
@@ -235,6 +249,7 @@ export class Schedule extends Component {
                             className={manager.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={manager.id}
                             schedule={manager.schedule}
+                            submittedCount={this.state.submittedCount}
                         />
                     )
                 )
@@ -264,6 +279,7 @@ export class Schedule extends Component {
                             className={runner.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={runner.id}
                             schedule={runner.schedule}
+                            submittedCount={this.state.submittedCount}
                         />
                     )
                 )
@@ -292,6 +308,7 @@ export class Schedule extends Component {
                             className={server.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={server.id}
                             schedule={server.schedule}
+                            submittedCount={this.state.submittedCount}
                         />
                     )
                 )
@@ -321,6 +338,7 @@ export class Schedule extends Component {
                             className={sommelier.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={sommelier.id}
                             schedule={sommelier.schedule}
+                            submittedCount={this.state.submittedCount}
                         />
                     )
                 )
@@ -377,7 +395,8 @@ export class Schedule extends Component {
                         {busserRow}
                 </div>
                     <ScheduleSelect value={this.state.selectedWeek} onChange={this.handleScheduleSelection}/>
-                    <p>{this.state.value}</p>
+                    <button onClick={this.incrementCountProps}>Save</button>
+                    
                 <div className="user_schedule_container">
                     <MonthRow />
                     <SelectedWeekDayRow selectedWeek={this.state.selectedWeek}/>

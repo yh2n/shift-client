@@ -20,16 +20,17 @@ export class UserEmployeeRow extends Component {
         this.fetchSchedule()
     }
     
-    // componentDidUpdate() {
-    //         this.setAvailability();
-    //     }
+    componentDidUpdate(prevProps) {
+        if(this.props.submittedCount !== prevProps.submittedCount) {
+            this.setAvailability();
+        }
+    }
         
-        fetchSchedule = () => {
-            let { id, name } = this.props;
-            let employees = this.props.employees.employees;
-            this.setState({
-                loading: true,
-        })
+    fetchSchedule = () => {
+        let { id } = this.props;
+        this.setState({
+            loading: true,
+    })
         console.log(this.state);
         return fetch(`${API_BASE_URL}/employee/${id}/schedule/${this.state.currentWeek}`, {
             method: 'GET',
@@ -79,8 +80,6 @@ export class UserEmployeeRow extends Component {
             },
             
             body: JSON.stringify(this.state.schedule),
-            //credentials: 'same-origin',
-            //mode: 'cors'
             })
             .catch(err => {
                 console.log(err)
