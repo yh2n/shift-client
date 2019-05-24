@@ -7,30 +7,26 @@ export default class UserEmployeeRowSelected extends Component {
 
         this.state = ({
             schedule: {},
-            loading: false,
             error: null,
         })
     }
 
     componentDidMount() {
         this.fetchSchedule();
-        console.log(this.props.value)
+        console.log(this.props.selectedWeek)
     }
 
     componentDidUpdate(prevProps) {
-        if(this.props.value !== prevProps.value) {
+        if(this.props.selectedWeek !== prevProps.selectedWeek) {
             this.fetchSchedule()
         }
         return null;
     }
 
     fetchSchedule = () => {
-        let { id, name } = this.props;
-        this.setState({
-            loading: true,
-    })
+        let { id } = this.props;
     console.log(this.state);
-    return fetch(`${API_BASE_URL}/employee/${id}/schedule/${this.props.value}`, {
+    return fetch(`${API_BASE_URL}/employee/${id}/schedule/${this.props.selectedWeek}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

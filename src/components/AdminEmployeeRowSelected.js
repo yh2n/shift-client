@@ -33,7 +33,7 @@ export default class AdminEmployeeRowSelected extends Component {
     fetchSchedule = () => {
         let { id, selectedWeek } = this.props;
         console.log(this.state);
-        return fetch(`${API_BASE_URL}/employee/${id}/selected-schedule/${selectedWeek}`, {
+        return fetch(`${API_BASE_URL}/employee/${id}/schedule/${selectedWeek}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { API_BASE_URL } from '../config';
 import moment from 'moment';
 
-let currentWeek = (moment().week())
 
 export class UserEmployeeRow extends Component {
     constructor(props) {
@@ -13,6 +12,7 @@ export class UserEmployeeRow extends Component {
             schedule: {},
             loading: false,
             error: null,
+            currentWeek: moment().week()
         })
     }
     
@@ -20,19 +20,19 @@ export class UserEmployeeRow extends Component {
         this.fetchSchedule()
     }
     
-    // componentDidUpdate() {
-    //         this.setAvailability();
-    //     }
+    componentDidUpdate(prevProps) {
+        if(this.props.submittedCount !== prevProps.submittedCount) {
+            this.setAvailability();
+        }
+    }
         
-        fetchSchedule = () => {
-            console.log(`!!!!!!!!!!!!!!!!${currentWeek}`)
-            let { id, name } = this.props;
-            let employees = this.props.employees.employees;
-            this.setState({
-                loading: true,
-        })
+    fetchSchedule = () => {
+        let { id } = this.props;
+        this.setState({
+            loading: true,
+    })
         console.log(this.state);
-        return fetch(`${API_BASE_URL}/employee/${id}/schedule/14`, {
+        return fetch(`${API_BASE_URL}/employee/${id}/schedule/${this.state.currentWeek}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -80,8 +80,6 @@ export class UserEmployeeRow extends Component {
             },
             
             body: JSON.stringify(this.state.schedule),
-            //credentials: 'same-origin',
-            //mode: 'cors'
             })
             .catch(err => {
                 console.log(err)

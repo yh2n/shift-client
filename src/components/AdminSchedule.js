@@ -7,7 +7,7 @@ import PositionRow from './PositionRow';
 import AdminEmployeeRow from './AdminEmployeeRow';
 import AdminEmployeeRowSelected from './AdminEmployeeRowSelected';
 import CurrentWeekDayRow from './CurrentWeekDayRow';
-import ScheduleSelect from './ScheduleSelect'
+import ScheduleSelect from './ScheduleSelect';
 import SelectedWeekDayRow from './SelectedWeekDayRow';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -387,7 +387,7 @@ export class Schedule extends Component {
                     <PositionRow key="schedule_bussers" position="Bussers"/>
                     {busserRow}
                 </div>
-                <ScheduleSelect value={this.state.selectedWeek} onChange={this.handleScheduleSelection}/>
+                <ScheduleSelect selectedWeek={this.state.selectedWeek} onChange={this.handleScheduleSelection}/>
                 <button onClick={this.incrementCountProps}>Save</button>
                 <div className="admin_schedule_container">
                     <SelectedWeekDayRow className="day_row" selectedWeek={this.state.selectedWeek}/>
