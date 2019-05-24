@@ -7,16 +7,15 @@ const Options = () => {
     let options = [];
         for(var i = 1; i <= 52; i++) {
             options.push(
-                <MenuItem 
+                <option 
                     value={i} 
                     key={i}
                 >
                 {moment('2019').add(`${i}`, 'weeks').format(" M/D/YYYY")}
-                </MenuItem>)
+                </option>)
     }
     return options;
 }
-
 
 
 export default Options;
