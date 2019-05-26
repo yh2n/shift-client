@@ -7,7 +7,7 @@ import './ScheduleSelect.css';
 
  
 
-const CustomSelect = (props) => {
+const ScheduleSelect = (props) => {
     return (
         <Select 
             value={props.value} 
@@ -21,4 +21,4 @@ const CustomSelect = (props) => {
 }
 
 
-export default CustomSelect;
+export default ScheduleSelect;

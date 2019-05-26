@@ -13,6 +13,7 @@ import ScheduleSelect from './ScheduleSelect';
 
 
 
+
 import { fetchEmployees } from '../actions/fetch_employees';
 import { connect } from 'react-redux';
 import './UserSchedule.css';
@@ -394,7 +395,11 @@ export class Schedule extends Component {
                         <PositionRow key="schedule_bussers" position="Bussers"/>
                         {busserRow}
                 </div>
-                    <ScheduleSelect selectedWeek={this.state.selectedWeek} onChange={this.handleScheduleSelection}/>
+                    <ScheduleSelect
+                        className="schedule-select" 
+                        value={this.state.selectedWeek} 
+                        onChange={this.handleScheduleSelection}
+                    />
                     <button onClick={this.incrementCountProps}>Save</button>
                     
                 <div className="user_schedule_container">

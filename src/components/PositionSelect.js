@@ -1,13 +1,9 @@
 import React from 'react';
-import Options from './ScheduleSelectOptions';
 import Select from '@material-ui/core/Select';
+import PositionSelectOptions from './PositionSelectOptions';
 
-import './ScheduleSelect.css';
 
-
- 
-
-const CustomSelect = props => {
+const PositionSelect = (props) => {
     return (
         <Select 
             value={props.value} 
@@ -15,10 +11,10 @@ const CustomSelect = props => {
             native={true}
             className={props.className}
         >
-            <Options />
+            <PositionSelectOptions />
         </Select>
         )
 }
 
 
-export default CustomSelect;
+export default PositionSelect;
