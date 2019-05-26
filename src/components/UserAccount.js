@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import EmployeeInfoModal from './EmployeeInfoForm';
+import EmployeeInfoForm from './EmployeeInfoForm';
 import AccountNav from './AccountNav';
 import UserMenuModal from './UserMenuModal';
 import './UserAccount.css';
@@ -26,7 +26,7 @@ export default class UserAccount extends Component {
 					show={this.state.isOpen}
 					onClose={this.toggleModal}
 				/> 
-				<EmployeeInfoModal />
+				<EmployeeInfoForm />
 			</div>
 		)
 	}
