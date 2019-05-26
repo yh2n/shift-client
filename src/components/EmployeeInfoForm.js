@@ -1,65 +1,72 @@
 import React, { Component } from 'react';
-import { reduxForm, Field } from 'redux-form';
-import { connect } from 'react-redux';
 import { API_BASE_URL } from '../config';
 import Input from './Input';
-import { fetchEmployeeInfo } from '../actions/fetch_employee_info';
-import { updateUserInfo } from '../actions/update_info';
 
 import './UserInfo.css';
 
-const currentUserId = localStorage.getItem("id");
 
-export class EmployeeInfoModal extends Component {
+export default class EmployeeInfoForm extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			loading: false,
-			employee: {}, 
-			address: {}
+			employeeInfo: {}, 
+			address: {},
+			currentUserId: localStorage.getItem("id")
 		}
 	}
 	componentDidMount() {
-		this.loadEmployee();
+		this.loadEmployeeInfo();
 		this.loadAddress();
 	}
 
 	handleChange = e => {
-		let target = e.target.value;
-		console.log(target);
-		this.setState({
-			value: target
+		const { name, value } = e.target
+		// Inline editing
+		const updatedEmployeeInfo = {
+            ...this.state.employeeInfo,
+            [name]: value
+		}
+
+		const updatedAddress = {
+            ...this.state.address,
+            [name]: value
+		}
+
+		this.setState({ 
+			employeeInfo: updatedEmployeeInfo,
+			address: updatedAddress
 		})
-		console.log(this.state.value)
 	}
 
-	editInfo = (values) => {
-		console.log(this.state.value)
-		let position = this.state.value;
-		const {firstName, lastName, phone_number, emailAddress, address_1, address_2, city, state, zip} = values;
-		const info = {firstName, lastName, position, phone_number, emailAddress, address_1, address_2, city, state, zip};
-		console.log(values);
-		console.log("new info submitted");
-		return this.props.dispatch(updateUserInfo(info))
+	editInfo = () => {
+		const id = localStorage.getItem("id");
+		const { employeeInfo, address } = this.state;
+		const info = { employeeInfo, address }
+ 		return fetch(`${ API_BASE_URL }/employee/${id}/info`, {
+			method: 'PUT',
+			headers: {
+				'content-type': 'application/json'
+			},
+			body: JSON.stringify(info),
+			mode: 'cors'
+		})
+		.then(res => res.json(info))
+		.catch(err => {
+			console.log(err)
+		});
 	}
 
-	loadEmployee() {
-		fetch(`${API_BASE_URL}/employee/employee/${currentUserId}`)
+	loadEmployeeInfo = () => {
+		fetch(`${API_BASE_URL}/employee/employee/${this.state.currentUserId}`)
 		.then(res => {
 			if(!res.ok) {
 				return Promise.reject(res.statusText);
 			}
 			return res.json();
 		})
-		.then(employee => {
-			this.setState({
-				employee,
-				//value: employee.position,
-				loading: false,
-			})
-			console.log(this.state.value, this.state.employee.firstName, this.state.employee.address.address_1)
-			console.log(this.state.employee)
+		.then(employeeInfo => {
+			this.setState({employeeInfo})
 			})
 			.catch(err => {
 				this.setState({
@@ -68,12 +75,12 @@ export class EmployeeInfoModal extends Component {
 			})
 	}
 
-	loadAddress() {
+	loadAddress = () => {
 		this.setState({
 			loading: true,
 			error: null
 		})
-		fetch(`${API_BASE_URL}/employee/${currentUserId}/info`)
+		fetch(`${API_BASE_URL}/employee/${this.state.currentUserId}/info`)
 			.then(res => {
 				if(!res.ok) {
 					return Promise.reject(res.statusText);
@@ -85,7 +92,6 @@ export class EmployeeInfoModal extends Component {
 					address,
 					loading: false,
 				})
-				console.log(this.state.employee)
 			})
 			.catch(err => {
 				this.setState({
@@ -95,107 +101,99 @@ export class EmployeeInfoModal extends Component {
 	}
 
 	render() {
-        // console.log(this.props);
-        // if(!this.props.show) {
-        //     return null
-        // }
 		return(
 			<div className="form-container">
-			<form className="user-info-form" onSubmit={this.props.handleSubmit(values => 
-				this.editInfo(values))}>
+			<form className="user-info-form" onSubmit={this.editInfo}>
 					<fieldset>
-					{/* <i className="material-icons done" onClick={this.props.close}>close</i> */}
 						<label htmlFor="first-name"></label>			
-						<Field
-							component={Input}
+						<Input
 							name="firstName" 
 							placeholder="First Name"
-							//allows initialization from state
-							defaultValue={this.state.employee.firstName}
+							// Prevents input from being undefined when first rendered
+							// and causing switch from uncontrolled to controlled 
+							value={this.state.employeeInfo.firstName || ''}
 							onChange={this.handleChange}
-							pristine={false}
 						/>
 						<label htmlFor="last-name"></label>			
-						<Field
-							component={Input}
+						<Input
 							name="lastName" 
-							value={this.state.employee.lastName}
+							value={this.state.employeeInfo.lastName || ''}
+							onChange={this.handleChange}
 							placeholder="Last Name"
 						/>
 
 						<label htmlFor="address">Home Address</label>
 						<div className="address-field">
-							<label htmlFor="address1"></label>			
-							<Field
-								component={Input}
-								name="address_1" 
-								defaultValue={this.state.address.address_1}
-								placeholder="e.g Street, Ave, Blvd"
-								/>
-							<label htmlFor="address2"></label>			
-							<Field
-								component={Input}
-								name="address_2" 
-								defaultValue={this.state.address.address_2}
-								placeholder="e.g apt #"
-								/>
-							<label htmlFor="city" ></label>			
-							<Field
-								component={Input}
-								name="city" 
-								defaultValue={this.state.address.city}
-								placeholder="City"
-								/>
-							<label htmlFor="state"></label>			
-							<Field
-								component={Input}
-								name="state" 
-								defaultValue={this.state.address.state}
-								placeholder="State"
-								/>
-							<label htmlFor="zip"></label>			
-							<Field
-								component={Input}
-								name="zip" 
-								defaultValue={this.state.address.zip}
-								placeholder="ZIP"
-								/>
+						<label htmlFor="address1"></label>			
+						<Input
+							name="address_1" 
+							value={this.state.address.address_1 || ''}
+							onChange={this.handleChange}
+							placeholder="e.g Street, Ave, Blvd"
+							/>
+						<label htmlFor="address2"></label>			
+						<Input
+							name="address_2" 
+							value={this.state.address.address_2 || ''}
+							onChange={this.handleChange}
+							placeholder="e.g apt #"
+							/>
+						<label htmlFor="city" ></label>			
+						<Input
+							name="city" 
+							value={this.state.address.city || ''}
+							onChange={this.handleChange}
+							placeholder="City"
+							/>
+						<label htmlFor="state"></label>			
+						<Input
+							name="state" 
+							value={this.state.address.state || ''}
+							onChange={this.handleChange}
+							placeholder="State"
+							/>
+						<label htmlFor="zip"></label>			
+						<Input
+							name="zip" 
+							value={this.state.address.zip || ''}
+							onChange={this.handleChange}
+							placeholder="ZIP"
+							/>
 						</div>
 						<div>
-							<label htmlFor="state">Contact Info</label>			
-							<Field
-								component={Input}
-								name="emailAddress" 
-								defaultValue={this.state.employee.email_address}
-								placeholder="Email address"
-							/>
-							<Field
-								component={Input}
-								name="phone_number" 
-								type="tel"
-								defaultValue={this.state.employee.phone_number}
-								placeholder="Phone number"
-							/>
+						<label htmlFor="state">Contact Info</label>			
+						<Input
+							name="email_address" 
+							value={this.state.employeeInfo.email_address || ''}
+							onChange={this.handleChange}
+							placeholder="Email address"
+						/>
+						<Input
+							name="phone_number" 
+							type="tel"
+							value={this.state.employeeInfo.phone_number || ''}
+							onChange={this.handleChange}
+							placeholder="Phone number"
+						/>
 						</div>
 
 						<label>Position</label>
-						<Field 
+						<select 
 							component="select" 
 							name="position"
-							//value={this.state.value} 
-							onChange={(e) => this.handleChange(e)}>
-							<option value="default">{this.state.employee.position === "" ? "Select your position..." : this.state.employee.position}</option>
-							<option value="Bartender">Bartender</option>
-							<option value="Barback">Barback</option>
-							<option value="Busser">Busser</option>
-							<option value="Captain">Captain</option>
-							<option value="Hostess/Host">Hostess/Host</option>
-							<option value="Maitre d'">Maître d'</option>
-							<option value="Manager">Manager</option>
-							<option value="Runner">Runner</option>
-							<option value="Server">Server</option>
-							<option value="Sommelier">Sommelier</option>
-						</Field>
+							onChange={this.handleChange}>
+								<option value="default">{this.state.employeeInfo.position === "" ? "Select your position..." : this.state.employeeInfo.position}</option>
+								<option value="Bartender">Bartender</option>
+								<option value="Barback">Barback</option>
+								<option value="Busser">Busser</option>
+								<option value="Captain">Captain</option>
+								<option value="Hostess/Host">Hostess/Host</option>
+								<option value="Maitre d'">Maître d'</option>
+								<option value="Manager">Manager</option>
+								<option value="Runner">Runner</option>
+								<option value="Server">Server</option>
+								<option value="Sommelier">Sommelier</option>
+						</select>
 						<button 
 							className="update-btn" 
 							type="submit"
@@ -209,30 +207,5 @@ export class EmployeeInfoModal extends Component {
 	}
 }
 
-EmployeeInfoModal = reduxForm({
-	form: 'user_info',
-})(EmployeeInfoModal)
 
-const mapStateToprops = state => {
-	return {
-	employee: state.employee,
-	// initialValues: {
-	// 	firstName: state.firstName,
-	// 	lastName: "Potico"
-	// 	 },
-	}	
-}
-
-export default connect(mapStateToprops)(EmployeeInfoModal)
-
-// EmployeeInfoModal = connect(
-// 	mapStateToprops,
-// )(UserInfoForm)
-
-// export default reduxForm({
-// 	form: 'user_info',
-// 	initilaValues: state => {
-// 		position: this.state.value
-// 	}
-// })(EmployeeInfoModal)
 
