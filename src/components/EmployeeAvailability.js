@@ -52,7 +52,6 @@ export default class EmployeeAvailability extends Component {
         
         this.state = {
             availability: {},
-            loading: false,
             error: null
         };
     }
@@ -67,7 +66,8 @@ export default class EmployeeAvailability extends Component {
             loading: true
         });
 
-        const id = this.props.match.params.id;
+        const id = localStorage.getIten("id")
+        // const id = this.props.match.params.id;
         return fetch(`${API_BASE_URL}/employee/${id}/availability`)
             .then(res => {
                 if (!res.ok) {
@@ -76,18 +76,12 @@ export default class EmployeeAvailability extends Component {
                 return res.json();
             })
             .then(availability => {
-                console.log(availability)
-                this.setState({
-                    availability,
-                    loading: false
-                })
+                this.setState({availability})
             })
             .catch(err => {
                 this.setState({
                     error: 'Could not load availability list',
-                    load: false
                 })
-                console.log(this.state.error, err)
             })
         }
     render() {
