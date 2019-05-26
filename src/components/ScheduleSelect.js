@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import Options from './ScheduleSelectOptions';
+import React from 'react';
+import ScheduleSelectOptions from './ScheduleSelectOptions';
 import Select from '@material-ui/core/Select';
 
 import './ScheduleSelect.css';
@@ -7,18 +7,18 @@ import './ScheduleSelect.css';
 
  
 
-const ScheduleSelect = (props) => {
+const CustomSelect = (props) => {
     return (
         <Select 
-            value={props.selectedWeek} 
+            value={props.value} 
             onChange={props.onChange}
             native={true}
-            className="schedule-select"
+            className={props.className}
         >
-            <Options />
+            <ScheduleSelectOptions />
         </Select>
         )
 }
 
 
-export default ScheduleSelect;
+export default CustomSelect;

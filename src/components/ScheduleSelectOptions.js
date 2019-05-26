@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 
 
-const Options = () => {
+const ScheduleSelectOptions = () => {
     let options = [];
         for(var i = 1; i <= 52; i++) {
             options.push(
@@ -17,4 +17,4 @@ const Options = () => {
 }
 
 
-export default Options;
+export default ScheduleSelectOptions;
