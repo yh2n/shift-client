@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import {Link} from 'react-router-dom';
 import { fetchEmployees } from '../actions/fetch_employees';
 
+import './Contacts.css'
+
+
 
 export class ContactRow extends Component {
 	componentDidMount() {

@@ -31,7 +31,7 @@ export class Contacts extends Component {
 
     render() {
         return (
-			<div>
+			<div className="contact_page">
 				<div>
 					<AccountNav onClick={this.toggleModal}/>
 					<UserMenuModal
