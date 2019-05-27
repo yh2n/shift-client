@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import moment from 'moment';
 
 import AdminAccount from './components/AdminAccount';
@@ -23,8 +23,8 @@ import UserSchedule from './components/UserSchedule';
 import './App.css';
 
 // First day of week is Monday: 1 //
-//doy is calculated as 7 + dow - janX, where janX is the first day of January 
-//that must belong to the first week of the year. //
+// doy is calculated as 7 + dow - janX, where janX is the first day of January 
+// that must belong to the first week of the year. //
 // First week of year must start with January 7th: 7 + 1 - 7 = 1
 moment.updateLocale('en', {
   week: {
