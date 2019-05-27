@@ -180,21 +180,6 @@ export default class EmployeeInfoForm extends Component {
 						</div>
 
 						<label>Position</label>
-						{/* <select 
-							name="position"
-							onChange={this.handleChange}>
-								<option value="default">{this.state.employeeInfo.position === "" ? "Select your position..." : this.state.employeeInfo.position}</option>
-								<option value="Bartender">Bartender</option>
-								<option value="Barback">Barback</option>
-								<option value="Busser">Busser</option>
-								<option value="Captain">Captain</option>
-								<option value="Hostess/Host">Hostess/Host</option>
-								<option value="Maitre d'">Maître d'</option>
-								<option value="Manager">Manager</option>
-								<option value="Runner">Runner</option>
-								<option value="Server">Server</option>
-								<option value="Sommelier">Sommelier</option>
-						</select> */}
 						<PositionSelect 
 							name="position"
 							value={this.state.employeeInfo.position}
