@@ -1,3 +1,8 @@
+.user-info-form {
+	width: 40%;
+	max-width: 500px;
+}
+
 .user-info-form fieldset {
 	border-radius: 4px;
 	align-items: center;
@@ -8,7 +13,6 @@
 
 .user-info-form input {
     display: block; 
-	width: 400px;
 	height: 30px;
 	font-size: 22px;
 	margin-bottom: 30px;
@@ -45,4 +49,37 @@
 }
 
 
-	
+
+@media only screen and (max-width: 1200px) {
+	.user-info-form {
+		width: 60%;
+	}	
+}
+
+@media only screen and (max-width: 767px) {
+	.user-info-form {
+		width: 70%;
+	}	
+
+	.select-save-div {
+		flex-direction: column;
+	}
+
+	.position_select {
+		margin: 10px 0 10px 0;
+		font-size: 22px;
+	}
+
+	.update_btn {
+		width: 150px;
+		margin-top: 20px;
+		width: auto;
+		height: 50px;
+	}
+
+}
+@media only screen and (max-width: 767px) {
+	.user-info-form {
+		width: 80%;
+	}	
+}
