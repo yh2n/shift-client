@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect} from 'react-redux';
 import { API_BASE_URL } from '../config';
 import { Weekday, Weekendday } from './Day';
-import './Availability.css';
+import './AvailabilityPage.css';
 
 const currentUserId = localStorage.getItem("id");
 
@@ -12,7 +12,6 @@ export class Availability extends Component {
         
         this.state = {
             availability: {},
-            loading: false,
             error: null
         };
     }
@@ -20,7 +19,6 @@ export class Availability extends Component {
     componentDidMount() {
         this.loadAvailability()
     }
-
 
     loadAvailability() {
         this.setState({
@@ -35,25 +33,17 @@ export class Availability extends Component {
             })
             .then(availability => {
                 console.log(availability)
-                this.setState({
-                    availability,
-                    loading: false
-                })
+                this.setState({availability})
             })
             .catch(err => {
                 this.setState({
                     error: 'Could not load availability list',
                     load: false
                 })
-                console.log(this.state.error, err)
             })
         }
 
-    submitChanges = (availability) => {
-        console.log(availability);
-        console.log(this.state.availability);
-        console.log(JSON.stringify(this.state.availability));
-
+    submitChanges = () => {
         return fetch(`${API_BASE_URL}/employee/${currentUserId}/availability`, {
             method: 'PUT',
             headers: {
@@ -61,33 +51,22 @@ export class Availability extends Component {
                 'Accept': 'application/json'
             },
             body: JSON.stringify(this.state.availability),
-            //credentials: 'same-origin',
-            //mode: 'cors'
         })
-        //  Need to return res.json() to render the new state, otherwise would need to reload page
-        //after each availability update
         .then(res => res.json())
         .then(availability => {
-            console.log(this.state.availability);
-            this.setState({
-                availability,
-                loading: false
-            })
+            this.setState({availability})
         })
         .catch(err => {
             console.log(err)
         })
     }
     render() {
-        console.log(this.state.availability)
         return (
-            <div>
-                <div className="availabilty_container">
+            <div className="availability_container">
+                <div className="availability">
                     <Weekday 
                         day="Mo"
                         breakfastToggled={!this.state.availability.Mo_breakfast}
-                        //PASS PREVSTATE AND PROPS AS PARAMETER IN 'SETSTATE', UPDATE AVAILABILITY OBJECT
-                        //NEED TO DESTRUCTURE PREVSTATE.AVAILABILITY TO AVOID UPDATING WHOLE AVAILABILITY OBJECT
                         selectBreakfast={() => this.setState((prevState, props) => { return {availability: {...prevState.availability, Mo_breakfast:!prevState.availability.Mo_breakfast}}})}
                         lunchToggled={!this.state.availability.Mo_lunch}
                         selectLunch={() => this.setState((prevState, props) => { return {availability: {...prevState.availability, Mo_lunch:!prevState.availability.Mo_lunch}}})}

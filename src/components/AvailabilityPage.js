@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Availability from './Availability';
 import AccountNav from './AccountNav';
 import UserMenuModal from './UserMenuModal';
-import './Availability.css';
+import './AvailabilityPage.css';
 
 
 export default class AvailabilityPage extends Component {
@@ -22,7 +22,7 @@ export default class AvailabilityPage extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="availability_page">
 				<AccountNav onClick={() => this.toggleModal()}/>
 				<UserMenuModal
 					show={this.state.isOpen}
