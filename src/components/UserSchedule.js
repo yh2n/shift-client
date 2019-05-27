@@ -11,9 +11,6 @@ import PositionRow from './PositionRow';
 import MonthRow from './MonthRow';
 import ScheduleSelect from './ScheduleSelect';
 
-
-
-
 import { fetchEmployees } from '../actions/fetch_employees';
 import { connect } from 'react-redux';
 import './UserSchedule.css';
@@ -58,7 +55,6 @@ export class Schedule extends Component {
     
 	render() {
         const employees = this.props.employees.employees;
-        let { currentWeek } = this.state
         console.log(employees);
 
 
