@@ -45,7 +45,7 @@ export class Schedule extends Component {
         console.log(this.state.selectedWeek)
     }
 
-    incrementCountProps = () => {
+    incrementCount = () => {
         this.setState(prevState => {
             return { submittedCount: prevState.submittedCount + 1 }
         })
@@ -392,7 +392,7 @@ export class Schedule extends Component {
                     value={this.state.selectedWeek} 
                     onChange={this.handleScheduleSelection}
                 />
-                <button onClick={this.incrementCountProps}>Save</button>
+                <button onClick={this.incrementCount}>Save</button>
                 <div className="admin_schedule_container">
                     <SelectedWeekDayRow className="day_row" selectedWeek={this.state.selectedWeek}/>
                     <PositionRow position="Managers"/>
