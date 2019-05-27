@@ -1,0 +1,48 @@
+.user-info-form fieldset {
+	border-radius: 4px;
+	align-items: center;
+	margin: 45px auto 60px auto;
+	font-size: 25px;
+	height: 85%;
+}
+
+.user-info-form input {
+    display: block; 
+	width: 400px;
+	height: 30px;
+	font-size: 22px;
+	margin-bottom: 30px;
+	margin-top: 20px;
+	padding-left: 5px;
+}
+
+.address-field {
+	font-size: 17px;
+}
+
+.user-info-form label {
+    display: block; 
+    margin-bottom: 5px;
+}
+
+.select-save-div {
+	display: flex;
+}
+
+.position_select {
+	flex: 1;
+	margin-right: 15px;
+	font-size: 22px;
+}
+
+.update_btn {
+	width: 150px;
+}
+
+.update-btn:hover {
+    cursor: pointer;
+    background: #668295;
+}
+
+
+	

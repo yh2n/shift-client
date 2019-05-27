@@ -4,7 +4,7 @@ import Input from './Input';
 import PositionSelect from './PositionSelect'
 
 
-import './UserInfo.css';
+import './EmployeeInfoForm.css';
 
 
 export default class EmployeeInfoForm extends Component {
@@ -104,7 +104,7 @@ export default class EmployeeInfoForm extends Component {
 
 	render() {
 		return(
-			<div className="form-container">
+			<>
 			<form className="user-info-form" onSubmit={this.editInfo}>
 					<fieldset>
 						<label htmlFor="first-name"></label>			
@@ -180,20 +180,23 @@ export default class EmployeeInfoForm extends Component {
 						</div>
 
 						<label>Position</label>
-						<PositionSelect 
-							name="position"
-							value={this.state.employeeInfo.position}
-							onChange={this.handleChange}
-						/>
-						<button 
-							className="update-btn" 
-							type="submit"
-						>
-							Save
-						</button>
+						<div className="select-save-div">
+							<PositionSelect 
+								className="position_select"
+								name="position"
+								value={this.state.employeeInfo.position}
+								onChange={this.handleChange}
+							/>
+							<button 
+								className="update_btn" 
+								type="submit"
+							>
+								Save
+							</button>
+						</div>
 					</fieldset>
 				</form>
-            </div>
+            </>
 			)
 	}
 }
