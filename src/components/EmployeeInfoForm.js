@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { API_BASE_URL } from '../config';
 import Input from './Input';
-import Select from '@material-ui/core/Select';
-import PositionSelectOptions from './PositionSelectOptions'
+import PositionSelect from './PositionSelect'
 
 
 import './UserInfo.css';
@@ -181,7 +180,7 @@ export default class EmployeeInfoForm extends Component {
 						</div>
 
 						<label>Position</label>
-						<select 
+						{/* <select 
 							name="position"
 							onChange={this.handleChange}>
 								<option value="default">{this.state.employeeInfo.position === "" ? "Select your position..." : this.state.employeeInfo.position}</option>
@@ -195,8 +194,12 @@ export default class EmployeeInfoForm extends Component {
 								<option value="Runner">Runner</option>
 								<option value="Server">Server</option>
 								<option value="Sommelier">Sommelier</option>
-								{/* <PositionSelectOptions /> */}
-						</select>
+						</select> */}
+						<PositionSelect 
+							name="position"
+							value={this.state.employeeInfo.position}
+							onChange={this.handleChange}
+						/>
 						<button 
 							className="update-btn" 
 							type="submit"

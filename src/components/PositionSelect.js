@@ -6,12 +6,13 @@ import PositionSelectOptions from './PositionSelectOptions';
 const PositionSelect = (props) => {
     return (
         <Select 
+            name={props.name}
             value={props.value} 
             onChange={props.onChange}
             native={true}
             className={props.className}
         >
-            <PositionSelectOptions />
+            <PositionSelectOptions name={props.name} />
         </Select>
         )
 }
