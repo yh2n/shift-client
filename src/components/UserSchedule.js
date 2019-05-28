@@ -367,60 +367,65 @@ export class Schedule extends Component {
                         onClose={this.toggleModal}
                     />
                 </div>
-        	    <div className="user_schedule_container">
-                    <MonthRow />
-                    <CurrentWeekDayRow />
-                        <PositionRow position="Managers"/>
-                        {managerRow}
-                        <PositionRow key="schedule_captains" position="Captains"/>
-                        {captainRow}
-                        <PositionRow key="schedule_maitre-d" position="Maître d'"/>
-                        {maitreDRow}
-                        <PositionRow key="schedule_host-staff" position="Host staff"/>
-                        {hostRow}
-                        <PositionRow key="schedule_sommeliers" position="Sommeliers"/>
-                        {sommelierRow}
-                        <PositionRow key="schedule_bartenders" position="Bartenders"/>
-                        {bartenderRow}
-                        <PositionRow key="schedule_barbacks" position="Barbacks"/>
-                        {barbackRow}
-                        <PositionRow key="schedule_servers" position="Servers" />
-                        {serverRow}
-                        <PositionRow key="schedule_runners" position="Runners"/>
-                        {runnerRow}
-                        <PositionRow key="schedule_bussers" position="Bussers"/>
-                        {busserRow}
-                </div>
-                    <ScheduleSelect
-                        className="schedule-select" 
-                        value={this.state.selectedWeek} 
-                        onChange={this.handleScheduleSelection}
-                    />
-                    <button onClick={this.incrementCount}>Save</button>
-                    
-                <div className="user_schedule_container">
-                    <MonthRow />
-                    <SelectedWeekDayRow selectedWeek={this.state.selectedWeek}/>
-                        <PositionRow position="Managers"/>
-                        {managerRow_selected}
-                        <PositionRow key="schedule_captains_selected" position="Captains"/>
-                        {captainRow_selected}
-                        <PositionRow key="schedule_maitre-d_selected" position="Maître d'"/>
-                        {maitreDRow_selected}
-                        <PositionRow key="schedule_host-staff_selected" position="Host staff"/>
-                        {hostRow_selected}
-                        <PositionRow key="schedule_sommeliers_selected" position="Sommeliers"/>
-                        {sommelierRow_selected}
-                        <PositionRow key="schedule_bartenders_selected" position="Bartenders"/>
-                        {bartenderRow_selected}
-                        <PositionRow key="schedule_barbacks_selected" position="Barbacks"/>
-                        {barbackRow_selected}
-                        <PositionRow key="schedule_servers_selected" position="Servers" />
-                        {serverRow_selected}
-                        <PositionRow key="schedule_runners_selected" position="Runners"/>
-                        {runnerRow_selected}
-                        <PositionRow key="schedule_bussers_selected" position="Bussers"/>
-                        {busserRow_selected}
+                <div className="schedule_page">
+                    <MonthRow className="current_month_row"/>
+                    <div className="user_schedule_container">
+                        <CurrentWeekDayRow />
+                            <PositionRow position="Managers"/>
+                            {managerRow}
+                            <PositionRow key="schedule_captains" position="Captains"/>
+                            {captainRow}
+                            <PositionRow key="schedule_maitre-d" position="Maître d'"/>
+                            {maitreDRow}
+                            <PositionRow key="schedule_host-staff" position="Host staff"/>
+                            {hostRow}
+                            <PositionRow key="schedule_sommeliers" position="Sommeliers"/>
+                            {sommelierRow}
+                            <PositionRow key="schedule_bartenders" position="Bartenders"/>
+                            {bartenderRow}
+                            <PositionRow key="schedule_barbacks" position="Barbacks"/>
+                            {barbackRow}
+                            <PositionRow key="schedule_servers" position="Servers" />
+                            {serverRow}
+                            <PositionRow key="schedule_runners" position="Runners"/>
+                            {runnerRow}
+                            <PositionRow key="schedule_bussers" position="Bussers"/>
+                            {busserRow}
+                    </div>
+                    <div className="selected_month">
+                        <div className="select_save">
+                            <ScheduleSelect
+                                className="schedule-select" 
+                                value={this.state.selectedWeek} 
+                                onChange={this.handleScheduleSelection}
+                            />
+                            <button onClick={this.incrementCount}>Save</button>
+                        </div>
+                        <MonthRow />
+                    </div>
+                    <div className="user_schedule_container">
+                        <SelectedWeekDayRow selectedWeek={this.state.selectedWeek}/>
+                            <PositionRow position="Managers"/>
+                            {managerRow_selected}
+                            <PositionRow key="schedule_captains_selected" position="Captains"/>
+                            {captainRow_selected}
+                            <PositionRow key="schedule_maitre-d_selected" position="Maître d'"/>
+                            {maitreDRow_selected}
+                            <PositionRow key="schedule_host-staff_selected" position="Host staff"/>
+                            {hostRow_selected}
+                            <PositionRow key="schedule_sommeliers_selected" position="Sommeliers"/>
+                            {sommelierRow_selected}
+                            <PositionRow key="schedule_bartenders_selected" position="Bartenders"/>
+                            {bartenderRow_selected}
+                            <PositionRow key="schedule_barbacks_selected" position="Barbacks"/>
+                            {barbackRow_selected}
+                            <PositionRow key="schedule_servers_selected" position="Servers" />
+                            {serverRow_selected}
+                            <PositionRow key="schedule_runners_selected" position="Runners"/>
+                            {runnerRow_selected}
+                            <PositionRow key="schedule_bussers_selected" position="Bussers"/>
+                            {busserRow_selected}
+                    </div>
                 </div>
             </div>
 		)

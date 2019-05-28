@@ -2,17 +2,15 @@ import React from 'react';
 import moment from 'moment';
 
 
-export default function MonthRow() {
+ const MonthRow = props => {
     return (
         <>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div className="user_current_month">{moment().format("MMMM").toUpperCase()}</div>
-            <div className="user_year">{moment().format("YYYY")}</div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div className={props.className}>
+                <div className="user_current_month">{moment().format("MMMM YYYY").toUpperCase()}</div>
+            </div>
         </>
     )
 }
+
+
+export default MonthRow;

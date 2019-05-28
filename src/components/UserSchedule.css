@@ -1,8 +1,13 @@
+.schedule_page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .user_schedule_container {
   display: grid;
   width: 80%;
-  max-width: 960px;
-  margin: 150px auto;
+  max-width: 1200px;
   grid-template-columns: auto repeat(7, 1fr);
   grid-row-gap: 2px;
   grid-column-gap: 1px;
@@ -60,16 +65,29 @@
 .user_day_number {
   color: #129482;
 }
+
+.select_save {
+  display: flex;
+  border: solid;
+  margin: 100px 0 20px 0;
+} 
+
+.current_month_row {
+  margin-top: 150px;
+}
+
+.selected_month {
+  display: flex;  
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  max-width: 1200px;
+  border: solid red;
+}
+
 .user_current_month {
-  text-align: right;
   font-size: 40px;
   margin: 0px 10px 40px 0px;
-  color: #112138;
-}
-.user_year {
-  text-align: left;
-  font-size: 40px;
-  margin: 0px 0px 40px 10px;
   color: #112138;
 }
 
