@@ -8,6 +8,7 @@
 	grid-template-columns: repeat(5, 1fr);
 	grid-row-gap: 5px;
 	width: 75%;
+	max-width: 1200px;
 	height: auto;
 	margin: 250px auto 50px auto;
 	border-radius: 4px;
@@ -85,15 +86,17 @@
 	}	
 }
 
+@media only screen and (max-width: 900px) {
+	.contact_list_container {
+		font-size: 15px;
+
+	}	
+}
+
 @media only screen and (min-width: 1200px) {
 	.contact_list_container {
 		width: 80%;
 	}	
 }
 
-@media only screen and (min-width: 1200px) {
-	.contact_list_container {
-		width: 75%;
-	}	
-}
 
