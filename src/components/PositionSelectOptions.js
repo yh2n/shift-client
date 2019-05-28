@@ -1,8 +1,7 @@
 import React from 'react';
 
-const PositionSelectOptions = props => {
+const PositionSelectOptions = () => {
     const positions = [
-        props.name === "position" ? "Select your position..." : props.name,
         "Bartender", 
         "Barback", 
         "Busser", 
