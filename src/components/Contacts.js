@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ContactLabels from './ContactLabels';
 import ContactRow from './ContactRow';
+import ContactRowMobile from './ContactRowMobile';
 
 import AccountNav from './AccountNav';
 import UserMenuModal from './UserMenuModal';
@@ -41,7 +42,10 @@ export class Contacts extends Component {
 				</div>
 				<div className="contact_list_container">
 					<ContactLabels />
-					<ContactRow />
+					<ContactRow className="contacts"/>
+				</div>
+				<div className="contact_list_container-mobile">
+					<ContactRowMobile className="contacts"/>
 				</div>
             </div>
         )
