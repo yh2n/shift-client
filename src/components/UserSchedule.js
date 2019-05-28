@@ -9,6 +9,7 @@ import CurrentWeekDayRow from './CurrentWeekDayRow';
 import SelectedWeekDayRow from './SelectedWeekDayRow';
 import PositionRow from './PositionRow';
 import MonthRow from './MonthRow';
+import SelectedMonthRow from './SelectedMonthRow';
 import ScheduleSelect from './ScheduleSelect';
 
 import { fetchEmployees } from '../actions/fetch_employees';
@@ -26,7 +27,7 @@ export class Schedule extends Component {
 		this.state = {
             isOpen : false, 
             currentWeek:  moment().week(),
-            selectedWeek: moment().week(),
+            selectedWeek: moment().week() + 1,
             submittedCount: 0,
             error: null
 		}
@@ -368,7 +369,7 @@ export class Schedule extends Component {
                     />
                 </div>
                 <div className="schedule_page">
-                    <MonthRow className="current_month_row"/>
+                    <MonthRow className="month_row-current"/>
                     <div className="user_schedule_container">
                         <CurrentWeekDayRow />
                             <PositionRow position="Managers"/>
@@ -401,7 +402,10 @@ export class Schedule extends Component {
                             />
                             <button onClick={this.incrementCount}>Save</button>
                         </div>
-                        <MonthRow />
+                        <SelectedMonthRow 
+                            className="month_row-selected"
+                            selectedWeek={this.state.selectedWeek}
+                        />
                     </div>
                     <div className="user_schedule_container">
                         <SelectedWeekDayRow selectedWeek={this.state.selectedWeek}/>
