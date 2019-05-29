@@ -49,150 +49,150 @@ export default class AdminEmployeeRow extends Component {
     }
     render() {
         const MondayShifts = (
-            <ul key="monday_shifts">
-                <li 
+            <div key="monday_shifts">
+                <div 
                     key="mo_br"
                     className={this.state.schedule.Mo_br_need_cover ? "red" : ""}
                 >
                     {this.state.schedule.Mo_breakfast ? "Breakfast" : ""}
-                </li>
-                <li 
+                </div>
+                <div 
                     key="mo_lu"
                     className={this.state.schedule.Mo_lunch_need_cover ? "red" : ""}
                 >
-                    {this.state.schedule.Mo_lunch ? "Lunch" : ""}</li>
-                <li 
+                    {this.state.schedule.Mo_lunch ? "Lunch" : ""}</div>
+                <div 
                     key="mo_di"
                     className={this.state.schedule.Mo_dinner_need_cover ? "red" : ""}
                 >
-                    {this.state.schedule.Mo_dinner ? "Dinner" : ""}</li>
-                <li 
+                    {this.state.schedule.Mo_dinner ? "Dinner" : ""}</div>
+                <div 
                     key="mo_off"
                     className={this.state.schedule.Mo_can_cover ? "green" : ""}
                 >
                     {!this.state.schedule.Mo_breakfast && !this.state.schedule.Mo_lunch && !this.state.schedule.Mo_dinner ? "OFF" : ""}
-                </li>
-            </ul>
+                </div>
+            </div>
         )
         const TuesdayShifts = (
-                <ul key="tuesday_shifts">
-                    <li 
+                <div key="tuesday_shifts">
+                    <div 
                         key="tu_br"
                         className={this.state.schedule.Tu_br_need_cover ? "red" : ""}
-                    >{this.state.schedule.Tu_breakfast ? "Breakfast" : ""}</li>
-                    <li 
+                    >{this.state.schedule.Tu_breakfast ? "Breakfast" : ""}</div>
+                    <div 
                         key="tu_lu"
                         className={this.state.schedule.Tu_lunch_need_cover ? "red" : ""}
-                    >{this.state.schedule.Tu_lunch ? "Lunch" : ""}</li>
-                    <li 
+                    >{this.state.schedule.Tu_lunch ? "Lunch" : ""}</div>
+                    <div 
                         key="tu_di"
                         className={this.state.schedule.Tu_dinner_need_cover ? "red" : ""}
-                    >{this.state.schedule.Tu_dinner ? "Dinner" : ""}</li>
-                    <li 
+                    >{this.state.schedule.Tu_dinner ? "Dinner" : ""}</div>
+                    <div 
                         key="tu_off"
                         className={this.state.schedule.Tu_can_cover ? "green" : ""}
-                    >{!this.state.schedule.Tu_breakfast && !this.state.schedule.Tu_lunch && !this.state.schedule.Tu_dinner ? "OFF" : ""}</li>
-                </ul>
+                    >{!this.state.schedule.Tu_breakfast && !this.state.schedule.Tu_lunch && !this.state.schedule.Tu_dinner ? "OFF" : ""}</div>
+                </div>
             )
         const WednesdayShifts = (
-                <ul key="wednesday_shifts">
-                    <li 
+                <div key="wednesday_shifts">
+                    <div 
                         key="we_br"
                         className={this.state.schedule.We_br_need_cover ? "red" : ""}
-                    >{this.state.schedule.We_breakfast ? "Breakfast" : ""}</li>
-                    <li 
+                    >{this.state.schedule.We_breakfast ? "Breakfast" : ""}</div>
+                    <div 
                         key="we_lu"
                         className={this.state.schedule.We_lunch_need_cover ? "red" : ""}
-                    >{this.state.schedule.We_lunch ? "Lunch" : ""}</li>
-                    <li 
+                    >{this.state.schedule.We_lunch ? "Lunch" : ""}</div>
+                    <div 
                         key="we_di"
                         className={this.state.schedule.We_dinner_need_cover ? "red" : ""}
-                    >{this.state.schedule.We_dinner ? "Dinner" : ""}</li>
-                    <li 
+                    >{this.state.schedule.We_dinner ? "Dinner" : ""}</div>
+                    <div 
                         key="we_off"
                         className={this.state.schedule.We_can_cover ? "green" : ""}
-                    >{!this.state.schedule.We_breakfast && !this.state.schedule.We_lunch && !this.state.schedule.We_dinner ? "OFF" : ""}</li>
-                </ul>
+                    >{!this.state.schedule.We_breakfast && !this.state.schedule.We_lunch && !this.state.schedule.We_dinner ? "OFF" : ""}</div>
+                </div>
             )
         const ThursdayShifts = (
-                <ul key="thursday_shifts">
-                    <li 
+                <div key="thursday_shifts">
+                    <div 
                         key="th_br"
                         className={this.state.schedule.Th_br_need_cover ? "red" : ""}
-                    >{this.state.schedule.Th_breakfast ? "Breakfast" : ""}</li>
-                    <li 
+                    >{this.state.schedule.Th_breakfast ? "Breakfast" : ""}</div>
+                    <div 
                         key="th_lu"
                         className={this.state.schedule.Th_lunch_need_cover ? "red" : ""}
-                    >{this.state.schedule.Th_lunch ? "Lunch" : ""}</li>
-                    <li 
+                    >{this.state.schedule.Th_lunch ? "Lunch" : ""}</div>
+                    <div 
                         key="th_di"
                         className={this.state.schedule.Th_dinner_need_cover ? "red" : ""}
-                    >{this.state.schedule.Th_dinner ? "Dinner" : ""}</li>
-                    <li 
+                    >{this.state.schedule.Th_dinner ? "Dinner" : ""}</div>
+                    <div 
                         key="th_off"
                         className={this.state.schedule.Th_can_cover ? "green" : ""}
-                    >{!this.state.schedule.Th_breakfast && !this.state.schedule.Th_lunch && !this.state.schedule.Th_dinner ? "OFF" : ""}</li>
-                </ul>
+                    >{!this.state.schedule.Th_breakfast && !this.state.schedule.Th_lunch && !this.state.schedule.Th_dinner ? "OFF" : ""}</div>
+                </div>
             )
         const FridayShifts = (
-                <ul key="friday_shifts">
-                    <li 
+                <div key="friday_shifts">
+                    <div 
                         key="fr_br"
                         className={this.state.schedule.Fr_br_need_cover ? "red" : ""}
-                    >{this.state.schedule.Fr_breakfast ? "Breakfast" : ""}</li>
-                    <li 
+                    >{this.state.schedule.Fr_breakfast ? "Breakfast" : ""}</div>
+                    <div 
                         key="fr_lu"
                         className={this.state.schedule.Fr_lunch_need_cover ? "red" : ""}
-                    >{this.state.schedule.Fr_lunch ? "Lunch" : ""}</li>
-                    <li 
+                    >{this.state.schedule.Fr_lunch ? "Lunch" : ""}</div>
+                    <div 
                         key="fr_di"
                         className={this.state.schedule.Fr_dinner_need_cover ? "red" : ""}
-                    >{this.state.schedule.Fr_dinner ? "Dinner" : ""}</li>
-                    <li 
+                    >{this.state.schedule.Fr_dinner ? "Dinner" : ""}</div>
+                    <div 
                         key="fr_off"
                         className={this.state.schedule.Fr_can_cover ? "green" : ""}
-                    >{!this.state.schedule.Fr_breakfast && !this.state.schedule.Fr_lunch && !this.state.schedule.Fr_dinner ? "OFF" : ""}</li>
-                </ul>
+                    >{!this.state.schedule.Fr_breakfast && !this.state.schedule.Fr_lunch && !this.state.schedule.Fr_dinner ? "OFF" : ""}</div>
+                </div>
             )
         const SaturdayShifts = (
-                <ul key="saturday_shifts">
-                    <li 
+                <div key="saturday_shifts">
+                    <div 
                         key="sa_br"
                         className={this.state.schedule.Sa_br_need_cover ? "red" : ""}
-                    >{this.state.schedule.Sa_breakfast ? "Breakfast" : ""}</li>
-                    <li 
+                    >{this.state.schedule.Sa_breakfast ? "Breakfast" : ""}</div>
+                    <div 
                         key="sa_bru"
                         className={this.state.schedule.Sa_brunch_need_cover ? "red" : ""}
-                    >{this.state.schedule.Sa_brunch ? "Brunch" : ""}</li>
-                    <li 
+                    >{this.state.schedule.Sa_brunch ? "Brunch" : ""}</div>
+                    <div 
                         key="sa_di"
                         className={this.state.schedule.Sa_dinner_need_cover ? "red" : ""}
-                    >{this.state.schedule.Sa_dinner ? "Dinner" : ""}</li>
-                    <li 
+                    >{this.state.schedule.Sa_dinner ? "Dinner" : ""}</div>
+                    <div 
                         key="sa_off"
                         className={this.state.schedule.Sa_can_cover ? "green" : ""}
-                    >{!this.state.schedule.Sa_breakfast && !this.state.schedule.Sa_brunch && !this.state.schedule.Sa_dinner ? "OFF" : ""}</li>
-                </ul>
+                    >{!this.state.schedule.Sa_breakfast && !this.state.schedule.Sa_brunch && !this.state.schedule.Sa_dinner ? "OFF" : ""}</div>
+                </div>
             )
         const SundayShifts = (
-                <ul key="sunday_shifts">
-                    <li 
+                <div key="sunday_shifts">
+                    <div 
                         key="su_br"
                         className={this.state.schedule.Su_br_need_cover ? "red" : ""}
-                    >{this.state.schedule.Su_breakfast ? "Breakfast" : ""}</li>
-                    <li 
+                    >{this.state.schedule.Su_breakfast ? "Breakfast" : ""}</div>
+                    <div 
                         key="su_bru"
                         className={this.state.schedule.Su_brunch_need_cover ? "red" : ""}
-                    >{this.state.schedule.Su_brunch ? "Brunch" : ""}</li>
-                    <li 
+                    >{this.state.schedule.Su_brunch ? "Brunch" : ""}</div>
+                    <div 
                         key="su_di"
                         className={this.state.schedule.Su_dinner_need_cover ? "red" : ""}
-                    >{this.state.schedule.Su_dinner ? "Dinner" : ""}</li>
-                    <li 
+                    >{this.state.schedule.Su_dinner ? "Dinner" : ""}</div>
+                    <div 
                         key="su_off"
                         className={this.state.schedule.Su_can_cover ? "green" : ""}
-                    >{!this.state.schedule.Su_breakfast && !this.state.schedule.Su_brunch && !this.state.schedule.Su_dinner ? "OFF" : ""}</li>
-                </ul>
+                    >{!this.state.schedule.Su_breakfast && !this.state.schedule.Su_brunch && !this.state.schedule.Su_dinner ? "OFF" : ""}</div>
+                </div>
             )
         
         return (
@@ -200,25 +200,25 @@ export default class AdminEmployeeRow extends Component {
                 <div className={this.props.className}>
                     {this.props.name}
                 </div>
-                <div className="user_schedule_btns" key="Monday">
+                <div className="admin_schedule_shift" key="Monday">
                     {MondayShifts}
                 </div>
-                <div className="user_schedule_btns" key="Tuesday">
+                <div className="admin_schedule_shift" key="Tuesday">
                     {TuesdayShifts}
                 </div>
-                <div className="user_schedule_btns" key="Wednesday">
+                <div className="admin_schedule_shift" key="Wednesday">
                     {WednesdayShifts}
                 </div>
-                <div className="user_schedule_btns" key="Thursday">
+                <div className="admin_schedule_shift" key="Thursday">
                     {ThursdayShifts}
                 </div>
-                <div className="user_schedule_btns" key="Friday">
+                <div className="admin_schedule_shift" key="Friday">
                     {FridayShifts}
                 </div>
-                <div className="user_schedule_btns" key="Saturday">
+                <div className="admin_schedule_shift" key="Saturday">
                     {SaturdayShifts}
                 </div>
-                <div className="user_schedule_btns" key="Sunday">
+                <div className="admin_schedule_shift" key="Sunday">
                     {SundayShifts}
                 </div>
             </>

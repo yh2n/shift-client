@@ -7,6 +7,7 @@ import PositionRow from './PositionRow';
 import AdminEmployeeRow from './AdminEmployeeRow';
 import AdminEmployeeRowSelected from './AdminEmployeeRowSelected';
 import CurrentWeekDayRow from './CurrentWeekDayRow';
+import SelectedMonthRow from './SelectedMonthRow';
 import ScheduleSelect from './ScheduleSelect';
 import SelectedWeekDayRow from './SelectedWeekDayRow';
 import { Link } from 'react-router-dom';
@@ -24,7 +25,7 @@ export class Schedule extends Component {
 		this.state = {
             isOpen : false,
             toggled: false,
-            selectedWeek: moment().week(),
+            selectedWeek: moment().week() + 1,
             submittedCount: 0
 		}
     }
@@ -59,7 +60,7 @@ export class Schedule extends Component {
                 barbacks.map(barback => (
                         <AdminEmployeeRow
                             key={barback.id}
-                            className={barback.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
+                            className={barback.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={
                                 <Link to ={`/admin/employee/${barback.id}`} 
                                     style={{textDecoration:'none', color:' #129482'}}>
@@ -97,7 +98,7 @@ export class Schedule extends Component {
                 bartenders.map(bartender => (
                         <AdminEmployeeRow
                             key={bartender.id}
-                            className={bartender.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
+                            className={bartender.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={bartender.firstName}
                             id={bartender.id}
                             schedule={bartender.schedule}
@@ -110,7 +111,7 @@ export class Schedule extends Component {
                 bartenders.map(bartender => (
                         <AdminEmployeeRowSelected
                             key={`${bartender.id}_selected`}
-                            className={bartender.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
+                            className={bartender.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={bartender.firstName}
                             id={bartender.id}
                             selectedWeek={this.state.selectedWeek}
@@ -126,7 +127,7 @@ export class Schedule extends Component {
                 bussers.map(busser => (
                         <AdminEmployeeRow
                             key={busser.id}
-                            className={busser.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
+                            className={busser.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={busser.firstName}
                             id={busser.id}
                             schedule={busser.schedule}
@@ -139,7 +140,7 @@ export class Schedule extends Component {
                 bussers.map(busser => (
                         <AdminEmployeeRowSelected
                             key={`${busser.id}_selected`}
-                            className={busser.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
+                            className={busser.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={busser.firstName}
                             id={busser.id}
                             selectedWeek={this.state.selectedWeek}
@@ -155,7 +156,7 @@ export class Schedule extends Component {
                 captains.map(captain => (
                         <AdminEmployeeRow
                             key={captain.id}
-                            className={captain.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
+                            className={captain.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={captain.firstName}
                             id={captain.id}
                             schedule={captain.schedule}
@@ -168,7 +169,7 @@ export class Schedule extends Component {
                 captains.map(captain => (
                         <AdminEmployeeRowSelected
                             key={`${captain.id}_selected`}
-                            className={captain.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
+                            className={captain.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={captain.firstName}
                             id={captain.id}
                             selectedWeek={this.state.selectedWeek}
@@ -184,7 +185,7 @@ export class Schedule extends Component {
                 hosts.map(host => (
                         <AdminEmployeeRow
                             key={host.id}
-                            className={host.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
+                            className={host.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={host.firstName}
                             id={host.id}
                             schedule={host.schedule}
@@ -197,7 +198,7 @@ export class Schedule extends Component {
                 hosts.map(host => (
                         <AdminEmployeeRowSelected
                             key={`${host.id}_selected`}
-                            className={host.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
+                            className={host.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={host.firstName}
                             id={host.id}
                             selectedWeek={this.state.selectedWeek}
@@ -213,7 +214,7 @@ export class Schedule extends Component {
                 maitre_ds.map(maitre_d => (
                         <AdminEmployeeRow
                             key={maitre_d.id}
-                            className={maitre_d.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
+                            className={maitre_d.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={maitre_d.firstName}
                             id={maitre_d.id}
                             schedule={maitre_d.schedule}
@@ -226,7 +227,7 @@ export class Schedule extends Component {
                 maitre_ds.map(maitre_d => (
                         <AdminEmployeeRowSelected
                             key={`${maitre_d.id}_selected`}
-                            className={maitre_d.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
+                            className={maitre_d.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={maitre_d.firstName}
                             id={maitre_d.id}
                             selectedWeek={this.state.selectedWeek}
@@ -242,7 +243,7 @@ export class Schedule extends Component {
                 managers.map(manager => (
                         <AdminEmployeeRow
                             key={manager.id}
-                            className={manager.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
+                            className={manager.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={manager.firstName}
                             id={manager.id}
                             schedule={manager.schedule}
@@ -255,7 +256,7 @@ export class Schedule extends Component {
                 managers.map(manager => (
                         <AdminEmployeeRowSelected
                             key={`${manager.id}_selected`}
-                            className={manager.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
+                            className={manager.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={manager.firstName}
                             id={manager.id}
                             selectedWeek={this.state.selectedWeek}
@@ -271,7 +272,7 @@ export class Schedule extends Component {
                 runners.map(runner => (
                         <AdminEmployeeRow
                             key={runner.id}
-                            className={runner.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
+                            className={runner.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={runner.firstName}
                             id={runner.id}
                             schedule={runner.schedule}
@@ -284,7 +285,7 @@ export class Schedule extends Component {
                 runners.map(runner => (
                         <AdminEmployeeRowSelected
                             key={`${runner.id}_selected`}
-                            className={runner.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
+                            className={runner.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={runner.firstName}
                             id={runner.id}
                             selectedWeek={this.state.selectedWeek}
@@ -300,7 +301,7 @@ export class Schedule extends Component {
                 servers.map(server => (
                         <AdminEmployeeRow
                             key={server.id}
-                            className={server.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
+                            className={server.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={server.firstName}
                             id={server.id}
                             schedule={server.schedule}
@@ -313,7 +314,7 @@ export class Schedule extends Component {
                 servers.map(server => (
                         <AdminEmployeeRowSelected
                             key={`${server.id}_selected`}
-                            className={server.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
+                            className={server.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={server.firstName}
                             id={server.id}
                             selectedWeek={this.state.selectedWeek}
@@ -329,7 +330,7 @@ export class Schedule extends Component {
                 sommeliers.map(sommelier => (
                         <AdminEmployeeRow
                             key={sommelier.id}
-                            className={sommelier.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
+                            className={sommelier.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={sommelier.firstName}
                             id={sommelier.id}
                             schedule={sommelier.schedule}
@@ -342,7 +343,7 @@ export class Schedule extends Component {
                 sommeliers.map(sommelier => (
                         <AdminEmployeeRowSelected
                             key={`${sommelier.id}_selected`}
-                            className={sommelier.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
+                            className={sommelier.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={sommelier.firstName}
                             id={sommelier.id}
                             selectedWeek={this.state.selectedWeek}
@@ -361,59 +362,68 @@ export class Schedule extends Component {
                         onClose={this.toggleModal}
                     />
                 </div>
-                <div className="current_schedule_prompt">
-                </div>
-                <div className="admin_schedule_container">
-                    <MonthRow />
-                    <CurrentWeekDayRow className="day_row"/>
-                    <PositionRow position="Managers"/>
-                    {managerRow}
-                    <PositionRow key="schedule_captains" position="Captains"/>
-                    {captainRow}
-                    <PositionRow key="schedule_maitre-d" position="Maître d'"/>
-                    {maitreDRow}
-                    <PositionRow key="schedule_host-staff" position="Host staff"/>
-                    {hostRow}
-                    <PositionRow key="schedule_sommeliers" position="Sommeliers"/>
-                    {sommelierRow}
-                    <PositionRow key="schedule_bartenders" position="Bartenders"/>
-                    {bartenderRow}
-                    <PositionRow key="schedule_barbacks" position="Barbacks"/>
-                    {barbackRow}
-                    <PositionRow key="schedule_servers" position="Servers" />
-                    {serverRow}
-                    <PositionRow key="schedule_runners" position="Runners"/>
-                    {runnerRow}
-                    <PositionRow key="schedule_bussers" position="Bussers"/>
-                    {busserRow}
-                </div>
-                <ScheduleSelect 
-                    value={this.state.selectedWeek} 
-                    onChange={this.handleScheduleSelection}
-                />
-                <button onClick={this.incrementCount}>Save</button>
-                <div className="admin_schedule_container">
-                    <SelectedWeekDayRow className="day_row" selectedWeek={this.state.selectedWeek}/>
-                    <PositionRow position="Managers"/>
-                    {managerRow_selected}
-                    <PositionRow key="schedule_captains" position="Captains"/>
-                    {captainRow_selected}
-                    <PositionRow key="schedule_maitre-d" position="Maître d'"/>
-                    {maitreDRow_selected}
-                    <PositionRow key="schedule_host-staff" position="Host staff"/>
-                    {hostRow_selected}
-                    <PositionRow key="schedule_sommeliers" position="Sommeliers"/>
-                    {sommelierRow_selected}
-                    <PositionRow key="schedule_barbacks" position="Barbacks"/>
-                    {barbackRow_selected}
-                    <PositionRow key="schedule_bartenders" position="Bartenders"/>
-                    {bartenderRow_selected}
-                    <PositionRow key="schedule_servers" position="Servers" />
-                    {serverRow_selected}
-                    <PositionRow key="schedule_runners" position="Runners"/>
-                    {runnerRow_selected}
-                    <PositionRow key="schedule_bussers" position="Bussers"/>
-                    {busserRow_selected}
+                <div className="admin_schedule_page">
+                    <MonthRow className="month_row-current"/>
+                    <div className="admin_schedule_container">
+                        <CurrentWeekDayRow className="day_row"/>
+                        <PositionRow position="Managers"/>
+                        {managerRow}
+                        <PositionRow key="schedule_captains" position="Captains"/>
+                        {captainRow}
+                        <PositionRow key="schedule_maitre-d" position="Maître d'"/>
+                        {maitreDRow}
+                        <PositionRow key="schedule_host-staff" position="Host staff"/>
+                        {hostRow}
+                        <PositionRow key="schedule_sommeliers" position="Sommeliers"/>
+                        {sommelierRow}
+                        <PositionRow key="schedule_bartenders" position="Bartenders"/>
+                        {bartenderRow}
+                        <PositionRow key="schedule_barbacks" position="Barbacks"/>
+                        {barbackRow}
+                        <PositionRow key="schedule_servers" position="Servers" />
+                        {serverRow}
+                        <PositionRow key="schedule_runners" position="Runners"/>
+                        {runnerRow}
+                        <PositionRow key="schedule_bussers" position="Bussers"/>
+                        {busserRow}
+                    </div>
+                    <div className="selected_month">
+                        <div className="select_save">
+                            <ScheduleSelect
+                                className="schedule-select" 
+                                value={this.state.selectedWeek} 
+                                onChange={this.handleScheduleSelection}
+                            />
+                            <button onClick={this.incrementCount}>Save</button>
+                        </div>
+                        <SelectedMonthRow 
+                            className="month_row-selected"
+                            selectedWeek={this.state.selectedWeek}
+                        />
+                    </div>
+                    <div className="admin_schedule_container">
+                        <SelectedWeekDayRow className="day_row" selectedWeek={this.state.selectedWeek}/>
+                        <PositionRow position="Managers"/>
+                        {managerRow_selected}
+                        <PositionRow key="schedule_captains" position="Captains"/>
+                        {captainRow_selected}
+                        <PositionRow key="schedule_maitre-d" position="Maître d'"/>
+                        {maitreDRow_selected}
+                        <PositionRow key="schedule_host-staff" position="Host staff"/>
+                        {hostRow_selected}
+                        <PositionRow key="schedule_sommeliers" position="Sommeliers"/>
+                        {sommelierRow_selected}
+                        <PositionRow key="schedule_barbacks" position="Barbacks"/>
+                        {barbackRow_selected}
+                        <PositionRow key="schedule_bartenders" position="Bartenders"/>
+                        {bartenderRow_selected}
+                        <PositionRow key="schedule_servers" position="Servers" />
+                        {serverRow_selected}
+                        <PositionRow key="schedule_runners" position="Runners"/>
+                        {runnerRow_selected}
+                        <PositionRow key="schedule_bussers" position="Bussers"/>
+                        {busserRow_selected}
+                    </div>
                 </div>
             </div>
 		)
