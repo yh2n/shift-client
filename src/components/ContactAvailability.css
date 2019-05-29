@@ -1,16 +1,34 @@
-.contact_availability_container {
-    display: grid;
-    max-width: 960px;
-    margin: 150px auto;
-    grid-template-columns: repeat(7, 135px);
-    grid-row-gap: 2px;
-    grid-column-gap: 1px;
+.contact_availability_page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.contact_availability_day, .contact_availability_shift {
-    padding: 30px;
+.contact_availability_container {
+    display: flex;
+    width: 75%;
+    max-width: 1200px;
+}
+
+.contact_availability_shift, .contact_availability_day {
+    font-size: 16px;
+    padding: 32px;
+    margin: 0px 1px 0 1px;
     border: solid black;
+    border-radius: 2px;
     text-align: center;
+}
+/* .contact_availability_day {
+    padding: 32px;
+    border: solid black;
+} */
+
+.contact_availability_day-container {
+    display: flex;
+    width: 14.26%;
+    flex-direction: column;
 }
 
 .unavailable {
@@ -19,4 +37,49 @@
 
 .available {
     opacity:1
+}
+
+
+@media only screen and (max-width: 1400px) {
+    .contact_availability_container {
+        width: 80%
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .contact_availability_container {
+        width: 90%
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .contact_availability_container {
+        width: 98%
+    }
+} 
+
+@media only screen and (max-width: 880px) {
+    .contact_availability_container {
+        width: 98%;
+    }
+    
+    .contact_availability_shift, .contact_availability_day {
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .contact_availability_container {
+        width: 95%;
+        flex-direction: column;
+    }
+    .contact_availability_day-container {
+        display: flex;
+        align-content: center;
+        width: 100%;
+        flex-direction: row;
+    }
+    
+    .contact_availability_shift, .contact_availability_day {
+        width: 24.5%;
+    }
 }

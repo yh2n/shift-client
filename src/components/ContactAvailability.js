@@ -6,17 +6,17 @@ import './ContactAvailability.css';
 export class ContactWeekDay extends Component {
     render() {
         return (
-            <div>
+            <div className="contact_availability_day-container">
                 <div className="contact_availability_day">
                     {this.props.day}
                 </div>
-                <div className={this.props.breakfastToggled ? "availability_btn breakfast unavailable" : "availability_btn breakfast available"}>
+                <div className={this.props.breakfastToggled ? "contact_availability_shift breakfast unavailable" : "contact_availability_shift breakfast available"}>
                     Breakfast
                 </div>
-                <div className={this.props.lunchToggled ? "availability_btn lunch unavailable" : "availability_btn lunch available"}>
+                <div className={this.props.lunchToggled ? "contact_availability_shift lunch unavailable" : "contact_availability_shift lunch available"}>
                     Lunch
                 </div>
-                <div className={this.props.dinnerToggled ? "availability_btn dinner unavailable" : "availability_btn dinner available"}>
+                <div className={this.props.dinnerToggled ? "contact_availability_shift dinner unavailable" : "contact_availability_shift dinner available"}>
                     Dinner
                 </div>
             </div>
@@ -27,17 +27,17 @@ export class ContactWeekDay extends Component {
 export class ContactWeekendDay extends Component {
     render() {
         return (
-            <div>
+            <div className="contact_availability_day-container">
                 <div className="contact_availability_day">
                     {this.props.day}
                 </div>
-                <div className={this.props.breakfastToggled ? "availability_btn breakfast unavailable" : "availability_btn breakfast available"}>
+                <div className={this.props.breakfastToggled ? "contact_availability_shift breakfast unavailable" : "contact_availability_shift breakfast available"}>
                     Breakfast
                 </div>
-                <div className={this.props.brunchToggled ? "availability_btn brunch unavailable" : "availability_btn brunch available"}>
+                <div className={this.props.brunchToggled ? "contact_availability_shift brunch unavailable" : "contact_availability_shift brunch available"}>
                     Brunch
                 </div>
-                <div className={this.props.dinnerToggled ? "availability_btn dinner unavailable" : "availability_btn dinner available"}>
+                <div className={this.props.dinnerToggled ? "contact_availability_shift dinner unavailable" : "contact_availability_shift dinner available"}>
                     Dinner
                 </div>
             </div>

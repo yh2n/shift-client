@@ -23,7 +23,7 @@ export default class ContactAvailabilityPage extends Component {
     render() {
         let username = localStorage.getItem("username");
         return (
-            <div>
+            <div className="contact_availability_page">
                 <AccountNav onClick={this.toggleModal}/>
 				<UserMenuModal
 					show={this.state.isOpen}
