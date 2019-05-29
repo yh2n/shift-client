@@ -14,7 +14,7 @@
   margin-bottom: 40px;
 }
 
-.user_schedule_btns {
+.user_schedule_shift {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,13 +98,10 @@
   text-align: center;
 }
 
-.user_schedule_shifts {
+/* .user_schedule_shifts {
   border:  solid #112138;
-}
-
-li {
-  list-style-type: none
-}
+  font-size: 20px;
+} */
 
 .green {
   color: rgb(33, 206, 33);
@@ -116,4 +113,32 @@ li {
   color: red;
   font-weight: bold;
   font-size: 18px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .user_schedule_container, .selected_month {
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .user_schedule_container, .selected_month {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .user_schedule_container, .selected_month {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .user_schedule_container, .selected_month {
+    width: 95%;
+  }
+
+  .user_schedule_shift, .red, .green {
+    font-size: 14px
+  }
 }

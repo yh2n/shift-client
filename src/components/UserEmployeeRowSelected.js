@@ -120,25 +120,25 @@ export default class UserEmployeeRowSelected extends Component {
                 <div className={this.props.className}>
                     {this.props.name}
                 </div>
-                <div className="user_schedule_btns" key="Monday">
+                <div className="user_schedule_shift" key="Monday">
                     {MondayShifts}
                 </div>
-                <div className="user_schedule_btns" key="Tuesday">
+                <div className="user_schedule_shift" key="Tuesday">
                     {TuesdayShifts}
                 </div>
-                <div className="user_schedule_btns" key="Wednesday">
+                <div className="user_schedule_shift" key="Wednesday">
                     {WednesdayShifts}
                 </div>
-                <div className="user_schedule_btns" key="Thursday">
+                <div className="user_schedule_shift" key="Thursday">
                     {ThursdayShifts}
                 </div>
-                <div className="user_schedule_btns" key="Friday">
+                <div className="user_schedule_shift" key="Friday">
                     {FridayShifts}
                 </div>
-                <div className="user_schedule_btns" key="Saturday">
+                <div className="user_schedule_shift" key="Saturday">
                     {SaturdayShifts}
                 </div>
-                <div className="user_schedule_btns" key="Sunday">
+                <div className="user_schedule_shift" key="Sunday">
                     {SundayShifts}
                 </div>
             </>
