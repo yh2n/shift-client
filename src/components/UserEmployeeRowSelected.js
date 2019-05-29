@@ -59,60 +59,60 @@ export default class UserEmployeeRowSelected extends Component {
 
     render() {
         const MondayShifts = (
-                <ul key="mon_shifts_next">
-                    <li key="mo_br_next">{this.state.schedule.Mo_breakfast ? "Breakfast" : ""}</li>
-                    <li key="mo_lu_next">{this.state.schedule.Mo_lunch ? "Lunch" : ""}</li>
-                    <li key="mo_di_next">{this.state.schedule.Mo_dinner ? "Dinner" : ""}</li>
-                    <li key="mo_off_next">{!this.state.schedule.Mo_breakfast && !this.state.schedule.Mo_lunch && !this.state.schedule.Mo_dinner ? "OFF" : ""}</li>
-                </ul>
+                <div key="mon_shifts_next">
+                    <div key="mo_br_next">{this.state.schedule.Mo_breakfast ? "Breakfast" : ""}</div>
+                    <div key="mo_lu_next">{this.state.schedule.Mo_lunch ? "Lunch" : ""}</div>
+                    <div key="mo_di_next">{this.state.schedule.Mo_dinner ? "Dinner" : ""}</div>
+                    <div key="mo_off_next">{!this.state.schedule.Mo_breakfast && !this.state.schedule.Mo_lunch && !this.state.schedule.Mo_dinner ? "OFF" : ""}</div>
+                </div>
             )
         const TuesdayShifts = (
-                <ul key="tue_shifts_next">
-                    <li key="tu_br_next">{this.state.schedule.Tu_breakfast ? "Breakfast" : ""}</li>
-                    <li key="tu_lu_next">{this.state.schedule.Tu_lunch ? "Lunch" : ""}</li>
-                    <li key="tu_di_next">{this.state.schedule.Tu_dinner ? "Dinner" : ""}</li>
-                    <li key="tu_off_next">{!this.state.schedule.Tu_breakfast && !this.state.schedule.Tu_lunch && !this.state.schedule.Tu_dinner ? "OFF" : ""}</li>
-                </ul>
+                <div key="tue_shifts_next">
+                    <div key="tu_br_next">{this.state.schedule.Tu_breakfast ? "Breakfast" : ""}</div>
+                    <div key="tu_lu_next">{this.state.schedule.Tu_lunch ? "Lunch" : ""}</div>
+                    <div key="tu_di_next">{this.state.schedule.Tu_dinner ? "Dinner" : ""}</div>
+                    <div key="tu_off_next">{!this.state.schedule.Tu_breakfast && !this.state.schedule.Tu_lunch && !this.state.schedule.Tu_dinner ? "OFF" : ""}</div>
+                </div>
             )
         const WednesdayShifts = (
-                <ul key="wed_shifts_next">
-                    <li key="we_br_next">{this.state.schedule.We_breakfast ? "Breakfast" : ""}</li>
-                    <li key="we_lu_next">{this.state.schedule.We_lunch ? "Lunch" : ""}</li>
-                    <li key="we_di_next">{this.state.schedule.We_dinner ? "Dinner" : ""}</li>
-                    <li key="we_off_next">{!this.state.schedule.We_breakfast && !this.state.schedule.We_lunch && !this.state.schedule.We_dinner ? "OFF" : ""}</li>
-                </ul>
+                <div key="wed_shifts_next">
+                    <div key="we_br_next">{this.state.schedule.We_breakfast ? "Breakfast" : ""}</div>
+                    <div key="we_lu_next">{this.state.schedule.We_lunch ? "Lunch" : ""}</div>
+                    <div key="we_di_next">{this.state.schedule.We_dinner ? "Dinner" : ""}</div>
+                    <div key="we_off_next">{!this.state.schedule.We_breakfast && !this.state.schedule.We_lunch && !this.state.schedule.We_dinner ? "OFF" : ""}</div>
+                </div>
             )
         const ThursdayShifts = (
-                <ul key="thu_shifts_next"> 
-                    <li key="th_br_next">{this.state.schedule.Th_breakfast ? "Breakfast" : ""}</li>
-                    <li key="th_lu_next">{this.state.schedule.Th_lunch ? "Lunch" : ""}</li>
-                    <li key="th_di_next">{this.state.schedule.Th_dinner ? "Dinner" : ""}</li>
-                    <li key="th_off_next">{!this.state.schedule.Th_breakfast && !this.state.schedule.Th_lunch && !this.state.schedule.Th_dinner ? "OFF" : ""}</li>
-                </ul>
+                <div key="thu_shifts_next"> 
+                    <div key="th_br_next">{this.state.schedule.Th_breakfast ? "Breakfast" : ""}</div>
+                    <div key="th_lu_next">{this.state.schedule.Th_lunch ? "Lunch" : ""}</div>
+                    <div key="th_di_next">{this.state.schedule.Th_dinner ? "Dinner" : ""}</div>
+                    <div key="th_off_next">{!this.state.schedule.Th_breakfast && !this.state.schedule.Th_lunch && !this.state.schedule.Th_dinner ? "OFF" : ""}</div>
+                </div>
             )
         const FridayShifts = (
-                <ul key="fri_shifts_next">
-                    <li key="fr_br_next">{this.state.schedule.Fr_breakfast ? "Breakfast" : ""}</li>
-                    <li key="fr_lu_next">{this.state.schedule.Fr_lunch ? "Lunch" : ""}</li>
-                    <li key="fr_di_next">{this.state.schedule.Fr_dinner ? "Dinner" : ""}</li>
-                    <li key="fr_off_next">{!this.state.schedule.Fr_breakfast && !this.state.schedule.Fr_lunch && !this.state.schedule.Fr_dinner ? "OFF" : ""}</li>
-                </ul>
+                <div key="fri_shifts_next">
+                    <div key="fr_br_next">{this.state.schedule.Fr_breakfast ? "Breakfast" : ""}</div>
+                    <div key="fr_lu_next">{this.state.schedule.Fr_lunch ? "Lunch" : ""}</div>
+                    <div key="fr_di_next">{this.state.schedule.Fr_dinner ? "Dinner" : ""}</div>
+                    <div key="fr_off_next">{!this.state.schedule.Fr_breakfast && !this.state.schedule.Fr_lunch && !this.state.schedule.Fr_dinner ? "OFF" : ""}</div>
+                </div>
             )
         const SaturdayShifts = (
-                <ul key="sat_shifts_next">
-                    <li key="sa_br_next">{this.state.schedule.Sa_breakfast ? "Breakfast" : ""}</li>
-                    <li key="sa_bru_next">{this.state.schedule.Sa_brunch ? "Brunch" : ""}</li>
-                    <li key="sa_di_next">{this.state.schedule.Sa_dinner ? "Dinner" : ""}</li>
-                    <li key="sa_off_next">{!this.state.schedule.Sa_breakfast && !this.state.schedule.Sa_brunch && !this.state.schedule.Sa_dinner ? "OFF" : ""}</li>
-                </ul>
+                <div key="sat_shifts_next">
+                    <div key="sa_br_next">{this.state.schedule.Sa_breakfast ? "Breakfast" : ""}</div>
+                    <div key="sa_bru_next">{this.state.schedule.Sa_brunch ? "Brunch" : ""}</div>
+                    <div key="sa_di_next">{this.state.schedule.Sa_dinner ? "Dinner" : ""}</div>
+                    <div key="sa_off_next">{!this.state.schedule.Sa_breakfast && !this.state.schedule.Sa_brunch && !this.state.schedule.Sa_dinner ? "OFF" : ""}</div>
+                </div>
             )
         const SundayShifts = (
-                <ul key="sun_shifts_next">
-                    <li key="su_br_next">{this.state.schedule.Su_breakfast ? "Breakfast" : ""}</li>
-                    <li key="su_bru_next">{this.state.schedule.Su_brunch ? "Brunch" : ""}</li>
-                    <li key="su_di_next">{this.state.schedule.Su_dinner ? "Dinner" : ""}</li>
-                    <li key="su_off_next">{!this.state.schedule.Su_breakfast && !this.state.schedule.Su_brunch && !this.state.schedule.Su_dinner ? "OFF" : ""}</li>
-                </ul>
+                <div key="sun_shifts_next">
+                    <div key="su_br_next">{this.state.schedule.Su_breakfast ? "Breakfast" : ""}</div>
+                    <div key="su_bru_next">{this.state.schedule.Su_brunch ? "Brunch" : ""}</div>
+                    <div key="su_di_next">{this.state.schedule.Su_dinner ? "Dinner" : ""}</div>
+                    <div key="su_off_next">{!this.state.schedule.Su_breakfast && !this.state.schedule.Su_brunch && !this.state.schedule.Su_dinner ? "OFF" : ""}</div>
+                </div>
             )
         
         return (

@@ -17,13 +17,9 @@
 .user_schedule_btns {
   display: flex;
   align-items: center;
-  /* justify-content: center; */
+  justify-content: center;
   background: #D2F7F3;
   color: #112138;
-}
-
-.user_schedule_btns li:hover {
-  cursor: pointer;
 }
 
 .user_schedule_position {
@@ -38,7 +34,6 @@
   justify-content: center;
   background: #112138;
   color: white;
-  text-align: center;
   padding: 10px;
 }
 
