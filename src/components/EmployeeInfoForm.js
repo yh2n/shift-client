@@ -14,7 +14,8 @@ export default class EmployeeInfoForm extends Component {
 		this.state = {
 			employeeInfo: {}, 
 			address: {},
-			currentUserId: localStorage.getItem("id")
+			currentUserId: localStorage.getItem("id"),
+			saveButtonText: "Save"
 		}
 	}
 	componentDidMount() {
@@ -41,10 +42,18 @@ export default class EmployeeInfoForm extends Component {
 		})
 	}
 
-	editInfo = () => {
+	editInfo = (e) => {
 		const id = localStorage.getItem("id");
 		const { employeeInfo, address } = this.state;
-		const info = { employeeInfo, address }
+		const info = { employeeInfo, address };
+		
+		e.preventDefault();
+		
+		this.setState({saveButtonText: "Saved!"})
+		setTimeout(()=> {
+			this.setState({saveButtonText: "Save"})
+		},1500)
+		
  		return fetch(`${ API_BASE_URL }/employee/${id}/info`, {
 			method: 'PUT',
 			headers: {
@@ -191,7 +200,7 @@ export default class EmployeeInfoForm extends Component {
 								className="update_btn" 
 								type="submit"
 							>
-								Save
+								{this.state.saveButtonText}
 							</button>
 						</div>
 					</fieldset>
