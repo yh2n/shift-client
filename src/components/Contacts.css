@@ -26,7 +26,7 @@
 	display: flex;
 	border-bottom: solid white;
 	padding-left: 8px;
-	justify-content: start;
+	justify-content: flex-start;
 	align-items: center;
 }
 
@@ -76,6 +76,16 @@
 	.contact_list_container {
 		display: none;
 	}	
+
+	.contact_list_container-mobile {
+		width: 90%;
+	}	
+}
+
+@media only screen and (max-width: 550px) {
+	.contact_list_container-mobile {
+		width: 95%;
+	}	
 }
 
 @media only screen and (min-width: 1000px) {
@@ -98,5 +108,7 @@
 		width: 80%;
 	}	
 }
+
+
 
 
