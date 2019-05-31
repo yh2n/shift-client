@@ -62,7 +62,7 @@ export default class EmployeeInfoForm extends Component {
 			body: JSON.stringify(info),
 			mode: 'cors'
 		})
-		.then(res => res.json(info))
+		.then(res => res.json())
 		.catch(err => {
 			console.log(err)
 		});
