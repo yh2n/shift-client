@@ -51,8 +51,6 @@ export class Schedule extends Component {
     incrementCount = e => {
         e.preventDefault();
 		
-        // this.setState({saveButtonText: "Saved!"})
-        
         this.setState(prevState => {
             return { 
                 submittedCount: prevState.submittedCount + 1,
