@@ -6,7 +6,7 @@ import moment from 'moment';
     return (
         <>
             <div className={props.className}>
-                <div className="month-current">{moment().format("MMMM YYYY").toUpperCase()}</div>
+                <div className={props.className}>{moment().format("MMMM YYYY").toUpperCase()}</div>
             </div>
         </>
     )
