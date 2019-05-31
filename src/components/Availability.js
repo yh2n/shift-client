@@ -12,7 +12,8 @@ export class Availability extends Component {
         
         this.state = {
             availability: {},
-            error: null
+            error: null,
+            updateButtonText: "Update"
         };
     }
 
@@ -43,7 +44,14 @@ export class Availability extends Component {
             })
         }
 
-    submitChanges = () => {
+    submitChanges = e => {
+        e.preventDefault();
+		
+		this.setState({updateButtonText: "Changes submitted!"})
+		setTimeout(()=> {
+			this.setState({updateButtonText: "Update"})
+        },1500)
+        
         return fetch(`${API_BASE_URL}/employee/${currentUserId}/availability`, {
             method: 'PUT',
             headers: {
@@ -135,7 +143,7 @@ export class Availability extends Component {
 					className="submit_availability"
 					onClick={this.submitChanges}
 				>
-					Update
+					{this.state.updateButtonText}
 				</button>
             </div>
         )
