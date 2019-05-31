@@ -28,6 +28,7 @@ export class Schedule extends Component {
             isOpen : false, 
             currentWeek:  moment().week(),
             selectedWeek: moment().week() + 1,
+            updateButtonText: "Update",
             submittedCount: 0,
             error: null
 		}
@@ -47,11 +48,21 @@ export class Schedule extends Component {
 		});
     }
 
-    incrementCount = () => {
+    incrementCount = e => {
+        e.preventDefault();
+		
+        // this.setState({saveButtonText: "Saved!"})
+        
         this.setState(prevState => {
-            return { submittedCount: prevState.submittedCount + 1 }
+            return { 
+                submittedCount: prevState.submittedCount + 1,
+                updateButtonText: "Updated !"
+            }
         })
-        console.log(this.state.submittedCount)
+        
+        setTimeout(()=> {
+            this.setState({updateButtonText: "Update"})
+        }, 1500)
     }
     
 	render() {
@@ -369,7 +380,15 @@ export class Schedule extends Component {
                     />
                 </div>
                 <div className="schedule_page">
-                    <MonthRow className="month_row-current"/>
+                    <div className="user_current_month">
+                        <button 
+                            className="user_current_schedule_update_button" 
+                            onClick={this.incrementCount}
+                        >
+                            {this.state.updateButtonText}
+                        </button>
+                        <MonthRow className="month-current"/>
+                    </div>
                     <div className="user_schedule_container">
                         <CurrentWeekDayRow />
                             <PositionRow position="Managers"/>
@@ -393,14 +412,13 @@ export class Schedule extends Component {
                             <PositionRow key="schedule_bussers" position="Bussers"/>
                             {busserRow}
                     </div>
-                    <div className="selected_month">
+                    <div className="user_selected_month">
                         <div className="select_save">
                             <ScheduleSelect
                                 className="schedule-select" 
                                 value={this.state.selectedWeek} 
                                 onChange={this.handleScheduleSelection}
                             />
-                            <button onClick={this.incrementCount}>Save</button>
                         </div>
                         <SelectedMonthRow 
                             className="month_row-selected"

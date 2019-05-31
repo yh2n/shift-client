@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 150px;
 }
 
 .user_schedule_container {
@@ -67,11 +68,22 @@
   margin: 100px 0 20px 0;
 } 
 
-.month_row-current {
-  margin-top: 150px;
+.user_current_month {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid;
+  margin: 100px 0 20px 0;
 }
 
-.selected_month {
+.user_current_schedule_update_button {
+  font-size: 20px;
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+.user_selected_month {
   display: flex;  
   flex-direction: column;
   align-items: center;
@@ -82,7 +94,7 @@
 
 .month-current {
   font-size: 40px;
-  margin: 0px 10px 40px 0px;
+  margin-bottom: 10px;
   color: #112138;
 }
 
@@ -148,7 +160,7 @@
 }
 @media only screen and (max-width: 550px) {
   .user_schedule_container > *, .red, .green {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .month-current, .month-selected {
