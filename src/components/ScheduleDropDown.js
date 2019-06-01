@@ -1,46 +1,32 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { WeekShiftButton, WeekendShiftButton } from './ScheduleShiftButton';
 
 
-export class WeekDropDown extends Component {
-    render() {
-        // renders nothing if the "show" prop is false
-    //     if(!this.props.show) {
-    //     return null;
-    // }
-    
+const WeekDropDown = props => {
     return (
             <WeekShiftButton 
-                breakfastSelected={this.props.breakfastSelected}
-                toggleBreakfast={() => {return this.props.selectBreakfast()}}
-                lunchSelected={this.props.lunchSelected}
-                toggleLunch={() => {return (this.props.selectLunch())}}
-                dinnerSelected={this.props.dinnerSelected}
-                toggleDinner={()=>{return (this.props.selectDinner())}}
-                setSchedule={() => this.props.setSchedule()}
+                breakfastSelected={props.breakfastSelected}
+                toggleBreakfast={() => {return props.selectBreakfast()}}
+                lunchSelected={props.lunchSelected}
+                toggleLunch={() => {return (props.selectLunch())}}
+                dinnerSelected={props.dinnerSelected}
+                toggleDinner={()=>{return (props.selectDinner())}}
+                setSchedule={() => props.setSchedule()}
             />
     )
-  }
 }
 
-export class WeekendDropDown extends Component {
-    render() {
-        // renders nothing if the "show" prop is false
-    //     if(!this.props.show) {
-    //     return null;
-    // }
-    
+const WeekendDropDown = props => {
     return (
             <WeekendShiftButton 
-                breakfastSelected={this.props.breakfastSelected}
-                toggleBreakfast={this.props.selectBreakfast}
-                brunchSelected={this.props.brunchSelected}
-                toggleBrunch={this.props.selectBrunch}
-                dinnerSelected={this.props.dinnerSelected}
-                toggleDinner={this.props.selectDinner}
+                breakfastSelected={props.breakfastSelected}
+                toggleBreakfast={props.selectBreakfast}
+                brunchSelected={props.brunchSelected}
+                toggleBrunch={props.selectBrunch}
+                dinnerSelected={props.dinnerSelected}
+                toggleDinner={props.selectDinner}
             />
     )
-  }
 }
 
-export default WeekDropDown;
+export  { WeekDropDown, WeekendDropDown };
