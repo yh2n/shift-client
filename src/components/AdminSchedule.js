@@ -25,15 +25,19 @@ export class Schedule extends Component {
 		this.state = {
             isOpen : false,
             toggled: false,
+            currentWeek: moment().week(),
             selectedWeek: moment().week() + 1,
-            submittedCount: 0
+            submittedCount: 0,
+            shiftFormat: ""
 		}
     }
     
     componentDidMount() {
-        this.props.dispatch(fetchEmployees())
+        this.props.dispatch(fetchEmployees());
+        window.addEventListener("resize", this.handleWindowResize);
+        window.innerWidth < 570 ? this.setState({shiftFormat: "mobile"}) : this.setState({shiftFormat: "desktop"})
     }
-		
+
 	toggleModal = () => {
 		this.setState({
             isOpen: !this.state.isOpen
@@ -52,8 +56,19 @@ export class Schedule extends Component {
         console.log(this.state.submittedCount)
     }
 
+    handleWindowResize = () => {
+        if (window.innerWidth < 568) {
+            this.setState({shiftFormat: "mobile"})
+        }
+        else {
+            this.setState({shiftFormat: "desktop"})
+        }
+        console.log(this.state.shiftFormat)
+    }
+
 	render() {
         const employees = this.props.employees.employees;
+        console.log(window.innerWidth, this.state.shiftFormat)
         
         let barbacks = employees.filter(employee => employee.position === "Barback")
         let barbackRow = (
@@ -68,6 +83,7 @@ export class Schedule extends Component {
                                 </Link>
                                 }
                             id={barback.id}
+                            shiftFormat={this.state.shiftFormat}
                             schedule={barback.schedule}
                         />
                     )
@@ -85,6 +101,7 @@ export class Schedule extends Component {
                                 </Link>
                                 }
                             id={barback.id}
+                            shiftFormat={this.state.shiftFormat}
                             selectedWeek={this.state.selectedWeek}
                             submittedCount={this.state.submittedCount}
                         />
@@ -101,6 +118,7 @@ export class Schedule extends Component {
                             className={bartender.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={bartender.firstName}
                             id={bartender.id}
+                            shiftFormat={this.state.shiftFormat}
                             schedule={bartender.schedule}
                         />
                     )
@@ -114,6 +132,7 @@ export class Schedule extends Component {
                             className={bartender.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={bartender.firstName}
                             id={bartender.id}
+                            shiftFormat={this.state.shiftFormat}
                             selectedWeek={this.state.selectedWeek}
                             submittedCount={this.state.submittedCount}
                         />
@@ -130,6 +149,7 @@ export class Schedule extends Component {
                             className={busser.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={busser.firstName}
                             id={busser.id}
+                            shiftFormat={this.state.shiftFormat}
                             schedule={busser.schedule}
                         />
                     )
@@ -143,6 +163,7 @@ export class Schedule extends Component {
                             className={busser.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={busser.firstName}
                             id={busser.id}
+                            shiftFormat={this.state.shiftFormat}
                             selectedWeek={this.state.selectedWeek}
                             submittedCount={this.state.submittedCount}
                         />
@@ -159,6 +180,7 @@ export class Schedule extends Component {
                             className={captain.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={captain.firstName}
                             id={captain.id}
+                            shiftFormat={this.state.shiftFormat}
                             schedule={captain.schedule}
                         />
                     )
@@ -172,6 +194,7 @@ export class Schedule extends Component {
                             className={captain.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={captain.firstName}
                             id={captain.id}
+                            shiftFormat={this.state.shiftFormat}
                             selectedWeek={this.state.selectedWeek}
                             submittedCount={this.state.submittedCount}
                         />
@@ -188,6 +211,7 @@ export class Schedule extends Component {
                             className={host.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={host.firstName}
                             id={host.id}
+                            shiftFormat={this.state.shiftFormat}
                             schedule={host.schedule}
                         />
                     )
@@ -202,6 +226,7 @@ export class Schedule extends Component {
                             name={host.firstName}
                             id={host.id}
                             selectedWeek={this.state.selectedWeek}
+                            shiftFormat={this.state.shiftFormat}
                             submittedCount={this.state.submittedCount}
                         />
                     )
@@ -217,6 +242,7 @@ export class Schedule extends Component {
                             className={maitre_d.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={maitre_d.firstName}
                             id={maitre_d.id}
+                            shiftFormat={this.state.shiftFormat}
                             schedule={maitre_d.schedule}
                         />
                     )
@@ -230,6 +256,7 @@ export class Schedule extends Component {
                             className={maitre_d.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={maitre_d.firstName}
                             id={maitre_d.id}
+                            shiftFormat={this.state.shiftFormat}
                             selectedWeek={this.state.selectedWeek}
                             submittedCount={this.state.submittedCount}
                         />
@@ -246,6 +273,7 @@ export class Schedule extends Component {
                             className={manager.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={manager.firstName}
                             id={manager.id}
+                            shiftFormat={this.state.shiftFormat}
                             schedule={manager.schedule}
                         />
                     )
@@ -259,6 +287,7 @@ export class Schedule extends Component {
                             className={manager.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={manager.firstName}
                             id={manager.id}
+                            shiftFormat={this.state.shiftFormat}
                             selectedWeek={this.state.selectedWeek}
                             submittedCount={this.state.submittedCount}
                         />
@@ -275,6 +304,7 @@ export class Schedule extends Component {
                             className={runner.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={runner.firstName}
                             id={runner.id}
+                            shiftFormat={this.state.shiftFormat}
                             schedule={runner.schedule}
                         />
                     )
@@ -288,6 +318,7 @@ export class Schedule extends Component {
                             className={runner.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={runner.firstName}
                             id={runner.id}
+                            shiftFormat={this.state.shiftFormat}
                             selectedWeek={this.state.selectedWeek}
                             submittedCount={this.state.submittedCount}
                         />
@@ -304,6 +335,7 @@ export class Schedule extends Component {
                             className={server.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={server.firstName}
                             id={server.id}
+                            shiftFormat={this.state.shiftFormat}
                             schedule={server.schedule}
                         />
                     )
@@ -317,6 +349,7 @@ export class Schedule extends Component {
                             className={server.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={server.firstName}
                             id={server.id}
+                            shiftFormat={this.state.shiftFormat}
                             selectedWeek={this.state.selectedWeek}
                             submittedCount={this.state.submittedCount}
                         />
@@ -333,6 +366,7 @@ export class Schedule extends Component {
                             className={sommelier.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={sommelier.firstName}
                             id={sommelier.id}
+                            shiftFormat={this.state.shiftFormat}
                             schedule={sommelier.schedule}
                         />
                     )
@@ -346,6 +380,7 @@ export class Schedule extends Component {
                             className={sommelier.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={sommelier.firstName}
                             id={sommelier.id}
+                            shiftFormat={this.state.shiftFormat}
                             selectedWeek={this.state.selectedWeek}
                             submittedCount={this.state.submittedCount}
                         />
@@ -363,9 +398,14 @@ export class Schedule extends Component {
                     />
                 </div>
                 <div className="admin_schedule_page">
-                    <MonthRow className="month_row-current"/>
+                    <div className="admin_current_month">
+                        <MonthRow className="month-current"/>
+                    </div>
                     <div className="admin_schedule_container">
-                        <CurrentWeekDayRow className="day_row"/>
+                        <CurrentWeekDayRow 
+                            className={this.state.shiftFormat == "desktop" ? "day_row" : "day_row hidden" }
+                            week={this.state.currentWeek}
+                        />
                         <PositionRow position="Managers"/>
                         {managerRow}
                         <PositionRow key="schedule_captains" position="Captains"/>
@@ -402,7 +442,7 @@ export class Schedule extends Component {
                         />
                     </div>
                     <div className="admin_schedule_container">
-                        <SelectedWeekDayRow className="day_row" selectedWeek={this.state.selectedWeek}/>
+                        <SelectedWeekDayRow className="day_row" week={this.state.selectedWeek}/>
                         <PositionRow position="Managers"/>
                         {managerRow_selected}
                         <PositionRow key="schedule_captains" position="Captains"/>

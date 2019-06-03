@@ -95,7 +95,7 @@ export default class AdminEmployeeRowSelected extends Component {
                         selectLunch={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Mo_lunch:!prevState.schedule.Mo_lunch}}})}
                         dinnerSelected={!this.state.schedule.Mo_dinner}
                         selectDinner={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Mo_dinner:!prevState.schedule.Mo_dinner}}})}
-                        
+                        shiftFormat={this.props.shiftFormat}
                     />
                 </div>
                 <div className="admin_schedule_btns" key="Tuesday">
@@ -106,7 +106,7 @@ export default class AdminEmployeeRowSelected extends Component {
                         selectLunch={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Tu_lunch:!prevState.schedule.Tu_lunch}}})}
                         dinnerSelected={!this.state.schedule.Tu_dinner}
                         selectDinner={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Tu_dinner:!prevState.schedule.Tu_dinner}}})}
-                        
+                        shiftFormat={this.props.shiftFormat}
                     />
                 </div>
                 <div className="admin_schedule_btns" key="Wednesday">
@@ -117,6 +117,7 @@ export default class AdminEmployeeRowSelected extends Component {
                         selectLunch={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, We_lunch:!prevState.schedule.We_lunch}}})}
                         dinnerSelected={!this.state.schedule.We_dinner}
                         selectDinner={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, We_dinner:!prevState.schedule.We_dinner}}})}
+                        shiftFormat={this.props.shiftFormat}
                     />
                 </div>
                 <div className="admin_schedule_btns" key="Thursday">
@@ -127,6 +128,7 @@ export default class AdminEmployeeRowSelected extends Component {
                         selectLunch={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Th_lunch:!prevState.schedule.Th_lunch}}})}
                         dinnerSelected={!this.state.schedule.Th_dinner}
                         selectDinner={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Th_dinner:!prevState.schedule.Th_dinner}}})}
+                        shiftFormat={this.props.shiftFormat}
                     />
                 </div>
                 <div className="admin_schedule_btns" key="Friday" >
@@ -137,6 +139,7 @@ export default class AdminEmployeeRowSelected extends Component {
                         selectLunch={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule,Fr_lunch:!prevState.schedule.Fr_lunch}}})}
                         dinnerSelected = {!this.state.schedule.Fr_dinner}
                         selectDinner={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule,Fr_dinner:!prevState.schedule.Fr_dinner}}})}
+                        shiftFormat={this.props.shiftFormat}
                     />
                 </div>
                 <div className="admin_schedule_btns" key="Saturday">
@@ -147,6 +150,7 @@ export default class AdminEmployeeRowSelected extends Component {
                         selectBrunch={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Sa_brunch:!prevState.schedule.Sa_brunch}}})}
                         dinnerSelected={!this.state.schedule.Sa_dinner}
                         selectDinner={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Sa_dinner:!prevState.schedule.Sa_dinner}}})}
+                        shiftFormat={this.props.shiftFormat}
                         
                     />
                 </div>
@@ -158,7 +162,7 @@ export default class AdminEmployeeRowSelected extends Component {
                         selectBrunch={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Su_brunch:!prevState.schedule.Su_brunch}}})}
                         dinnerSelected={!this.state.schedule.Su_dinner}
                         selectDinner={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Su_dinner:!prevState.schedule.Su_dinner}}})}
-                    
+                        shiftFormat={this.props.shiftFormat}
                     />
                 </div>
             </>

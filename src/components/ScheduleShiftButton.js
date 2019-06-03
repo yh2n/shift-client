@@ -5,38 +5,28 @@ export class WeekShiftButton extends Component {
         return (
             <>
                 <button 
-                    key={"breakfast"}
+                    key="breakfast"
                     type="edit"
                     className={this.props.breakfastSelected ? "schedule_btn off" : "schedule_btn selected" }
-                    onClick={() => {
-                        console.log(this.props);
-                            this.props.toggleBreakfast();
-                        }}
+                    onClick={this.props.toggleBreakfast}
                 >
-                    Breakfast
+                    {this.props.shiftFormat === "mobile" ? "Bkfst" : "Breakfast"}
                 </button>
                 <button 
-                    key={"lunch"}
+                    key="lunch"
                     type="edit" 
                     className={this.props.lunchSelected ? "schedule_btn off" : "schedule_btn selected" }
-                    onClick={() => {
-                        console.log(this.props);
-                            this.props.toggleLunch()
-                        }}
-                        >
-                    Lunch
+                    onClick={this.props.toggleLunch}
+                >
+                    {this.props.shiftFormat === "mobile" ? "Lun" : "Lunch"}
                 </button>
                 <button
-                    key={"dinner"}
+                    key="dinner"
                     type="edit"
                     className={this.props.dinnerSelected ? "schedule_btn off" : "schedule_btn selected" }
-                        onClick={() => {
-                            console.log(this.props);
-                            return (
-                                        this.props.toggleDinner())
-                                    }}
-                    >
-                    Dinner
+                    onClick={this.props.toggleDinner}
+                >
+                    {this.props.shiftFormat === "mobile" ? "Din" : "Dinner"}
                 </button>
             </>
         )
@@ -49,35 +39,23 @@ export class WeekendShiftButton extends Component {
                 <button
                     key={"breakfast"} 
                     className={this.props.breakfastSelected? "schedule_btn off" : "schedule_btn selected" }
-                    onClick={() => {
-                        console.log(this.props);
-                        return (
-                            this.props.toggleBreakfast())
-                        }}
+                    onClick={this.props.toggleBreakfast}
                 >
-                    Breakfast
+                    {this.props.shiftFormat === "mobile" ? "Bkfst" : "Breakfast"}
                 </button>
                 <button 
                         key={"brunch"}
                         className={this.props.brunchSelected? "schedule_btn off" : "schedule_btn selected" }
-                        onClick={() => {
-                            console.log("clicked")
-                            return (
-                                this.props.toggleBrunch())
-                            }}
+                        onClick={this.props.toggleBrunch}
                 >
-                    Brunch
+                    {this.props.shiftFormat === "mobile" ? "Brun" : "Brunch"}
                 </button>
                 <button 
                         key={"dinner"}
                         className={this.props.dinnerSelected? "schedule_btn off" : "schedule_btn selected" }
-                        onClick={() => {
-                            console.log("clicked")
-                            return (
-                                this.props.toggleDinner())
-                            }}
+                        onClick={this.props.toggleDinner}
                 >
-                    Dinner
+                    {this.props.shiftFormat === "mobile" ? "Din" : "Dinner"}
                 </button>
             </>
         )

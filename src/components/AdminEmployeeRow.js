@@ -51,23 +51,43 @@ export default class AdminEmployeeRow extends Component {
         const MondayShifts = (
             <div key="monday_shifts">
                 <div 
-                    key="mo_br"
+                    key="Mo_br_mob"
                     className={this.state.schedule.Mo_br_need_cover ? "red" : ""}
                 >
-                    {this.state.schedule.Mo_breakfast ? "Breakfast" : ""}
+                    {this.state.schedule.Mo_breakfast && this.props.shiftFormat === "mobile" ? "Brkfst" : ""}
                 </div>
                 <div 
-                    key="mo_lu"
+                    key="Mo_br"
+                    className={this.state.schedule.Mo_br_need_cover ? "red" : ""}
+                >
+                    {this.state.schedule.Mo_breakfast && this.props.shiftFormat === "desktop" ? "Breakfast" : ""}
+                </div>
+                <div 
+                    key="Mo_lu_mob"
                     className={this.state.schedule.Mo_lunch_need_cover ? "red" : ""}
                 >
-                    {this.state.schedule.Mo_lunch ? "Lunch" : ""}</div>
+                    {this.state.schedule.Mo_lunch && this.props.shiftFormat === "mobile" ? "Lun" : ""}
+                </div>
                 <div 
-                    key="mo_di"
+                    key="Mo_lu"
+                    className={this.state.schedule.Mo_lunch_need_cover ? "red" : ""}
+                >
+                    {this.state.schedule.Mo_lunch && this.props.shiftFormat === "desktop" ? "Lunch" : ""}
+                </div>
+                <div 
+                    key="Mo_di_mob"
                     className={this.state.schedule.Mo_dinner_need_cover ? "red" : ""}
                 >
-                    {this.state.schedule.Mo_dinner ? "Dinner" : ""}</div>
+                    {this.state.schedule.Mo_dinner && this.props.shiftFormat === "mobile" ? "Din" : ""}
+                </div>
                 <div 
-                    key="mo_off"
+                    key="Mo_di"
+                    className={this.state.schedule.Mo_dinner_need_cover ? "red" : ""}
+                >
+                    {this.state.schedule.Mo_dinner && this.props.shiftFormat === "desktop" ? "Dinner" : ""}
+                </div>
+                <div 
+                    key="Mo_off"
                     className={this.state.schedule.Mo_can_cover ? "green" : ""}
                 >
                     {!this.state.schedule.Mo_breakfast && !this.state.schedule.Mo_lunch && !this.state.schedule.Mo_dinner ? "OFF" : ""}
@@ -77,121 +97,277 @@ export default class AdminEmployeeRow extends Component {
         const TuesdayShifts = (
                 <div key="tuesday_shifts">
                     <div 
-                        key="tu_br"
+                        key="Tu_br_mob"
                         className={this.state.schedule.Tu_br_need_cover ? "red" : ""}
-                    >{this.state.schedule.Tu_breakfast ? "Breakfast" : ""}</div>
+                    >
+                        {this.state.schedule.Tu_breakfast && this.props.shiftFormat === "mobile" ? "Brkfst" : ""}
+                    </div>
                     <div 
-                        key="tu_lu"
+                        key="Tu_br"
+                        className={this.state.schedule.Tu_br_need_cover ? "red" : ""}
+                    >
+                        {this.state.schedule.Tu_breakfast && this.props.shiftFormat === "desktop" ? "Breakfast" : ""}
+                    </div>
+                    <div 
+                        key="Tu_lu_mob"
                         className={this.state.schedule.Tu_lunch_need_cover ? "red" : ""}
-                    >{this.state.schedule.Tu_lunch ? "Lunch" : ""}</div>
+                    >
+                        {this.state.schedule.Tu_lunch && this.props.shiftFormat === "mobile" ? "Lun" : ""}
+                    </div>
                     <div 
-                        key="tu_di"
+                        key="Tu_lu"
+                        className={this.state.schedule.Tu_lunch_need_cover ? "red" : ""}
+                    >
+                        {this.state.schedule.Tu_lunch && this.props.shiftFormat === "desktop" ? "Lunch" : ""}
+                    </div>
+                    <div 
+                        key="Tu_di_mob"
                         className={this.state.schedule.Tu_dinner_need_cover ? "red" : ""}
-                    >{this.state.schedule.Tu_dinner ? "Dinner" : ""}</div>
+                    >
+                        {this.state.schedule.Tu_dinner && this.props.shiftFormat === "mobile" ? "Din" : ""}
+                    </div>
                     <div 
-                        key="tu_off"
+                        key="Tu_di"
+                        className={this.state.schedule.Tu_dinner_need_cover ? "red" : ""}
+                    >
+                        {this.state.schedule.Tu_dinner && this.props.shiftFormat === "desktop" ? "Dinner" : ""}
+                    </div>
+                    <div 
+                        key="Tu_off"
                         className={this.state.schedule.Tu_can_cover ? "green" : ""}
-                    >{!this.state.schedule.Tu_breakfast && !this.state.schedule.Tu_lunch && !this.state.schedule.Tu_dinner ? "OFF" : ""}</div>
+                    >
+                        {!this.state.schedule.Tu_breakfast && !this.state.schedule.Tu_lunch && !this.state.schedule.Tu_dinner ? "OFF" : ""}
+                    </div>
                 </div>
             )
         const WednesdayShifts = (
                 <div key="wednesday_shifts">
                     <div 
-                        key="we_br"
+                        key="We_br_mob"
                         className={this.state.schedule.We_br_need_cover ? "red" : ""}
-                    >{this.state.schedule.We_breakfast ? "Breakfast" : ""}</div>
+                    >
+                        {this.state.schedule.We_breakfast && this.props.shiftFormat === "mobile" ? "Brkfst" : ""}
+                    </div>
                     <div 
-                        key="we_lu"
+                        key="We_br"
+                        className={this.state.schedule.We_br_need_cover ? "red" : ""}
+                    >
+                        {this.state.schedule.We_breakfast && this.props.shiftFormat === "desktop" ? "Breakfast" : ""}
+                    </div>
+                    <div 
+                        key="We_lu_mob"
                         className={this.state.schedule.We_lunch_need_cover ? "red" : ""}
-                    >{this.state.schedule.We_lunch ? "Lunch" : ""}</div>
+                    >
+                        {this.state.schedule.We_lunch && this.props.shiftFormat === "mobile" ? "Lun" : ""}
+                    </div>
                     <div 
-                        key="we_di"
+                        key="We_lu"
+                        className={this.state.schedule.We_lunch_need_cover ? "red" : ""}
+                    >
+                        {this.state.schedule.We_lunch && this.props.shiftFormat === "desktop" ? "Lunch" : ""}
+                    </div>
+                    <div 
+                        key="We_di_mob"
                         className={this.state.schedule.We_dinner_need_cover ? "red" : ""}
-                    >{this.state.schedule.We_dinner ? "Dinner" : ""}</div>
+                    >
+                        {this.state.schedule.We_dinner && this.props.shiftFormat === "mobile" ? "Din" : ""}
+                    </div>
                     <div 
-                        key="we_off"
+                        key="We_di"
+                        className={this.state.schedule.We_dinner_need_cover ? "red" : ""}
+                    >
+                        {this.state.schedule.We_dinner && this.props.shiftFormat === "desktop" ? "Dinner" : ""}
+                    </div>
+                    <div 
+                        key="We_off"
                         className={this.state.schedule.We_can_cover ? "green" : ""}
-                    >{!this.state.schedule.We_breakfast && !this.state.schedule.We_lunch && !this.state.schedule.We_dinner ? "OFF" : ""}</div>
+                    >
+                        {!this.state.schedule.We_breakfast && !this.state.schedule.We_lunch && !this.state.schedule.We_dinner ? "OFF" : ""}
+                    </div>
                 </div>
             )
         const ThursdayShifts = (
                 <div key="thursday_shifts">
                     <div 
-                        key="th_br"
+                        key="Th_br_mob"
                         className={this.state.schedule.Th_br_need_cover ? "red" : ""}
-                    >{this.state.schedule.Th_breakfast ? "Breakfast" : ""}</div>
+                    >
+                        {this.state.schedule.Th_breakfast && this.props.shiftFormat === "mobile" ? "Brkfst" : ""}
+                    </div>
                     <div 
-                        key="th_lu"
+                        key="Th_br"
+                        className={this.state.schedule.Th_br_need_cover ? "red" : ""}
+                    >
+                        {this.state.schedule.Th_breakfast && this.props.shiftFormat === "desktop" ? "Breakfast" : ""}
+                    </div>
+                    <div 
+                        key="Th_lu_mob"
                         className={this.state.schedule.Th_lunch_need_cover ? "red" : ""}
-                    >{this.state.schedule.Th_lunch ? "Lunch" : ""}</div>
+                    >
+                        {this.state.schedule.Th_lunch && this.props.shiftFormat === "mobile" ? "Lun" : ""}
+                    </div>
                     <div 
-                        key="th_di"
+                        key="Th_lu"
+                        className={this.state.schedule.Th_lunch_need_cover ? "red" : ""}
+                    >
+                        {this.state.schedule.Th_lunch && this.props.shiftFormat === "desktop" ? "Lunch" : ""}
+                    </div>
+                    <div 
+                        key="Th_di_mob"
                         className={this.state.schedule.Th_dinner_need_cover ? "red" : ""}
-                    >{this.state.schedule.Th_dinner ? "Dinner" : ""}</div>
+                    >
+                        {this.state.schedule.Th_dinner && this.props.shiftFormat === "mobile" ? "Din" : ""}
+                    </div>
                     <div 
-                        key="th_off"
+                        key="Th_di"
+                        className={this.state.schedule.Th_dinner_need_cover ? "red" : ""}
+                    >
+                        {this.state.schedule.Th_dinner && this.props.shiftFormat === "desktop" ? "Dinner" : ""}
+                    </div>
+                    <div 
+                        key="Th_off"
                         className={this.state.schedule.Th_can_cover ? "green" : ""}
-                    >{!this.state.schedule.Th_breakfast && !this.state.schedule.Th_lunch && !this.state.schedule.Th_dinner ? "OFF" : ""}</div>
+                    >
+                        {!this.state.schedule.Th_breakfast && !this.state.schedule.Th_lunch && !this.state.schedule.Th_dinner ? "OFF" : ""}
+                    </div>
                 </div>
             )
         const FridayShifts = (
                 <div key="friday_shifts">
                     <div 
-                        key="fr_br"
+                        key="Fr_br_mob"
                         className={this.state.schedule.Fr_br_need_cover ? "red" : ""}
-                    >{this.state.schedule.Fr_breakfast ? "Breakfast" : ""}</div>
+                    >
+                        {this.state.schedule.Fr_breakfast && this.props.shiftFormat === "mobile" ? "Brkfst" : ""}
+                    </div>
                     <div 
-                        key="fr_lu"
+                        key="Fr_br"
+                        className={this.state.schedule.Fr_br_need_cover ? "red" : ""}
+                    >
+                        {this.state.schedule.Fr_breakfast && this.props.shiftFormat === "desktop" ? "Breakfast" : ""}
+                    </div>
+                    <div 
+                        key="Fr_lu_mob"
                         className={this.state.schedule.Fr_lunch_need_cover ? "red" : ""}
-                    >{this.state.schedule.Fr_lunch ? "Lunch" : ""}</div>
+                    >
+                        {this.state.schedule.Fr_lunch && this.props.shiftFormat === "mobile" ? "Lun" : ""}
+                    </div>
                     <div 
-                        key="fr_di"
+                        key="Fr_lu"
+                        className={this.state.schedule.Fr_lunch_need_cover ? "red" : ""}
+                    >
+                        {this.state.schedule.Fr_lunch && this.props.shiftFormat === "desktop" ? "Lunch" : ""}
+                    </div>
+                    <div 
+                        key="Fr_di_mob"
                         className={this.state.schedule.Fr_dinner_need_cover ? "red" : ""}
-                    >{this.state.schedule.Fr_dinner ? "Dinner" : ""}</div>
+                    >
+                        {this.state.schedule.Fr_dinner && this.props.shiftFormat === "mobile" ? "Din" : ""}
+                    </div>
                     <div 
-                        key="fr_off"
+                        key="Fr_di"
+                        className={this.state.schedule.Fr_dinner_need_cover ? "red" : ""}
+                    >
+                        {this.state.schedule.Fr_dinner && this.props.shiftFormat === "desktop" ? "Dinner" : ""}
+                    </div>
+                    <div 
+                        key="Fr_off"
                         className={this.state.schedule.Fr_can_cover ? "green" : ""}
-                    >{!this.state.schedule.Fr_breakfast && !this.state.schedule.Fr_lunch && !this.state.schedule.Fr_dinner ? "OFF" : ""}</div>
+                    >
+                        {!this.state.schedule.Fr_breakfast && !this.state.schedule.Fr_lunch && !this.state.schedule.Fr_dinner ? "OFF" : ""}
+                    </div>
                 </div>
             )
         const SaturdayShifts = (
                 <div key="saturday_shifts">
                     <div 
-                        key="sa_br"
+                        key="Sa_br_mob"
                         className={this.state.schedule.Sa_br_need_cover ? "red" : ""}
-                    >{this.state.schedule.Sa_breakfast ? "Breakfast" : ""}</div>
+                    >
+                        {this.state.schedule.Sa_breakfast && this.props.shiftFormat === "mobile" ? "Brkfst" : ""}
+                    </div>
                     <div 
-                        key="sa_bru"
+                        key="Sa_br"
+                        className={this.state.schedule.Sa_br_need_cover ? "red" : ""}
+                    >
+                        {this.state.schedule.Sa_breakfast && this.props.shiftFormat === "desktop" ? "Breakfast" : ""}
+                    </div>
+                    <div 
+                        key="Sa_bru_mob"
                         className={this.state.schedule.Sa_brunch_need_cover ? "red" : ""}
-                    >{this.state.schedule.Sa_brunch ? "Brunch" : ""}</div>
+                    >
+                        {this.state.schedule.Sa_brunch && this.props.shiftFormat === "mobile" ? "Brun" : ""}
+                    </div>
                     <div 
-                        key="sa_di"
+                        key="Sa_bru"
+                        className={this.state.schedule.Sa_brunch_need_cover ? "red" : ""}
+                    >
+                        {this.state.schedule.Sa_brunch && this.props.shiftFormat === "desktop" ? "Brunch" : ""}
+                    </div>
+                    <div 
+                        key="Sa_di_mob"
                         className={this.state.schedule.Sa_dinner_need_cover ? "red" : ""}
-                    >{this.state.schedule.Sa_dinner ? "Dinner" : ""}</div>
+                    >
+                        {this.state.schedule.Sa_dinner && this.props.shiftFormat === "mobile" ? "Din" : ""}
+                    </div>
                     <div 
-                        key="sa_off"
+                        key="Sa_di"
+                        className={this.state.schedule.Sa_dinner_need_cover ? "red" : ""}
+                    >
+                        {this.state.schedule.Sa_dinner && this.props.shiftFormat === "desktop" ? "Dinner" : ""}
+                    </div>
+                    <div 
+                        key="Sa_off"
                         className={this.state.schedule.Sa_can_cover ? "green" : ""}
-                    >{!this.state.schedule.Sa_breakfast && !this.state.schedule.Sa_brunch && !this.state.schedule.Sa_dinner ? "OFF" : ""}</div>
+                    >
+                        {!this.state.schedule.Sa_breakfast && !this.state.schedule.Sa_brunch && !this.state.schedule.Sa_dinner ? "OFF" : ""}
+                    </div>
                 </div>
             )
         const SundayShifts = (
                 <div key="sunday_shifts">
                     <div 
-                        key="su_br"
+                        key="Su_br_mob"
                         className={this.state.schedule.Su_br_need_cover ? "red" : ""}
-                    >{this.state.schedule.Su_breakfast ? "Breakfast" : ""}</div>
+                    >
+                        {this.state.schedule.Su_breakfast && this.props.shiftFormat === "mobile" ? "Brkfst" : ""}
+                    </div>
                     <div 
-                        key="su_bru"
+                        key="Su_br"
+                        className={this.state.schedule.Su_br_need_cover ? "red" : ""}
+                    >
+                        {this.state.schedule.Su_breakfast && this.props.shiftFormat === "desktop" ? "Breakfast" : ""}
+                    </div>
+                    <div 
+                        key="Su_bru_mob"
                         className={this.state.schedule.Su_brunch_need_cover ? "red" : ""}
-                    >{this.state.schedule.Su_brunch ? "Brunch" : ""}</div>
+                    >
+                        {this.state.schedule.Su_brunch && this.props.shiftFormat === "mobile" ? "Brun" : ""}
+                    </div>
                     <div 
-                        key="su_di"
+                        key="Su_bru"
+                        className={this.state.schedule.Su_brunch_need_cover ? "red" : ""}
+                    >
+                        {this.state.schedule.Su_brunch && this.props.shiftFormat === "desktop" ? "Brunch" : ""}
+                    </div>
+                    <div 
+                        key="Su_di_mob"
                         className={this.state.schedule.Su_dinner_need_cover ? "red" : ""}
-                    >{this.state.schedule.Su_dinner ? "Dinner" : ""}</div>
+                    >
+                        {this.state.schedule.Su_dinner && this.props.shiftFormat === "mobile" ? "Din" : ""}
+                    </div>
                     <div 
-                        key="su_off"
+                        key="Su_di"
+                        className={this.state.schedule.Su_dinner_need_cover ? "red" : ""}
+                    >
+                        {this.state.schedule.Su_dinner && this.props.shiftFormat === "desktop" ? "Dinner" : ""}
+                    </div>
+                    <div 
+                        key="Su_off"
                         className={this.state.schedule.Su_can_cover ? "green" : ""}
-                    >{!this.state.schedule.Su_breakfast && !this.state.schedule.Su_brunch && !this.state.schedule.Su_dinner ? "OFF" : ""}</div>
+                    >
+                        {!this.state.schedule.Su_breakfast && !this.state.schedule.Su_brunch && !this.state.schedule.Su_dinner ? "OFF" : ""}
+                    </div>
                 </div>
             )
         
