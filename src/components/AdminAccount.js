@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import EmployeeRow from './EmployeeRow';
 import AccountNav from './AccountNav';
 import AdminMenuModal from './AdminMenuModal';
+import EmployeeRow from './EmployeeRow';
 import ContactLabels from './ContactLabels';
+import ContactRowMobile from './ContactRowMobile';
 import { fetchEmployees } from '../actions/fetch_employees';
 import './AdminAccount.css'
 
@@ -28,7 +29,7 @@ export  class AdminAccount extends Component {
 	}
     render() {
         return (
-            <div>
+            <div className="staff_page">
 				<div>
 					<AccountNav onClick={this.toggleMenuModal}/>
 					<AdminMenuModal
@@ -39,6 +40,9 @@ export  class AdminAccount extends Component {
 				<div className="staff_member_container">
 					<ContactLabels />
 					<EmployeeRow />
+				</div>
+				<div className="contact_list_container-mobile">
+					<ContactRowMobile className="contacts"/>
 				</div>
         	</div>
         )

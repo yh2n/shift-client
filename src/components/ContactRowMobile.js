@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {Link} from 'react-router-dom';
 import { fetchEmployees } from '../actions/fetch_employees';
@@ -16,7 +16,7 @@ export class ContactRow extends Component {
 		let employees = this.props.employees.employees
 		return (
 			employees.map((employee, index) => (
-				<Fragment key={index}>
+				<div className="contact_card_mobile" key={index}>
                     <div className="contact_label-mobile">Name</div>
 					<div className="contact_info-mobile">{employee.firstName} {employee.lastName}</div>
                     <div className="contact_label-mobile">Phone Number</div>
@@ -29,7 +29,7 @@ export class ContactRow extends Component {
 					<Link to={`./contact-availability/${employee.id}`} style={{ textDecoration: 'none' }}>
 						<div className="contact_info-mobile contact_availability">View</div>
 					</Link>
-				</Fragment>
+				</div>
 			)
 		)
 

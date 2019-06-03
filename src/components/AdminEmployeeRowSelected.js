@@ -80,8 +80,6 @@ export default class AdminEmployeeRowSelected extends Component {
     }
 
     render() {
-        console.log(`***********************${JSON.stringify(this.state.schedule)}`);
-
         return (
             <>
                 <div className="admin_schedule_name">
