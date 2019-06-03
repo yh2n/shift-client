@@ -30,12 +30,15 @@ export class Schedule extends Component {
             selectedWeek: moment().week() + 1,
             updateButtonText: "Update",
             submittedCount: 0,
+            shiftFormat: "",
             error: null
 		}
 	}	
         
     componentDidMount() {
-        this.props.dispatch(fetchEmployees())
+        this.props.dispatch(fetchEmployees());
+        window.addEventListener("resize", this.handleWindowResize);
+        window.innerWidth < 570 ? this.setState({shiftFormat: "mobile"}) : this.setState({shiftFormat: "desktop"})
     }
 
     handleScheduleSelection = (e) => {
@@ -77,6 +80,7 @@ export class Schedule extends Component {
                             className={barback.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={barback.id}
                             schedule={barback.schedule}
+                            shiftFormat={this.state.shiftFormat}
                             submittedCount={this.state.submittedCount}
                         />
                     )
@@ -90,7 +94,7 @@ export class Schedule extends Component {
                         name={barback.id === currentUser ? barback.firstName  : <Link className="contact_links" to={`/admin/employee/${barback.id}`}>{barback.firstName}</Link>}
                         className={barback.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={barback.id}
-                        schedule={barback.next_schedule}
+                        shiftFormat={this.state.shiftFormat}
                         selectedWeek={this.state.selectedWeek}
                     />
                 )
@@ -106,6 +110,7 @@ export class Schedule extends Component {
                             className={bartender.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={bartender.id}
                             schedule={bartender.schedule}
+                            shiftFormat={this.state.shiftFormat}
                             submittedCount={this.state.submittedCount}
                         />
                     )
@@ -119,7 +124,7 @@ export class Schedule extends Component {
                         name={bartender.id === currentUser ? bartender.firstName  : <Link className="contact_links" to={`/admin/employee/${bartender.id}`}>{bartender.firstName}</Link>}
                         className={bartender.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={bartender.id}
-                        schedule={bartender.next_schedule}
+                        shiftFormat={this.state.shiftFormat}
                         selectedWeek={this.state.selectedWeek}
                     />
                 )
@@ -137,6 +142,7 @@ export class Schedule extends Component {
                             className={busser.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={busser.id}
                             schedule={busser.schedule}
+                            shiftFormat={this.state.shiftFormat}
                             submittedCount={this.state.submittedCount}
                         />
                     )
@@ -150,7 +156,7 @@ export class Schedule extends Component {
                         name={busser.id === currentUser ? busser.firstName  : <Link className="contact_links" to={`/admin/employee/${busser.id}`}>{busser.firstName}</Link>}
                         className={busser.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={busser.id}
-                        schedule={busser.next_schedule}
+                        shiftFormat={this.state.shiftFormat}
                         selectedWeek={this.state.selectedWeek}
                     />
                 )
@@ -167,6 +173,7 @@ export class Schedule extends Component {
                             className={captain.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={captain.id}
                             schedule={captain.schedule}
+                            shiftFormat={this.state.shiftFormat}
                             submittedCount={this.state.submittedCount}
                         />
                     )
@@ -180,7 +187,7 @@ export class Schedule extends Component {
                         name={captain.id === currentUser ? captain.firstName  : <Link className="contact_links" to={`/admin/employee/${captain.id}`}>{captain.firstName}</Link>}
                         className={captain.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={captain.id}
-                        schedule={captain.next_schedule}
+                        shiftFormat={this.state.shiftFormat}
                         selectedWeek={this.state.selectedWeek}
                     />
                 )
@@ -196,6 +203,7 @@ export class Schedule extends Component {
                             className={host.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={host.id}
                             schedule={host.schedule}
+                            shiftFormat={this.state.shiftFormat}
                             submittedCount={this.state.submittedCount}
                         />
                     )
@@ -209,7 +217,7 @@ export class Schedule extends Component {
                         name={host.id === currentUser ? host.firstName  : <Link className="contact_links" to={`/admin/employee/${host.id}`}>{host.firstName}</Link>}
                         className={host.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={host.id}
-                        schedule={host.next_schedule}
+                        shiftFormat={this.state.shiftFormat}
                         selectedWeek={this.state.selectedWeek}
                     />
                 )
@@ -226,6 +234,7 @@ export class Schedule extends Component {
                             className={maitre_d.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={maitre_d.id}
                             schedule={maitre_d.schedule}
+                            shiftFormat={this.state.shiftFormat}
                             submittedCount={this.state.submittedCount}
                         />
                     )
@@ -239,7 +248,7 @@ export class Schedule extends Component {
                         name={maitre_d.id === currentUser ? maitre_d.firstName  : <Link className="contact_links" to={`/admin/employee/${maitre_d.id}`}>{maitre_d.firstName}</Link>}
                         className={maitre_d.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={maitre_d.id}
-                        schedule={maitre_d.next_schedule}
+                        shiftFormat={this.state.shiftFormat}
                         selectedWeek={this.state.selectedWeek}
                     />
                 )
@@ -256,6 +265,7 @@ export class Schedule extends Component {
                             className={manager.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={manager.id}
                             schedule={manager.schedule}
+                            shiftFormat={this.state.shiftFormat}
                             submittedCount={this.state.submittedCount}
                         />
                     )
@@ -269,7 +279,7 @@ export class Schedule extends Component {
                         name={manager.id === currentUser ? manager.firstName : <Link className="contact_links" to ={`/admin/employee/${manager.id}`}>{manager.firstName}</Link>}
                         className={manager.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={manager.id}
-                        schedule={manager.next_schedule}
+                        shiftFormat={this.state.shiftFormat}
                         selectedWeek={this.state.selectedWeek}
                     />
                 )
@@ -286,6 +296,7 @@ export class Schedule extends Component {
                             className={runner.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={runner.id}
                             schedule={runner.schedule}
+                            shiftFormat={this.state.shiftFormat}
                             submittedCount={this.state.submittedCount}
                         />
                     )
@@ -299,7 +310,7 @@ export class Schedule extends Component {
                         name={runner.id === currentUser ? runner.firstName : <Link className="contact_links" to ={`/admin/employee/${runner.id}`}>{runner.firstName}</Link>}
                         className={runner.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={runner.id}
-                        schedule={runner.next_schedule}
+                        shiftFormat={this.state.shiftFormat}
                         selectedWeek={this.state.selectedWeek}
                     />
                 )
@@ -315,6 +326,7 @@ export class Schedule extends Component {
                             className={server.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={server.id}
                             schedule={server.schedule}
+                            shiftFormat={this.state.shiftFormat}
                             submittedCount={this.state.submittedCount}
                         />
                     )
@@ -328,7 +340,7 @@ export class Schedule extends Component {
                         name={server.id === currentUser ? server.firstName : <Link className="contact_links" to ={`/admin/employee/${server.id}`}>{server.firstName}</Link>}
                         className={server.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={server.id}
-                        schedule={server.next_schedule}
+                        shiftFormat={this.state.shiftFormat}
                         selectedWeek={this.state.selectedWeek}
                     />
                 )
@@ -345,6 +357,7 @@ export class Schedule extends Component {
                             className={sommelier.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={sommelier.id}
                             schedule={sommelier.schedule}
+                            shiftFormat={this.state.shiftFormat}
                             submittedCount={this.state.submittedCount}
                         />
                     )
@@ -358,7 +371,7 @@ export class Schedule extends Component {
                         name={sommelier.id === currentUser ? sommelier.firstName : <Link className="contact_links" to ={`/admin/employee/${sommelier.id}`}>{sommelier.firstName}</Link>}
                         className={sommelier.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={sommelier.id}
-                        schedule={sommelier.next_schedule}
+                        shiftFormat={this.state.shiftFormat}
                         selectedWeek={this.state.selectedWeek}
                     />
                 )
@@ -388,7 +401,7 @@ export class Schedule extends Component {
                         <MonthRow className="month-current"/>
                     </div>
                     <div className="user_schedule_container">
-                        <CurrentWeekDayRow />
+                        <CurrentWeekDayRow week={this.state.currentWeek}/>
                             <PositionRow position="Managers"/>
                             {managerRow}
                             <PositionRow key="schedule_captains" position="Captains"/>
@@ -424,7 +437,7 @@ export class Schedule extends Component {
                         />
                     </div>
                     <div className="user_schedule_container">
-                        <SelectedWeekDayRow selectedWeek={this.state.selectedWeek}/>
+                        <SelectedWeekDayRow week={this.state.selectedWeek}/>
                             <PositionRow position="Managers"/>
                             {managerRow_selected}
                             <PositionRow key="schedule_captains_selected" position="Captains"/>
