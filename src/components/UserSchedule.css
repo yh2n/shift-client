@@ -23,6 +23,10 @@
   color: #112138;
 }
 
+.user_schedule_shift:hover {
+  cursor: pointer;
+}
+
 .user_schedule_position {
   background: #203c64;
   text-align: center;
@@ -128,25 +132,25 @@
 }
 
 @media only screen and (max-width: 1200px) {
-  .user_schedule_container, .selected_month {
+  .user_schedule_container, .user_selected_month {
     width: 85%;
   }
 }
 
 @media only screen and (max-width: 1100px) {
-  .user_schedule_container, .selected_month {
+  .user_schedule_container, .user_selected_month {
     width: 90%;
   }
 }
 
 @media only screen and (max-width: 1000px) {
-  .user_schedule_container, .selected_month {
+  .user_schedule_container, .user_selected_month {
     width: 95%;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .user_schedule_container, .selected_month {
+  .user_schedule_container, .user_selected_month {
     width: 95%;
   }
 
@@ -155,7 +159,7 @@
   }
 
   .month-current, .month-selected {
-    font-size: 35px;
+    font-size: 30px;
   }
 }
 @media only screen and (max-width: 550px) {
@@ -164,6 +168,6 @@
   }
 
   .month-current, .month-selected {
-    font-size: 30px;
+    font-size: 25px;
   }
 }
