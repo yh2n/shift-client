@@ -84,7 +84,7 @@ export class Schedule extends Component {
                 barbacks.map(barback => (
                         <UserEmployeeRow
                             key={barback.id}
-                            name={barback.id === currentUser ? barback.firstName  : <Link className="contact_links" to={`/admin/employee/${barback.id}`}>{barback.firstName}</Link>}
+                            name={barback.id === currentUser ? barback.firstName  : <Link className="contact_links" to={`./contact-availability/${barback.id}`}>{barback.firstName}</Link>}
                             className={barback.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={barback.id}
                             schedule={barback.schedule}
@@ -99,7 +99,7 @@ export class Schedule extends Component {
             barbacks.map(barback => (
                     <UserEmployeeRowSelected
                         key={`${barback.id}_selected`}
-                        name={barback.id === currentUser ? barback.firstName  : <Link className="contact_links" to={`/admin/employee/${barback.id}`}>{barback.firstName}</Link>}
+                        name={barback.id === currentUser ? barback.firstName  : <Link className="contact_links" to={`./contact-availability/${barback.id}`}>{barback.firstName}</Link>}
                         className={barback.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={barback.id}
                         shiftFormat={this.state.shiftFormat}
@@ -114,7 +114,7 @@ export class Schedule extends Component {
                 bartenders.map(bartender => (
                         <UserEmployeeRow
                             key={bartender.id}
-                            name={bartender.id === currentUser ? bartender.firstName  : <Link className="contact_links" to={`/admin/employee/${bartender.id}`}>{bartender.firstName}</Link>}
+                            name={bartender.id === currentUser ? bartender.firstName  : <Link className="contact_links" to={`./contact-availability/${bartender.id}`}>{bartender.firstName}</Link>}
                             className={bartender.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={bartender.id}
                             schedule={bartender.schedule}
@@ -129,7 +129,7 @@ export class Schedule extends Component {
             bartenders.map(bartender => (
                     <UserEmployeeRowSelected
                         key={`${bartender.id}_selected`}
-                        name={bartender.id === currentUser ? bartender.firstName  : <Link className="contact_links" to={`/admin/employee/${bartender.id}`}>{bartender.firstName}</Link>}
+                        name={bartender.id === currentUser ? bartender.firstName  : <Link className="contact_links" to={`./contact-availability/${bartender.id}`}>{bartender.firstName}</Link>}
                         className={bartender.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={bartender.id}
                         shiftFormat={this.state.shiftFormat}
@@ -146,7 +146,7 @@ export class Schedule extends Component {
                 bussers.map(busser => (
                         <UserEmployeeRow
                             key={busser.id}
-                            name={busser.id === currentUser ? busser.firstName  : <Link className="contact_links" to={`/admin/employee/${busser.id}`}>{busser.firstName}</Link>}
+                            name={busser.id === currentUser ? busser.firstName  : <Link className="contact_links" to={`./contact-availability/${busser.id}`}>{busser.firstName}</Link>}
                             className={busser.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={busser.id}
                             schedule={busser.schedule}
@@ -161,7 +161,7 @@ export class Schedule extends Component {
             bussers.map(busser => (
                     <UserEmployeeRowSelected
                         key={`${busser.id}_selected`}
-                        name={busser.id === currentUser ? busser.firstName  : <Link className="contact_links" to={`/admin/employee/${busser.id}`}>{busser.firstName}</Link>}
+                        name={busser.id === currentUser ? busser.firstName  : <Link className="contact_links" to={`./contact-availability/${busser.id}`}>{busser.firstName}</Link>}
                         className={busser.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={busser.id}
                         shiftFormat={this.state.shiftFormat}
@@ -177,7 +177,7 @@ export class Schedule extends Component {
                 captains.map(captain => (
                         <UserEmployeeRow
                             key={captain.id}
-                            name={captain.id === currentUser ? captain.firstName  : <Link className="contact_links" to={`/admin/employee/${captain.id}`}>{captain.firstName}</Link>}
+                            name={captain.id === currentUser ? captain.firstName  : <Link className="contact_links" to={`./contact-availability/${captain.id}`}>{captain.firstName}</Link>}
                             className={captain.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={captain.id}
                             schedule={captain.schedule}
@@ -192,7 +192,7 @@ export class Schedule extends Component {
             captains.map(captain => (
                     <UserEmployeeRowSelected
                         key={`${captain.id}_selected`}
-                        name={captain.id === currentUser ? captain.firstName  : <Link className="contact_links" to={`/admin/employee/${captain.id}`}>{captain.firstName}</Link>}
+                        name={captain.id === currentUser ? captain.firstName  : <Link className="contact_links" to={`./contact-availability/${captain.id}`}>{captain.firstName}</Link>}
                         className={captain.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={captain.id}
                         shiftFormat={this.state.shiftFormat}
@@ -207,7 +207,7 @@ export class Schedule extends Component {
                 hosts.map(host => (
                         <UserEmployeeRow
                             key={host.id}
-                            name={host.id === currentUser ? host.firstName  : <Link className="contact_links" to={`/admin/employee/${host.id}`}>{host.firstName}</Link>}
+                            name={host.id === currentUser ? host.firstName  : <Link className="contact_links" to={`./contact-availability/${host.id}`}>{host.firstName}</Link>}
                             className={host.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={host.id}
                             schedule={host.schedule}
@@ -222,7 +222,7 @@ export class Schedule extends Component {
             hosts.map(host => (
                     <UserEmployeeRowSelected
                         key={`${host.id}_selected`}
-                        name={host.id === currentUser ? host.firstName  : <Link className="contact_links" to={`/admin/employee/${host.id}`}>{host.firstName}</Link>}
+                        name={host.id === currentUser ? host.firstName  : <Link className="contact_links" to={`./contact-availability/${host.id}`}>{host.firstName}</Link>}
                         className={host.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={host.id}
                         shiftFormat={this.state.shiftFormat}
@@ -238,7 +238,7 @@ export class Schedule extends Component {
                 maitre_ds.map(maitre_d => (
                         <UserEmployeeRow
                             key={maitre_d.id}
-                            name={maitre_d.id === currentUser ? maitre_d.firstName  : <Link className="contact_links" to={`/admin/employee/${maitre_d.id}`}>{maitre_d.firstName}</Link>}
+                            name={maitre_d.id === currentUser ? maitre_d.firstName  : <Link className="contact_links" to={`./contact-availability/${maitre_d.id}`}>{maitre_d.firstName}</Link>}
                             className={maitre_d.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={maitre_d.id}
                             schedule={maitre_d.schedule}
@@ -253,7 +253,7 @@ export class Schedule extends Component {
             maitre_ds.map(maitre_d => (
                     <UserEmployeeRowSelected
                         key={`${maitre_d.id}_selected`}
-                        name={maitre_d.id === currentUser ? maitre_d.firstName  : <Link className="contact_links" to={`/admin/employee/${maitre_d.id}`}>{maitre_d.firstName}</Link>}
+                        name={maitre_d.id === currentUser ? maitre_d.firstName  : <Link className="contact_links" to={`./contact-availability/${maitre_d.id}`}>{maitre_d.firstName}</Link>}
                         className={maitre_d.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={maitre_d.id}
                         shiftFormat={this.state.shiftFormat}
@@ -269,7 +269,7 @@ export class Schedule extends Component {
                 managers.map(manager => (
                         <UserEmployeeRow
                             key={manager.id}
-                            name={manager.id === currentUser ? manager.firstName : <Link className="contact_links" to ={`/admin/employee/${manager.id}`}>{manager.firstName}</Link>}
+                            name={manager.id === currentUser ? manager.firstName : <Link className="contact_links" to ={`./contact-availability/${manager.id}`}>{manager.firstName}</Link>}
                             className={manager.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={manager.id}
                             schedule={manager.schedule}
@@ -284,7 +284,7 @@ export class Schedule extends Component {
             managers.map(manager => (
                     <UserEmployeeRowSelected
                         key={`${manager.id}_selected`}
-                        name={manager.id === currentUser ? manager.firstName : <Link className="contact_links" to ={`/admin/employee/${manager.id}`}>{manager.firstName}</Link>}
+                        name={manager.id === currentUser ? manager.firstName : <Link className="contact_links" to ={`./contact-availability/${manager.id}`}>{manager.firstName}</Link>}
                         className={manager.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={manager.id}
                         shiftFormat={this.state.shiftFormat}
@@ -300,7 +300,7 @@ export class Schedule extends Component {
                 runners.map(runner => (
                         <UserEmployeeRow
                             key={runner.id}
-                            name={runner.id === currentUser ? runner.firstName : <Link className="contact_links" to ={`/admin/employee/${runner.id}`}>{runner.firstName}</Link>}
+                            name={runner.id === currentUser ? runner.firstName : <Link className="contact_links" to ={`./contact-availability/${runner.id}`}>{runner.firstName}</Link>}
                             className={runner.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={runner.id}
                             schedule={runner.schedule}
@@ -315,7 +315,7 @@ export class Schedule extends Component {
             runners.map(runner => (
                     <UserEmployeeRowSelected
                         key={`${runner.id}_selected`}
-                        name={runner.id === currentUser ? runner.firstName : <Link className="contact_links" to ={`/admin/employee/${runner.id}`}>{runner.firstName}</Link>}
+                        name={runner.id === currentUser ? runner.firstName : <Link className="contact_links" to ={`./contact-availability/${runner.id}`}>{runner.firstName}</Link>}
                         className={runner.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={runner.id}
                         shiftFormat={this.state.shiftFormat}
@@ -330,7 +330,7 @@ export class Schedule extends Component {
                 servers.map(server => (
                         <UserEmployeeRow
                             key={server.id}
-                            name={server.id === currentUser ? server.firstName : <Link className="contact_links" to ={`/admin/employee/${server.id}`}>{server.firstName}</Link>}
+                            name={server.id === currentUser ? server.firstName : <Link className="contact_links" to ={`./contact-availability/${server.id}`}>{server.firstName}</Link>}
                             className={server.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={server.id}
                             schedule={server.schedule}
@@ -345,7 +345,7 @@ export class Schedule extends Component {
             servers.map(server => (
                     <UserEmployeeRowSelected
                         key={`${server.id}_selected`}
-                        name={server.id === currentUser ? server.firstName : <Link className="contact_links" to ={`/admin/employee/${server.id}`}>{server.firstName}</Link>}
+                        name={server.id === currentUser ? server.firstName : <Link className="contact_links" to ={`./contact-availability/${server.id}`}>{server.firstName}</Link>}
                         className={server.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={server.id}
                         shiftFormat={this.state.shiftFormat}
@@ -361,7 +361,7 @@ export class Schedule extends Component {
                 sommeliers.map(sommelier => (
                         <UserEmployeeRow
                             key={sommelier.id}
-                            name={sommelier.id === currentUser ? sommelier.firstName : <Link className="contact_links" to ={`/admin/employee/${sommelier.id}`}>{sommelier.firstName}</Link>}
+                            name={sommelier.id === currentUser ? sommelier.firstName : <Link className="contact_links" to ={`./contact-availability/${sommelier.id}`}>{sommelier.firstName}</Link>}
                             className={sommelier.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                             id={sommelier.id}
                             schedule={sommelier.schedule}
@@ -376,7 +376,7 @@ export class Schedule extends Component {
             sommeliers.map(sommelier => (
                     <UserEmployeeRowSelected
                         key={`${sommelier.id}_selected`}
-                        name={sommelier.id === currentUser ? sommelier.firstName : <Link className="contact_links" to ={`/admin/employee/${sommelier.id}`}>{sommelier.firstName}</Link>}
+                        name={sommelier.id === currentUser ? sommelier.firstName : <Link className="contact_links" to ={`./contact-availability/${sommelier.id}`}>{sommelier.firstName}</Link>}
                         className={sommelier.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={sommelier.id}
                         shiftFormat={this.state.shiftFormat}
