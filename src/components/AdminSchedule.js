@@ -402,10 +402,7 @@ export class Schedule extends Component {
                         <MonthRow className="month-current"/>
                     </div>
                     <div className="admin_schedule_container">
-                        <CurrentWeekDayRow 
-                            className={this.state.shiftFormat == "desktop" ? "day_row" : "day_row hidden" }
-                            week={this.state.currentWeek}
-                        />
+                        <CurrentWeekDayRow week={this.state.currentWeek}/>
                         <PositionRow position="Managers"/>
                         {managerRow}
                         <PositionRow key="schedule_captains" position="Captains"/>

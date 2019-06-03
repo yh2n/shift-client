@@ -12,6 +12,7 @@ const WeekDropDown = props => {
                 dinnerSelected={props.dinnerSelected}
                 toggleDinner={()=>{return (props.selectDinner())}}
                 setSchedule={() => props.setSchedule()}
+                shiftFormat={props.shiftFormat}
             />
     )
 }
@@ -25,6 +26,7 @@ const WeekendDropDown = props => {
                 toggleBrunch={props.selectBrunch}
                 dinnerSelected={props.dinnerSelected}
                 toggleDinner={props.selectDinner}
+                shiftFormat={props.shiftFormat}
             />
     )
 }
