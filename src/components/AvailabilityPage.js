@@ -29,7 +29,8 @@ export default class AvailabilityPage extends Component {
 					onClose={this.toggleModal}
 				/>
 				<div className="availability_prompt">
-					<p>Indicate your availability:</p>
+					<p>Click on all the shifts you can work.</p>
+					<p>Please be sure to keep this up to date to avoid any scheduling conflicts.</p>
 				</div>
 				<Availability />
 			</div>
