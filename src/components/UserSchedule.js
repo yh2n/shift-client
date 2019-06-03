@@ -38,7 +38,8 @@ export class Schedule extends Component {
     componentDidMount() {
         this.props.dispatch(fetchEmployees());
         window.addEventListener("resize", this.handleWindowResize);
-        window.innerWidth < 570 ? this.setState({shiftFormat: "mobile"}) : this.setState({shiftFormat: "desktop"})
+        window.innerWidth < 570 ? this.setState({shiftFormat: "mobile"}) : this.setState({shiftFormat: "desktop"});
+        console.log(this.state.shiftFormat)
     }
 
     handleScheduleSelection = (e) => {
@@ -66,10 +67,17 @@ export class Schedule extends Component {
         }, 1500)
     }
     
+    handleWindowResize = () => {
+        if (window.innerWidth < 568) {
+            this.setState({shiftFormat: "mobile"})
+        }
+        else {
+            this.setState({shiftFormat: "desktop"})
+        }
+        console.log(this.state.shiftFormat)
+    }
 	render() {
         const employees = this.props.employees.employees;
-        console.log(employees);
-
 
         let barbacks = employees.filter(employee => employee.position === "Barback")
         let barbackRow = (
