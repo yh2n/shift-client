@@ -39,7 +39,6 @@ export class Schedule extends Component {
         this.props.dispatch(fetchEmployees());
         window.addEventListener("resize", this.handleWindowResize);
         window.innerWidth < 570 ? this.setState({shiftFormat: "mobile"}) : this.setState({shiftFormat: "desktop"});
-        console.log(this.state.shiftFormat)
     }
 
     handleScheduleSelection = (e) => {
@@ -68,13 +67,12 @@ export class Schedule extends Component {
     }
     
     handleWindowResize = () => {
-        if (window.innerWidth < 568) {
+        if (window.innerWidth < 570) {
             this.setState({shiftFormat: "mobile"})
         }
         else {
             this.setState({shiftFormat: "desktop"})
         }
-        console.log(this.state.shiftFormat)
     }
 	render() {
         const employees = this.props.employees.employees;

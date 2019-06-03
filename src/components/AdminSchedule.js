@@ -35,7 +35,7 @@ export class Schedule extends Component {
     componentDidMount() {
         this.props.dispatch(fetchEmployees());
         window.addEventListener("resize", this.handleWindowResize);
-        window.innerWidth < 570 ? this.setState({shiftFormat: "mobile"}) : this.setState({shiftFormat: "desktop"})
+        window.innerWidth < 568 ? this.setState({shiftFormat: "mobile"}) : this.setState({shiftFormat: "desktop"})
     }
 
 	toggleModal = () => {
