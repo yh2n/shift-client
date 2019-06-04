@@ -1,16 +1,18 @@
 import React from 'react';
 
-export default function PositionRow(props) {
+const PositionRow = props => {
     return (
         <>
-            <div key="positon-row_position"className="user_schedule_position">{props.position}</div>	
-            <div key="positon-row_Mo" className="user_schedule_days"></div>	
-            <div key="positon-row_Tu" className="user_schedule_days"></div>	
-            <div key="positon-row_We" className="user_schedule_days"></div>	
-            <div key="positon-row_Th" className="user_schedule_days"></div>	
-            <div key="positon-row_Fr" className="user_schedule_days"></div>	
-            <div key="positon-row_Sa" className="user_schedule_days"></div>	
-            <div key="positon-row_Su" className="user_schedule_days"></div>
+            <div key="positon-row_position" className={props.positionClass}>{props.position}</div>	
+            <div key="positon-row_Mo" className={props.positionRowClass}></div>	
+            <div key="positon-row_Tu" className={props.positionRowClass}></div>	
+            <div key="positon-row_We" className={props.positionRowClass}></div>	
+            <div key="positon-row_Th" className={props.positionRowClass}></div>	
+            <div key="positon-row_Fr" className={props.positionRowClass}></div>	
+            <div key="positon-row_Sa" className={props.positionRowClass}></div>	
+            <div key="positon-row_Su" className={props.positionRowClass}></div>
         </>
     )
 }
+
+export default PositionRow;

@@ -3,7 +3,7 @@ import moment from 'moment';
 import AccountNav from './AccountNav';
 import AdminMenuModal from './AdminMenuModal';
 import MonthRow from './MonthRow';
-import PositionRow from './PositionRow';
+import PositionRow  from './PositionRow';
 import AdminEmployeeRow from './AdminEmployeeRow';
 import AdminEmployeeRowSelected from './AdminEmployeeRowSelected';
 import CurrentWeekDayRow from './CurrentWeekDayRow';
@@ -35,7 +35,7 @@ export class Schedule extends Component {
     componentDidMount() {
         this.props.dispatch(fetchEmployees());
         window.addEventListener("resize", this.handleWindowResize);
-        window.innerWidth < 568 ? this.setState({shiftFormat: "mobile"}) : this.setState({shiftFormat: "desktop"})
+        window.innerWidth < 568 ? this.setState({ shiftFormat: "mobile" }) : this.setState({ shiftFormat: "desktop" })
     }
 
 	toggleModal = () => {
@@ -406,25 +406,49 @@ export class Schedule extends Component {
                     </div>
                     <div className="admin_schedule_container">
                         <CurrentWeekDayRow week={this.state.currentWeek}/>
-                        <PositionRow position="Managers"/>
+                        <PositionRow 
+                            positionClass="admin_schedule_position" 
+                            positionRowClass="admin_schedule_days"position="Managers"/>
                         {managerRow}
-                        <PositionRow key="schedule_captains" position="Captains"/>
+                        <PositionRow 
+                            positionClass="admin_schedule_position" 
+                            positionRowClass="admin_schedule_days"key="schedule_captains" 
+                            position="Captains"
+                        />
                         {captainRow}
-                        <PositionRow key="schedule_maitre-d" position="Maître d'"/>
+                        <PositionRow 
+                            positionClass="admin_schedule_position" 
+                            positionRowClass="admin_schedule_days"key="schedule_maitre-d" 
+                            position="Maître d'"
+                        />
                         {maitreDRow}
-                        <PositionRow key="schedule_host-staff" position="Host staff"/>
+                        <PositionRow 
+                            positionClass="admin_schedule_position" 
+                            positionRowClass="admin_schedule_days"key="schedule_host-staff" position="Host staff"/>
                         {hostRow}
-                        <PositionRow key="schedule_sommeliers" position="Sommeliers"/>
+                        <PositionRow 
+                            positionClass="admin_schedule_position" 
+                            positionRowClass="admin_schedule_days"key="schedule_sommeliers" position="Sommeliers"/>
                         {sommelierRow}
-                        <PositionRow key="schedule_bartenders" position="Bartenders"/>
+                        <PositionRow 
+                            positionClass="admin_schedule_position" 
+                            positionRowClass="admin_schedule_days"key="schedule_bartenders" position="Bartenders"/>
                         {bartenderRow}
-                        <PositionRow key="schedule_barbacks" position="Barbacks"/>
+                        <PositionRow 
+                            positionClass="admin_schedule_position" 
+                            positionRowClass="admin_schedule_days"key="schedule_barbacks" position="Barbacks"/>
                         {barbackRow}
-                        <PositionRow key="schedule_servers" position="Servers" />
+                        <PositionRow 
+                            positionClass="admin_schedule_position" 
+                            positionRowClass="admin_schedule_days"key="schedule_servers" position="Servers" />
                         {serverRow}
-                        <PositionRow key="schedule_runners" position="Runners"/>
+                        <PositionRow 
+                            positionClass="admin_schedule_position" 
+                            positionRowClass="admin_schedule_days"key="schedule_runners" position="Runners"/>
                         {runnerRow}
-                        <PositionRow key="schedule_bussers" position="Bussers"/>
+                        <PositionRow 
+                            positionClass="admin_schedule_position" 
+                            positionRowClass="admin_schedule_days"key="schedule_bussers" position="Bussers"/>
                         {busserRow}
                     </div>
                     <div className="selected_month">
@@ -443,25 +467,45 @@ export class Schedule extends Component {
                     </div>
                     <div className="admin_schedule_container">
                         <SelectedWeekDayRow className="day_row" week={this.state.selectedWeek}/>
-                        <PositionRow position="Managers"/>
+                        <PositionRow 
+                            positionClass="admin_schedule_position" 
+                            positionRowClass="admin_schedule_days"position="Managers"/>
                         {managerRow_selected}
-                        <PositionRow key="schedule_captains" position="Captains"/>
+                        <PositionRow 
+                            positionClass="admin_schedule_position" 
+                            positionRowClass="admin_schedule_days"key="schedule_captains" position="Captains"/>
                         {captainRow_selected}
-                        <PositionRow key="schedule_maitre-d" position="Maître d'"/>
+                        <PositionRow 
+                            positionClass="admin_schedule_position" 
+                            positionRowClass="admin_schedule_days"key="schedule_maitre-d" position="Maître d'"/>
                         {maitreDRow_selected}
-                        <PositionRow key="schedule_host-staff" position="Host staff"/>
+                        <PositionRow 
+                            positionClass="admin_schedule_position" 
+                            positionRowClass="admin_schedule_days"key="schedule_host-staff" position="Host staff"/>
                         {hostRow_selected}
-                        <PositionRow key="schedule_sommeliers" position="Sommeliers"/>
+                        <PositionRow 
+                            positionClass="admin_schedule_position" 
+                            positionRowClass="admin_schedule_days"key="schedule_sommeliers" position="Sommeliers"/>
                         {sommelierRow_selected}
-                        <PositionRow key="schedule_barbacks" position="Barbacks"/>
+                        <PositionRow 
+                            positionClass="admin_schedule_position" 
+                            positionRowClass="admin_schedule_days"key="schedule_barbacks" position="Barbacks"/>
                         {barbackRow_selected}
-                        <PositionRow key="schedule_bartenders" position="Bartenders"/>
+                        <PositionRow 
+                            positionClass="admin_schedule_position" 
+                            positionRowClass="admin_schedule_days"key="schedule_bartenders" position="Bartenders"/>
                         {bartenderRow_selected}
-                        <PositionRow key="schedule_servers" position="Servers" />
+                        <PositionRow 
+                            positionClass="admin_schedule_position" 
+                            positionRowClass="admin_schedule_days"key="schedule_servers" position="Servers" />
                         {serverRow_selected}
-                        <PositionRow key="schedule_runners" position="Runners"/>
+                        <PositionRow 
+                            positionClass="admin_schedule_position" 
+                            positionRowClass="admin_schedule_days"key="schedule_runners" position="Runners"/>
                         {runnerRow_selected}
-                        <PositionRow key="schedule_bussers" position="Bussers"/>
+                        <PositionRow 
+                            positionClass="admin_schedule_position" 
+                            positionRowClass="admin_schedule_days"key="schedule_bussers" position="Bussers"/>
                         {busserRow_selected}
                     </div>
                 </div>
