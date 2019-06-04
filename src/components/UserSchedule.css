@@ -19,7 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-	background: #D2F7F3;
+	background: rgba(38, 165, 106, .1);
   color: #112138;
 }
 
@@ -31,6 +31,7 @@
   background: rgba(24, 30, 64, 25);
   text-align: center;
   color: rgba(38, 165, 106, 65);
+  padding: 3px;
 }
 
 .user_schedule_name {
@@ -39,7 +40,7 @@
   justify-content: center;
   background: rgba(24, 30, 64, 25);
   color: white;
-  padding: 10px;
+  padding: 15px;
 }
 
 .contact_links {
@@ -165,5 +166,8 @@
 
   .month-current, .month-selected {
     font-size: 25px;
+  }
+  .user_schedule_position {
+    padding: 1px;
   }
 }
