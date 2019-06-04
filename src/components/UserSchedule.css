@@ -30,7 +30,7 @@
 .user_schedule_position {
   background: rgba(24, 30, 64, 25);
   text-align: center;
-  color: #D2F7F3;
+  color: rgba(38, 165, 106, 65);
 }
 
 .user_schedule_name {
@@ -48,7 +48,7 @@
 }
 
 .contact_links:hover {
-  color: #129482;
+  color:rgba(38, 165, 106, 65);
 }
 
 .user_schedule_days {
@@ -58,7 +58,7 @@
 }
 
 .user_day_number {
-  color: #129482;
+  color:rgba(38, 165, 106, 65);
 }
 
 .select_save {
