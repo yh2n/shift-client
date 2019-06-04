@@ -20,7 +20,7 @@
 	display: grid;
 	grid-template-columns: repeat(4, 2fr) 1fr;
 	border-bottom: solid rgba(38, 165, 106, .1);;
-	color: rgba(24, 30, 64, 0.45);
+	color: rgba(24, 30, 64, 25);
 }
 
 .contact_labels { 
