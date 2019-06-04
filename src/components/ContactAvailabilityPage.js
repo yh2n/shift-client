@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import AccountNav from './AccountNav';
 import UserMenuModal from './UserMenuModal';
 import ContactAvailability from './ContactAvailability';
-
 import { Link } from 'react-router-dom';
 
 export default class ContactAvailabilityPage extends Component {
@@ -29,9 +28,7 @@ export default class ContactAvailabilityPage extends Component {
 					show={this.state.isOpen}
                     onClose={this.toggleModal}
 				/>
-                <ContactAvailability 
-                {...this.props}
-                />
+                <ContactAvailability {...this.props} />
                 <Link to={`/my_account/${username}/contacts`} style={{ textDecoration: 'none' }}>
                     <button>Back to Contacts</button>
                 </Link>

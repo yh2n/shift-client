@@ -10,33 +10,27 @@
     display: flex;
     width: 75%;
     max-width: 1200px;
+    justify-content: center;
+    align-items: center;
 }
 
 .contact_availability_shift, .contact_availability_day {
     font-size: 16px;
     padding: 32px;
-    margin: 0px 1px 0 1px;
-    border: solid black;
+    margin: 1px;
     border-radius: 2px;
-    text-align: center;
+    color: white;
 }
-/* .contact_availability_day {
-    padding: 32px;
-    border: solid black;
-} */
+
+.contact_availability_day {
+    cursor: text;
+    background: rgba(216, 73, 73, 85);
+}
 
 .contact_availability_day-container {
     display: flex;
     width: 14.26%;
     flex-direction: column;
-}
-
-.unavailable {
-    opacity: 0.1
-}
-
-.available {
-    opacity:1
 }
 
 
