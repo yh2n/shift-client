@@ -66,6 +66,9 @@ export class Schedule extends Component {
         console.log(this.state.shiftFormat)
     }
 
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.handleWindowResize);
+    }
 	render() {
         const employees = this.props.employees.employees;
         console.log(window.innerWidth, this.state.shiftFormat)
