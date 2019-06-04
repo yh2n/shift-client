@@ -19,7 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #D2F7F3;
+  background: rgba(38, 165, 106, 0.2);
   color: #112138;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .user_schedule_position {
-  background: #203c64;
+  background: rgba(24, 30, 64, 25);
   text-align: center;
   color: #D2F7F3;
 }
@@ -37,7 +37,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #112138;
+  background: rgba(24, 30, 64, 25);
   color: white;
   padding: 10px;
 }
@@ -51,13 +51,8 @@
   color: #129482;
 }
 
-.logged_in {
-  background: #c0a115;
-  color: #112138;
-  text-align: center;
-}
 .user_schedule_days {
-  background: #203c64;
+  background: rgba(24, 30, 64, 25);
   color: #D2F7F3;
   text-align: center;
 }
@@ -68,7 +63,6 @@
 
 .select_save {
   display: flex;
-  border: solid;
   margin: 100px 0 20px 0;
 } 
 
@@ -76,7 +70,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: solid;
   margin: 100px 0 20px 0;
 }
 
@@ -87,13 +80,16 @@
   padding: 10px;
 }
 
+.user_current_schedule_update_button:hover {
+  background: rgba(242, 201, 79, 0.2);
+}
+
 .user_selected_month {
   display: flex;  
   flex-direction: column;
   align-items: center;
   width: 80%;
   max-width: 1200px;
-  border: solid red;
 }
 
 .month-current {
@@ -108,16 +104,11 @@
   color: #112138;
 }
 
-.current {
-  background: #c0a115;
+.current, .logged_in {
+  background: rgba(242, 201, 79, 95);
   color: #112138;
   text-align: center;
 }
-
-/* .user_schedule_shifts {
-  border:  solid #112138;
-  font-size: 20px;
-} */
 
 .green {
   color: rgb(33, 206, 33);
