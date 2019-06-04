@@ -79,3 +79,8 @@
 	background: #D2F7F3;
 	cursor: not-allowed;
 }
+
+.redirect_button { 
+	color: rgba(38, 165, 106, 65);
+	font-size: 15px;
+}
