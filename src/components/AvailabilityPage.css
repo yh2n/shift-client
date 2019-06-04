@@ -88,13 +88,13 @@
     border: solid rgba(24, 30, 64, 25);
 }
 
-.dinner-unavailable {
+/* .dinner-unavailable {
     background: rgba(24, 30, 64, 25);
-    border: solid rgba(242, 201, 79, 0);
-}
+} */
 
 .dinner-unavailable {
     background: rgba(24, 30, 64, 0.45);
+    border: solid rgba(242, 201, 79, 0);
 }
 
 .submit_availability {

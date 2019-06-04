@@ -30,7 +30,7 @@ export default class AvailabilityPage extends Component {
 				/>
 				<div className="availability_prompt">
 					<p>Click on all the shifts you can work.</p>
-					<p>Please be sure to keep this up to date to avoid any scheduling conflicts.</p>
+					<p>Keep this up to date to avoid any scheduling conflicts.</p>
 				</div>
 				<Availability />
 			</div>
