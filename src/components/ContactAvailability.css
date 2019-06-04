@@ -1,20 +1,28 @@
 .contact_availability_page {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    margin: 0 auto;
 }
 
 .contact_availability_container {
     display: flex;
+    flex-direction: column;
     width: 75%;
     max-width: 1200px;
+    margin-bottom: 30px;
+}
+.contact_availability {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .contact_availability_shift, .contact_availability_day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 16px;
     padding: 32px;
     margin: 1px;
@@ -33,6 +41,14 @@
     flex-direction: column;
 }
 
+.contact_redirect_btn {
+    border: solid;
+     margin-top: 60px;
+    padding: 15px;
+    font-size: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
 
 @media only screen and (max-width: 1400px) {
     .contact_availability_container {
@@ -62,10 +78,11 @@
     }
 }
 @media only screen and (max-width: 768px) {
-    .contact_availability_container {
-        width: 95%;
+    .contact_availability {
+        width: 100%;
         flex-direction: column;
     }
+
     .contact_availability_day-container {
         display: flex;
         align-content: center;

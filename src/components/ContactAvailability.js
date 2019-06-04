@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { API_BASE_URL } from '../config';
+import { Link } from 'react-router-dom';
 
 import './ContactAvailability.css';
 
@@ -87,8 +88,11 @@ export default class ContactAvailability extends Component {
             })
         }
     render() {
+        let username = localStorage.getItem("username");
+
         return (
             <div className="contact_availability_container">
+                <div className="contact_availability">
                 <ContactWeekDay 
                     day="Mo"
                     breakfastToggled={!this.state.availability.Mo_breakfast}
@@ -131,6 +135,10 @@ export default class ContactAvailability extends Component {
                     brunchToggled={!this.state.availability.Su_brunch}
                     dinnerToggled={!this.state.availability.Su_dinner}
                 />
+                </div>
+                <Link to={`/my_account/${username}/contacts`} style={{ textDecoration: 'none' }}>
+                    <button className="contact_redirect_btn">Back to Contacts</button>
+                </Link>
             </div>
         )
     }
