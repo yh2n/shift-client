@@ -8,7 +8,8 @@ const CurrentWeekDayRow = props => {
 
     return (
         <>
-            <div className="user_schedule_position"></div>	
+            <div className="user_schedule_position">
+            </div>	
             <div className={moment().day(1).format("Do") === moment().format("Do") ? "user_schedule_days current" : "user_schedule_days"}>
                 Mon <span className={moment().day(1).format("Do") === moment().format("Do") ? "user_day_number current" : "user_day_number"}>
                         {moment(`${year}`).add(`${week}`, 'weeks').add(0, 'days').format("D")}

@@ -383,7 +383,15 @@ export class Schedule extends Component {
                 )
             )
         )
-
+        
+        const updateButton = () => {
+            return (
+                <button 
+                            className="user_current_schedule_update_button" 
+                            onClick={this.incrementCount}
+                        ></button>
+            )
+        }
 		return(
 			<div>
                 <div>
@@ -398,16 +406,20 @@ export class Schedule extends Component {
                 </div>
                 <div className="schedule_page">
                     <div className="user_current_month">
+                        <MonthRow className="month-current"/>
                         <button 
                             className="user_current_schedule_update_button" 
                             onClick={this.incrementCount}
                         >
                             {this.state.updateButtonText}
                         </button>
-                        <MonthRow className="month-current"/>
                     </div>
                     <div className="user_schedule_container">
-                        <CurrentWeekDayRow week={this.state.currentWeek}/>
+                        <CurrentWeekDayRow 
+                            week={this.state.currentWeek}
+                            incrementCount={this.incrementCount}
+                            updateButtonText={this.state.updateButtonText}
+                        />
                             <PositionRow position="Managers"/>
                             {managerRow}
                             <PositionRow key="schedule_captains" position="Captains"/>
