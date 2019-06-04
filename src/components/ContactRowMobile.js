@@ -26,7 +26,7 @@ export class ContactRow extends Component {
                     <div className="contact_label-mobile">Position</div>
 					<div className="contact_info-mobile">{employee.position}</div>
 					<Link to={`./contact-availability/${employee.id}`} style={{ textDecoration: 'none' }}>
-						<div className="contact_info-mobile contact_availability">Availability</div>
+						<div className="contact_info-mobile card_availability">Availability</div>
 					</Link>
 				</div>
 			)
