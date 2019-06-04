@@ -66,10 +66,7 @@ export class UserEmployeeRow extends Component {
     }
 
     setAvailability = () => {
-        console.log("change(s) submitted!!!!!!!!!!!");
         let employees = this.props.employees.employees;
-        console.table(employees);
-        console.log(JSON.stringify(this.state.schedule));
         let id = this.props.id;
         console.log(id, this.props.name);
         return fetch(`${API_BASE_URL}/employee/${id}/schedule/${this.state.currentWeek}`, {
