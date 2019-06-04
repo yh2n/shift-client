@@ -1,6 +1,5 @@
 .contact_page {
 	display: flex;
-	background: rgba(43,35, 65, 25);
 	height: 100vh;
 }
 
@@ -47,14 +46,18 @@
 }
 
 .contact_card_mobile {
-	background: rgba(43,35, 65, 2);
-	border: solid;
+	border: solid rgba(38, 165, 106, .4);
+	color: rgba(24, 30, 64, 25);
 	border-radius: 3px;
 	margin-bottom: 5px;
 }
 
+.contact_card_mobile:hover {
+	border: solid rgba(38, 165, 106, 85);
+}
 .contact_label-mobile {
 	margin: 10px 0 0 10px;
+	font-weight: 600;
 }
 
 .contact_info-mobile {
@@ -62,6 +65,9 @@
 	margin: 5px 10px 10px 10px;
 }
 
+.contact_info-mobile.contact_availability {
+	color: rgba(216, 73, 73, 85);
+}
 
 @media only screen and (min-width: 769px) {
 	.contact_list_container-mobile {
