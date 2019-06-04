@@ -33,13 +33,13 @@
     padding: 32px;
     margin: 1px;
     border-radius: 2px;
+	color: white;
 }
 
 
 .availability_btn.day {
     cursor: text;
     background: rgba(216, 73, 73, 85);
-	color: white;
 }
 
 .day_container {
@@ -49,42 +49,53 @@
 }
 
 .breakfast {
-    color: white;
-    background: rgba(38, 165, 106, 65)
+    background: rgba(38, 165, 106, 65);
+    border: solid rgba(38, 165, 106, 65)
 }
 
 .breakfast-unavailable {
-    color: white;
-    background: rgba(38, 165, 106, 0.45)
+    background: rgba(38, 165, 106, 0.45);
+    border: solid rgba(38, 165, 106, 0);
+}
+
+.breakfast-unavailable:hover, 
+.lunch-unavailable:hover, 
+.brunch-unavailable:hover,
+.dinner-unavailable:hover {
+    border: solid rgba(216, 73, 73, 85);
 }
 
 .lunch {
     background: rgba(93, 135, 191, 75);
-	color: white;
+    border: solid rgba(93, 135, 191, 75);
 }
 
 .lunch-unavailable {
     background: rgba(93, 135, 191, 0.45);
-	color: white;
+    border: solid rgba(93, 135, 191, 0);
 }
 
 .brunch {
     background: rgba(242, 201, 79, 95);
-	color: white;
+    border: solid rgba(242, 201, 79, 95);
 }
 .brunch-unavailable {
     background: rgba(242, 201, 79, 0.45);
-	color: white;
+    border: solid rgba(242, 201, 79, 0);
 }
 
 .dinner, .submit_availability {
     background: rgba(24, 30, 64, 25);
-	color: white;
+    border: solid rgba(24, 30, 64, 25);
 }
 
-.dinner-unavailable, .submit_availability:hover {
+.dinner-unavailable {
+    background: rgba(24, 30, 64, 25);
+    border: solid rgba(242, 201, 79, 0);
+}
+
+.dinner-unavailable {
     background: rgba(24, 30, 64, 0.45);
-	color: white;
 }
 
 .submit_availability {
@@ -92,9 +103,13 @@
     padding: 15px;
     font-size: 20px;
     max-width: 1200px;
+    color: white;
 }
 
-
+.submit_availability:hover {
+    background: rgba(24, 30, 64, 0.45);
+    border: solid rgba(24, 30, 64, 0);
+}
 
 @media only screen and (max-width: 1400px) {
     .availability_container {

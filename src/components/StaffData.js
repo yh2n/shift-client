@@ -23,27 +23,27 @@ export class StaffData extends Component {
 		}
 		else {
 			body = (
-				<ol className="admin_employee_list">
+				<div className="admin_employee_list">
 					{employees.map((employee, index) => 
-						<li key={index} className="admin_employee_row">
-							<ul>
+						<div key={index} className="admin_employee_row">
+							<div>
 								<Link to ={`/admin/employee/${employee.id}`} style={{textDecoration:'none'}}>
-									<li>
+									<div>
 										id: {employee.id}
-									</li>
+									</div>
 								</Link>
-									<li>First name: {employee.firstName}</li>
-									<li>Last name: {employee.lastName}</li>
-									<li>Position: {employee.position}</li>
-							</ul>
-						</li>
+									<div>First name: {employee.firstName}</div>
+									<div>Last name: {employee.lastName}</div>
+									<div>Position: {employee.position}</div>
+							</div>
+						</div>
 					)}
-				</ol>
+				</div>
 				)
 			
 		}
 		return (
-			<div>
+			<div className="staff_page">
 				{body}
 			</div>
 		)

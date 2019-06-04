@@ -21,15 +21,13 @@ export default class EmployeeAvailabilityPage extends Component {
     
     render() {
         return (
-            <div>
+            <div className="contact_availability_page">
                 <AccountNav onClick={this.toggleModal}/>
 				<AdminMenuModal
 					show={this.state.isOpen}
                     onClose={this.toggleModal}
 				/>
-                <EmployeeAvailability 
-                {...this.props}
-                />
+                <EmployeeAvailability {...this.props} />
                 <Link to={`/admin/employee_database`} style={{ textDecoration: 'none' }}>
                     <button>Back to Contacts</button>
                 </Link>

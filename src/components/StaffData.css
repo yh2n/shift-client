@@ -12,6 +12,18 @@
 	margin: 200px auto 200px auto;
 }
 
+.staff_member_container {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-row-gap: 5px;
+	width: 75%;
+	max-width: 1200px;
+	height: auto;
+	margin: 250px auto 50px auto;
+	border-radius: 4px;
+	font-size: 20px;
+	background: #D2F7F3;
+}
 .admin_employee_row {
 	border: solid black;
 	border-radius: 4px;
@@ -23,4 +35,52 @@
 
 .admin_employee_row li {
 	list-style-type: none;
+}
+
+@media only screen and (min-width: 769px) {
+	.staff_member_container-mobile {
+		display: none;
+	}	
+
+	.staff_member_container {
+		width: 90%;
+		font-size: 18px;
+	}	
+}
+
+@media only screen and (max-width: 768px) {
+	.staff_member_container {
+		display: none;
+	}	
+
+	.staff_member_container-mobile {
+		width: 90%;
+	}	
+}
+
+@media only screen and (max-width: 550px) {
+	.staff_member_container-mobile {
+		width: 95%;
+	}	
+}
+
+@media only screen and (min-width: 1000px) {
+	.staff_member_container {
+		width: 85%;
+		font-size: 20px;
+
+	}	
+}
+
+@media only screen and (max-width: 900px) {
+	.staff_member_container {
+		font-size: 15px;
+
+	}	
+}
+
+@media only screen and (min-width: 1200px) {
+	.staff_member_container {
+		width: 80%;
+	}	
 }

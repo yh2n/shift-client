@@ -1,6 +1,6 @@
 .account_nav {
     display: flex;
-    background: rgba(17, 33, 56, 1);
+    background: #181E3F;
     align-items: center;
     position: fixed;
     width: 100%;
@@ -30,10 +30,10 @@
 }
 
 .nav_user_name {
-    color: #2177a8
+    color: #D84949;
 }
 
 .nav_date {
     margin: 0px 25px 0px 30px;
-    color: #129482;
+    color: #26A56A;
 }
