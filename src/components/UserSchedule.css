@@ -78,9 +78,14 @@
   width: 100%;
   margin-bottom: 5px;
   padding: 10px;
+  transition: background .5s;
 }
 
-.user_current_schedule_update_button:hover {
+.updating {
+  background: rgba(242, 201, 79, 95);
+}
+
+.updated {
   background: rgba(242, 201, 79, 0.2);
 }
 

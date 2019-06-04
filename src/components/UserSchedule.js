@@ -29,6 +29,7 @@ export class Schedule extends Component {
             currentWeek:  moment().week(),
             selectedWeek: moment().week() + 1,
             updateButtonText: "Update",
+            isUpdating: false,
             submittedCount: 0,
             shiftFormat: "",
             error: null
@@ -57,12 +58,16 @@ export class Schedule extends Component {
         this.setState(prevState => {
             return { 
                 submittedCount: prevState.submittedCount + 1,
-                updateButtonText: "Updated !"
+                updateButtonText: "Updated !",
+                isUpdating: true
             }
         })
         
         setTimeout(()=> {
-            this.setState({updateButtonText: "Update"})
+            this.setState({
+                updateButtonText: "Update",
+                isUpdating: false
+            })
         }, 1500)
     }
     
@@ -79,6 +84,7 @@ export class Schedule extends Component {
         window.removeEventListener("resize", this.handleWindowResize);
     }
 	render() {
+        console.log(this.state.isUpdating)
         const employees = this.props.employees.employees;
 
         let barbacks = employees.filter(employee => employee.position === "Barback")
@@ -388,14 +394,6 @@ export class Schedule extends Component {
             )
         )
         
-        const updateButton = () => {
-            return (
-                <button 
-                            className="user_current_schedule_update_button" 
-                            onClick={this.incrementCount}
-                        ></button>
-            )
-        }
 		return(
 			<div>
                 <div>
@@ -412,7 +410,7 @@ export class Schedule extends Component {
                     <div className="user_current_month">
                         <MonthRow className="month-current"/>
                         <button 
-                            className="user_current_schedule_update_button" 
+                            className={this.state.isUpdating ? "user_current_schedule_update_button updating" : "user_current_schedule_update_button updated"}
                             onClick={this.incrementCount}
                         >
                             {this.state.updateButtonText}
