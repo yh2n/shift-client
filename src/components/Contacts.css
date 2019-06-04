@@ -1,39 +1,43 @@
 .contact_page {
 	display: flex;
 	height: 100vh;
+	background: rgba(38, 165, 106, .1);
 }
 
 .contact_list_container {
-	display: grid;
-	grid-template-columns: repeat(5, 1fr);
-	grid-row-gap: 5px;
+	display: flex;
+	flex-direction: column;
 	width: 75%;
 	max-width: 1200px;
-	height: auto;
 	margin: 250px auto 50px auto;
 	border-radius: 4px;
 	font-size: 20px;
-	background: #D2F7F3;
 }
 
-.contact_row  {
+.contact_row , .contact_labels {
+	background: white;
+	border: solid white;
 	display: grid;
-	list-style-type: none;
+	grid-template-columns: repeat(4, 2fr) 1fr;
+	border-bottom: solid rgba(38, 165, 106, .1);;
+	color: rgba(24, 30, 64, 0.45);
 }
 
+.contact_labels { 
+	font-weight: 600;
+}
+
+.contact_row {
+	font-weight: 200;
+}
 
 .contact_list {
 	display: flex;
-	border-bottom: solid white;
-	padding-left: 8px;
+	padding: 8px 6px;
 	justify-content: flex-start;
 	align-items: center;
 }
 
-
-.contacts {
-	color: red;
-}
 
 .contact_list_container-mobile {
 	display: flex;
@@ -46,15 +50,17 @@
 }
 
 .contact_card_mobile {
-	border: solid rgba(38, 165, 106, .4);
+	border: solid rgba(38, 165, 106, 0);
+	background: white;
 	color: rgba(24, 30, 64, 25);
 	border-radius: 3px;
 	margin-bottom: 5px;
 }
 
-.contact_card_mobile:hover {
-	border: solid rgba(38, 165, 106, 85);
+.contact_card_mobile:hover, .contact_row:hover{
+	border: solid rgba(38, 165, 106, .2);
 }
+
 .contact_label-mobile {
 	margin: 10px 0 0 10px;
 	font-weight: 600;
@@ -65,9 +71,11 @@
 	margin: 5px 10px 10px 10px;
 }
 
-.contact_info-mobile.contact_availability {
-	color: rgba(216, 73, 73, 85);
+.contact_info-mobile.card_availability, 
+.contact_list.availability_redirect {
+	color: rgba(38, 165, 106, 0.7);
 }
+
 
 @media only screen and (min-width: 769px) {
 	.contact_list_container-mobile {
@@ -85,8 +93,12 @@
 		display: none;
 	}	
 
+	.contact_page {
+		height: 100%;
+	}
+
 	.contact_list_container-mobile {
-		width: 90%;
+		max-width: 480px;
 	}	
 }
 
@@ -98,7 +110,7 @@
 
 @media only screen and (min-width: 1000px) {
 	.contact_list_container {
-		width: 85%;
+		width: 90%;
 		font-size: 20px;
 
 	}	
