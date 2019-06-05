@@ -1,6 +1,6 @@
 .contact_page {
 	display: flex;
-	height: 100vh;
+	height: 100%;
 	background: rgba(38, 165, 106, .1);
 }
 
@@ -14,12 +14,12 @@
 	font-size: 20px;
 }
 
-.contact_row , .contact_labels {
+.contact_row, .contact_labels {
 	background: white;
 	border: solid white;
 	display: grid;
-	grid-template-columns: repeat(4, 2fr) 1fr;
-	border-bottom: solid rgba(38, 165, 106, .1);;
+	grid-template-columns: 2fr 2fr 3fr 2fr 1fr;
+	border-bottom: solid rgba(38, 165, 106, .1);
 	color: rgba(24, 30, 64, 25);
 }
 
@@ -92,10 +92,6 @@
 	.contact_list_container {
 		display: none;
 	}	
-
-	.contact_page {
-		height: 100%;
-	}
 
 	.contact_list_container-mobile {
 		max-width: 480px;

@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     margin: 0 auto;
 }
 
@@ -11,6 +11,7 @@
     color: rgba(24, 30, 64, 25);;
     font-size: 20px;
     margin-bottom: 50px;
+    margin-top: 10%;
     width: 75%;
     max-width: 1200px;
 }
