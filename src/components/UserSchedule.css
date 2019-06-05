@@ -117,13 +117,13 @@
 }
 
 .green {
-  color: rgb(33, 206, 33);
+  color: rgba(38, 165, 106, 65);
   font-weight: bold;
   font-size: 18px;
 }
 
 .red {
-  color: red;
+  color: rgba(216, 73, 73, 85);
   font-weight: bold;
   font-size: 18px;
 }
