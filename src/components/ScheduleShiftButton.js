@@ -7,7 +7,7 @@ export class WeekShiftButton extends Component {
                 <button 
                     key="breakfast"
                     type="edit"
-                    className={this.props.breakfastSelected ? "schedule_btn off" : "schedule_btn selected" }
+                    className={this.props.breakfastSelected ? "breakfast_btn off" : "breakfast_btn selected" }
                     onClick={this.props.toggleBreakfast}
                 >
                     {this.props.shiftFormat === "mobile" ? "Bkfst" : "Breakfast"}
@@ -15,7 +15,7 @@ export class WeekShiftButton extends Component {
                 <button 
                     key="lunch"
                     type="edit" 
-                    className={this.props.lunchSelected ? "schedule_btn off" : "schedule_btn selected" }
+                    className={this.props.lunchSelected ? "lunch_btn off" : "lunch_btn selected" }
                     onClick={this.props.toggleLunch}
                 >
                     {this.props.shiftFormat === "mobile" ? "Lun" : "Lunch"}
@@ -23,7 +23,7 @@ export class WeekShiftButton extends Component {
                 <button
                     key="dinner"
                     type="edit"
-                    className={this.props.dinnerSelected ? "schedule_btn off" : "schedule_btn selected" }
+                    className={this.props.dinnerSelected ? "dinner_btn off" : "dinner_btn selected" }
                     onClick={this.props.toggleDinner}
                 >
                     {this.props.shiftFormat === "mobile" ? "Din" : "Dinner"}
@@ -38,21 +38,21 @@ export class WeekendShiftButton extends Component {
             <>
                 <button
                     key={"breakfast"} 
-                    className={this.props.breakfastSelected? "schedule_btn off" : "schedule_btn selected" }
+                    className={this.props.breakfastSelected ? "breakfast_btn off" : "breakfast_btn selected"}
                     onClick={this.props.toggleBreakfast}
                 >
                     {this.props.shiftFormat === "mobile" ? "Bkfst" : "Breakfast"}
                 </button>
                 <button 
                         key={"brunch"}
-                        className={this.props.brunchSelected? "schedule_btn off" : "schedule_btn selected" }
+                        className={this.props.brunchSelected ? "brunch_btn off" : "brunch_btn selected" }
                         onClick={this.props.toggleBrunch}
                 >
                     {this.props.shiftFormat === "mobile" ? "Brun" : "Brunch"}
                 </button>
                 <button 
                         key={"dinner"}
-                        className={this.props.dinnerSelected? "schedule_btn off" : "schedule_btn selected" }
+                        className={this.props.dinnerSelected ? "dinner_btn off" : "dinner_btn selected" }
                         onClick={this.props.toggleDinner}
                 >
                     {this.props.shiftFormat === "mobile" ? "Din" : "Dinner"}
