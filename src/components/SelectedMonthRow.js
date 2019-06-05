@@ -7,7 +7,7 @@ import moment from 'moment';
     return (
         <>
             <div className={props.className}>
-                <div className="month-selected">{moment(`${year}`).add(`${props.selectedWeek}`, 'weeks').format("MMMM YYYY").toUpperCase()}</div>
+                <div className={props.selectedMonthClass}>{moment(`${year}`).add(`${props.selectedWeek}`, 'weeks').format("MMMM YYYY").toUpperCase()}</div>
             </div>
         </>
     )
