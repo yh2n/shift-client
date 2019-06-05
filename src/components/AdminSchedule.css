@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 150px;
   background: rgba(24, 30, 64, 25);
+  height: 100%;
 }
 
 .admin_schedule_container {
@@ -28,6 +28,7 @@
   color: #112138;
   border-bottom: 1px solid rgba(38, 165, 106, 65);
 }
+
 .admin_schedule_position, .admin_schedule_days  {
   border-bottom: .5px solid rgba(38, 165, 106, 65);
   border-top: 1px solid rgba(38, 165, 106, 65);
@@ -71,33 +72,57 @@
 }
 
 .month_row-selected {
-  border: solid green;
+  margin-bottom: 40px;
 }
 
-.month-selected {
-  background: white;
-  color: green;
-  
+.admin_current_month-container {
+  margin: 150px 0 40px 0;
 }
 
-/* modal */
+.admin_current_month, .admin_selected_month {
+  font-size: 40px;
+  color: white;
+}
+
+/* selected week */
+
+.admin_schedule_select {
+  background:rgba(24, 30, 64, 0.1);
+}
+
 .admin_schedule_btns {
-  color: black;
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-row-gap: 1px;
 }
 
 .schedule_btn {
-  background: #129482;
+  background: red;
+}
+
+.breakfast_btn {
+  background: rgba(216, 73, 73, 85);
+}
+
+.lunch_btn {
+  background: rgba(38, 165, 106, 65);
+}
+
+.brunch_btn {
+  background: rgba(242, 201, 79, 95);
+}
+
+.dinner_btn {
+  background: rgba(93, 135, 191, 75);
 }
 
 .selected {
   opacity: 1;
-  color: #D2F7F3;
+  color: white;
 }
 
 .off {
+  /* color: white; */
   opacity: 0.2
 }
 .hidden {
@@ -106,13 +131,6 @@
 
 .displayed {
   display: inline-block;
-}
-
-.admin_current_month {
-  font-size: 40px;
-  margin-bottom: 40px;
-  margin-left: 30px;
-  color: #112138;
 }
 
 .admin_year {

@@ -453,6 +453,7 @@ export class Schedule extends Component {
                         </div>
                         <SelectedMonthRow 
                             className="month_row-selected"
+                            selectedMonthClass="user_selected_month"
                             selectedWeek={this.state.selectedWeek}
                         />
                     </div>

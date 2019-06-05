@@ -401,8 +401,11 @@ export class Schedule extends Component {
                     />
                 </div>
                 <div className="admin_schedule_page">
-                    <div className="admin_current_month">
-                        <MonthRow className="month-current"/>
+                    <div className="admin_current_month-container">
+                        <MonthRow 
+                            className="month-current"
+                            monthClass="admin_current_month"
+                        />
                     </div>
                     <div className="admin_schedule_container">
                         <CurrentWeekDayRow week={this.state.currentWeek}/>
@@ -454,7 +457,7 @@ export class Schedule extends Component {
                     <div className="selected_month">
                         <div className="select_save">
                             <ScheduleSelect
-                                className="schedule-select" 
+                                className="admin_schedule_select" 
                                 value={this.state.selectedWeek} 
                                 onChange={this.handleScheduleSelection}
                             />
@@ -462,6 +465,7 @@ export class Schedule extends Component {
                         </div>
                         <SelectedMonthRow 
                             className="month_row-selected"
+                            selectedMonthClass="admin_selected_month"
                             selectedWeek={this.state.selectedWeek}
                         />
                     </div>
