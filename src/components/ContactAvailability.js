@@ -136,7 +136,7 @@ export default class ContactAvailability extends Component {
                     dinnerToggled={!this.state.availability.Su_dinner}
                 />
                 </div>
-                <Link to={`/my_account/${username}/contacts`} style={{ textDecoration: 'none' }}>
+                <Link to={this.props.linkTo} style={{ textDecoration: 'none' }}>
                     <button className="contact_redirect_btn">Back to Contacts</button>
                 </Link>
             </div>

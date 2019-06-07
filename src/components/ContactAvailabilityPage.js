@@ -19,6 +19,7 @@ export default class ContactAvailabilityPage extends Component {
     }
     
     render() {
+        let username = localStorage.getItem('username')
         return (
             <div className="contact_availability_page">
                 <AccountNav onClick={this.toggleModal}/>
@@ -26,7 +27,10 @@ export default class ContactAvailabilityPage extends Component {
 					show={this.state.isOpen}
                     onClose={this.toggleModal}
 				/>
-                <ContactAvailability {...this.props} />
+                <ContactAvailability 
+                    {...this.props} 
+                    linkTo={`/my_account/${username}/contacts`}
+                />
             </div>
         )
     }
