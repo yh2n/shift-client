@@ -455,13 +455,16 @@ export class Schedule extends Component {
                         {busserRow}
                     </div>
                     <div className="selected_month">
-                        <div className="select_save">
+                        <div className="admin_select_save">
                             <ScheduleSelect
                                 className="admin_schedule_select" 
                                 value={this.state.selectedWeek} 
                                 onChange={this.handleScheduleSelection}
                             />
-                            <button onClick={this.incrementCount}>Save</button>
+                            <button 
+                                onClick={this.incrementCount}
+                                className="admin_schedule_save"
+                                >Save</button>
                         </div>
                         <SelectedMonthRow 
                             className="month_row-selected"
