@@ -408,7 +408,8 @@ export class Schedule extends Component {
                 </div>
                 <div className="schedule_page">
                     <div className="user_current_month">
-                        <MonthRow className="month-current"/>
+                        <MonthRow 
+                        className="month-current"/>
                         <button 
                             className={this.state.isUpdating ? "user_current_schedule_update_button updating" : "user_current_schedule_update_button updated"}
                             onClick={this.incrementCount}
@@ -443,7 +444,7 @@ export class Schedule extends Component {
                             <PositionRow positionClass="user_schedule_position" positonRowClass="user_schedule_days" key="schedule_bussers" position="Bussers"/>
                             {busserRow}
                     </div>
-                    <div className="user_selected_month">
+                    <div className="selected_month">
                         <div className="select_save">
                             <ScheduleSelect
                                 className="schedule-select" 
@@ -452,7 +453,7 @@ export class Schedule extends Component {
                             />
                         </div>
                         <SelectedMonthRow 
-                            className="month_row-selected"
+                            className="user_month_row-selected"
                             selectedMonthClass="user_selected_month"
                             selectedWeek={this.state.selectedWeek}
                         />

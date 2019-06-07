@@ -63,10 +63,26 @@
 }
 
 .select_save {
-  display: flex;
   margin: 100px 0 20px 0;
 } 
 
+.MuiInputBase-input {
+  background: rgba(242, 201, 79, 0.2);
+}
+
+.MuiInputBase-root.MuiInput-root.MuiInput-underline {
+  background: rgba(242, 201, 79, 0.2);
+  border-radius: 3px;
+  padding: 10px;
+}
+
+.MuiInputBase-root.Mui-selected {
+  color: red;
+}
+
+.Mui-focused.schedule_select {
+  background: rgba(242, 201, 79, 0.2);
+}
 .user_current_month {
   display: flex;
   flex-direction: column;
@@ -90,23 +106,19 @@
   background: rgba(242, 201, 79, 0.2);
 }
 
+.user_month_row-selected {
+    margin-bottom: 40px;
+}
+
 .user_selected_month {
-  display: flex;  
-  flex-direction: column;
-  align-items: center;
-  width: 80%;
+  font-size: 40px;
   max-width: 1200px;
+  color: #112138;
 }
 
 .month-current {
   font-size: 40px;
   margin-bottom: 10px;
-  color: #112138;
-}
-
-.user_selected_month {
-  font-size: 40px;
-  margin: 0px 10px 40px 0px;
   color: #112138;
 }
 
@@ -129,25 +141,25 @@
 }
 
 @media only screen and (max-width: 1200px) {
-  .user_schedule_container, .user_selected_month {
+  .user_schedule_container, .selected_month {
     width: 85%;
   }
 }
 
 @media only screen and (max-width: 1100px) {
-  .user_schedule_container, .user_selected_month {
+  .user_schedule_container, .selected_month {
     width: 90%;
   }
 }
 
 @media only screen and (max-width: 1000px) {
-  .user_schedule_container, .user_selected_month {
+  .user_schedule_container, .selected_month {
     width: 95%;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .user_schedule_container, .user_selected_month {
+  .user_schedule_container, .selected_month {
     width: 95%;
   }
 
@@ -155,7 +167,7 @@
     font-size: 14px;
   }
 
-  .month-current, .month-selected {
+  .month-current, .user_selected_month {
     font-size: 30px;
   }
 }
@@ -164,7 +176,7 @@
     font-size: 12px;
   }
 
-  .month-current, .month-selected {
+  .month-current, .user_selected_month {
     font-size: 25px;
   }
   .user_schedule_position {

@@ -7,7 +7,7 @@ import './ScheduleSelect.css';
 
  
 
-const ScheduleSelect = (props) => {
+const ScheduleSelect = props => {
     return (
         <Select 
             value={props.value} 
