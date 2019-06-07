@@ -63,9 +63,6 @@ export default class ContactAvailability extends Component {
 
 
     loadAvailability() {
-        this.setState({
-            loading: true
-        });
         let id = this.props.match.params.id
         console.log(this.props.match);
         return fetch(`${API_BASE_URL}/employee/${id}/availability`)
@@ -77,19 +74,16 @@ export default class ContactAvailability extends Component {
             })
             .then(availability => {
                 console.log(availability)
-                this.setState({
-                    availability
-                })
+                this.setState({ availability })
             })
             .catch(err => {
                 this.setState({
                     error: 'Could not load availability list'
                 })
+                console.log(`_____________${err}`)
             })
         }
     render() {
-        let username = localStorage.getItem("username");
-
         return (
             <div className="contact_availability_container">
                 <div className="contact_availability">
