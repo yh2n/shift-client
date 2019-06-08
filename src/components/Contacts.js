@@ -32,7 +32,7 @@ export class Contacts extends Component {
 
     render() {
         return (
-			<div className="contact_page">
+			<div className="page" >
 				<div>
 					<AccountNav onClick={this.toggleModal}/>
 					<UserMenuModal
@@ -40,12 +40,14 @@ export class Contacts extends Component {
 						onClose={this.toggleModal}
 					/>
 				</div>
+				<div className="contact_page">
 				<div className="contact_list_container">
 					<ContactLabels />
 					<ContactRow className="contacts"/>
 				</div>
 				<div className="contact_list_container-mobile">
 					<ContactRowMobile className="contacts"/>
+				</div>
 				</div>
             </div>
         )

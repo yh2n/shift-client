@@ -1,8 +1,11 @@
 .contact_page {
 	display: flex;
-	height: 100%;
-	background: rgba(38, 165, 106, .1);
 }
+
+.page {
+	background: rgba(38, 165, 106, .1);
+	height: 100%;
+ }
 
 .contact_list_container {
 	display: flex;
@@ -12,7 +15,7 @@
 	margin: 250px auto 50px auto;
 	border-radius: 4px;
 	font-size: 20px;
-	height: 100vh;
+	/* height: 100vh; */
 }
 
 .contact_row, .contact_labels {
