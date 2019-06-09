@@ -80,6 +80,10 @@
   color: red;
 }
 
+.user_select_options {
+  background: red;
+}
+
 .Mui-focused.schedule_select {
   background: rgba(242, 201, 79, 0.2);
 }

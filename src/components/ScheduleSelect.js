@@ -7,7 +7,7 @@ import './ScheduleSelect.css';
 
  
 
-const ScheduleSelect = (props) => {
+const ScheduleSelect = props => {
     return (
         <Select 
             value={props.value} 
@@ -15,7 +15,7 @@ const ScheduleSelect = (props) => {
             native={true}
             className={props.className}
         >
-            <ScheduleSelectOptions />
+            <ScheduleSelectOptions className={props.optionClass} />
         </Select>
         )
 }

@@ -460,6 +460,7 @@ export class Schedule extends Component {
                                 className="admin_schedule_select" 
                                 value={this.state.selectedWeek} 
                                 onChange={this.handleScheduleSelection}
+                                optionClass="admin_select_options"
                             />
                             <button 
                                 onClick={this.incrementCount}

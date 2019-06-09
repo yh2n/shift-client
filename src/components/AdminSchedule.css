@@ -114,6 +114,10 @@
   width: 90px
 }
 
+.admin_select_options {
+  color: red;
+}
+
 .admin_schedule_btns {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
