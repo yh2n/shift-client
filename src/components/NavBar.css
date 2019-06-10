@@ -6,10 +6,12 @@
     height: 50px;
 }
 
-.redirect_button {
+.nav_redirect_button {
     height: 35px;
     width: 90px;
     margin-right: 10px;
+    color: rgba(38, 165, 106, 65);
+    font-size: 15px;
 }
 
 .logo {
