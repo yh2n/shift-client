@@ -33,6 +33,7 @@
 .account_redirect_field {
 	display: grid;
 	margin-bottom: 40px;
+	width: 250px;
 }
 
 .login_redirect {
@@ -50,37 +51,33 @@
 	border-radius: 4px;
 	margin-bottom: 8px;
 	justify-content: center;
-	width: 287.5px
 }
 
 .log_redirect {
-	background: #112138;
-	opacity: 0.2;
- 	color: #D2F7F3;
-	border: none;
+ 	color: rgba(38, 165, 106, 65);
+	border: solid white;
 	font-size: 20px;
 	font-weight: 150;
 	margin-top: 15px;
-	padding: 10px 40px 10px 40px
+	padding: 10px 37px;
 }
 
 .log_redirect:hover {
-	background: blue;;
+	border: solid #E9F2ED;
 }
 
 
 .selected_account {
-	background: #D2F7F3;
-	opacity: 1;
+	background: #E9F2ED;
+	border: solid #E9F2ED;
 	color: #13A1AB;
 }
 
 .selected_account:hover {
-	background: #D2F7F3;
 	cursor: not-allowed;
 }
 
 .redirect_button { 
-	color: rgba(38, 165, 106, 65);
 	font-size: 15px;
+	border: solid #E9F2ED;
 }
