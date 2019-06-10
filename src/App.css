@@ -23,7 +23,7 @@ input:hover {
 	cursor: text;
 }
 input {
-	background: #D2F7F3;
+	background: #E9F2ED;
 	font-weight: 150;
 	border-top: none;
 	border-right: none;
@@ -34,15 +34,14 @@ input {
 
 
 fieldset {
-	background: #D2F7F3;
+	background: #E9F2ED;
 	font-size: 25px;
 	border: none;
 	color: #112138;
 }
 
 input::placeholder {
-	/* color: #A7ADAD; */
-	background: #D2F7F3
+	background: #E9F2ED;
 }
 
 
