@@ -1,5 +1,9 @@
-/*TO DO: move login redirect to top banner*/
-
 .login-redirect {
 	text-align: center;
+}
+
+.login-redirect a {
+	color: rgba(38, 165, 106, 65);
+	background: rgba(242, 201, 79, 0.45);
+	padding: 3px;
 }
