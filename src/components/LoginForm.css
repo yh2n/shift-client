@@ -28,6 +28,7 @@
 	width: 100%;
 	padding: 15px;
 	background-color: white;
+	font-size: 20px;
 }
 
 .account_redirect_field {
@@ -48,7 +49,6 @@
 
 .acct_redirect_field {
 	display: flex;
-	border-radius: 4px;
 	margin-bottom: 8px;
 	justify-content: center;
 }
@@ -60,6 +60,14 @@
 	font-weight: 150;
 	margin-top: 15px;
 	padding: 10px 37px;
+}
+
+.log_redirect.admin {
+	border-radius: 3px 0 0 3px;
+}
+
+.log_redirect.employee {
+	border-radius: 0 3px 3px 0;
 }
 
 .log_redirect:hover {
