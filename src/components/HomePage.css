@@ -2,6 +2,11 @@
 	text-align: center;
 }
 
-.register-redirect > span {
-	color: #19D9E6;
+.register-redirect > span, a {
+	color: #13A1AB;
+}
+
+.register-redirect a {
+	background: rgba(242, 201, 79, 0.45);
+	padding: 3px;
 }
