@@ -16,17 +16,34 @@
     width: 200px;
 }
 
+.img_container {
+    width: 80px;
+    text-align: center;
+    border: solid;
+}
+
 
 @media all and (max-width: 1050px) {
     .landing_pg_icons {
         flex-direction: column;
         align-items: flex-start;
+        align-items: center;
     }
+
     .landing_pg_icons > div {
         flex-direction: row;
-        margin: 10px 5px
+        margin: 10px 5px;
+        width: 450px;
     }
+
     .landing_pg_icons > p {
         align-self: flex-end;
+    }
+
+    .img_container {
+        width: 100px;
+        text-align: center;
+        border: solid red; 
+        margin-right: 10px;
     }
 }
