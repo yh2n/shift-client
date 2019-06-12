@@ -3,16 +3,16 @@ button {
 	border-radius: 3px;
 	outline: none;
 }
+
 button:hover {
 	cursor: pointer;
 }
 
 button:disabled {
- cursor: not-allowed;
- background: #112138;
- opacity: 0.3;
- color: #D2F7F3;
- font-size: 15px;
+	cursor: not-allowed;
+	background: #112138;
+	opacity: 0.3;
+	color: #D2F7F3;
 }
 
 input:focus {
@@ -22,6 +22,7 @@ input:focus {
 input:hover {
 	cursor: text;
 }
+
 input {
 	background: #E9F2ED;
 	font-weight: 150;
@@ -42,10 +43,4 @@ fieldset {
 
 input::placeholder {
 	background: #E9F2ED;
-}
-
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
