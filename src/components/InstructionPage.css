@@ -1,0 +1,46 @@
+.instructions {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: #E9F2ED;
+}
+
+.instructions > * {
+    border-radius: 4px;
+    width: 600px;
+    margin-bottom: 15px; 
+    padding: 10px;
+	background: white;
+}
+
+ul {
+    list-style-type: square;  
+}
+
+li {
+    padding-bottom: 3px
+}
+
+.pw_instructions {
+    padding-left: 20px
+}
+
+.instructions_page_redirect {
+    border-radius: 4px;
+    background: white;
+    text-align: center;
+    font-size: 20px;
+    width: 100px;
+    padding: 10px
+}
+
+
+
+@media all and (max-width: 610px) {
+    .instructions > * {
+        width: 95%;
+        margin-bottom: 10px; 
+        padding: 10px 0;
+    }
+}
