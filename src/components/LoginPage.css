@@ -1,0 +1,12 @@
+.register-redirect, .home-about_redirect {
+	text-align: center;
+}
+
+.register-redirect > span, a {
+	color: #13A1AB;
+}
+
+.register-redirect a {
+	background: rgba(242, 201, 79, 0.45);
+	padding: 3px;
+}
