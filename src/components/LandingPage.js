@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import LandingPageIcons from './LandingPageIcons';
 import Background1 from '../images/blurred-background-calendar-cellphone-1893424.jpg';
 
@@ -14,16 +15,16 @@ export default class LandingPage extends Component {
                     <p>shift</p>
                 </div>
                 <div className="background_images">
-                    <img src={Background1} alt="" width="100%" height="100%"/>
+                    <img src={ Background1 } alt="" width="100%" height="100%"/>
                 </div>
                 <p className="landing_page_redirect-mobile">
                     shift
                 </p>
-                <div className="instructions">
-                </div>
                 <LandingPageIcons />
                 <p className="landing_page_redirect-desktop">
-                    Check the demo!
+                    <Link to='/instructions' style={{'textDecoration': 'none'}}>
+                        Check the demo!
+                    </Link>
                 </p>  
             </div>
         );
