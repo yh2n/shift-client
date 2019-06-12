@@ -22,7 +22,7 @@ export function RegistrationPage(props) {
 					to='/login'/>
 			    <RegistrationForm />
 			    <p className="login-redirect">
-				    Have an account? <Link to='/login'>Login</Link>.
+				    Have an account? <Link to='/login' style={{'textDecoration': 'none'}}>Login</Link>
 				</p>
 			</div>
 		);

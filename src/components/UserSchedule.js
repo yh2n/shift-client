@@ -448,6 +448,7 @@ export class Schedule extends Component {
                         <div className="select_save">
                             <ScheduleSelect
                                 className="schedule-select" 
+                                optionClass="user_select_options"
                                 value={this.state.selectedWeek} 
                                 onChange={this.handleScheduleSelection}
                             />

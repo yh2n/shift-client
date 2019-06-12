@@ -32,7 +32,7 @@ export class HomePage extends Component {
 				to='/registration'/>
 			<LoginForm employeeSelected={this.state.employee}/>
 			<p className="register-redirect">
-				New to <span>shift</span>? Register <Link to='/registration' component="RegistrationPage"> here </Link>.
+				New to <span>shift</span>? Register <Link to='/registration' component="RegistrationPage" style={{'textDecoration': 'none'}}> here </Link>
 			</p>
 		</div>
 		);

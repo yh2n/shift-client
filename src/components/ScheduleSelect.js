@@ -15,7 +15,7 @@ const ScheduleSelect = props => {
             native={true}
             className={props.className}
         >
-            <ScheduleSelectOptions />
+            <ScheduleSelectOptions className={props.optionClass} />
         </Select>
         )
 }
