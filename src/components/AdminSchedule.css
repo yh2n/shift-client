@@ -9,7 +9,7 @@
 .admin_schedule_container {
   display: grid;
   width: 80%;
-  border: 1px solid rgba(38, 165, 106, 65);
+  border: 1px solid grey;
   max-width: 1200px;
   grid-template-columns: auto repeat(7, 1fr);
   grid-column-gap: 1px;
@@ -24,20 +24,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #D2F7F3;
-  color: #112138;
-  border-bottom: 1px solid rgba(38, 165, 106, 65);
+  background: rgba(93, 135, 191, 0.2);
+  color:#D2F7F3;;
+  border-bottom: 1px solid grey;
 }
 
 .admin_schedule_position, .admin_schedule_days  {
-  border-bottom: .5px solid rgba(38, 165, 106, 65);
-  border-top: 1px solid rgba(38, 165, 106, 65);
+  border-bottom: .5px solid grey;
+  border-top: .5px solid grey;
   background: #112138;
-  color: #129482;
+  color: rgba(38, 165, 106, 65);
 }
 
 .admin_schedule_name {
-  border-bottom: 1px solid rgba(38, 165, 106, 65);
+  border-bottom: 1px solid grey;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,23 +81,48 @@
 
 .admin_current_month, .admin_selected_month {
   font-size: 40px;
-  color: white;
+  color: #D2F7F3;
 }
 
 /* selected week */
 
-.admin_schedule_select {
-  background:rgba(24, 30, 64, 0.1);
+.admin_select_save {
+  margin: 100px 0 20px 0;
+  display: flex;
+  align-items: center;
+  width: 250px;
+} 
+
+.admin_select_save > .MuiInputBase-root.MuiInput-root.MuiInput-underline {
+  background: rgba(24, 30, 64, 25);
+  color: #D2F7F3;
+  flex: 1;
+}
+
+.admin_select_save > .MuiSvgIcon-root.MuiSelect-icon {
+  color: #D2F7F3;
+}
+
+.admin_schedule_save {
+  width: 60px;
+  border-radius: 2px;
+  background:rgba(24, 30, 64, 24);
+  color: #D2F7F3;
+  border: .5px solid #D2F7F3;
+  font-size: 14px;
+  padding: 17px;
+  width: 90px
 }
 
 .admin_schedule_btns {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-row-gap: 1px;
+  border-bottom: solid .5px grey;
 }
 
-.schedule_btn {
-  background: red;
+.admin_schedule_btns > * {
+  border-radius: 0;
 }
 
 .breakfast_btn {
@@ -122,7 +147,7 @@
 }
 
 .off {
-  /* color: white; */
+  color: white;
   opacity: 0.2
 }
 .hidden {
@@ -141,14 +166,6 @@
 }
 .admin_day_number {
   color: #2463A1;
-}
-
-.select {
-  background: blueviolet
-}
-
-.select:active {
-  background: blueviolet
 }
 
 @media only screen and (max-width: 1200px) {

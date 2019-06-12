@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AccountNav from './AccountNav';
 import AdminMenuModal from './AdminMenuModal';
-import EmployeeRow from './EmployeeRow';
+import ContactRow from './ContactRow';
 import ContactLabels from './ContactLabels';
 import ContactRowMobile from './ContactRowMobile';
 import { fetchEmployees } from '../actions/fetch_employees';
@@ -29,7 +29,7 @@ export  class AdminAccount extends Component {
 	}
     render() {
         return (
-            <div className="staff_page">
+            <div>
 				<div>
 					<AccountNav onClick={this.toggleMenuModal}/>
 					<AdminMenuModal
@@ -37,12 +37,17 @@ export  class AdminAccount extends Component {
 						onClose={this.toggleMenuModal}
 					/>
 				</div>
-				<div className="staff_member_container">
-					<ContactLabels />
-					<EmployeeRow />
-				</div>
-				<div className="contact_list_container-mobile">
-					<ContactRowMobile className="contacts"/>
+				<div className="contact_page">
+					<div className="contact_list_container">
+						<ContactLabels />
+						<ContactRow 
+							className="contacts"
+							linkTo={'employee-availability'}
+						/>
+					</div>
+					<div className="contact_list_container-mobile">
+						<ContactRowMobile className="contacts"/>
+					</div>
 				</div>
         	</div>
         )

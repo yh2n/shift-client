@@ -6,7 +6,6 @@ import { fetchEmployees } from '../actions/fetch_employees';
 import './Contacts.css'
 
 
-
 export class ContactRow extends Component {
 	componentDidMount() {
 		this.props.dispatch(fetchEmployees())
@@ -21,7 +20,7 @@ export class ContactRow extends Component {
 					<div className="contact_list">{employee.phone_number}</div>
 					<div className="contact_list">{employee.email_address}</div>
 					<div className="contact_list">{employee.position}</div>
-					<Link to={`./contact-availability/${employee.id}`} style={{ textDecoration: 'none' }}>
+					<Link to={`./${this.props.linkTo}/${employee.id}`} style={{ textDecoration: 'none' }}>
 						<div className="contact_list availability_redirect">View</div>
 					</Link>
 				</div>

@@ -107,13 +107,16 @@
 }
 
 .user_month_row-selected {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
+}
+.user_selected_month {
+  max-width: 1200px;
 }
 
 .user_selected_month {
   font-size: 40px;
-  max-width: 1200px;
   color: #112138;
+  margin-bottom: 10px;
 }
 
 .month-current {
@@ -129,13 +132,13 @@
 }
 
 .green {
-  color: rgb(33, 206, 33);
+  color: rgba(38, 165, 106, 65);
   font-weight: bold;
   font-size: 18px;
 }
 
 .red {
-  color: red;
+  color: rgba(216, 73, 73, 85);
   font-weight: bold;
   font-size: 18px;
 }

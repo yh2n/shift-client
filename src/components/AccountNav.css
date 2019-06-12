@@ -25,12 +25,12 @@
     width: 100px;
     height: 35px;
     margin: 0px 12px 0px 30px;
-    color: red;
-    font-size: 12px
+    color: rgba(216, 73, 73, 85);
+    font-size: 14px
 }
 
 .nav_user_name {
-    color: #D84949;
+    color: rgba(216, 73, 73, 85);
 }
 
 .nav_date {

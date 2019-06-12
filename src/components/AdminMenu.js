@@ -34,14 +34,15 @@ export default class AdminMenu extends Component {
                             <i className="material-icons">group</i> Staff 
                         </button>
                     </Link>
-                    <Link to='/admin/register_employee' style={{ textDecoration: 'none' }}>
-                    <button 
-                        className="menu_modal_employee_redirect"
-                        type="button"
-                    >
-                        <i className="material-icons">group_add</i> New hire
-                    </button>
-                    </Link>
+                    {/* -----------TODO--------- */}
+                    {/* <Link to='/admin/register_employee' style={{ textDecoration: 'none' }}>
+                        <button 
+                            className="menu_modal_employee_redirect"
+                            type="button"
+                        >
+                            <i className="material-icons">group_add</i> New hire
+                        </button>
+                    </Link> */}
                 </div>
             </div>
         </div>

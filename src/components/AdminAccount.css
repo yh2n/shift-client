@@ -1,5 +1,11 @@
+.staff_page {
+	display: flex;
+	background: rgba(38, 165, 106, .1);
+	height: 100%;
+}
+
 .staff_member_container {
-	display: grid;
+	/* display: grid;
 	grid-template-columns: repeat(5, 1fr);
 	grid-row-gap: 5px;
 	width: 75%;
@@ -7,7 +13,15 @@
 	border-radius: 4px;
 	padding: 8px;
 	font-size: 20px;
-	background: #D2F7F3;
+	background: #D2F7F3; */
+	display: flex;
+	flex-direction: column;
+	width: 75%;
+	max-width: 1200px;
+	margin: 250px auto;
+	border-radius: 4px;
+	font-size: 20px;
+	height: auto;
 }
 
 .employee_contact_list {
@@ -33,11 +47,9 @@
 	font-size: 20px;
 }
 
-
 .contact_list {
 	border-bottom: solid white;
 	text-align: left;
-	/* padding: 3px */
 	height: 30px;
 	padding-left: 8px
 }

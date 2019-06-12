@@ -1,5 +1,7 @@
 .contact_page {
 	display: flex;
+	background: rgba(38, 165, 106, .1);
+	height: 100%;
 }
 
 .page {
@@ -12,10 +14,10 @@
 	flex-direction: column;
 	width: 75%;
 	max-width: 1200px;
-	margin: 250px auto 50px auto;
+	margin: 250px auto;
 	border-radius: 4px;
 	font-size: 20px;
-	/* height: 100vh; */
+	height: auto;
 }
 
 .contact_row, .contact_labels {

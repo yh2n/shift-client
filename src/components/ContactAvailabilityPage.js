@@ -7,18 +7,15 @@ export default class ContactAvailabilityPage extends Component {
     constructor(props) {
 		super(props);
 
-		this.state = {
-			isOpen : false,
-		}
+		this.state = { isOpen : false }
     }	
     
     toggleModal = () => {
-		this.setState({
-			isOpen: !this.state.isOpen
-		});
+		this.setState({ isOpen: !this.state.isOpen })
     }
     
     render() {
+        let username = localStorage.getItem('username')
         return (
             <div className="contact_availability_page">
                 <AccountNav onClick={this.toggleModal}/>
@@ -26,7 +23,10 @@ export default class ContactAvailabilityPage extends Component {
 					show={this.state.isOpen}
                     onClose={this.toggleModal}
 				/>
-                <ContactAvailability {...this.props} />
+                <ContactAvailability 
+                    {...this.props} 
+                    linkTo={`/my_account/${username}/contacts`}
+                />
             </div>
         )
     }
