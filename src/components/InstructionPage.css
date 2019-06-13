@@ -1,9 +1,13 @@
+.instruction_page {
+    background: #E9F2ED;
+}
+
 .instructions {
     display: flex;
-    height: 100vh;
+    height: 96vh;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
-    background: #E9F2ED;
 }
 
 .instructions > * {
@@ -33,10 +37,9 @@ li {
 
 .instructions_page_redirect {
     border-radius: 4px;
-    background: white;
+    background: #E9F2ED;
     text-align: center;
-    font-size: 20px;
-    width: 100px;
+    font-size: 15px;
     padding: 10px
 }
 
