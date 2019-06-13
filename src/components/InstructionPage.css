@@ -1,13 +1,16 @@
 .instruction_page {
     background: #E9F2ED;
+    display: flex;
+    flex-direction: column;
+    height: 100vh
 }
 
 .instructions {
     display: flex;
-    height: 96vh;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    flex: 1;
 }
 
 .instructions > * {
