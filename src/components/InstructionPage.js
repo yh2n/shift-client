@@ -17,6 +17,7 @@ export class InstructionPage extends Component {
             return  <li key={ user.username }>{ user.username }</li> 
         })
         return (
+            <div className="instruction_page">
             <div className="instructions">
                 <div className="admin_instructions_div">
                     <ul>
@@ -44,10 +45,10 @@ export class InstructionPage extends Component {
                 <div >
                     <li className="pw_instructions" style={{'listStyle': 'none'}}>Use 'password' for all employees and admin</li>
                 </div>
+            </div>
                 <p className="instructions_page_redirect">
                     <Link to='/login' style={{'textDecoration': 'none'}}>
-                        Login
-                    </Link>
+                        Login | </Link><Link to='/' style={{'textDecoration': 'none'}}>Home </Link>
                 </p>  
             </div>
         )
