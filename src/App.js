@@ -12,9 +12,10 @@ import AvailabilityPage from './components/AvailabilityPage';
 import Contacts from './components/Contacts';
 import ContactAvailabilityPage from './components/ContactAvailabilityPage';
 import EmployeeAvailabilityPage from './components/EmployeeAvailabilityPage';
-import HomePage from './components/HomePage';
+import InstructionPage from './components/InstructionPage';
 import NotFound from './components/NotFound';
 import LandingPage from './components/LandingPage';
+import LoginPage from './components/LoginPage';
 import RegistrationPage from './components/RegistrationPage';
 import RegisterEmployee from './components/RegisterEmployee';
 import UserAccount from './components/UserAccount';
@@ -41,10 +42,11 @@ class App extends Component {
             <div className="app">
               <Switch>
                 <Route exact path="/" component={LandingPage} />
-                <Route exact path="/login" component={HomePage} />
+                <Route exact path="/instructions" component={InstructionPage} />
                 <Route exact path="/admin/login" component={AdminLogin} />
                 <Route exact path="/verification" component={AuthenticationPage} />
                 <Route exact path="/registration" component={RegistrationPage} />
+                <Route exact path="/login" component={LoginPage} />
                 <Route exact path="/admin/registration" component={AdminRegistrationPage} />
                 <Route exact path="/my_account/:username" component={UserAccount} />
                 <Route exact path="/my_account/:username/profile" component={UserAccount} />

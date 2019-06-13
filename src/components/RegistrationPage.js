@@ -24,6 +24,9 @@ export function RegistrationPage(props) {
 			    <p className="login-redirect">
 				    Have an account? <Link to='/login' style={{'textDecoration': 'none'}}>Login</Link>
 				</p>
+				<p className="home-about_redirect">
+					<Link to='/' style={{'textDecoration': 'none'}}> Home </Link> | <Link to='/instructions' style={{'textDecoration': 'none'}}> About </Link>
+				</p>
 			</div>
 		);
 	}

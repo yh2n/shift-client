@@ -4,7 +4,7 @@ import NavBar from './NavBar';
 import LoginForm from './LoginForm';
 import { Link, Redirect } from 'react-router-dom';
 
-import './HomePage.css';
+import './LoginPage.css';
 
 
 export class HomePage extends Component {
@@ -32,7 +32,11 @@ export class HomePage extends Component {
 				to='/registration'/>
 			<LoginForm employeeSelected={this.state.employee}/>
 			<p className="register-redirect">
-				New to <span>shift</span>? Register <Link to='/registration' component="RegistrationPage" style={{'textDecoration': 'none'}}> here </Link>
+				New to <span>shift</span>? Register 
+				<Link to='/registration' style={{'textDecoration': 'none'}}> here </Link>
+			</p>
+			<p className="home-about_redirect">
+				<Link to='/' style={{'textDecoration': 'none'}}> Home </Link> | <Link to='/instructions' style={{'textDecoration': 'none'}}> About </Link>
 			</p>
 		</div>
 		);

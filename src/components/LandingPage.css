@@ -3,18 +3,38 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     font-family: 'Quattrocento Sans', sans-serif;
-	background: #E9F2ED;
+}
+
+.header {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 700;
+    color: #181E3F;
+    position: fixed;
+    border-radius: 3px;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background: #E9F2ED;
+    
+}
+
+.header > p {
+    padding-left: 10px;
 }
 
 .background_images {
     max-width: 1280px;
     max-height: 827px;
     width: 98%;
-    margin-bottom: 120px;
-    border: solid;
+    margin: 100px 0 60px 0;
+    animation-name: carousel;
+    animation-duration: 2s;
 }
 
 .background_images img {
@@ -24,5 +44,24 @@
 .instructions {
     display: flex;
     flex-direction: column;
+}
 
+@media all and (max-width: 414px) {
+    .header {
+        display: none;
+    }
+    
+    .landing_page_redirect-desktop {
+        display: none;
+    }
+
+    .background_images {
+        margin: 10px;
+    }
+}
+
+@media all and (min-width: 414px) {
+    .landing_page_redirect-mobile {
+        display: none;
+    }
 }
