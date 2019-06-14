@@ -24,8 +24,8 @@ export default class LandingPage extends Component {
                 </div>
                 <p className="intro_container_redirect-desktop">
                     <Link to='/instructions' style={{'textDecoration': 'none'}}>
-                        Demo | <Link to='/login' style={{'textDecoration': 'none'}}>Login</Link>
-                    </Link>
+                        Demo | </Link><Link to='/login' style={{'textDecoration': 'none'}}>Login</Link>
+                    
                 </p>  
             </div>
         );
