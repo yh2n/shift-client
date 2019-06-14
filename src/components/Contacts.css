@@ -1,13 +1,11 @@
-.contact_page {
-	display: flex;
-	background: rgba(38, 165, 106, .1);
-	height: 100%;
+.background-color {
+    background: #E9F2ED;
 }
 
-.page {
-	background: rgba(38, 165, 106, .1);
+.contact_page {
+	display: flex;
 	height: 100%;
- }
+}
 
 .contact_list_container {
 	display: flex;
