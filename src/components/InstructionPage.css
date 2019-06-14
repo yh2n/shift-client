@@ -1,10 +1,12 @@
 .instruction_page {
-    background: #E9F2ED;
     display: flex;
     flex-direction: column;
     height: 100vh
 }
 
+.background-color {
+    background: #E9F2ED;
+}
 .instructions {
     display: flex;
     align-items: center;

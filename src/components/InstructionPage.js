@@ -8,7 +8,12 @@ import './InstructionPage.css';
 
 export class InstructionPage extends Component {
     componentDidMount() {
-		this.props.dispatch(fetchEmployees())
+        this.props.dispatch(fetchEmployees())
+        document.body.classList.add("background-color");
+    }
+
+    componentWillUnmount() {
+        document.body.classList.remove("background-color");
     }
     
     render() {
