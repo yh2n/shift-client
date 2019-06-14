@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     font-family: 'Quattrocento Sans', sans-serif;
 }
@@ -21,7 +21,6 @@
     width: 100%;
     height: 50px;
     background: #E9F2ED;
-    
 }
 
 .header > p {
@@ -32,7 +31,7 @@
     max-width: 1280px;
     max-height: 827px;
     width: 98%;
-    margin: 50px 0 60px 0;
+    margin: 100px 0 60px 0;
     animation-name: carousel;
     animation-duration: 2s;
 }
@@ -41,10 +40,6 @@
     width: 100%;
 }
 
-.instructions {
-    display: flex;
-    flex-direction: column;
-}
 
 @media all and (max-width: 414px) {
     .header {

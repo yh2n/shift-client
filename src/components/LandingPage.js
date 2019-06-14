@@ -10,22 +10,24 @@ export default class LandingPage extends Component {
     state = {  }
     render() {
         return (
-            <div className="landing_page">
-                <div className="header">
-                    <p>shift</p>
+            <div>
+                <div className="landing_page">
+                    <div className="header">
+                        <p>shift</p>
+                    </div>
+                    <div className="background_images">
+                        <img src={ Background1 } alt="" width="100%" height="100%"/>
+                    </div>
+                    <p className="landing_page_redirect-mobile">
+                        shift
+                    </p>
+                    <LandingPageIcons />
+                    <p className="landing_page_redirect-desktop">
+                        <Link to='/instructions' style={{'textDecoration': 'none'}}>
+                            Check the demo!
+                        </Link>
+                    </p>  
                 </div>
-                <div className="background_images">
-                    <img src={ Background1 } alt="" width="100%" height="100%"/>
-                </div>
-                <p className="landing_page_redirect-mobile">
-                    shift
-                </p>
-                <LandingPageIcons />
-                <p className="landing_page_redirect-desktop">
-                    <Link to='/instructions' style={{'textDecoration': 'none'}}>
-                        Check the demo!
-                    </Link>
-                </p>  
             </div>
         );
     }
