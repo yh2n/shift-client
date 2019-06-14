@@ -1,9 +1,17 @@
 .landing_page {
     display: flex;
+    height: 100vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
+}
+
+.intro_container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
     font-family: 'Quattrocento Sans', sans-serif;
 }
@@ -46,7 +54,7 @@
         display: none;
     }
     
-    .landing_page_redirect-desktop {
+    .intro_container_redirect-desktop {
         display: none;
     }
 
@@ -56,7 +64,7 @@
 }
 
 @media all and (min-width: 414px) {
-    .landing_page_redirect-mobile {
+    .intro_container_redirect-mobile {
         display: none;
     }
 }
