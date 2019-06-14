@@ -1,10 +1,12 @@
 .instruction_page {
-    background: #E9F2ED;
     display: flex;
     flex-direction: column;
     height: 100vh
 }
 
+.background-color {
+    background: #E9F2ED;
+}
 .instructions {
     display: flex;
     align-items: center;
@@ -20,6 +22,10 @@
     padding: 10px;
     background: white;
 	color: #112138;
+}
+
+.admin_instructions_div {
+    margin-top: 50px;
 }
 
 ul {

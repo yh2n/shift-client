@@ -4,6 +4,11 @@
 	height: 100%;
 }
 
+.page {
+	background: rgba(38, 165, 106, .1);
+	height: 100%;
+ }
+
 .contact_list_container {
 	display: flex;
 	flex-direction: column;

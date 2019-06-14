@@ -87,7 +87,6 @@
 .Mui-focused.schedule_select {
   background: rgba(242, 201, 79, 0.2);
 }
-
 .user_current_month {
   display: flex;
   flex-direction: column;
@@ -118,15 +117,15 @@
   max-width: 1200px;
 }
 
-.month-current {
+.user_selected_month {
   font-size: 40px;
   color: #112138;
   margin-bottom: 10px;
 }
 
-.user_selected_month {
+.month-current {
   font-size: 40px;
-  margin: 0px 10px 40px 0px;
+  margin-bottom: 10px;
   color: #112138;
 }
 
@@ -175,7 +174,7 @@
     font-size: 14px;
   }
 
-  .month-current, .month-selected {
+  .month-current, .user_selected_month {
     font-size: 30px;
   }
 }
@@ -184,7 +183,7 @@
     font-size: 12px;
   }
 
-  .month-current, .month-selected {
+  .month-current, .user_selected_month {
     font-size: 25px;
   }
   .user_schedule_position {

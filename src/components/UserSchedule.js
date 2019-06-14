@@ -408,7 +408,8 @@ export class Schedule extends Component {
                 </div>
                 <div className="schedule_page">
                     <div className="user_current_month">
-                        <MonthRow className="month-current"/>
+                        <MonthRow 
+                        className="month-current"/>
                         <button 
                             className={this.state.isUpdating ? "user_current_schedule_update_button updating" : "user_current_schedule_update_button updated"}
                             onClick={this.incrementCount}
