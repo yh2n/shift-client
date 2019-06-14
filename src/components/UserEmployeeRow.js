@@ -269,8 +269,8 @@ export class UserEmployeeRow extends Component {
                         {this.state.schedule.Sa_breakfast && this.props.shiftFormat === "desktop" ? "Breakfast" : ""}
                     </div>
                     <div 
-                        key="Sa_lu"
-                        className={this.state.schedule.Sa_lunch_need_cover ? "red" : ""}
+                        key="Sa_bru"
+                        className={this.state.schedule.Sa_brunch_need_cover ? "red" : ""}
                         onClick={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Sa_brunch_need_cover:!prevState.schedule.Sa_brunch_need_cover}}})}
                         >
                         {this.state.schedule.Sa_brunch && this.props.shiftFormat === "mobile" ? "Brun" : ""}
@@ -304,7 +304,7 @@ export class UserEmployeeRow extends Component {
                         {this.state.schedule.Su_breakfast && this.props.shiftFormat === "desktop" ? "Breakfast" : ""}
                     </div>
                     <div 
-                        key="Su_lu"
+                        key="Su_bru"
                         className={this.state.schedule.Su_brunch_need_cover ? "red" : ""}
                         onClick={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Su_brunch_need_cover:!prevState.schedule.Su_brunch_need_cover}}})}
                         >

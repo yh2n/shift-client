@@ -81,7 +81,7 @@ export class Schedule extends Component {
                             className={barback.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={
                                 <Link to ={`/admin/employee/${barback.id}`} 
-                                    style={{textDecoration:'none', color:' #129482'}}>
+                                    style={{textDecoration:'none', color:' #E9F2ED '}}>
                                     {barback.firstName}
                                 </Link>
                                 }
@@ -99,7 +99,7 @@ export class Schedule extends Component {
                             key={`${barback.id}_selected`}
                             name={
                                 <Link to ={`/admin/employee/${barback.id}`} 
-                                    style={{textDecoration:'none', color:' #129482'}}>
+                                    style={{textDecoration:'none', color:' #E9F2ED '}}>
                                     {barback.firstName}
                                 </Link>
                                 }
@@ -119,7 +119,12 @@ export class Schedule extends Component {
                         <AdminEmployeeRow
                             key={bartender.id}
                             className={bartender.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
-                            name={bartender.firstName}
+                            name={
+                                <Link to ={`/admin/employee/${bartender.id}`} 
+                                    style={{textDecoration:'none', color:' #E9F2ED '}}>
+                                    {bartender.firstName}
+                                </Link>
+                                }
                             id={bartender.id}
                             shiftFormat={this.state.shiftFormat}
                             schedule={bartender.schedule}
@@ -133,7 +138,12 @@ export class Schedule extends Component {
                         <AdminEmployeeRowSelected
                             key={`${bartender.id}_selected`}
                             className={bartender.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
-                            name={bartender.firstName}
+                            name={
+                                <Link to ={`/admin/employee/${bartender.id}`} 
+                                    style={{textDecoration:'none', color:' #E9F2ED '}}>
+                                    {bartender.firstName}
+                                </Link>
+                                }
                             id={bartender.id}
                             shiftFormat={this.state.shiftFormat}
                             selectedWeek={this.state.selectedWeek}
@@ -150,7 +160,12 @@ export class Schedule extends Component {
                         <AdminEmployeeRow
                             key={busser.id}
                             className={busser.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
-                            name={busser.firstName}
+                            name={
+                                <Link to ={`/admin/employee/${busser.id}`} 
+                                    style={{textDecoration:'none', color:' #E9F2ED '}}>
+                                    {busser.firstName}
+                                </Link>
+                                }
                             id={busser.id}
                             shiftFormat={this.state.shiftFormat}
                             schedule={busser.schedule}
@@ -164,7 +179,12 @@ export class Schedule extends Component {
                         <AdminEmployeeRowSelected
                             key={`${busser.id}_selected`}
                             className={busser.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
-                            name={busser.firstName}
+                            name={
+                                <Link to ={`/admin/employee/${busser.id}`} 
+                                    style={{textDecoration:'none', color:' #E9F2ED '}}>
+                                    {busser.firstName}
+                                </Link>
+                                }
                             id={busser.id}
                             shiftFormat={this.state.shiftFormat}
                             selectedWeek={this.state.selectedWeek}
@@ -181,7 +201,12 @@ export class Schedule extends Component {
                         <AdminEmployeeRow
                             key={captain.id}
                             className={captain.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
-                            name={captain.firstName}
+                            name={
+                                <Link to ={`/admin/employee/${captain.id}`} 
+                                    style={{textDecoration:'none', color:' #E9F2ED '}}>
+                                    {captain.firstName}
+                                </Link>
+                                }
                             id={captain.id}
                             shiftFormat={this.state.shiftFormat}
                             schedule={captain.schedule}
@@ -195,7 +220,12 @@ export class Schedule extends Component {
                         <AdminEmployeeRowSelected
                             key={`${captain.id}_selected`}
                             className={captain.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
-                            name={captain.firstName}
+                            name={
+                                <Link to ={`/admin/employee/${captain.id}`} 
+                                    style={{textDecoration:'none', color:' #E9F2ED '}}>
+                                    {captain.firstName}
+                                </Link>
+                                }
                             id={captain.id}
                             shiftFormat={this.state.shiftFormat}
                             selectedWeek={this.state.selectedWeek}
@@ -212,7 +242,12 @@ export class Schedule extends Component {
                         <AdminEmployeeRow
                             key={host.id}
                             className={host.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
-                            name={host.firstName}
+                            name={
+                                <Link to ={`/admin/employee/${host.id}`} 
+                                    style={{textDecoration:'none', color:' #E9F2ED '}}>
+                                    {host.firstName}
+                                </Link>
+                                }
                             id={host.id}
                             shiftFormat={this.state.shiftFormat}
                             schedule={host.schedule}
@@ -226,7 +261,12 @@ export class Schedule extends Component {
                         <AdminEmployeeRowSelected
                             key={`${host.id}_selected`}
                             className={host.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
-                            name={host.firstName}
+                            name={
+                                <Link to ={`/admin/employee/${host.id}`} 
+                                    style={{textDecoration:'none', color:' #E9F2ED '}}>
+                                    {host.firstName}
+                                </Link>
+                                }
                             id={host.id}
                             selectedWeek={this.state.selectedWeek}
                             shiftFormat={this.state.shiftFormat}
@@ -243,7 +283,12 @@ export class Schedule extends Component {
                         <AdminEmployeeRow
                             key={maitre_d.id}
                             className={maitre_d.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
-                            name={maitre_d.firstName}
+                            name={
+                                <Link to ={`/admin/employee/${maitre_d.id}`} 
+                                    style={{textDecoration:'none', color:' #E9F2ED '}}>
+                                    {maitre_d.firstName}
+                                </Link>
+                                }
                             id={maitre_d.id}
                             shiftFormat={this.state.shiftFormat}
                             schedule={maitre_d.schedule}
@@ -257,7 +302,12 @@ export class Schedule extends Component {
                         <AdminEmployeeRowSelected
                             key={`${maitre_d.id}_selected`}
                             className={maitre_d.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
-                            name={maitre_d.firstName}
+                            name={
+                                <Link to ={`/admin/employee/${maitre_d.id}`} 
+                                    style={{textDecoration:'none', color:' #E9F2ED '}}>
+                                    {maitre_d.firstName}
+                                </Link>
+                                }
                             id={maitre_d.id}
                             shiftFormat={this.state.shiftFormat}
                             selectedWeek={this.state.selectedWeek}
@@ -274,7 +324,12 @@ export class Schedule extends Component {
                         <AdminEmployeeRow
                             key={manager.id}
                             className={manager.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
-                            name={manager.firstName}
+                            name={
+                                <Link to ={`/admin/employee/${manager.id}`} 
+                                    style={{textDecoration:'none', color:' #E9F2ED '}}>
+                                    {manager.firstName}
+                                </Link>
+                                }
                             id={manager.id}
                             shiftFormat={this.state.shiftFormat}
                             schedule={manager.schedule}
@@ -288,7 +343,12 @@ export class Schedule extends Component {
                         <AdminEmployeeRowSelected
                             key={`${manager.id}_selected`}
                             className={manager.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
-                            name={manager.firstName}
+                            name={
+                                <Link to ={`/admin/employee/${manager.id}`} 
+                                    style={{textDecoration:'none', color:' #E9F2ED '}}>
+                                    {manager.firstName}
+                                </Link>
+                                }
                             id={manager.id}
                             shiftFormat={this.state.shiftFormat}
                             selectedWeek={this.state.selectedWeek}
@@ -305,7 +365,12 @@ export class Schedule extends Component {
                         <AdminEmployeeRow
                             key={runner.id}
                             className={runner.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
-                            name={runner.firstName}
+                            name={
+                                <Link to ={`/admin/employee/${runner.id}`} 
+                                    style={{textDecoration:'none', color:' #E9F2ED '}}>
+                                    {runner.firstName}
+                                </Link>
+                                }
                             id={runner.id}
                             shiftFormat={this.state.shiftFormat}
                             schedule={runner.schedule}
@@ -319,7 +384,12 @@ export class Schedule extends Component {
                         <AdminEmployeeRowSelected
                             key={`${runner.id}_selected`}
                             className={runner.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
-                            name={runner.firstName}
+                            name={
+                                <Link to ={`/admin/employee/${runner.id}`} 
+                                    style={{textDecoration:'none', color:' #E9F2ED '}}>
+                                    {runner.firstName}
+                                </Link>
+                                }
                             id={runner.id}
                             shiftFormat={this.state.shiftFormat}
                             selectedWeek={this.state.selectedWeek}
@@ -336,7 +406,12 @@ export class Schedule extends Component {
                         <AdminEmployeeRow
                             key={server.id}
                             className={server.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
-                            name={server.firstName}
+                            name={
+                                <Link to ={`/admin/employee/${server.id}`} 
+                                    style={{textDecoration:'none', color:' #E9F2ED '}}>
+                                    {server.firstName}
+                                </Link>
+                                }
                             id={server.id}
                             shiftFormat={this.state.shiftFormat}
                             schedule={server.schedule}
@@ -350,7 +425,12 @@ export class Schedule extends Component {
                         <AdminEmployeeRowSelected
                             key={`${server.id}_selected`}
                             className={server.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
-                            name={server.firstName}
+                            name={
+                                <Link to ={`/admin/employee/${server.id}`} 
+                                    style={{textDecoration:'none', color:' #E9F2ED '}}>
+                                    {server.firstName}
+                                </Link>
+                                }
                             id={server.id}
                             shiftFormat={this.state.shiftFormat}
                             selectedWeek={this.state.selectedWeek}
@@ -367,7 +447,12 @@ export class Schedule extends Component {
                         <AdminEmployeeRow
                             key={sommelier.id}
                             className={sommelier.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
-                            name={sommelier.firstName}
+                            name={
+                                <Link to ={`/admin/employee/${sommelier.id}`} 
+                                    style={{textDecoration:'none', color:' #E9F2ED '}}>
+                                    {sommelier.firstName}
+                                </Link>
+                                }
                             id={sommelier.id}
                             shiftFormat={this.state.shiftFormat}
                             schedule={sommelier.schedule}
@@ -381,7 +466,12 @@ export class Schedule extends Component {
                         <AdminEmployeeRowSelected
                             key={`${sommelier.id}_selected`}
                             className={sommelier.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
-                            name={sommelier.firstName}
+                            name={
+                                <Link to ={`/admin/employee/${sommelier.id}`} 
+                                    style={{textDecoration:'none', color:' #E9F2ED '}}>
+                                    {sommelier.firstName}
+                                </Link>
+                                }
                             id={sommelier.id}
                             shiftFormat={this.state.shiftFormat}
                             selectedWeek={this.state.selectedWeek}

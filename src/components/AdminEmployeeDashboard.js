@@ -20,7 +20,12 @@ export default class AdminEmployeeDashboard extends Component {
 
 	componentDidMount() {
 		this.loadEmployee();
+		document.body.classList.add("employee_dashboard_background-color");
 	}
+
+	componentWillUnmount() {
+        document.body.classList.remove("employee_dashboard_background-color");
+    }
 
 	loadEmployee() {this.setState({loading: true,error: null})
 		let id = this.props.match.params.id
@@ -51,7 +56,7 @@ export default class AdminEmployeeDashboard extends Component {
 		});
 	}
     render() {
-		console.log(this.state);
+		console.log(this.state.employee);
 		
 		let body;
 		if (this.state.error) {
@@ -65,18 +70,29 @@ export default class AdminEmployeeDashboard extends Component {
 			let employee = this.state.employee;
 			
 			body = (
-					<ul>
-						<li>id: {employee.id}</li>
-						<li>First name: {employee.firstName}</li>
-						<li>Last name: {employee.lastName}</li>
-						<li>Position: {employee.position}</li>
-						<li>Phone number: {employee.phone_number}</li>
-						<li>Address: {employee.address_1}</li>
-						<li>Email address: {employee.email_address}</li>
-						<Link to={`/admin/employee-availability/${employee.id}`} style={{ textDecoration: 'none' }}>
-									<li>Availability</li>
-						</Link>
-					</ul>
+					<div className="admin_employee_dashboard">
+						<div className="admin_employee_info">
+							<div>First name</div>
+							<div>Last name </div>
+							<div>Position </div>
+							<div>Username </div>
+							<div>Phone number </div>
+							<div>Address </div>
+							<div>Email address: </div>
+							<Link to={`/admin/employee-availability/${employee.id}`} style={{ textDecoration: 'none' }}>
+										<div>Availability</div>
+							</Link>
+						</div>
+						<div className="admin_employee_data">
+							<div>{employee.firstName}</div>
+							<div>{employee.lastName? employee.lastName : "N/A"}</div>
+							<div>{employee.position ? employee.position : "N/A"}</div>
+							<div>{employee.username? employee.username : "N/A"}</div>
+							<div>{employee.phone_number ? employee.phone_number : "N/A"}</div>
+							<div>{employee.email_address === "" ? "N/A" : employee.email_address}</div>
+							
+						</div>
+					</div>
 				)
 		}
 
@@ -89,14 +105,14 @@ export default class AdminEmployeeDashboard extends Component {
 							onClose={this.toggleMenuModal}
 					/>
 				</div>
-				<Link to ={'/admin/employee_database'} style={{textDecoration:'none'}}>
-					<button className="employee-database_redirect">
-						Back to database
-					</button>
-				</Link>
 				<div className="employee_contact_info">
 					{body}
 				</div>
+				<Link to ={'/admin'} style={{textDecoration:'none'}}>
+					<div className="employee-database_redirect">
+						Back to schedule
+					</div>
+				</Link>
         	</div>
 		)
     }
