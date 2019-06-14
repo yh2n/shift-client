@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    margin: 0 auto;
+    margin-top: 200px;
 }
 
 .contact_availability_container {
@@ -43,11 +43,14 @@
 
 .contact_redirect_btn {
     border: solid;
+    border-radius: 4px;
     margin-top: 60px;
     padding: 15px;
     font-size: 20px;
     width: 100%;
     max-width: 1200px;
+    background: #181E3F;
+    color: white;
 }
 
 @media only screen and (max-width: 1400px) {
