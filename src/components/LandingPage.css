@@ -19,20 +19,24 @@
 .header {
     box-sizing: border-box;
     display: flex;
-    align-items: center;
-    font-size: 25px;
-    font-weight: 700;
-    color: #181E3F;
     position: fixed;
-    border-radius: 3px;
     top: 0;
     width: 100%;
     height: 50px;
-    background: #E9F2ED;
+    background: #181E3F;
+    align-items: center;
 }
 
-.header > p {
-    padding-left: 10px;
+.landing_page_app_name {
+    font-size: 25px;
+    padding: 0 60px 0 10px;
+    color: #E9F2ED;
+}
+
+.landing_page_header_redirect {
+    font-size: 15px;
+    align-self: flex-end;
+    padding-right: 25px;
 }
 
 .background_images {
