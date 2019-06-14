@@ -18,7 +18,7 @@
 
 .admin_employee_dashboard {
     display: flex;
-    border: .5px solid #181E3F;
+    background:  white;
     border-radius: 4px;
     min-width: 450px;
     color: #181E3F;
