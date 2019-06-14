@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    margin: 0 auto;
+    margin-top: 150px;
 }
 
 .availability_prompt {
@@ -103,7 +103,7 @@
 }
 
 .submit_availability:hover {
-    background: rgba(24, 30, 64, 0.45);
+    background: rgba(24, 30, 64, 25);
     border: solid rgba(24, 30, 64, 0);
 }
 
