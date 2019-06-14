@@ -49,7 +49,7 @@
 }
 
 .contact_links:hover {
-  color:rgba(242, 201, 79, .9);;
+  color:rgba(242, 201, 79, .9);
 }
 
 .user_schedule_days {
@@ -76,6 +76,9 @@
   padding: 10px;
 }
 
+.MuiSvgIcon-root.MuiSelect-icon {
+  color: #112138;
+}
 
 .Mui-focused.schedule_select {
   background: rgba(242, 201, 79, 0.2);

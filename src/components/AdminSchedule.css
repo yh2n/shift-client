@@ -37,17 +37,17 @@
 }
 
 .admin_schedule_name {
-  border-bottom: 1px solid grey;
   display: flex;
+  border-bottom: 1px solid grey;
   justify-content: center;
   align-items: center;
   background: rgba(24, 30, 64, 25);
-  color: #D2F7F3;
   padding: 10px;
+  color: #D2F7F3;
 }
 
 .admin_schedule_name:hover {
-  color: white;
+  color:rgba(242, 201, 79, .9);;
 }
 
 .admin_schedule_days_name {
@@ -55,8 +55,9 @@
   color: #D2F7F3;
 }
 
-.current {
+.current, .logged_in {
   background: #c0a115;
+  color: #112138;
 }
 
 .admin_schedule_div {
@@ -99,7 +100,7 @@
   flex: 1;
 }
 
-.admin_select_save > .MuiSvgIcon-root.MuiSelect-icon {
+.admin_schedule_select > * {
   color: #D2F7F3;
 }
 
@@ -112,10 +113,6 @@
   font-size: 14px;
   padding: 17px;
   width: 90px
-}
-
-.admin_select_options {
-  color: red;
 }
 
 .admin_schedule_btns {
