@@ -13,7 +13,7 @@ export default class LandingPage extends Component {
         return (
             <div className="landing_page">
                 <div className="intro_container">
-                    <LandingPageNav />
+                    <LandingPageNav />   
                     <div className="background_images">
                         <img src={ Background1 } alt="" width="100%" height="100%"/>
                     </div>
