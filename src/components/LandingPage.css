@@ -1,6 +1,6 @@
 .landing_page {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -8,10 +8,10 @@
 
 .intro_container {
     display: flex;
-    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex: 1;
     width: 100vw;
     font-family: 'Quattrocento Sans', sans-serif;
 }
