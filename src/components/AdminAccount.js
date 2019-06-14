@@ -46,7 +46,10 @@ export  class AdminAccount extends Component {
 						/>
 					</div>
 					<div className="contact_list_container-mobile">
-						<ContactRowMobile className="contacts"/>
+						<ContactRowMobile 
+							className="contacts"
+							linkTo={'employee-availability'}
+						/>
 					</div>
 				</div>
         	</div>
