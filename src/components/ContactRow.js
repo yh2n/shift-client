@@ -13,6 +13,7 @@ export class ContactRow extends Component {
 	
 	render() {
 		let employees = this.props.employees.employees
+		console.log(employees)
 		return (
 			employees.map((employee, index) => (
 				<div className="contact_row" key={index}>
