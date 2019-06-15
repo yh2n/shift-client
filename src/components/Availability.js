@@ -4,7 +4,6 @@ import { API_BASE_URL } from '../config';
 import { Weekday, Weekendday } from './Day';
 import './AvailabilityPage.css';
 
-const currentUserId = localStorage.getItem("id");
 
 export class Availability extends Component {
     constructor(props) {
@@ -13,7 +12,8 @@ export class Availability extends Component {
         this.state = {
             availability: {},
             error: null,
-            updateButtonText: "Update"
+            updateButtonText: "Update",
+            currentUserId: localStorage.getItem("id")
         };
     }
 
@@ -25,7 +25,7 @@ export class Availability extends Component {
         this.setState({
             loading: true
         });
-        return fetch(`${API_BASE_URL}/employee/${currentUserId}/availability`)
+        return fetch(`${API_BASE_URL}/employee/${this.state.currentUserId}/availability`)
             .then(res => {
                 if (!res.ok) {
                     return Promise.reject(res.statusText);
@@ -52,7 +52,7 @@ export class Availability extends Component {
 			this.setState({updateButtonText: "Update"})
         },1500)
         
-        return fetch(`${API_BASE_URL}/employee/${currentUserId}/availability`, {
+        return fetch(`${API_BASE_URL}/employee/${this.state.currentUserId}/availability`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
