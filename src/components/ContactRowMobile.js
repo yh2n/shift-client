@@ -22,7 +22,7 @@ export class ContactRow extends Component {
                     <div className="contact_label-mobile">Phone Number</div>
 					<div className="contact_info-mobile">{employee.phone_number}</div>
                     <div className="contact_label-mobile">Email Address</div>
-					<div className="contact_info-mobile">{employee.email_address}</div>
+					<div className="contact_info-mobile">{employee.email}</div>
                     <div className="contact_label-mobile">Position</div>
 					<div className="contact_info-mobile">{employee.position}</div>
 					<Link to={`./${this.props.linkTo}/${employee.id}`} style={{ textDecoration: 'none' }}>

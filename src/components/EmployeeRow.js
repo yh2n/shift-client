@@ -16,7 +16,7 @@ export class EmployeeRow extends Component {
 				<Fragment key={employee.id}>
 					<div className="contact_list">{employee.firstName} {employee.lastName}</div>
 					<div className="contact_list">{employee.phone_number === "" ? "" : employee.phone_number}</div>
-					<div className="contact_list">{employee.email_address}</div>
+					<div className="contact_list">{employee.email}</div>
 					<div className="contact_list">{employee.position}</div>
 					<Link to={`/admin/employee-availability/${employee.id}`} style={{ textDecoration: 'none' }}>
 						<div className="contact_list">View</div>

@@ -77,7 +77,6 @@ export default class AdminEmployeeDashboard extends Component {
 							<div>Position </div>
 							<div>Username </div>
 							<div>Phone number </div>
-							{/* <div>Address </div> */}
 							<div>Email address: </div>
 							<Link to={`/admin/employee-availability/${employee.id}`} style={{ textDecoration: 'none' }}>
 										<div>Availability</div>
@@ -89,8 +88,7 @@ export default class AdminEmployeeDashboard extends Component {
 							<div>{employee.position ? employee.position : "N/A"}</div>
 							<div>{employee.username? employee.username : "N/A"}</div>
 							<div>{employee.phone_number ? employee.phone_number : "N/A"}</div>
-							{/* <div>{employee.address.address1 || "N/A"}</div> */}
-							<div>{employee.email_address ? employee.email_address : "N/A"}</div>
+							<div>{employee.email ? employee.email : "N/A"}</div>
 							
 						</div>
 					</div>

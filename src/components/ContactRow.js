@@ -19,7 +19,7 @@ export class ContactRow extends Component {
 				<div className="contact_row" key={index}>
 					<div className="contact_list">{employee.firstName} {employee.lastName}</div>
 					<div className="contact_list">{employee.phone_number}</div>
-					<div className="contact_list">{employee.email_address}</div>
+					<div className="contact_list">{employee.email}</div>
 					<div className="contact_list">{employee.position}</div>
 					<Link to={`./${this.props.linkTo}/${employee.id}`} style={{ textDecoration: 'none' }}>
 						<div className="contact_list availability_redirect">View</div>
