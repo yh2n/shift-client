@@ -27,6 +27,8 @@ export class Schedule extends Component {
             toggled: false,
             currentWeek: moment().week(),
             selectedWeek: moment().week() + 1,
+            updateButtonText: "Save",
+            isUpdating: false,
             submittedCount: 0,
             shiftFormat: ""
 		}
@@ -51,9 +53,19 @@ export class Schedule extends Component {
 
     incrementCount = () => {
         this.setState(prevState => {
-            return { submittedCount: prevState.submittedCount + 1 }
+            return { 
+                submittedCount: prevState.submittedCount + 1,
+                updateButtonText: "Saved !",
+                isUpdating: true
+            }
         })
-        console.log(this.state.submittedCount)
+        
+        setTimeout(()=> {
+            this.setState({
+                updateButtonText: "Save",
+                isUpdating: false
+            })
+        }, 1000)
     }
 
     handleWindowResize = () => {
@@ -554,8 +566,8 @@ export class Schedule extends Component {
                             />
                             <button 
                                 onClick={this.incrementCount}
-                                className="admin_schedule_save"
-                                >Save</button>
+                                className={this.state.isUpdating ? "admin_schedule_save updating-admin" : "admin_schedule_save updated-admin"}
+                                >{this.state.updateButtonText}</button>
                         </div>
                         <SelectedMonthRow 
                             className="month_row-selected"
