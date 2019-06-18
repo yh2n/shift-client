@@ -18,16 +18,16 @@ export default class AdminEmployeeRow extends Component {
 
     componentDidMount() {
         this.fetchSchedule();
-        this.pusher = new Pusher('dd4cfaae3504bbdaa2b2', {
-            cluster: 'us2',
-            forceTLS: true
-      });
-      Pusher.logToConsole = true;
-      this.channel = this.pusher.subscribe('new_schedule');
-      this.channel.bind('schedule_update', () => {
-          this.fetchSchedule()
-          console.log('new schedule')
-      })
+        // this.pusher = new Pusher('dd4cfaae3504bbdaa2b2', {
+        //     cluster: 'us2',
+        //     forceTLS: true
+        // });
+        // Pusher.logToConsole = true;
+        // this.channel = this.pusher.subscribe('new_schedule');
+        // this.channel.bind('schedule_update', () => {
+        //     this.fetchSchedule()
+        //     console.log('new schedule')
+        // })
     }
 
     fetchSchedule = () => {

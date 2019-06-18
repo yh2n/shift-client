@@ -1,0 +1,14 @@
+.notifications {
+    border: solid;
+    transition: margin-right 3s;
+}
+
+.notifications-hidden {
+    margin-right: -120%;
+
+}
+
+.notifications-visible {
+    margin-right: 0;
+
+}

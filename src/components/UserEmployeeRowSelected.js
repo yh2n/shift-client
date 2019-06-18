@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { API_BASE_URL } from '../config';
+import Pusher from 'pusher-js'
 
 export default class UserEmployeeRowSelected extends Component {
     constructor(props) {
@@ -14,6 +15,15 @@ export default class UserEmployeeRowSelected extends Component {
     componentDidMount() {
         this.fetchSchedule();
         console.log(this.props.selectedWeek)
+        // this.pusher = new Pusher('dd4cfaae3504bbdaa2b2', {
+        //     cluster: 'us2',
+        //     forceTLS: true
+        // });
+
+        // Pusher.logToConsole = true;
+        // this.channel = this.pusher.subscribe('new_schdedule');
+        // this.channel.bind('schedule_update', () => {
+        // })
     }
 
     componentDidUpdate(prevProps) {
