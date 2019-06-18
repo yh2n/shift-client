@@ -66,6 +66,7 @@ export class Schedule extends Component {
                 isUpdating: false
             })
         }, 1000)
+        
     }
 
     handleWindowResize = () => {
