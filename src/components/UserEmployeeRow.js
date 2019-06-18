@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { API_BASE_URL } from '../config';
 import moment from 'moment';
+import Pusher from 'pusher-js';
+
 
 
 export class UserEmployeeRow extends Component {
@@ -17,7 +19,18 @@ export class UserEmployeeRow extends Component {
     }
     
     componentDidMount() {
-        this.fetchSchedule()
+        this.fetchSchedule();
+        this.pusher = new Pusher('dd4cfaae3504bbdaa2b2', {
+            cluster: 'us2',
+            forceTLS: true
+        });
+
+        Pusher.logToConsole = true;
+        this.channel = this.pusher.subscribe('update');
+        this.channel.bind('availability_update', () => {
+            this.fetchSchedule()
+            console.log('change of availability')
+        })
     }
     
     componentDidUpdate(prevProps) {
