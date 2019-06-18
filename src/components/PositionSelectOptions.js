@@ -4,8 +4,8 @@ const PositionSelectOptions = () => {
     const positions = [
         "Bartender", 
         "Barback", 
+        "Barista",
         "Busser", 
-        "Captain", 
         "Hostess/Host", 
         "Maitre d'" , 
         "Manager", 
