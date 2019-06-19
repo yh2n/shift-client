@@ -37,3 +37,16 @@
     margin: 0px 25px 0px 30px;
     color: #26A56A;
 }
+
+.material-icons.no_notification {
+    color: rgba(242, 201, 79, 95);
+}
+
+.material-icons.new_notification {
+    color: rgba(216, 73, 73, 85);
+    filter: brightness(120%)
+
+}
+.material-icons.new_notification:hover {
+    cursor: pointer;
+}

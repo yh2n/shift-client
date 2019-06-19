@@ -26,7 +26,12 @@ export class AccountNav extends Component{
                     <div></div>
                     <div></div>
                 </div>
-                <i className="material-icons" style={{color: 'white', background: 'red', 'borderRadius': '50%', padding: '3px'}}>add_alert</i>
+                <i 
+                    className={this.props.className}
+                    onClick={this.props.markAsRead}
+                >
+                    add_alert
+                </i>
                 <p className="nav_date">{moment().format("dddd, MMMM Do YYYY")}</p>
                 <p className="nav_user_name">{currentUser}</p>
                 <button 
