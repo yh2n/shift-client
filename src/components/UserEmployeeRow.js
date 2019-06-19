@@ -29,7 +29,7 @@ export class UserEmployeeRow extends Component {
         this.channel = this.pusher.subscribe('update');
         this.channel.bind('availability_update', () => {
             this.fetchSchedule()
-            this.props.handleNotification()
+            this.props.handleAvailabilityAlert()
             console.log('change of availability')
         })
     }
