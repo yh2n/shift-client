@@ -9,7 +9,7 @@ export default class Notifications extends Component {
     }
     render() {
         return (
-            <div className={this.props.className}>New schedule available!</div>
+            <div className={this.props.className}>{this.props.text}</div>
         );
     }
 }
