@@ -20,6 +20,7 @@ export class Contacts extends Component {
 		this.state = {
 			isOpen : false,
 			availability_alert: false,
+			schedule_alert: false,
 			new_notification: false
 		}
 	}	
@@ -33,10 +34,15 @@ export class Contacts extends Component {
             forceTLS: true
         });
 
-        Pusher.logToConsole = true;
         this.channel = this.pusher.subscribe('update');
         this.channel.bind('availability_update', () => {
             this.handleAvailabilityAlert()
+		})
+
+		this.channel = this.pusher.subscribe('new_schedule');
+        this.channel.bind('schedule_update', () => {
+            this.handleScheduleAlert()
+            console.log('new schedule')
         })
 	}
 
@@ -59,6 +65,19 @@ export class Contacts extends Component {
         }, 7000);
     }
 
+	handleScheduleAlert = () => {
+        this.setState({
+            schedule_alert: true,
+            new_notification: true
+        })
+
+        setTimeout(() => {
+            this.setState({
+                schedule_alert: false
+            })
+            
+        }, 7000);
+    }
 	markAsRead = () => {
         this.setState({new_notification: false})
     }
@@ -82,10 +101,14 @@ export class Contacts extends Component {
 						onClose={this.toggleModal}
 					/>
 				</div>
-					<Notifications 
-						className={this.state.availability_alert ? "user_contacts-availability_alert" : "user_contacts-availability_alert notifications-hidden"}
-						text="New schedule request!"
-					/>
+				<Notifications 
+					className={this.state.availability_alert ? "user_contacts-availability_alert" : "user_contacts-availability_alert notifications-hidden"}
+					text="New schedule request!"
+				/>
+				<Notifications 
+                        className={this.state.schedule_alert ? "user_contacts-schedule_alert" : "user_contacts-schedule_alert notifications-hidden"}
+                        text="New schedule available!"
+				/>
 				<div className="contact_page">
 					<div className="contact_list_container">
 						<ContactLabels />
