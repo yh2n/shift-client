@@ -3,6 +3,7 @@
     padding: 15px 20px;
     background: rgba(242, 201, 79, 95);
     transition: margin-right 3s;
+    animation: blink-animation 2s infinite;
 }
 
 .schedule_alert {
@@ -18,7 +19,8 @@
 
 }
 
-.notifications-visible {
-    margin-right: 0;
-
+@keyframes blink-animation {
+  to {
+      filter: brightness(120%)
+  }
 }

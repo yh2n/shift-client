@@ -20,7 +20,6 @@ import { connect } from 'react-redux';
 import './UserSchedule.css';
 
 
-const currentUser = localStorage.getItem('id');
 
 
 export class Schedule extends Component {
@@ -29,6 +28,7 @@ export class Schedule extends Component {
 
 		this.state = {
             isOpen : false, 
+            currentUser: localStorage.getItem('id'),
             currentWeek:  moment().week(),
             selectedWeek: moment().week() + 1,
             updateButtonText: "Update",
@@ -38,7 +38,7 @@ export class Schedule extends Component {
             error: null,
             availability_alert: false,
             schedule_alert: false,
-            new_notification: false
+            new_notification: false,
 		}
 	}	
         
@@ -109,7 +109,7 @@ export class Schedule extends Component {
                 availability_alert: false
             })
             
-        }, 6000);
+        }, 7000);
     }
 
     handleScheduleAlert = () => {
@@ -117,12 +117,13 @@ export class Schedule extends Component {
             schedule_alert: true,
             new_notification: true
         })
+
         setTimeout(() => {
             this.setState({
                 schedule_alert: false
             })
             
-        }, 6000);
+        }, 7000);
     }
 
     markAsRead = () => {
@@ -135,6 +136,7 @@ export class Schedule extends Component {
 	render() {
         console.log(this.state.isUpdating)
         const employees = this.props.employees.employees;
+        let { currentUser } = this.state 
 
         let barbacks = employees.filter(employee => employee.position === "Barback")
         let barbackRow = (
@@ -488,9 +490,10 @@ export class Schedule extends Component {
                 <div>
                     <AccounttNav 
                         onClick={this.toggleModal}
-                        name={currentUser}
+                        // name={currentUser}
                         className={this.state.new_notification === false ? "material-icons no_notification" : "material-icons new_notification"}
                         markAsRead={this.markAsRead}
+                        username={localStorage.getItem('username')}
                     />
                     <UserMenuModal
                         show={this.state.isOpen}
@@ -499,7 +502,7 @@ export class Schedule extends Component {
                 </div>
                 <div className="schedule_page">
                     <Notifications 
-                        className={this.state.availability_alert ? "availability_alert notifications-displayed" : "availability_alert notifications-hidden"}
+                        className={this.state.availability_alert ? "availability_alert" : "availability_alert notifications-hidden"}
                         text="New schedule request!"
                     />
                     <Notifications 

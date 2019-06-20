@@ -44,8 +44,7 @@
 
 .material-icons.new_notification {
     color: rgba(216, 73, 73, 85);
-    filter: brightness(120%)
-
+    filter: brightness(120%);
 }
 .material-icons.new_notification:hover {
     cursor: pointer;
