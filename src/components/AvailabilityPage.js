@@ -14,6 +14,7 @@ export default class AvailabilityPage extends Component {
 		this.state = {
 			isOpen : false,
 			availability_alert: false,
+			schedule_alert: false,
 			new_notification: false
 		}
 	}	
@@ -28,7 +29,11 @@ export default class AvailabilityPage extends Component {
         this.channel = this.pusher.subscribe('update');
         this.channel.bind('availability_update', () => {
             this.handleAvailabilityAlert()
-            console.log('change of availability')
+		})
+		
+		this.channel = this.pusher.subscribe('new_schedule');
+        this.channel.bind('schedule_update', () => {
+            this.handleScheduleAlert()
         })
 	}
 		
@@ -49,7 +54,22 @@ export default class AvailabilityPage extends Component {
             })
             
         }, 7000);
+	}
+	
+	handleScheduleAlert = () => {
+        this.setState({
+            schedule_alert: true,
+            new_notification: true
+        })
+
+        setTimeout(() => {
+            this.setState({
+                schedule_alert: false
+            })
+            
+        }, 7000);
     }
+
 
 	markAsRead = () => {
         this.setState({new_notification: false})
@@ -73,6 +93,10 @@ export default class AvailabilityPage extends Component {
                         className={this.state.availability_alert ? "user_schedule-availability_alert" : "user_schedule-availability_alert notifications-hidden"}
                         text="New schedule request!"
                 />
+				<Notifications 
+                        className={this.state.schedule_alert ? "user_schedule-schedule_alert" : "user_schedule-schedule_alert notifications-hidden"}
+                        text="New schedule available!"
+				/>
 				<div className="availability_prompt">
 					<p>Click on all the shifts you can work.</p>
 					<p>Keep this up to date to avoid any scheduling conflicts.</p>
