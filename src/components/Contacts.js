@@ -64,12 +64,6 @@ export class Contacts extends Component {
     }
 
 	componentWillUnmount() {
-		document.body.classList.remove("background-color");
-		this.pusher = new Pusher('dd4cfaae3504bbdaa2b2', {
-            cluster: 'us2',
-            forceTLS: true
-		});
-		
 		this.pusher.disconnect()
     }
     render() {
