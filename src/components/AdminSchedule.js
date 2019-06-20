@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import moment from 'moment';
+
 import AccountNav from './AccountNav';
 import AdminMenuModal from './AdminMenuModal';
+import Notifications from './Notifications';
 import MonthRow from './MonthRow';
 import PositionRow  from './PositionRow';
 import AdminEmployeeRow from './AdminEmployeeRow';
@@ -77,6 +79,19 @@ export class Schedule extends Component {
             this.setState({shiftFormat: "desktop"})
         }
         console.log(this.state.shiftFormat)
+    }
+
+    handleAvailabilityAlert = () => {
+        this.setState({
+            availability_alert: true,
+            new_notification: true
+        })
+        setTimeout(() => {
+            this.setState({
+                availability_alert: false
+            })
+            
+        }, 4000);
     }
 
     componentWillUnmount() {
@@ -510,6 +525,14 @@ export class Schedule extends Component {
                             monthClass="admin_current_month"
                         />
                     </div>
+                    <Notifications 
+                        className={this.state.availability_alert ? "availability_alert notifications-displayed" : "availability_alert notifications-hidden"}
+                        text="New schedule request!"
+                    />
+                    <Notifications 
+                        className={this.state.schedule_alert ? "schedule_alert notifications-displayed" : "schedule_alert notifications-hidden"}
+                        text="New schedule available!"
+                    />
                     <div className="admin_schedule_container">
                         <CurrentWeekDayRow week={this.state.currentWeek}/>
                         <PositionRow 

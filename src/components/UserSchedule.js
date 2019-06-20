@@ -502,11 +502,11 @@ export class Schedule extends Component {
                 </div>
                 <div className="schedule_page">
                     <Notifications 
-                        className={this.state.availability_alert ? "availability_alert" : "availability_alert notifications-hidden"}
+                        className={this.state.availability_alert ? "user_schedule-availability_alert" : "user_schedule-availability_alert notifications-hidden"}
                         text="New schedule request!"
                     />
                     <Notifications 
-                        className={this.state.schedule_alert ? "schedule_alert notifications-displayed" : "schedule_alert notifications-hidden"}
+                        className={this.state.schedule_alert ? "user_schedule-schedule_alert notifications-displayed" : "user_schedule-schedule_alert notifications-hidden"}
                         text="New schedule available!"
                     />
                     <div className="user_current_month">
