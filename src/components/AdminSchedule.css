@@ -30,10 +30,14 @@
 }
 
 .admin_schedule_position, .admin_schedule_days  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-bottom: .5px solid grey;
   border-top: .5px solid grey;
   background: #112138;
   color: rgba(38, 165, 106, 65);
+  padding-top: 3px;
 }
 
 .admin_schedule_name {

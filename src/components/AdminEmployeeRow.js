@@ -18,18 +18,6 @@ export default class AdminEmployeeRow extends Component {
 
     componentDidMount() {
         this.fetchSchedule();
-        this.pusher = new Pusher('dd4cfaae3504bbdaa2b2', {
-            cluster: 'us2',
-            forceTLS: true
-        });
-
-        Pusher.logToConsole = true;
-        this.channel = this.pusher.subscribe('update');
-        this.channel.bind('availability_update', () => {
-            this.fetchSchedule()
-            this.props.handleAvailabilityAlert()
-            console.log('change of availability')
-        })
     }
 
     fetchSchedule = () => {
