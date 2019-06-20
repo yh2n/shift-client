@@ -1,11 +1,16 @@
 .landing_page {
     display: flex;
-    min-height: 100vh;
+    height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
+.landing_page_animations {
+    border: solid red;
+    margin-top: 400px;
+    width: 80%;
+    max-width: 1200px;
+}
 .intro_container {
     display: flex;
     flex-direction: column;
@@ -14,6 +19,114 @@
     flex: 1;
     width: 100vw;
     font-family: 'Quattrocento Sans', sans-serif;
+}
+
+.animations_container {
+    display: flex;
+    flex-direction: column;
+    border: solid purple;
+    padding: 50px;
+}
+
+.animations_text {
+    border: solid;
+}
+.laptop_container {
+    display: flex;
+}
+
+.laptop {
+    display: flex;
+    flex-direction: column;
+    border: solid green;
+    padding: 20px;
+    margin-right: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 270px
+}
+
+.laptop_screen {
+    border: 8px solid;
+    border-radius: 5px;
+    width: 350px;
+    height: 230px;
+    margin-bottom: 2px;
+} 
+
+.laptop_keypboard {
+    border: solid 5px;
+    border-radius: 5px;
+    width: 460px;
+    height: 3%
+}
+
+.laptop_instructions, .cell-phone_instructions {
+    display: flex;
+    flex-direction: column;
+    border: solid blue;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell-phone_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid orange;
+}
+
+.cell-phone {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    width: 50%;
+    border: solid green;
+    padding: 20px;
+    margin-right: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell-phone_screen {
+    border-top: 8px solid;
+    border-right: 8px solid;
+    border-left: 8px solid;
+    border-radius: 8px 8px 0 0;
+    width: 90px;
+    height: 150px;
+} 
+
+.cell-phone_bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 8px solid;
+    border-radius: 0 0 8px 8px;
+    width: 90px;
+    height: 20px;
+    background: black;
+}
+
+.cell-phone_home_button {
+    width: 14px;
+    height: 14px;
+    border: solid white;
+    background: white;
+    border-radius: 50%;
+}
+
+.dialogue_bubble_left {
+    border: solid;
+    border-radius: 8px 8px 0 8px;
+    padding: 10px;
+}
+
+.dialogue_bubble_right {
+    border: solid;
+    border-radius: 8px 8px 8px 0;
+    padding: 10px;
 }
 
 .header {

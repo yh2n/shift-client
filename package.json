@@ -36,6 +36,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.9.0",
     "enzyme": "^3.9.0",
     "mock-local-storage": "^1.1.8",
     "react-scripts": "^2.0.5",
