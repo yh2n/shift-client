@@ -37,7 +37,7 @@
     border-radius: 3px;
     width: 180px;
     padding: 15px 20px;
-    margin: 100px auto;
+    margin: 50px auto;
     background: rgba(242, 201, 79, 95);
     transition: margin-right 3s;
     animation: blink-animation 2s infinite;
@@ -45,6 +45,8 @@
 
 .user_contacts-schedule_alert {
     border-radius: 3px;
+    width: 180px;
+    margin: 50px auto;
     padding: 15px 20px;
     background: #26A56A;
     color: white;
@@ -52,7 +54,23 @@
     transition: margin-right 3s;
 }
 
+.admin_schedule-availability_alert {
+    margin-top: 50px;
+    border-radius: 3px;
+    padding: 15px 20px;
+    background: rgba(242, 201, 79, 95);
+    transition: margin-right 3s;
+    animation: blink-animation 2s infinite;
+}
 
+.admin_schedule-schedule_alert {
+    border-radius: 3px;
+    padding: 15px 20px;
+    background: #26A56A;
+    color: white;
+    transition: margin-right 3s;
+    animation: blink-animation 2s infinite;
+}
 
 .notifications-hidden {
     margin-right: -145%;
