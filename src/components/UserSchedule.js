@@ -38,7 +38,7 @@ export class Schedule extends Component {
             error: null,
             availability_alert: false,
             schedule_alert: false,
-            new_notification: false,
+            new_notification: false
 		}
 	}	
         
@@ -55,8 +55,8 @@ export class Schedule extends Component {
         Pusher.logToConsole = true;
         this.channel = this.pusher.subscribe('new_schedule');
         this.channel.bind('schedule_update', () => {
-            this.fetchSchedule()
-            this.props.handleScheduleAlert()
+            // this.fetchSchedule()
+            this.handleScheduleAlert()
             console.log('new schedule')
         })
     }
@@ -508,7 +508,7 @@ export class Schedule extends Component {
                         text="New schedule request!"
                     />
                     <Notifications 
-                        className={this.state.schedule_alert ? "user_schedule-schedule_alert notifications-displayed" : "user_schedule-schedule_alert notifications-hidden"}
+                        className={this.state.schedule_alert ? "user_schedule-schedule_alert" : "user_schedule-schedule_alert notifications-hidden"}
                         text="New schedule available!"
                     />
                     <div className="user_current_month">

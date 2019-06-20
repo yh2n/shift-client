@@ -13,6 +13,7 @@ export default class UserAccount extends Component {
 		this.state = {
 			isOpen : false,
 			availability_alert: false,
+			schedule_alert: false,
 			new_notification: false
 		}
 	}	
@@ -23,11 +24,14 @@ export default class UserAccount extends Component {
             forceTLS: true
         });
 
-        Pusher.logToConsole = true;
         this.channel = this.pusher.subscribe('update');
         this.channel.bind('availability_update', () => {
             this.handleAvailabilityAlert()
-            console.log('change of availability')
+		})
+		
+		this.channel = this.pusher.subscribe('new_schedule');
+        this.channel.bind('schedule_update', () => {
+            this.handleScheduleAlert()
         })
 	}
 	toggleModal = () => {
@@ -45,7 +49,19 @@ export default class UserAccount extends Component {
             this.setState({
                 availability_alert: false
             })
-            
+        }, 7000);
+	}
+	
+	handleScheduleAlert = () => {
+        this.setState({
+            schedule_alert: true,
+            new_notification: true
+        })
+
+        setTimeout(() => {
+            this.setState({
+                schedule_alert: false
+            })
         }, 7000);
     }
 
@@ -75,6 +91,10 @@ export default class UserAccount extends Component {
 					className={this.state.availability_alert ? "user_account-availability_alert" : "user_account-availability_alert notifications-hidden"}
 					text="New schedule request!"
 				/>
+				<Notifications 
+                        className={this.state.schedule_alert ? "user_account-schedule_alert" : "user_account-schedule_alert notifications-hidden"}
+                        text="New schedule available!"
+                    />
 				<EmployeeInfoForm />
 			</div>
 		)
