@@ -96,6 +96,10 @@ export class UserEmployeeRow extends Component {
                 console.log(err)
             })
     }
+
+    componentWillUnmount() {
+		this.pusher.disconnect()
+    }
     render() {
         const MondayShifts = (
                 <div key="monday_shifts">

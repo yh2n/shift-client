@@ -132,6 +132,7 @@ export class Schedule extends Component {
 
     componentWillUnmount() {
         window.removeEventListener("resize", this.handleWindowResize);
+		this.pusher.disconnect()
     }
 	render() {
         console.log(this.state.isUpdating)
@@ -494,6 +495,7 @@ export class Schedule extends Component {
                         className={this.state.new_notification === false ? "material-icons no_notification" : "material-icons new_notification"}
                         markAsRead={this.markAsRead}
                         username={localStorage.getItem('username')}
+                        newNotification={this.state.new_notification}
                     />
                     <UserMenuModal
                         show={this.state.isOpen}

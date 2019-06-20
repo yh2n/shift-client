@@ -51,7 +51,11 @@ export default class UserAccount extends Component {
 
 	markAsRead = () => {
         this.setState({new_notification: false})
-    }
+	}
+	
+	componentWillUnmount() {
+		this.pusher.disconnect()
+	}
 
 	render() {
 		return (
@@ -61,17 +65,18 @@ export default class UserAccount extends Component {
 					className={this.state.new_notification === false ? "material-icons no_notification" : "material-icons new_notification"}
 					markAsRead={this.markAsRead}
 					username={localStorage.getItem('username')}
+					newNotification={this.state.new_notification}
 				/>
 				<UserMenuModal
 					show={this.state.isOpen}
 					onClose={this.toggleModal}
 				/> 
-					<Notifications 
-						className={this.state.availability_alert ? "user_account-availability_alert" : "user_account-availability_alert notifications-hidden"}
-						text="New schedule request!"
-					/>
-					<EmployeeInfoForm />
-				</div>
+				<Notifications 
+					className={this.state.availability_alert ? "user_account-availability_alert" : "user_account-availability_alert notifications-hidden"}
+					text="New schedule request!"
+				/>
+				<EmployeeInfoForm />
+			</div>
 		)
 	}
 }
