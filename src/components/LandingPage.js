@@ -36,27 +36,42 @@ export default class LandingPage extends Component {
                         </div>
                         <div className="animations_container">
                             <div className="cell-phone_container">
-                                <div className="cell-phone_instructions">
-                                    <i className="far fa-calendar-alt"></i>
-                                    <div className="animations_text">Get notified</div>
-                                    <div className="animations_text">Receive schedule updates and requests in real-time</div>
-                                </div>
                                 <div className="cell-phone">
                                     <div className="cell-phone_screen"></div>
                                     <div className="cell-phone_bottom">
                                         <div className="cell-phone_home_button"></div>
                                     </div>
                                 </div>
+                                <div className="cell-phone_instructions">
+                                    <i className="far fa-calendar-alt" style={{'font-size': '30px'}}></i>
+                                    <div className="animations_text">Get notified</div>
+                                    <div className="animations_text">Receive schedule updates and requests in real-time</div>
+                                </div>
                                 
                             </div>
                         </div>
                         <div className="animations_container">
-                            <div className="laptop_container">
-                                <div className="laptop">
+                            <div className="dialogue_container">
+                                {/* <div className="dialogue_icon1">
                                     <div className="dialogue_bubble_left">Hey man, can you cover me tonite?</div>
                                     <div className="dialogue_bubble_right">Sorry bro, already on the schedule</div>
-                                    <div className="dialogue_bubble_right">:(</div>
+                                    <div className="dialogue_bubble_right"><i class="far fa-frown"></i></div>
                                     <div className="dialogue_bubble_right">Ty</div>
+                                </div> */}
+                                <div className="dialogue_icon2">
+                                    <i className="fas fa-angry" style={{color: 'red'}}></i>
+                                    <i className="far fa-frown" style={{color: 'orangeRed'}}></i>
+                                    <i className="fas fa-grimace" style={{color: 'blue'}}></i>
+                                    <i className="far fa-comment"></i>
+                                    <i className="fas fa-phone-alt"></i>
+                                    <i className="fas fa-quote-left"></i>
+                                    <i className="fas fa-envelope-open"></i>
+                                    <i className="fas fa-bell"></i>
+                                    <i className="fas fa-voicemail"></i>
+                                    <i className="far fa-flushed"></i>
+                                    <i className="fas fa-mobile-alt"></i>
+                                    <i className="far fa-comments"></i>
+                                    <i className="fas fa-at"></i>
                                 </div>
                                 <div className="laptop_instructions">
                                     <i className="far fa-calendar-alt"></i>
