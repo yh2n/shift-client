@@ -174,8 +174,8 @@ export default class EmployeeInfoForm extends Component {
 						<div>
 						<label htmlFor="state">Contact Info</label>			
 						<Input
-							name="email_address" 
-							value={this.state.employeeInfo.email_address || ''}
+							name="email" 
+							value={this.state.employeeInfo.email || ''}
 							onChange={this.handleChange}
 							placeholder="Email address"
 						/>

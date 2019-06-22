@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import moment from 'moment';
+import Pusher from 'pusher-js';
+
 import AccountNav from './AccountNav';
 import AdminMenuModal from './AdminMenuModal';
+import Notifications from './Notifications';
 import MonthRow from './MonthRow';
 import PositionRow  from './PositionRow';
 import AdminEmployeeRow from './AdminEmployeeRow';
@@ -27,15 +30,30 @@ export class Schedule extends Component {
             toggled: false,
             currentWeek: moment().week(),
             selectedWeek: moment().week() + 1,
+            updateButtonText: "Save",
+            isUpdating: false,
             submittedCount: 0,
-            shiftFormat: ""
+            shiftFormat: "",
+            availability_alert: false,
+            schedule_alert: false,
+            new_notification: false,
 		}
     }
     
     componentDidMount() {
         this.props.dispatch(fetchEmployees());
         window.addEventListener("resize", this.handleWindowResize);
-        window.innerWidth < 568 ? this.setState({ shiftFormat: "mobile" }) : this.setState({ shiftFormat: "desktop" })
+        window.innerWidth < 568 ? this.setState({ shiftFormat: "mobile" }) : this.setState({ shiftFormat: "desktop" });
+
+        this.pusher = new Pusher('dd4cfaae3504bbdaa2b2', {
+            cluster: 'us2',
+            forceTLS: true
+        });
+
+        this.channel = this.pusher.subscribe('update');
+        this.channel.bind('availability_update', () => {
+            this.handleAvailabilityAlert()
+		})
     }
 
 	toggleModal = () => {
@@ -51,9 +69,20 @@ export class Schedule extends Component {
 
     incrementCount = () => {
         this.setState(prevState => {
-            return { submittedCount: prevState.submittedCount + 1 }
+            return { 
+                submittedCount: prevState.submittedCount + 1,
+                updateButtonText: "Saved !",
+                isUpdating: true
+            }
         })
-        console.log(this.state.submittedCount)
+        
+        setTimeout(()=> {
+            this.setState({
+                updateButtonText: "Save",
+                isUpdating: false
+            })
+        }, 1000)
+        
     }
 
     handleWindowResize = () => {
@@ -66,8 +95,22 @@ export class Schedule extends Component {
         console.log(this.state.shiftFormat)
     }
 
+    handleAvailabilityAlert = () => {
+        this.setState({
+            availability_alert: true,
+            new_notification: true
+        })
+        setTimeout(() => {
+            this.setState({
+                availability_alert: false
+            })
+            
+        }, 7000);
+    }
+
     componentWillUnmount() {
         window.removeEventListener("resize", this.handleWindowResize);
+        this.pusher.disconnect();
     }
 	render() {
         const employees = this.props.employees.employees;
@@ -484,13 +527,27 @@ export class Schedule extends Component {
 		return(
 			<div>
                 <div>
-                    <AccountNav onClick={this.toggleModal}/>
+                    <AccountNav 
+                        onClick={this.toggleModal}
+                        className={this.state.new_notification === false ? "material-icons no_notification" : "material-icons new_notification"}
+                        markAsRead={this.markAsRead}
+                        username={localStorage.getItem('username')}
+                        newNotification={this.state.new_notification}
+                    />
                     <AdminMenuModal
                         show={this.state.isOpen}
                         onClose={this.toggleModal}
                     />
                 </div>
                 <div className="admin_schedule_page">
+                    <Notifications 
+                        className={this.state.availability_alert ? "admin_schedule-availability_alert" : "admin_schedule-availability_alert notifications-hidden"}
+                        text="New schedule request!"
+                    />
+                    <Notifications 
+                        className={this.state.schedule_alert ? "admin_schedule-schedule_alert" : "admin_schedule-schedule_alert notifications-hidden"}
+                        text="New schedule available!"
+                    />
                     <div className="admin_current_month-container">
                         <MonthRow 
                             className="month-current"
@@ -554,8 +611,8 @@ export class Schedule extends Component {
                             />
                             <button 
                                 onClick={this.incrementCount}
-                                className="admin_schedule_save"
-                                >Save</button>
+                                className={this.state.isUpdating ? "admin_schedule_save updating-admin" : "admin_schedule_save updated-admin"}
+                                >{this.state.updateButtonText}</button>
                         </div>
                         <SelectedMonthRow 
                             className="month_row-selected"

@@ -21,6 +21,7 @@ export default class UserMenuModal extends React.Component {
   }
 }
 
+
 UserMenuModal.propTypes = {
   show: PropTypes.bool,
   children: PropTypes.node

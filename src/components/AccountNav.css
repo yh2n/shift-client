@@ -8,7 +8,7 @@
 }
 
 .menu_icon {
-    margin: 12px 0 12px 15px;
+    margin: 12px 15px;
     cursor: pointer;
     flex-grow: 1;
 }
@@ -36,4 +36,16 @@
 .nav_date {
     margin: 0px 25px 0px 30px;
     color: #26A56A;
+}
+
+.material-icons.no_notification {
+    color: rgba(242, 201, 79, 95);
+}
+
+.material-icons.new_notification {
+    color: rgba(216, 73, 73, 85);
+    filter: brightness(120%);
+}
+.material-icons.new_notification:hover {
+    cursor: pointer;
 }

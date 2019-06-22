@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { API_BASE_URL } from '../config';
+
 import { WeekDropDown, WeekendDropDown } from './ScheduleDropDown';
 
 
@@ -66,7 +67,7 @@ export default class AdminEmployeeRowSelected extends Component {
         let id = this.props.id;
         console.log(id, this.props.name);
         console.log(this.state.schedule);
-        return fetch(`${API_BASE_URL}/employee/${id}/schedule/${this.props.selectedWeek}`, {
+        return fetch(`${API_BASE_URL}/admin/${id}/schedule/${this.props.selectedWeek}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

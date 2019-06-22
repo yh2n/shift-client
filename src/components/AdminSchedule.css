@@ -30,24 +30,28 @@
 }
 
 .admin_schedule_position, .admin_schedule_days  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-bottom: .5px solid grey;
   border-top: .5px solid grey;
   background: #112138;
   color: rgba(38, 165, 106, 65);
+  padding-top: 3px;
 }
 
 .admin_schedule_name {
-  border-bottom: 1px solid grey;
   display: flex;
+  border-bottom: 1px solid grey;
   justify-content: center;
   align-items: center;
   background: rgba(24, 30, 64, 25);
-  color: #D2F7F3;
   padding: 10px;
+  color: #D2F7F3;
 }
 
 .admin_schedule_name:hover {
-  color: white;
+  color:rgba(242, 201, 79, .9);;
 }
 
 .admin_schedule_days_name {
@@ -55,8 +59,9 @@
   color: #D2F7F3;
 }
 
-.current {
+.current, .logged_in {
   background: #c0a115;
+  color: #112138;
 }
 
 .admin_schedule_div {
@@ -99,23 +104,29 @@
   flex: 1;
 }
 
-.admin_select_save > .MuiSvgIcon-root.MuiSelect-icon {
+.admin_schedule_select > * {
   color: #D2F7F3;
 }
 
 .admin_schedule_save {
   width: 60px;
   border-radius: 2px;
-  background:rgba(24, 30, 64, 24);
   color: #D2F7F3;
   border: .5px solid #D2F7F3;
-  font-size: 14px;
+  font-size: 16px;
   padding: 17px;
   width: 90px
 }
 
-.admin_select_options {
-  color: red;
+.updated-admin {
+  background: rgba(24, 30, 64, 24);
+  
+}
+
+.updating-admin {
+  background:white;
+  filter: brightness(200%);
+  color: rgba(24, 30, 64, 24);
 }
 
 .admin_schedule_btns {
@@ -148,6 +159,11 @@
 .selected {
   opacity: 1;
   color: white;
+  transition: filter .5s; 
+}
+
+.selected:hover {
+  filter: brightness(140%)
 }
 
 .off {

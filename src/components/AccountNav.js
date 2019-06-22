@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local_storage';
@@ -18,6 +19,27 @@ export class AccountNav extends Component{
         // if (!this.props.loggedIn) {
         //     return <Redirect to='/login' />;
         // }
+        if(this.props.newNotification === false) {
+            var Icon = (
+                <i 
+                className={this.props.className}
+            >
+                add_alert
+            </i>
+            )
+        }
+        else {
+            var Icon = (
+            <Link to={`/my_account/${this.props.username}/schedule`} >
+                <i 
+                className={this.props.className}
+                onClick={this.props.markAsRead}
+                >
+                add_alert
+                </i>
+            </Link>
+            )
+        }
         let currentUser = localStorage.getItem('currentUser')
         return(
             <div className="account_nav">
@@ -26,6 +48,7 @@ export class AccountNav extends Component{
                     <div></div>
                     <div></div>
                 </div>
+                { Icon }
                 <p className="nav_date">{moment().format("dddd, MMMM Do YYYY")}</p>
                 <p className="nav_user_name">{currentUser}</p>
                 <button 
