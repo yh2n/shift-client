@@ -5,10 +5,46 @@
     justify-content: center;
     align-items: center;
 }
+
+.app_presentation_container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    border: solid;
+    font-size: 60px;
+    max-width: 1400px;
+    width: 90%;
+    margin-top: 200px;
+}
+
+.app_presentation {
+    display: flex;
+    align-items: center;
+}
+
+.center_text {
+    flex-direction: column;
+    font-size: 50px;
+}
+
+.left_icons, .right_icons {
+    justify-content: center;
+}
+
+.right_icons > :nth-child(1) {
+    align-self: flex-start;
+    margin: 30px 80px 0 0;
+}
+
+.right_icons > :nth-child(2) {
+    align-self: flex-end;
+    margin: 0 10px 30px 50px;
+}
+.center_text > p {
+    margin: 10px 15px;
+}
 .landing_page_animations {
+    margin-top: 100px;
     border: solid red;
-    margin-top: 400px;
-    /* width: 80%; */
     max-width: 1200px;
 }
 .intro_container {
@@ -36,6 +72,7 @@
     display: flex;
     width: 100%;
     border: solid blueviolet;
+    align-items: center;
 }
 
 .laptop, .dialogue_icon1 {
@@ -80,7 +117,7 @@
 }
 
 
-.laptop_instructions > i, .cell-phone_instructions  > i, .last_instructions {
+.laptop_instructions > i, .cell-phone_instructions  > i, .last_instructions, .icon_text {
     align-self: center;
     margin: 10px;
 }
@@ -205,11 +242,21 @@
 @media all and (max-width: 1200px) {
     .landing_page_animations {
         border: solid red;
-        margin-top: 400px;
+        margin-top: 100px;
         max-width: 1000px;
+    }
+
+    .app_presentation_container > *{
+        font-size: 45px;
     }
 }
 
+@media all and (max-width: 1050px) {
+    .app_presentation_container > *{
+        font-size: 35px;
+    }
+    
+}
 @media all and (max-width: 968px) {
     .laptop_screen {
         width: 304px;
@@ -218,6 +265,22 @@
 
     .laptop_keypboard {
         width: 399px;
+    }
+
+    .cell-phone_screen {
+        width: 78px;
+        height: 130px
+    }
+    
+    .cell-phone_bottom {
+        width: 78px;
+        height: 17.3px;
+    }
+
+    .cell-phone_home_button {
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
     }
 }
 
@@ -230,19 +293,6 @@
     .laptop_keypboard {
         width: 373px;
     }
-}
-
-@media all and (max-width: 804px) {
-    .laptop_container, .cell-phone_container, .dialogue_container  {
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-    }
-
-    .laptop, .cell-phone, .dialogue_icon1, .dialogue_icon2 {
-        width: auto;
-    }
-
 
     .cell-phone_screen {
         width: 73px;
@@ -259,5 +309,46 @@
         height: 11px;
         border-radius: 50%;
     }
+}
+
+@media all and (max-width: 804px) {
+    .app_presentation_container {
+        display: flex;
+        flex-direction: column;
+        border: solid;
+        font-size: 40px;
+        width: 90%;
+        margin-top: 200px;
+    }
     
+    .left_icons {
+        margin-top: 30px;
+    }
+    .right_icons :nth-child(1) {
+        margin-bottom: 30px
+    }
+    .laptop_container, .cell-phone_container, .dialogue_container  {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .laptop, .cell-phone, .dialogue_icon1, .dialogue_icon2 {
+        width: auto;
+    }
+}
+
+@media all and (max-width: 549px) {
+    .center_text :nth-child(3) {
+        align-self: flex-end;
+    }
+}
+
+@media all and (max-width: 560px) {
+    /* .laptop_container, .cell-phone_container, .dialogue_container {
+        padding: 0
+    } */
+    .landing_page_animations {
+        width: 98%
+    }
 }
