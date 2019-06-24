@@ -21,6 +21,20 @@ export default class LandingPage extends Component {
                         shift
                     </p>
                     <LandingPageIcons /> */}
+                    <div className="app_presentation_container">
+                        <div className="app_presentation left_icons">
+                            <i className="fas fa-bell"></i>
+                        </div>
+                        <div className="app_presentation center_text">
+                            <p>Adding a real-time experience</p>
+                            <p>to staff management</p>
+                            <p>and scheduling</p>
+                        </div>
+                        <div className="app_presentation right_icons">
+                            <i className="fas fa-users"></i>
+                            <i className="fas fa-calendar-check"></i>
+                        </div>
+                    </div>
                     <div className="landing_page_animations">
                         <div className="animations_container">
                             <div className="laptop_container">
@@ -29,8 +43,8 @@ export default class LandingPage extends Component {
                                     <div className="laptop_keypboard"></div>
                                 </div>
                                 <div className="laptop_instructions">
-                                    <i className="far fa-calendar-alt" style={{'font-size': '40px'}}></i>
-                                    <div className="animations_text">Create new schedule in minutes</div>
+                                    <i className="far fa-calendar-alt" style={{'fontSize': '40px'}}></i>
+                                    <div className="animations_text icon_text">Create new schedule in minutes</div>
                                     <div className="animations_text">Have access to everuyone's updated availability and plan accordingly</div>
                                 </div>
                             </div>
@@ -44,8 +58,8 @@ export default class LandingPage extends Component {
                                     </div>
                                 </div>
                                 <div className="cell-phone_instructions">
-                                    <i className="far fa-bell" style={{'font-size': '40px'}}></i>
-                                    <div className="animations_text">Get notified</div>
+                                    <i className="far fa-bell" style={{'fontSize': '40px'}}></i>
+                                    <div className="animations_text icon_text">Get notified</div>
                                     <div className="animations_text">Receive schedule updates and requests in real-time</div>
                                     <div className="animations_text">Always know who will be on the floor even with last minutes changes</div>
                                 </div>
@@ -77,10 +91,10 @@ export default class LandingPage extends Component {
                                 </div>
                                 <div className="laptop_instructions">
                                     <div className="last_instructions">
-                                        <i class="far fa-laugh-beam" style={{'font-size': '40px'}}></i>
-                                        <i class="fas fa-sun" style={{'font-size': '40px'}}></i>
+                                        <i className="far fa-laugh-beam" style={{'fontSize': '40px'}}></i>
+                                        <i className="fas fa-sun" style={{'fontSize': '40px'}}></i>
                                     </div>
-                                    <div className="animations_text">Ease the process...</div>
+                                    <div className="animations_text icon_text">Ease the process...</div>
                                     <div className="animations_text">...scheduling, swapping shifts, communicating with the staff</div>
                                     <div className="animations_text">No more time wasted looking for that server who's off and willing to pick a shift</div>
                                     <div className="animations_text">4 unnecessary phone calls?
