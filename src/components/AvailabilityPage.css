@@ -11,7 +11,7 @@
     color: rgba(24, 30, 64, 25);;
     font-size: 20px;
     margin-bottom: 50px;
-    margin-top: 10%;
+    margin-top: 3%;
     width: 75%;
     max-width: 1200px;
 }
@@ -39,7 +39,7 @@
 
 .availability_btn.day {
     cursor: text;
-    background: rgba(216, 73, 73, 85);
+    background: #510F59;
 }
 
 .day_container {
