@@ -43,7 +43,7 @@ export default class LandingPage extends Component {
                                     </div>
                                 </div>
                                 <div className="cell-phone_instructions">
-                                    <i className="far fa-calendar-alt" style={{'font-size': '30px'}}></i>
+                                    <i className="far fa-calendar-alt" style={{fontSize: '30px'}}></i>
                                     <div className="animations_text">Get notified</div>
                                     <div className="animations_text">Receive schedule updates and requests in real-time</div>
                                 </div>
