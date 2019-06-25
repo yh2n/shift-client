@@ -8,7 +8,31 @@ import './LandingPage.css';
 
 
 export default class LandingPage extends Component {
-    state = {  }
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            request_alert: false,
+            schedule_alert:false
+        }
+    }
+
+    componentDidMount() {
+        this.handleAvailabilityAlert()
+    }
+
+    handleAvailabilityAlert = () => {
+        this.setState({
+            availability_alert: true,
+            new_notification: true
+        })
+        setTimeout(() => {
+            this.setState({
+                availability_alert: false
+            })
+            
+        }, 7000);
+    }
     render() {
         return (
             <div className="landing_page">
@@ -23,16 +47,16 @@ export default class LandingPage extends Component {
                     <LandingPageIcons /> */}
                     <div className="app_presentation_container">
                         <div className="app_presentation left_icons">
-                            <i className="fas fa-bell"></i>
+                            <i className="far fa-bell"></i>
                         </div>
                         <div className="app_presentation center_text">
-                            <p>Adding a real-time experience</p>
-                            <p>to staff management</p>
-                            <p>and scheduling</p>
+                            <p>ADDING REALTIME EXPERIENCE</p>
+                            <p>TO STAFF MANAGEMENT</p>
+                            <p>AND SCHEDULING</p>
                         </div>
                         <div className="app_presentation right_icons">
                             <i className="fas fa-users"></i>
-                            <i className="fas fa-calendar-check"></i>
+                            <i className="fa fa-calendar-check"></i>
                         </div>
                     </div>
                     <div className="landing_page_animations">
@@ -40,7 +64,9 @@ export default class LandingPage extends Component {
                             <div className="laptop_container">
                                 <div className="laptop">
                                     <div className="laptop_screen"></div>
-                                    <div className="laptop_keypboard"></div>
+                                    <div className="laptop_keypboard">
+                                        <div className="laptop_keyboard_button"></div>
+                                    </div>
                                 </div>
                                 <div className="laptop_instructions">
                                     <i className="far fa-calendar-alt" style={{'fontSize': '40px'}}></i>
@@ -52,7 +78,11 @@ export default class LandingPage extends Component {
                         <div className="animations_container">
                             <div className="cell-phone_container">
                                 <div className="cell-phone">
-                                    <div className="cell-phone_screen"></div>
+                                    <div className="cell-phone_screen">
+                                        <p style={{fontSize: '7px'}}>VeriMo Wi-Fi <i className="fas fa-wifi" ></i></p>
+                                        <div className={this.state.availability_alert ? "cellphone_alert request_alert alert_hidden" : "cellphone_alert request_alert"  }>New schedule request!</div>
+                                        {/* <div className="cellphone_alert schedule_alert">New schedule available!</div> */}
+                                    </div>
                                     <div className="cell-phone_bottom">
                                         <div className="cell-phone_home_button"></div>
                                     </div>
@@ -91,6 +121,7 @@ export default class LandingPage extends Component {
                                 </div>
                                 <div className="laptop_instructions">
                                     <div className="last_instructions">
+                                        <i className="fas fa-umbrella-beach" style={{'fontSize': '40px'}}></i>
                                         <i className="far fa-laugh-beam" style={{'fontSize': '40px'}}></i>
                                         <i className="fas fa-sun" style={{'fontSize': '40px'}}></i>
                                     </div>
