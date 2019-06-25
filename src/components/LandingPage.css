@@ -4,12 +4,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #181E3F;
 }
 
 .app_presentation_container {
     display: grid;
     grid-template-columns: 2fr 5fr 2fr;
-    border: solid;
+    /* border: solid; */
     font-size: 60px;
     max-width: 1400px;
     width: 90%;
@@ -27,13 +28,19 @@
     font-family: 'Fjalla One', sans-serif;
 }
 
-.left_icons, .right_icons {
+.right_icons {
     justify-content: center;
 }
 
 .right_icons > :nth-child(1) {
     align-self: flex-start;
     margin: 30px 80px 0 0;
+}
+
+.left_icons {
+    align-self: flex-start;
+    margin: 40% 80px 0 10px;
+    
 }
 
 .right_icons > :nth-child(2) {
@@ -45,7 +52,7 @@
 }
 .landing_page_animations {
     margin-top: 100px;
-    border: solid red;
+    /* border: solid red; */
     max-width: 1200px;
     font-family: 'Fjalla One', sans-serif;
 }
@@ -60,26 +67,27 @@
 
 .animations_container {
     display: flex;
-    border: solid purple;
+    /* border: solid purple; */
     padding: 50px;
 }
 
 
 .animations_text {
-    border: solid;
+    /* border: solid; */
     padding: 10px;
 }
 .laptop_container, .cell-phone_container, .dialogue_container {
     display: flex;
     width: 100%;
-    border: solid blueviolet;
+    /* border: solid blueviolet; */
     align-items: center;
 }
 
 .laptop, .dialogue_icon1 {
     display: flex;
     flex-direction: column;
-    border: solid green;
+    /* border: solid green; */
+    color: #D84949;
     padding: 20px;
     margin-right: 10px;
     justify-content: center;
@@ -89,7 +97,7 @@
 }
 
 .dialogue_icon2  {
-    border: solid green;
+    /* border: solid green; */
     width: 50%;
     font-size: 40px;
 }
@@ -109,7 +117,7 @@
     border-radius: 5px;
     width: 460px;
     height: 4%;
-    background: black;
+    background: #D84949;
 }
 
 .laptop_keyboard_button {
@@ -122,7 +130,6 @@
 .laptop_instructions, .cell-phone_instructions {
     display: flex;
     flex-direction: column;
-    border: solid blue;
     justify-content: center;
     align-items: flex-start;
 }
@@ -145,11 +152,12 @@
     flex-direction: column;
     height: 200px;
     width: 50%;
-    border: solid green;
+    /* border: solid green; */
     padding: 20px;
     margin-right: 10px;
     justify-content: center;
     align-items: center;
+    color: #26A56A
 }
 
 .cell-phone_screen {
@@ -170,7 +178,7 @@
     border-radius: 0 0 8px 8px;
     width: 90px;
     height: 20px;
-    background: black;
+    background: #26A56A;
 }
 
 .cell-phone_home_button {
@@ -282,7 +290,7 @@
 
 @media all and (max-width: 1220px) {
     .landing_page_animations {
-        border: solid red;
+        /* border: solid red; */
         margin-top: 100px;
         max-width: 1000px;
     }
@@ -290,10 +298,6 @@
     .app_presentation_container > *{
         font-size: 42px;
     }
-
-    /* .app_presentation_container > *{
-        font-size: 40px;
-    } */
 }
 
 @media all and (max-width: 1040px) {
@@ -340,14 +344,15 @@
     .app_presentation_container {
         display: flex;
         flex-direction: column;
-        border: solid;
+        /* border: solid; */
         font-size: 40px;
         width: 90%;
         margin-top: 200px;
     }
 
     .left_icons {
-        margin-top: 30px;
+        margin: 10px 0 0 0;
+        align-self: center;
     }
     .right_icons :nth-child(1) {
         margin-bottom: 30px

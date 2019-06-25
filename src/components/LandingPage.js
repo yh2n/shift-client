@@ -124,8 +124,7 @@ export default class LandingPage extends Component {
                                         <i className="fas fa-sun" style={{'fontSize': '40px'}}></i>
                                     </div>
                                     <div className="animations_text icon_text">Ease the process...</div>
-                                    <div className="animations_text">...of scheduling, swapping shifts, communicating with everyone in the restaurant</div>
-                                    <div className="animations_text">Dramatically cut the time finding that one coworker who's off and looking for a shift</div>
+                                    <div className="animations_text">...of scheduling, swapping shifts, communicating with every staff member</div>
                                 </div>
                             </div>
                         </div>
