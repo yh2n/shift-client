@@ -13,25 +13,24 @@ export default class LandingPage extends Component {
 
         this.state = {
             request_alert: false,
-            schedule_alert:false
+            schedule_alert: false
         }
     }
 
     componentDidMount() {
-        this.handleAvailabilityAlert()
+        this.handleRequestAlert()
     }
 
-    handleAvailabilityAlert = () => {
-        this.setState({
-            availability_alert: true,
-            new_notification: true
-        })
+    handleRequestAlert = () => {
+        // this.setState({
+        //     request_alert: true
+        // })
         setTimeout(() => {
             this.setState({
-                availability_alert: false
+                request_alert: true
             })
             
-        }, 7000);
+        }, 1000);
     }
     render() {
         return (
@@ -56,7 +55,7 @@ export default class LandingPage extends Component {
                         </div>
                         <div className="app_presentation right_icons">
                             <i className="fas fa-users"></i>
-                            <i className="fa fa-calendar-check"></i>
+                            <i className="far fa-calendar-check"></i>
                         </div>
                     </div>
                     <div className="landing_page_animations">
@@ -71,7 +70,7 @@ export default class LandingPage extends Component {
                                 <div className="laptop_instructions">
                                     <i className="far fa-calendar-alt" style={{'fontSize': '40px'}}></i>
                                     <div className="animations_text icon_text">Create new schedule in minutes</div>
-                                    <div className="animations_text">Have access to everuyone's updated availability and plan accordingly</div>
+                                    <div className="animations_text">Have access to everyone's updated availability and plan accordingly</div>
                                 </div>
                             </div>
                         </div>
@@ -79,8 +78,8 @@ export default class LandingPage extends Component {
                             <div className="cell-phone_container">
                                 <div className="cell-phone">
                                     <div className="cell-phone_screen">
-                                        <p style={{fontSize: '7px'}}>VeriMo Wi-Fi <i className="fas fa-wifi" ></i></p>
-                                        <div className={this.state.availability_alert ? "cellphone_alert request_alert alert_hidden" : "cellphone_alert request_alert"  }>New schedule request!</div>
+                                        {/* <p style={{fontSize: '7px'}}>VeriMo Wi-Fi <i className="fas fa-wifi" ></i></p> */}
+                                        {/* <div className={this.state.request_alert ? "cellphone_alert request_alert" : "cellphone_alert request_alert alert_hidden"  }>New schedule request!</div> */}
                                         {/* <div className="cellphone_alert schedule_alert">New schedule available!</div> */}
                                     </div>
                                     <div className="cell-phone_bottom">
@@ -91,9 +90,8 @@ export default class LandingPage extends Component {
                                     <i className="far fa-bell" style={{'fontSize': '40px'}}></i>
                                     <div className="animations_text icon_text">Get notified</div>
                                     <div className="animations_text">Receive schedule updates and requests in real-time</div>
-                                    <div className="animations_text">Always know who will be on the floor even with last minutes changes</div>
+                                    <div className="animations_text">Always know who will be present even with last minutes changes</div>
                                 </div>
-                                
                             </div>
                         </div>
                         <div className="animations_container">
@@ -126,10 +124,8 @@ export default class LandingPage extends Component {
                                         <i className="fas fa-sun" style={{'fontSize': '40px'}}></i>
                                     </div>
                                     <div className="animations_text icon_text">Ease the process...</div>
-                                    <div className="animations_text">...scheduling, swapping shifts, communicating with the staff</div>
-                                    <div className="animations_text">No more time wasted looking for that server who's off and willing to pick a shift</div>
-                                    <div className="animations_text">4 unnecessary phone calls?
-                                        7 unread text messages? Headaches? Nope</div>
+                                    <div className="animations_text">...of scheduling, swapping shifts, communicating with everyone in the restaurant</div>
+                                    <div className="animations_text">Dramatically cut the time finding that one coworker who's off and looking for a shift</div>
                                 </div>
                             </div>
                         </div>

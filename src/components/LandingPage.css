@@ -8,7 +8,7 @@
 
 .app_presentation_container {
     display: grid;
-    grid-template-columns: 1fr 5fr 2fr;
+    grid-template-columns: 2fr 5fr 2fr;
     border: solid;
     font-size: 60px;
     max-width: 1400px;
@@ -23,7 +23,8 @@
 
 .center_text {
     flex-direction: column;
-    font-size: 40Px;
+    font-size: 50Px;
+    font-family: 'Fjalla One', sans-serif;
 }
 
 .left_icons, .right_icons {
@@ -46,6 +47,7 @@
     margin-top: 100px;
     border: solid red;
     max-width: 1200px;
+    font-family: 'Fjalla One', sans-serif;
 }
 .intro_container {
     display: flex;
@@ -54,7 +56,6 @@
     align-items: center;
     flex: 1;
     width: 100vw;
-    font-family: 'Quattrocento Sans', sans-serif;
 }
 
 .animations_container {
@@ -187,17 +188,23 @@
     font-size: 8px;
     border: solid .5px;
     margin-bottom: 5px;
+    margin-top: 50px;
+    margin-left: -50px;
     height: 12px;
     width: 100%;
+    transition: margin-left 1s
 }
 
 .request_alert {
-    margin-left: -150px;
-    margin-top: 50px;
+    background: red;
 }
+
 .schedule_alert {
-    margin-top: 65px;
-    margin-right: -150px;
+    background: yellowgreen;
+}
+
+.alert_hidden {
+    margin-left: -170px;
 }
 
 .dialogue_bubble_left {
@@ -273,7 +280,7 @@
 }
 
 
-@media all and (max-width: 1200px) {
+@media all and (max-width: 1220px) {
     .landing_page_animations {
         border: solid red;
         margin-top: 100px;
@@ -281,16 +288,27 @@
     }
 
     .app_presentation_container > *{
-        font-size: 35px;
+        font-size: 42px;
     }
+
+    /* .app_presentation_container > *{
+        font-size: 40px;
+    } */
 }
 
-@media all and (max-width: 1050px) {
+@media all and (max-width: 1040px) {
     .app_presentation_container > *{
-        font-size: 30px;
+        font-size: 38px;
     }
     
 }
+@media all and (max-width: 935px) {
+    .center_text {
+        font-size: 35px
+
+    }
+}
+
 @media all and (max-width: 968px) {
     .laptop_screen {
         width: 304px;
@@ -378,17 +396,23 @@
     }
 }
 
-@media all and (max-width: 549px) {
-    .center_text :nth-child(3) {
-        align-self: flex-end;
+@media all and (max-width: 580px) {
+    .app_presentation_container {
+        width: 95%;
     }
 }
-
+ 
 @media all and (max-width: 560px) {
-    /* .laptop_container, .cell-phone_container, .dialogue_container {
+    .laptop_container, .cell-phone_container, .dialogue_container {
         padding: 0
-    } */
+    }
+   
     .landing_page_animations {
-        width: 98%
+        width: 98%;
+    }
+
+    .center_text {
+        font-size: 35px
+
     }
 }
