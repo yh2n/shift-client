@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AccountNav from './AccountNav';
 import AdminMenuModal from './AdminMenuModal';
+import Notifications from './Notifications';
 import ContactRow from './ContactRow';
 import ContactLabels from './ContactLabels';
 import ContactRowMobile from './ContactRowMobile';
@@ -14,7 +15,10 @@ export  class AdminAccount extends Component {
 
 		this.state = { 
 			isOpen: false,
-			isDisplayed: false
+			isDisplayed: false,
+			availability_alert: false,
+			schedule_alert: false,
+			new_notification: false
 		};
 	}
 
@@ -31,7 +35,12 @@ export  class AdminAccount extends Component {
         return (
             <div>
 				<div>
-					<AccountNav onClick={this.toggleMenuModal}/>
+				<AccountNav 
+					onClick={() => this.toggleModal()}
+					className={this.state.new_notification === false ? "material-icons no_notification" : "material-icons new_notification"}
+					markAsRead={this.markAsRead}
+					username={localStorage.getItem('username')}
+				/>
 					<AdminMenuModal
 						show={this.state.isDisplayed}
 						onClose={this.toggleMenuModal}
