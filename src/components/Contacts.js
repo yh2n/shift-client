@@ -84,6 +84,7 @@ export class Contacts extends Component {
 
 	componentWillUnmount() {
 		this.pusher.disconnect()
+		document.body.classList.remove("background-color");
     }
     render() {
         return (
