@@ -82,6 +82,7 @@ export class UserEmployeeRow extends Component {
     setAvailability = () => {
         let employees = this.props.employees.employees;
         let id = this.props.id;
+        this.props.preventSenderAlert()
         console.log(id, this.props.name);
         return fetch(`${API_BASE_URL}/employee/${id}/schedule/${this.state.currentWeek}`, {
             method: 'PUT',

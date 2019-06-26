@@ -38,7 +38,8 @@ export class Schedule extends Component {
             error: null,
             availability_alert: false,
             schedule_alert: false,
-            new_notification: false
+            new_notification: false,
+            fromMe: false
 		}
 	}	
         
@@ -52,12 +53,9 @@ export class Schedule extends Component {
             forceTLS: true
         });
 
-        Pusher.logToConsole = true;
         this.channel = this.pusher.subscribe('new_schedule');
         this.channel.bind('schedule_update', () => {
-            // this.fetchSchedule()
             this.handleScheduleAlert()
-            console.log('new schedule')
         })
     }
 
@@ -100,16 +98,18 @@ export class Schedule extends Component {
     }
 
     handleAvailabilityAlert = () => {
-        this.setState({
-            availability_alert: true,
-            new_notification: true
-        })
-        setTimeout(() => {
+        if(!this.state.fromMe) {
             this.setState({
-                availability_alert: false
+                availability_alert: true,
+                new_notification: true
             })
-            
-        }, 7000);
+            setTimeout(() => {
+                this.setState({
+                    availability_alert: false
+                })
+                
+            }, 7000);
+        }
     }
 
     handleScheduleAlert = () => {
@@ -122,7 +122,6 @@ export class Schedule extends Component {
             this.setState({
                 schedule_alert: false
             })
-            
         }, 7000);
     }
 
@@ -130,14 +129,19 @@ export class Schedule extends Component {
         this.setState({new_notification: false})
     }
 
+    preventSenderAlert = () => {
+        this.setState({
+            fromMe: true
+        })
+    }
+
     componentWillUnmount() {
         window.removeEventListener("resize", this.handleWindowResize);
 		this.pusher.disconnect()
     }
 	render() {
-        console.log(this.state.isUpdating)
         const employees = this.props.employees.employees;
-        let { currentUser } = this.state 
+        let { currentUser } = this.state;
 
         let barbacks = employees.filter(employee => employee.position === "Barback")
         let barbackRow = (
@@ -150,6 +154,7 @@ export class Schedule extends Component {
                             schedule={barback.schedule}
                             shiftFormat={this.state.shiftFormat}
                             submittedCount={this.state.submittedCount}
+                            preventSenderAlert={this.preventSenderAlert}
                             handleScheduleAlert={this.handleAvailabilityAlert}
                             handleAvailabilityAlert={this.handleAvailabilityAlert}
                         />
@@ -186,6 +191,7 @@ export class Schedule extends Component {
                             handleScheduleAlert={this.handleAvailabilityAlert}
                             handleAvailabilityAlert={this.handleAvailabilityAlert}
                             submittedCount={this.state.submittedCount}
+                            preventSenderAlert={this.preventSenderAlert}
                         />
                     )
                 )
@@ -199,8 +205,8 @@ export class Schedule extends Component {
                         className={bartender.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={bartender.id}
                         shiftFormat={this.state.shiftFormat}
-                            handleScheduleAlert={this.handleAvailabilityAlert}
-                            handleAvailabilityAlert={this.handleAvailabilityAlert}
+                        handleScheduleAlert={this.handleAvailabilityAlert}
+                        handleAvailabilityAlert={this.handleAvailabilityAlert}
                         selectedWeek={this.state.selectedWeek}
                     />
                 )
@@ -222,6 +228,7 @@ export class Schedule extends Component {
                             handleScheduleAlert={this.handleAvailabilityAlert}
                             handleAvailabilityAlert={this.handleAvailabilityAlert}
                             submittedCount={this.state.submittedCount}
+                            preventSenderAlert={this.preventSenderAlert}
                         />
                     )
                 )
@@ -235,8 +242,8 @@ export class Schedule extends Component {
                         className={busser.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={busser.id}
                         shiftFormat={this.state.shiftFormat}
-                            handleScheduleAlert={this.handleAvailabilityAlert}
-                            handleAvailabilityAlert={this.handleAvailabilityAlert}
+                        handleScheduleAlert={this.handleAvailabilityAlert}
+                        handleAvailabilityAlert={this.handleAvailabilityAlert}
                         selectedWeek={this.state.selectedWeek}
                     />
                 )
@@ -257,6 +264,7 @@ export class Schedule extends Component {
                             handleScheduleAlert={this.handleAvailabilityAlert}
                             handleAvailabilityAlert={this.handleAvailabilityAlert}
                             submittedCount={this.state.submittedCount}
+                            preventSenderAlert={this.preventSenderAlert}
                         />
                     )
                 )
@@ -270,8 +278,8 @@ export class Schedule extends Component {
                         className={captain.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={captain.id}
                         shiftFormat={this.state.shiftFormat}
-                            handleScheduleAlert={this.handleAvailabilityAlert}
-                            handleAvailabilityAlert={this.handleAvailabilityAlert}
+                        handleScheduleAlert={this.handleAvailabilityAlert}
+                        handleAvailabilityAlert={this.handleAvailabilityAlert}
                         selectedWeek={this.state.selectedWeek}
                     />
                 )
@@ -291,6 +299,7 @@ export class Schedule extends Component {
                             handleScheduleAlert={this.handleAvailabilityAlert}
                             handleAvailabilityAlert={this.handleAvailabilityAlert}
                             submittedCount={this.state.submittedCount}
+                            preventSenderAlert={this.preventSenderAlert}
                         />
                     )
                 )
@@ -303,9 +312,9 @@ export class Schedule extends Component {
                         name={host.id === currentUser ? host.firstName  : <Link className="contact_links" to={`./contact-availability/${host.id}`}>{host.firstName}</Link>}
                         className={host.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={host.id}
-                        shiftFormat={this.state.shiftFormat}
-                            handleScheduleAlert={this.handleAvailabilityAlert}
-                            handleAvailabilityAlert={this.handleAvailabilityAlert}
+                    shiftFormat={this.state.shiftFormat}
+                        handleScheduleAlert={this.handleAvailabilityAlert}
+                        handleAvailabilityAlert={this.handleAvailabilityAlert}
                         selectedWeek={this.state.selectedWeek}
                     />
                 )
@@ -326,6 +335,7 @@ export class Schedule extends Component {
                             handleScheduleAlert={this.handleAvailabilityAlert}
                             handleAvailabilityAlert={this.handleAvailabilityAlert}
                             submittedCount={this.state.submittedCount}
+                            preventSenderAlert={this.preventSenderAlert}
                         />
                     )
                 )
@@ -339,7 +349,7 @@ export class Schedule extends Component {
                         className={maitre_d.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={maitre_d.id}
                         shiftFormat={this.state.shiftFormat}
-                            handleScheduleAlert={this.handleAvailabilityAlert}
+                        handleScheduleAlert={this.handleAvailabilityAlert}
                             handleAvailabilityAlert={this.handleAvailabilityAlert}
                         selectedWeek={this.state.selectedWeek}
                     />
@@ -361,6 +371,7 @@ export class Schedule extends Component {
                             handleScheduleAlert={this.handleAvailabilityAlert}
                             handleAvailabilityAlert={this.handleAvailabilityAlert}
                             submittedCount={this.state.submittedCount}
+                            preventSenderAlert={this.preventSenderAlert}
                         />
                     )
                 )
@@ -374,8 +385,8 @@ export class Schedule extends Component {
                         className={manager.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={manager.id}
                         shiftFormat={this.state.shiftFormat}
-                            handleScheduleAlert={this.handleAvailabilityAlert}
-                            handleAvailabilityAlert={this.handleAvailabilityAlert}
+                        handleScheduleAlert={this.handleAvailabilityAlert}
+                        handleAvailabilityAlert={this.handleAvailabilityAlert}
                         selectedWeek={this.state.selectedWeek}
                     />
                 )
@@ -396,6 +407,7 @@ export class Schedule extends Component {
                             handleScheduleAlert={this.handleAvailabilityAlert}
                             handleAvailabilityAlert={this.handleAvailabilityAlert}
                             submittedCount={this.state.submittedCount}
+                            preventSenderAlert={this.preventSenderAlert}
                         />
                     )
                 )
@@ -409,8 +421,8 @@ export class Schedule extends Component {
                         className={runner.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={runner.id}
                         shiftFormat={this.state.shiftFormat}
-                            handleScheduleAlert={this.handleAvailabilityAlert}
-                            handleAvailabilityAlert={this.handleAvailabilityAlert}
+                        handleScheduleAlert={this.handleAvailabilityAlert}
+                        handleAvailabilityAlert={this.handleAvailabilityAlert}
                         selectedWeek={this.state.selectedWeek}
                     />
                 )
@@ -430,6 +442,7 @@ export class Schedule extends Component {
                             handleScheduleAlert={this.handleAvailabilityAlert}
                             handleAvailabilityAlert={this.handleAvailabilityAlert}
                             submittedCount={this.state.submittedCount}
+                            preventSenderAlert={this.preventSenderAlert}
                         />
                     )
                 )
@@ -443,8 +456,8 @@ export class Schedule extends Component {
                         className={server.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={server.id}
                         shiftFormat={this.state.shiftFormat}
-                            handleScheduleAlert={this.handleAvailabilityAlert}
-                            handleAvailabilityAlert={this.handleAvailabilityAlert}
+                        handleScheduleAlert={this.handleAvailabilityAlert}
+                        handleAvailabilityAlert={this.handleAvailabilityAlert}
                         selectedWeek={this.state.selectedWeek}
                     />
                 )
@@ -465,6 +478,7 @@ export class Schedule extends Component {
                             handleScheduleAlert={this.handleAvailabilityAlert}
                             handleAvailabilityAlert={this.handleAvailabilityAlert}
                             submittedCount={this.state.submittedCount}
+                            preventSenderAlert={this.preventSenderAlert}
                         />
                     )
                 )
@@ -478,8 +492,8 @@ export class Schedule extends Component {
                         className={sommelier.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={sommelier.id}
                         shiftFormat={this.state.shiftFormat}
-                            handleScheduleAlert={this.handleAvailabilityAlert}
-                            handleAvailabilityAlert={this.handleAvailabilityAlert}
+                        handleScheduleAlert={this.handleAvailabilityAlert}
+                        handleAvailabilityAlert={this.handleAvailabilityAlert}
                         selectedWeek={this.state.selectedWeek}
                     />
                 )
@@ -491,7 +505,6 @@ export class Schedule extends Component {
                 <div>
                     <AccounttNav 
                         onClick={this.toggleModal}
-                        // name={currentUser}
                         className={this.state.new_notification === false ? "material-icons no_notification" : "material-icons new_notification"}
                         markAsRead={this.markAsRead}
                         username={localStorage.getItem('username')}
