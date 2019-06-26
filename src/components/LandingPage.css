@@ -4,12 +4,58 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #181E3F;
 }
+
+.app_presentation_container {
+    display: grid;
+    grid-template-columns: 2fr 5fr 2fr;
+    /* border: solid; */
+    font-size: 60px;
+    max-width: 1400px;
+    width: 90%;
+    margin-top: 200px;
+}
+
+.app_presentation {
+    display: flex;
+    align-items: center;
+}
+
+.center_text {
+    flex-direction: column;
+    font-size: 50Px;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.center_text > p {
+    margin: 10px 15px;
+}
+
+.right_icons {
+    justify-content: center;
+}
+
+.right_icons > :nth-child(1) {
+    align-self: flex-start;
+    margin: 30px 50px 0 0;
+}
+
+.left_icons {
+    margin-left: 120px;
+    
+}
+
+.right_icons > :nth-child(2) {
+    align-self: flex-end;
+    margin: 0 10px 30px 50px;
+}
+
 .landing_page_animations {
-    border: solid red;
-    margin-top: 400px;
-    width: 80%;
-    max-width: 1200px;
+    margin-top: 100px;
+    /* border: solid red; */
+    max-width: 1400px;
+    font-family: 'Fjalla One', sans-serif;
 }
 .intro_container {
     display: flex;
@@ -18,36 +64,45 @@
     align-items: center;
     flex: 1;
     width: 100vw;
-    font-family: 'Quattrocento Sans', sans-serif;
 }
 
 .animations_container {
     display: flex;
-    flex-direction: column;
-    border: solid purple;
-    padding: 50px;
+    /* border: solid purple; */
+    padding: 30px;
 }
+
 
 .animations_text {
     border: solid;
+    color: white;
+    background: #181E3F;
+    margin-bottom: 10px;
+    padding: 10px;
 }
 .laptop_container, .cell-phone_container, .dialogue_container {
     display: flex;
+    width: 100%;
+    /* border: solid blueviolet; */
+    margin-bottom: 20px;
+    align-items: center;
 }
 
-.laptop, .dialogue_icon1, dialogue_icon2 {
+.laptop, .dialogue_icon1 {
     display: flex;
     flex-direction: column;
-    border: solid green;
+    /* border: solid green; */
+    color: #8C0368;
     padding: 20px;
     margin-right: 10px;
     justify-content: center;
     align-items: center;
-    width: 50%;
     height: 270px
 }
 
 .dialogue_icon2  {
+    /* border: solid green; */
+    width: 50%;
     font-size: 40px;
 }
 
@@ -60,18 +115,33 @@
 } 
 
 .laptop_keypboard {
-    border: solid 5px;
+    display: flex;
+    justify-content: center;
+    border: solid;
     border-radius: 5px;
     width: 460px;
-    height: 3%
+    height: 4%;
+    background: #8C0368;
+}
+
+.laptop_keyboard_button {
+    background: white;
+    border-radius: 2px;
+    width: 25px;
+    height: 3px;
 }
 
 .laptop_instructions, .cell-phone_instructions {
     display: flex;
     flex-direction: column;
-    border: solid blue;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+}
+
+
+.laptop_instructions > i, .cell-phone_instructions  > i, .last_instructions, .icon_text {
+    align-self: center;
+    margin: 15px;
 }
 
 .cell-phone_container {
@@ -79,7 +149,6 @@
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
-    border: solid orange;
 }
 
 .cell-phone {
@@ -87,14 +156,16 @@
     flex-direction: column;
     height: 200px;
     width: 50%;
-    border: solid green;
+    /* border: solid green; */
     padding: 20px;
     margin-right: 10px;
     justify-content: center;
     align-items: center;
+    color: #26A56A
 }
 
 .cell-phone_screen {
+    display: flex;
     border-top: 8px solid;
     border-right: 8px solid;
     border-left: 8px solid;
@@ -111,7 +182,7 @@
     border-radius: 0 0 8px 8px;
     width: 90px;
     height: 20px;
-    background: black;
+    background: #26A56A;
 }
 
 .cell-phone_home_button {
@@ -120,6 +191,32 @@
     border: solid white;
     background: white;
     border-radius: 50%;
+}
+
+.cellphone_alert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8px;
+    border: solid .5px;
+    margin-bottom: 5px;
+    margin-top: 50px;
+    margin-left: -50px;
+    height: 12px;
+    width: 100%;
+    transition: margin-left 1s
+}
+
+.request_alert {
+    background: red;
+}
+
+.schedule_alert {
+    background: yellowgreen;
+}
+
+.alert_hidden {
+    margin-left: -170px;
 }
 
 .dialogue_bubble_left {
@@ -134,6 +231,9 @@
     padding: 10px;
 }
 
+.last_instructions > i {
+    margin-right: 10px;
+}
 .header {
     box-sizing: border-box;
     display: flex;
@@ -188,5 +288,140 @@
 @media all and (min-width: 414px) {
     .intro_container_redirect-mobile {
         display: none;
+    }
+}
+
+
+@media all and (max-width: 1220px) {
+    .landing_page_animations {
+        /* border: solid red; */
+        margin-top: 100px;
+        max-width: 1000px;
+    }
+
+    .app_presentation_container > *{
+        font-size: 42px;
+    }
+}
+
+@media all and (max-width: 1040px) {
+    .app_presentation_container > *{
+        font-size: 38px;
+    }
+    
+}
+@media all and (max-width: 935px) {
+    .center_text {
+        font-size: 35px
+
+    }
+}
+
+@media all and (max-width: 968px) {
+    .laptop_screen {
+        width: 304px;
+        height: 200px;
+    }
+
+    .laptop_keypboard {
+        width: 399px;
+    }
+
+    .cell-phone_screen {
+        width: 78px;
+        height: 130px
+    }
+    
+    .cell-phone_bottom {
+        width: 78px;
+        height: 17.3px;
+    }
+
+    .cell-phone_home_button {
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+    }
+}
+
+@media all and (max-width: 900px) {
+    .app_presentation_container {
+        display: flex;
+        flex-direction: column;
+        /* border: solid; */
+        font-size: 40px;
+        width: 90%;
+        margin-top: 150px;
+    }
+
+    .left_icons {
+        margin: 10px 0 0 0;
+        align-self: center;
+    }
+    .right_icons :nth-child(1) {
+        margin-bottom: 30px
+    }
+}
+
+@media all and (max-width: 864px) {
+    .laptop_screen {
+        width: 284px;
+        height: 186px;
+    }
+
+    .laptop_keypboard {
+        width: 373px;
+    }
+
+    .laptop_keyboard_button  {
+        width: 20px;
+    }
+    .cell-phone_screen {
+        width: 73px;
+        height: 121px
+    }
+    
+    .cell-phone_bottom {
+        width: 73px;
+        height: 16px;
+    }
+
+    .cell-phone_home_button {
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+    }
+}
+
+@media all and (max-width: 804px) {
+    .laptop_container, .cell-phone_container, .dialogue_container  {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .laptop, .cell-phone, .dialogue_icon1, .dialogue_icon2 {
+        width: auto;
+    }
+}
+
+@media all and (max-width: 580px) {
+    .app_presentation_container {
+        width: 95%;
+    }
+}
+ 
+@media all and (max-width: 560px) {
+    .laptop_container, .cell-phone_container, .dialogue_container {
+        padding: 0
+    }
+   
+    .landing_page_animations {
+        width: 98%;
+    }
+
+    .center_text {
+        font-size: 35px
+
     }
 }

@@ -30,7 +30,8 @@
 }
 
 .nav_user_name {
-    color: rgba(216, 73, 73, 85);
+    /* color: rgba(216, 73, 73, 85); */
+    color: white
 }
 
 .nav_date {

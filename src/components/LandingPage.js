@@ -8,7 +8,30 @@ import './LandingPage.css';
 
 
 export default class LandingPage extends Component {
-    state = {  }
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            request_alert: false,
+            schedule_alert: false
+        }
+    }
+
+    componentDidMount() {
+        this.handleRequestAlert()
+    }
+
+    handleRequestAlert = () => {
+        // this.setState({
+        //     request_alert: true
+        // })
+        setTimeout(() => {
+            this.setState({
+                request_alert: true
+            })
+            
+        }, 1000);
+    }
     render() {
         return (
             <div className="landing_page">
@@ -21,33 +44,55 @@ export default class LandingPage extends Component {
                         shift
                     </p>
                     <LandingPageIcons /> */}
+                    <div className="app_presentation_container">
+                        <div className="app_presentation left_icons">
+                            <i className="far fa-bell"></i>
+                        </div>
+                        <div className="app_presentation center_text">
+                            <p>ADDING REALTIME EXPERIENCE</p>
+                            <p>TO STAFF MANAGEMENT</p>
+                            <p>AND SCHEDULING</p>
+                        </div>
+                        <div className="app_presentation right_icons">
+                            <i className="fas fa-users"></i>
+                            <i className="far fa-calendar-check"></i>
+                        </div>
+                    </div>
                     <div className="landing_page_animations">
                         <div className="animations_container">
                             <div className="laptop_container">
                                 <div className="laptop">
                                     <div className="laptop_screen"></div>
-                                    <div className="laptop_keypboard"></div>
+                                    <div className="laptop_keypboard">
+                                        <div className="laptop_keyboard_button"></div>
+                                    </div>
                                 </div>
                                 <div className="laptop_instructions">
-                                    <i className="far fa-calendar-alt"></i>
-                                    <div className="animations_text">Create new schedule in minutes</div>
+                                    <i className="far fa-calendar-alt" style={{'fontSize': '40px'}}></i>
+                                    <div className="animations_text icon_text">Create new schedule in minutes</div>
+                                    <div className="animations_text">Easily recall previous templates</div>
+                                    <div className="animations_text">Have access to everyone's updated availability and plan accordingly</div>
                                 </div>
                             </div>
                         </div>
                         <div className="animations_container">
                             <div className="cell-phone_container">
                                 <div className="cell-phone">
-                                    <div className="cell-phone_screen"></div>
+                                    <div className="cell-phone_screen">
+                                        {/* <p style={{fontSize: '7px'}}>VeriMo Wi-Fi <i className="fas fa-wifi" ></i></p> */}
+                                        {/* <div className={this.state.request_alert ? "cellphone_alert request_alert" : "cellphone_alert request_alert alert_hidden"  }>New schedule request!</div> */}
+                                        {/* <div className="cellphone_alert schedule_alert">New schedule available!</div> */}
+                                    </div>
                                     <div className="cell-phone_bottom">
                                         <div className="cell-phone_home_button"></div>
                                     </div>
                                 </div>
                                 <div className="cell-phone_instructions">
-                                    <i className="far fa-calendar-alt" style={{fontSize: '30px'}}></i>
-                                    <div className="animations_text">Get notified</div>
+                                    <i className="fas fa-bell" style={{'fontSize': '40px'}}></i>
+                                    <div className="animations_text icon_text">Get notified</div>
                                     <div className="animations_text">Receive schedule updates and requests in real-time</div>
+                                    <div className="animations_text">Always know who will be present even with last minutes changes</div>
                                 </div>
-                                
                             </div>
                         </div>
                         <div className="animations_container">
@@ -74,12 +119,13 @@ export default class LandingPage extends Component {
                                     <i className="fas fa-at"></i>
                                 </div>
                                 <div className="laptop_instructions">
-                                    <i className="far fa-calendar-alt"></i>
-                                    <div className="animations_text">Ease the process...</div>
-                                    <div className="animations_text">...scheduling, swapping shifts, communicating with the staff</div>
-                                    <div className="animations_text">How much time is wasted looking for that server who's off but willing to pick a shift?</div>
-                                    <div className="animations_text">How often do shifts get trade at the last minute with multiple unnecessary phone calls, 
-                                        several unread text messages and  lots of headache?</div>
+                                    <div className="last_instructions">
+                                        <i className="fas fa-umbrella-beach" style={{'fontSize': '40px'}}></i>
+                                        <i className="far fa-laugh-beam" style={{'fontSize': '40px'}}></i>
+                                        <i className="fas fa-sun" style={{'fontSize': '40px'}}></i>
+                                    </div>
+                                    <div className="animations_text icon_text">Ease the process...</div>
+                                    <div className="animations_text">...of scheduling, swapping shifts, communicating with every staff member</div>
                                 </div>
                             </div>
                         </div>
