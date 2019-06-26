@@ -58,6 +58,7 @@ export default class LandingPage extends Component {
                             <i className="far fa-calendar-check"></i>
                         </div>
                     </div>
+                    <div className="bottom_border"></div>
                     <div className="landing_page_animations">
                         <div className="animations_container">
                             <div className="laptop_container">
@@ -68,14 +69,14 @@ export default class LandingPage extends Component {
                                     </div>
                                 </div>
                                 <div className="laptop_instructions">
-                                    <i className="far fa-calendar-alt" style={{'fontSize': '40px'}}></i>
+                                    <i className="far fa-calendar-alt" style={{'fontSize': '40px', color: '#5D87BF'}}></i>
                                     <div className="animations_text icon_text">Create new schedule in minutes</div>
                                     <div className="animations_text">Easily recall previous templates</div>
                                     <div className="animations_text">Have access to everyone's updated availability and plan accordingly</div>
                                 </div>
                             </div>
                         </div>
-                        <div className="animations_container">
+                        <div className="animations_container cell">
                             <div className="cell-phone_container">
                                 <div className="cell-phone">
                                     <div className="cell-phone_screen">
@@ -88,7 +89,7 @@ export default class LandingPage extends Component {
                                     </div>
                                 </div>
                                 <div className="cell-phone_instructions">
-                                    <i className="fas fa-bell" style={{'fontSize': '40px'}}></i>
+                                    <i className="fas fa-bell" style={{'fontSize': '40px', color: '#26A56A'}}></i>
                                     <div className="animations_text icon_text">Get notified</div>
                                     <div className="animations_text">Receive schedule updates and requests in real-time</div>
                                     <div className="animations_text">Always know who will be present even with last minutes changes</div>
@@ -120,9 +121,10 @@ export default class LandingPage extends Component {
                                 </div>
                                 <div className="laptop_instructions">
                                     <div className="last_instructions">
-                                        <i className="fas fa-umbrella-beach" style={{'fontSize': '40px'}}></i>
-                                        <i className="far fa-laugh-beam" style={{'fontSize': '40px'}}></i>
-                                        <i className="fas fa-sun" style={{'fontSize': '40px'}}></i>
+                                        <i className="fas fa-umbrella-beach" style={{'fontSize': '40px', color: '#5D87BF'}}></i>
+                                        <i className="far fa-laugh-beam" style={{'fontSize': '40px', color: 'rgba(216, 73, 73, 85)'}}></i>
+                                        <i className="fas fa-sun" style={{'fontSize': '40px', color: '#26A56A'}}></i>
+                                        {/* <i className="fas fa-sun" style={{'fontSize': '40px', color: '#181E3F'}}></i> */}
                                     </div>
                                     <div className="animations_text icon_text">Ease the process...</div>
                                     <div className="animations_text">...of scheduling, swapping shifts, communicating with every staff member</div>

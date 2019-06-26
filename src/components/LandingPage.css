@@ -15,6 +15,12 @@
     max-width: 1400px;
     width: 90%;
     margin-top: 200px;
+    margin-bottom: 100px;
+}
+
+.bottom_border {
+    border-bottom: 10px dotted rgba(38, 165, 106, 65);
+    width: 25%
 }
 
 .app_presentation {
@@ -69,14 +75,21 @@
 .animations_container {
     display: flex;
     /* border: solid purple; */
+    border-right: 5px dashed rgba(216, 73, 73, 85);
+    margin-bottom: 30px;
+
     padding: 30px;
+}
+
+.animations_container.cell {
+    border-left: 5px dashed rgba(216, 73, 73, 85);
+    border-right: none;
 }
 
 
 .animations_text {
-    border: solid;
-    color: white;
-    background: #181E3F;
+    color: #181E3F;
+    background: #E9F2ED;
     margin-bottom: 10px;
     padding: 10px;
 }
@@ -84,15 +97,16 @@
     display: flex;
     width: 100%;
     /* border: solid blueviolet; */
+    padding: 15px;
     margin-bottom: 20px;
     align-items: center;
 }
-
 .laptop, .dialogue_icon1 {
     display: flex;
     flex-direction: column;
     /* border: solid green; */
-    color: #8C0368;
+    /* color: #8C0368; */
+    color: #181E3F;
     padding: 20px;
     margin-right: 10px;
     justify-content: center;
@@ -121,7 +135,7 @@
     border-radius: 5px;
     width: 460px;
     height: 4%;
-    background: #8C0368;
+    background: #181E3F;
 }
 
 .laptop_keyboard_button {
@@ -161,7 +175,8 @@
     margin-right: 10px;
     justify-content: center;
     align-items: center;
-    color: #26A56A
+    /* color: #26A56A; */
+    color: #181E3F;
 }
 
 .cell-phone_screen {
@@ -182,7 +197,7 @@
     border-radius: 0 0 8px 8px;
     width: 90px;
     height: 20px;
-    background: #26A56A;
+    background: #181E3F;
 }
 
 .cell-phone_home_button {
@@ -255,6 +270,7 @@
     font-size: 15px;
     align-self: flex-end;
     padding-right: 25px;
+    color: #26A56A;
 }
 
 .background_images {
@@ -352,6 +368,11 @@
         font-size: 40px;
         width: 90%;
         margin-top: 150px;
+    }
+
+    .laptop_container, .cell-phone_container, .dialogue_container {
+        border-right: none;
+        border-bottom: 5px dotted plum;
     }
 
     .left_icons {
