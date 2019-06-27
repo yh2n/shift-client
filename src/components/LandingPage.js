@@ -25,12 +25,12 @@ export default class LandingPage extends Component {
         // this.setState({
         //     request_alert: true
         // })
-        setTimeout(() => {
+        setInterval(() => {
             this.setState({
-                request_alert: true
+                request_alert: !this.state.request_alert
             })
             
-        }, 1000);
+        }, 3000);
     }
     render() {
         return (
@@ -45,7 +45,7 @@ export default class LandingPage extends Component {
                     </p>
                     <LandingPageIcons /> */}
                     <div className="app_presentation_container">
-                        <div className="app_presentation left_icons">
+                        <div className="app_presentation left_icons" style={{color: 'purple'}}>
                             <i className="far fa-bell"></i>
                         </div>
                         <div className="app_presentation center_text">
@@ -53,7 +53,7 @@ export default class LandingPage extends Component {
                             <p>TO STAFF MANAGEMENT</p>
                             <p>AND SCHEDULING</p>
                         </div>
-                        <div className="app_presentation right_icons">
+                        <div className="app_presentation right_icons" style={{color: 'purple'}}>
                             <i className="fas fa-users"></i>
                             <i className="far fa-calendar-check"></i>
                         </div>
@@ -76,35 +76,37 @@ export default class LandingPage extends Component {
                                 </div>
                             </div>
                         </div>
+                        <div className="dotted_bottom_border"></div>
                         <div className="animations_container cell">
                             <div className="cell-phone_container">
                                 <div className="cell-phone">
                                     <div className="cell-phone_screen">
-                                        {/* <p style={{fontSize: '7px'}}>VeriMo Wi-Fi <i className="fas fa-wifi" ></i></p> */}
-                                        {/* <div className={this.state.request_alert ? "cellphone_alert request_alert" : "cellphone_alert request_alert alert_hidden"  }>New schedule request!</div> */}
-                                        {/* <div className="cellphone_alert schedule_alert">New schedule available!</div> */}
+                                        <p style={{fontSize: '9px'}}>VeriMo Wi-Fi <i className="fas fa-wifi" ></i></p>
+                                        <div className={!this.state.request_alert ? "cellphone_alert request_alert alert_hidden" : "cellphone_alert request_alert"  }>New schedule request!</div>
                                     </div>
                                     <div className="cell-phone_bottom">
                                         <div className="cell-phone_home_button"></div>
                                     </div>
                                 </div>
                                 <div className="cell-phone_instructions">
-                                    <i className="fas fa-bell" style={{'fontSize': '40px', color: '#26A56A'}}></i>
+                                    <i className="fas fa-bell landing_page_bell" style={{'fontSize': '40px', color: '#5D87BF'}}></i>
                                     <div className="animations_text icon_text">Get notified</div>
                                     <div className="animations_text">Receive schedule updates and requests in real-time</div>
-                                    <div className="animations_text">Always know who will be present even with last minutes changes</div>
+                                    <div className="animations_text">Pick up open shifts</div>
+                                    <div className="animations_text">Keep track of last minutes changes</div>
                                 </div>
                             </div>
                         </div>
+                        <div className="dotted_bottom_border"></div>
                         <div className="animations_container">
                             <div className="dialogue_container">
-                                {/* <div className="dialogue_icon1">
+                                <div className="dialogue_icon1">
                                     <div className="dialogue_bubble_left">Hey man, can you cover me tonite?</div>
                                     <div className="dialogue_bubble_right">Sorry bro, already on the schedule</div>
-                                    <div className="dialogue_bubble_right"><i class="far fa-frown"></i></div>
-                                    <div className="dialogue_bubble_right">Ty</div>
-                                </div> */}
-                                <div className="dialogue_icon2">
+                                    <div className="dialogue_bubble_left"><i className="far fa-sad-tear" style={{fontSize: '18px'}}></i></div>
+                                    <div className="dialogue_bubble_left">Ty</div>
+                                </div>
+                                {/* <div className="dialogue_icon2">
                                     <i className="fas fa-angry" style={{color: 'red'}}></i>
                                     <i className="far fa-frown" style={{color: 'orangeRed'}}></i>
                                     <i className="fas fa-grimace" style={{color: 'blue'}}></i>
@@ -118,12 +120,12 @@ export default class LandingPage extends Component {
                                     <i className="fas fa-mobile-alt"></i>
                                     <i className="far fa-comments"></i>
                                     <i className="fas fa-at"></i>
-                                </div>
+                                </div> */}
                                 <div className="laptop_instructions">
                                     <div className="last_instructions">
                                         <i className="fas fa-umbrella-beach" style={{'fontSize': '40px', color: '#5D87BF'}}></i>
                                         <i className="far fa-laugh-beam" style={{'fontSize': '40px', color: 'rgba(216, 73, 73, 85)'}}></i>
-                                        <i className="fas fa-sun" style={{'fontSize': '40px', color: '#26A56A'}}></i>
+                                        <i className="fas fa-sun landing_page_sun" style={{'fontSize': '40px', color: '#26A56A'}}></i>
                                         {/* <i className="fas fa-sun" style={{'fontSize': '40px', color: '#181E3F'}}></i> */}
                                     </div>
                                     <div className="animations_text icon_text">Ease the process...</div>
