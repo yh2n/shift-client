@@ -25,7 +25,6 @@ export class UserEmployeeRow extends Component {
             forceTLS: true
         });
 
-        Pusher.logToConsole = true;
         this.channel = this.pusher.subscribe('update');
         this.channel.bind('availability_update', () => {
             this.fetchSchedule()
