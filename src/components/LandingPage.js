@@ -22,14 +22,10 @@ export default class LandingPage extends Component {
     }
 
     handleRequestAlert = () => {
-        // this.setState({
-        //     request_alert: true
-        // })
         setInterval(() => {
             this.setState({
                 request_alert: !this.state.request_alert
             })
-            
         }, 3000);
     }
     render() {
@@ -103,7 +99,7 @@ export default class LandingPage extends Component {
                                 <div className="dialogue_icon1">
                                     <div className="dialogue_bubble_left">Hey man, can you cover me tonite?</div>
                                     <div className="dialogue_bubble_right">Sorry bro, already on the schedule</div>
-                                    <div className="dialogue_bubble_left"><i className="far fa-sad-tear" style={{fontSize: '18px'}}></i></div>
+                                    <div className="dialogue_bubble_left"><i className="far fa-sad-tear" style={{fontSize: '20px'}}></i></div>
                                     <div className="dialogue_bubble_left">Ty</div>
                                 </div>
                                 {/* <div className="dialogue_icon2">
@@ -126,7 +122,6 @@ export default class LandingPage extends Component {
                                         <i className="fas fa-umbrella-beach" style={{'fontSize': '40px', color: '#5D87BF'}}></i>
                                         <i className="far fa-laugh-beam" style={{'fontSize': '40px', color: 'rgba(216, 73, 73, 85)'}}></i>
                                         <i className="fas fa-sun landing_page_sun" style={{'fontSize': '40px', color: '#26A56A'}}></i>
-                                        {/* <i className="fas fa-sun" style={{'fontSize': '40px', color: '#181E3F'}}></i> */}
                                     </div>
                                     <div className="animations_text icon_text">Ease the process...</div>
                                     <div className="animations_text">...of scheduling, swapping shifts, communicating with every staff member</div>
@@ -135,11 +130,16 @@ export default class LandingPage extends Component {
                         </div>
                     </div>
                 </div>
-                {/* <p className="intro_container_redirect-desktop">
-                    <Link to='/instructions' style={{'textDecoration': 'none'}}>
-                        Demo | </Link><Link to='/login' style={{'textDecoration': 'none'}}>Login</Link>
-                    
-                </p>   */}
+                <div className="intro_container_redirect-desktop">
+                    <div className="demo_login_redirect"> 
+                        <Link to='/instructions' style={{'textDecoration': 'none',  color: '#26A56A'}}>
+                            Demo | </Link><Link to='/login' style={{'textDecoration': 'none',  color: '#26A56A'}}>Login</Link>
+                    </div>
+                    {/* <div className="portfolio_gh_redirect">
+                        <div><span ><Link to='https://yh2n.github.io/portfolio/'>Yohann Potico</Link></span>&#9400;</div>
+                        <div><i class="fab fa-github"></i></div>
+                    </div> */}
+                </div>  
             </div>
         );
     }
