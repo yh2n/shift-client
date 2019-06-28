@@ -78,7 +78,11 @@ export default class LandingPage extends Component {
                                 <div className="cell-phone">
                                     <div className="cell-phone_screen">
                                         <p style={{fontSize: '9px'}}>VeriMo Wi-Fi <i className="fas fa-wifi" ></i></p>
-                                        <div className={!this.state.request_alert ? "cellphone_alert request_alert alert_hidden" : "cellphone_alert request_alert"  }>New schedule request!</div>
+                                        <div 
+                                            className={!this.state.request_alert ? "cellphone_alert request_alert alert_hidden" : "cellphone_alert request_alert alert_visible"}
+                                        >
+                                            New schedule request!
+                                        </div>
                                     </div>
                                     <div className="cell-phone_bottom">
                                         <div className="cell-phone_home_button"></div>
@@ -98,7 +102,7 @@ export default class LandingPage extends Component {
                             <div className="dialogue_container">
                                 <div className="dialogue_icon1">
                                     <div className="dialogue_bubble_left">Hey man, can you cover me tonite?</div>
-                                    <div className="dialogue_bubble_right">Sorry bro, already on the schedule</div>
+                                    <div className="dialogue_bubble_right">Sorry bro, already on the schedule :(</div>
                                     <div className="dialogue_bubble_left"><i className="far fa-sad-tear" style={{fontSize: '20px'}}></i></div>
                                     <div className="dialogue_bubble_left">Ty</div>
                                 </div>
@@ -135,10 +139,8 @@ export default class LandingPage extends Component {
                         <Link to='/instructions' style={{'textDecoration': 'none',  color: '#26A56A'}}>
                             Demo | </Link><Link to='/login' style={{'textDecoration': 'none',  color: '#26A56A'}}>Login</Link>
                     </div>
-                    {/* <div className="portfolio_gh_redirect">
-                        <div><span ><Link to='https://yh2n.github.io/portfolio/'>Yohann Potico</Link></span>&#9400;</div>
-                        <div><i class="fab fa-github"></i></div>
-                    </div> */}
+                        <div><a href='https://github.com/' target='_blank' rel="noopener noreferrer"><i className="fab fa-github" style={{'textDecoration': 'none',  color: '#26A56A', fontSize: '18px'}}></i></a></div>
+                        <div className="credits" style={{fontSize: '14px'}}>© 2019 <a href='https://yh2n.github.io/portfolio/' target='_blank' rel="noopener noreferrer"style={{textDecoration: 'none', color: '#26A56A'}}>Yohann Potico </a></div>
                 </div>  
             </div>
         );
