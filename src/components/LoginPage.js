@@ -21,7 +21,7 @@ export class HomePage extends Component {
 	console.log(this.props.currentUser);
 	let username = localStorage.getItem("username");
 	if (this.props.loggedIn) {
-        return <Redirect to={`/my_account/${username}`} />;
+        return <Redirect to={`/my_account/${username}/schedule`} />;
     }
 
 	return(
