@@ -84,7 +84,6 @@
 
 .animations_container.cell {
     border-left: 5px dashed purple;
-    /* border-left: 5px dashed rgba(216, 73, 73, 85); */
     border-right: none;
 }
 
@@ -94,6 +93,7 @@
     background: #E9F2ED;
     margin-bottom: 10px;
     padding: 10px;
+    box-shadow: 7px 7px 2px;
 }
 .laptop_container, .cell-phone_container, .dialogue_container {
     display: flex;
@@ -270,18 +270,20 @@
     margin-top: 40px;
     height: 15px;
     width: 98%;
-    transition: display 2s;
+    transition: margin 3s;
 }
 
 .request_alert {
     background: red;
     color: white;
+    /* margin-right: -240px; */
 }
 
+.alert_visible {
+}
 
 .alert_hidden {
     display: none;
-    /* margin-left: -240px; */
 }
 
 .last_instructions > i {
@@ -326,24 +328,33 @@
 
 .portfolio_gh_redirect {
     display: flex;
+    align-items: center;
+    color: #26A56A;
+    margin-bottom: 10px;
 }
 
 .intro_container_redirect-desktop {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin-top: 300px;
-    border: solid;
     width: 100%;
-    margin-bottom: 0;
-    height: 50px;
     background: #181E3F;
+    color: #26A56A;
 }
 
-/* .demo_login_redirect {
-    flex-grow: 1
-} */
+.demo_login_redirect {
+    margin: 20px 0 30px 0;
+}
 
+.intro_container_redirect-desktop i  {
+
+    margin-bottom: 15px;
+}
+.credits {
+    margin-bottom: 10px;
+}
 @media all and (max-width: 414px) {
     .header {
         display: none;
