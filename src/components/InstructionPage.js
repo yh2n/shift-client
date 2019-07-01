@@ -23,6 +23,7 @@ export class InstructionPage extends Component {
         })
         return (
             <div className="instruction_page">
+                <p className="instructions_app_name">shift</p>
                 <div className="instructions">
                     <div className="admin_instructions_div">
                         <ul>
@@ -52,8 +53,8 @@ export class InstructionPage extends Component {
                     </div>
                 </div>
                 <p className="instructions_page_redirect">
-                    <Link to='/login' style={{'textDecoration': 'none'}}>
-                        Login | </Link><Link to='/' style={{'textDecoration': 'none'}}>Home </Link>
+                    <Link to='/login' style={{'textDecoration': 'none', color: 'rgba(38, 165, 106, 65)'}}>
+                        Login | </Link><Link to='/' style={{'textDecoration': 'none', color: 'rgba(38, 165, 106, 65)'}}>Home </Link>
                 </p>  
             </div>
         )

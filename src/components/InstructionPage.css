@@ -4,6 +4,13 @@
     height: 100vh
 }
 
+.instructions_app_name {
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 40px;
+    margin-left: 20px;
+    color: white;
+}
+
 .background-color {
     background: #E9F2ED;
 }
