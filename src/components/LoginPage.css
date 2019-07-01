@@ -2,11 +2,11 @@
 	text-align: center;
 }
 
-.register-redirect > span, a {
-	color: #13A1AB;
+.register-redirect > span {
+	font-style: italic;
 }
 
-.register-redirect a {
-	background: rgba(242, 201, 79, 0.45);
+.register-redirect a, .home-about_redirect a {
+	color: #13A1AB;
 	padding: 3px;
 }
