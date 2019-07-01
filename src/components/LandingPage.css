@@ -151,25 +151,85 @@
 }
 
 .laptop_screen {
-    border: 8px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid;
+    border-top: 6px solid;
+    border-bottom: 5px solid;
     border-radius: 5px;
     width: 350px;
     height: 230px;
     margin-bottom: 2px;
 } 
+.animation_nav {
+    width: 100%;
+    text-align: left;
+    height: 10%;
+    margin: 4px 0 0px 6px;
+    color: rgba(38, 165, 106, 65);
+    font-size: 12px;
+}
+
+.animation_schedule, .animation_schedule_grid  {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    width: 98%; 
+    border: solid;
+    text-align: center;
+    border: .5px solid;
+}
+
+.animation_schedule {
+    margin-top: 15px;
+    margin-bottom: 2px;
+}
+.animation_schedule_grid {
+    margin: .25px
+}
+
+.grid_item {
+    margin-bottom: 1px;
+    display: grid;
+    border: .5px solid;
+    background: white;
+    min-height: 10px;
+    height: auto;
+}
+
+.green_item {
+    background: rgba(38, 165, 106, 65);
+}
+
+.purple_item {
+    background: purple;
+}
+
+.yellow_item {
+    background:rgba(242, 201, 79, 95);
+}
+
+.blue_item {
+    background: rgba(93, 135, 191, 75);
+}
+
+.red_item {
+    background:red;
+}
 
 .laptop_keypboard {
     display: flex;
     justify-content: center;
-    border: solid;
+    border: solid 3px;
     border-radius: 5px;
     width: 460px;
     height: 4%;
-    background: #181E3F;
+    /* background: #181E3F; */
 }
 
 .laptop_keyboard_button {
-    background: white;
+    background: #181E3F;
+    margin-top: 1px;
     border-radius: 2px;
     width: 25px;
     height: 3px;
@@ -233,9 +293,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-top: 8px solid;
-    border-right: 8px solid;
-    border-left: 8px solid;
+    border-top: 4px solid;
+    border-right: 2px solid;
+    border-left: 2px solid;
     border-radius: 8px 8px 0 0;
     width: 90px;
     height: 150px;
@@ -245,18 +305,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 8px solid;
+    border: 2px solid;
     border-radius: 0 0 8px 8px;
     width: 90px;
     height: 20px;
-    background: #181E3F;
+    background: white;
 }
 
 .cell-phone_home_button {
-    width: 14px;
-    height: 14px;
-    border: solid white;
-    background: white;
+    width: 8px;
+    height: 8px;
+    border: solid #181E3F;
+    background: #181E3F;
     border-radius: 50%;
 }
 
@@ -276,10 +336,11 @@
 .request_alert {
     background: red;
     color: white;
-    /* margin-right: -240px; */
-}
-
-.alert_visible {
+    margin-right: -70px;
+    height: 25%;
+    width: 90%;
+    border-radius: 8px;
+    border-bottom-left-radius: 0;
 }
 
 .alert_hidden {
@@ -434,8 +495,8 @@
     }
 
     .cell-phone_home_button {
-        width: 11px;
-        height: 11px;
+        width: 6px;
+        height: 6px;
         border-radius: 50%;
     }
 }
@@ -497,8 +558,8 @@
     }
 
     .cell-phone_home_button {
-        width: 11px;
-        height: 11px;
+        width: 5px;
+        height: 5px;
         border-radius: 50%;
     }
 }
