@@ -16,9 +16,9 @@ export class AccountNav extends Component{
     }
 
     render() {
-        // if (!this.props.loggedIn) {
-        //     return <Redirect to='/login' />;
-        // }
+        if (!this.props.loggedIn) {
+            return <Redirect to='/login' />;
+        }
         if(this.props.newNotification === false) {
             var Icon = (
                 <i 
