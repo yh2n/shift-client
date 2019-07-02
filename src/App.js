@@ -4,7 +4,6 @@ import moment from 'moment';
 
 import AdminAccount from './components/AdminAccount';
 import AdminEmployeeDashboard from './components/AdminEmployeeDashboard';
-import AdminLogin from './components/AdminLogin';
 import AdminRegistrationPage from './components/AdminRegistrationPage';
 import AdminSchedule from './components/AdminSchedule';
 import AuthenticationPage from './components/AuthenticationPage';
@@ -43,7 +42,6 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" component={LandingPage} />
                 <Route exact path="/instructions" component={InstructionPage} />
-                <Route exact path="/admin/login" component={AdminLogin} />
                 <Route exact path="/verification" component={AuthenticationPage} />
                 <Route exact path="/registration" component={RegistrationPage} />
                 <Route exact path="/login" component={LoginPage} />
