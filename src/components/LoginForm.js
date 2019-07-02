@@ -32,20 +32,6 @@ export class LoginForm extends Component {
 					onSubmit={this.props.handleSubmit(values => this.onSubmit(values)
 					)}>
 					{error}
-					<div className="acct_redirect_field">
-						<Link to='/admin/login'>
-							<button 
-								className={this.props.adminSelected ? "log_redirect admin selected_account" : "log_redirect admin"}>
-								Admin
-							</button>
-						</Link>
-						<Link to='/login'>
-							<button 
-								className={this.props.employeeSelected ? "log_redirect employee selected_account" : "log_redirect employee "}>
-								Employee
-							</button>
-						</Link>
-					</div>
 					<fieldset>
 						<label htmlFor="username" name="username"></label>
 						<Field 

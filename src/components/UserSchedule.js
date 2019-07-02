@@ -251,15 +251,15 @@ export class Schedule extends Component {
     )
 
 
-        let captains = employees.filter(employee => employee.position === "Captain")
-        let captainRow = (
-                captains.map(captain => (
+        let baristas = employees.filter(employee => employee.position === "Barista")
+        let baristaRow = (
+                baristas.map(barista => (
                         <UserEmployeeRow
-                            key={captain.id}
-                            name={captain.id === currentUser ? captain.firstName  : <Link className="contact_links" to={`./contact-availability/${captain.id}`}>{captain.firstName}</Link>}
-                            className={captain.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
-                            id={captain.id}
-                            schedule={captain.schedule}
+                            key={barista.id}
+                            name={barista.id === currentUser ? barista.firstName  : <Link className="contact_links" to={`./contact-availability/${barista.id}`}>{barista.firstName}</Link>}
+                            className={barista.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
+                            id={barista.id}
+                            schedule={barista.schedule}
                             shiftFormat={this.state.shiftFormat}
                             handleScheduleAlert={this.handleAvailabilityAlert}
                             handleAvailabilityAlert={this.handleAvailabilityAlert}
@@ -270,13 +270,13 @@ export class Schedule extends Component {
                 )
         )
 
-        let captainRow_selected = (
-            captains.map(captain => (
+        let baristaRow_selected = (
+            baristas.map(barista => (
                     <UserEmployeeRowSelected
-                        key={`${captain.id}_selected`}
-                        name={captain.id === currentUser ? captain.firstName  : <Link className="contact_links" to={`./contact-availability/${captain.id}`}>{captain.firstName}</Link>}
-                        className={captain.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
-                        id={captain.id}
+                        key={`${barista.id}_selected`}
+                        name={barista.id === currentUser ? barista.firstName  : <Link className="contact_links" to={`./contact-availability/${barista.id}`}>{barista.firstName}</Link>}
+                        className={barista.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
+                        id={barista.id}
                         shiftFormat={this.state.shiftFormat}
                         handleScheduleAlert={this.handleAvailabilityAlert}
                         handleAvailabilityAlert={this.handleAvailabilityAlert}
@@ -542,8 +542,6 @@ export class Schedule extends Component {
                         />
                             <PositionRow positionClass="user_schedule_position" positonRowClass="user_schedule_days" position="Managers"/>
                             {managerRow}
-                            <PositionRow positionClass="user_schedule_position" positonRowClass="user_schedule_days" key="schedule_captains" position="Captains"/>
-                            {captainRow}
                             <PositionRow positionClass="user_schedule_position" positonRowClass="user_schedule_days" key="schedule_maitre-d" position="Maître d'"/>
                             {maitreDRow}
                             <PositionRow positionClass="user_schedule_position" positonRowClass="user_schedule_days" key="schedule_host-staff" position="Host staff"/>
@@ -558,6 +556,8 @@ export class Schedule extends Component {
                             {serverRow}
                             <PositionRow positionClass="user_schedule_position" positonRowClass="user_schedule_days" key="schedule_runners" position="Runners"/>
                             {runnerRow}
+                            <PositionRow positionClass="user_schedule_position" positonRowClass="user_schedule_days" key="schedule_baristas" position="Baristas"/>
+                            {baristaRow}
                             <PositionRow positionClass="user_schedule_position" positonRowClass="user_schedule_days" key="schedule_bussers" position="Bussers"/>
                             {busserRow}
                     </div>
@@ -580,8 +580,6 @@ export class Schedule extends Component {
                         <SelectedWeekDayRow week={this.state.selectedWeek}/>
                             <PositionRow positionClass="user_schedule_position" positonRowClass="user_schedule_days" position="Managers"/>
                             {managerRow_selected}
-                            <PositionRow positionClass="user_schedule_position" positonRowClass="user_schedule_days" key="schedule_captains_selected" position="Captains"/>
-                            {captainRow_selected}
                             <PositionRow positionClass="user_schedule_position" positonRowClass="user_schedule_days" key="schedule_maitre-d_selected" position="Maître d'"/>
                             {maitreDRow_selected}
                             <PositionRow positionClass="user_schedule_position" positonRowClass="user_schedule_days" key="schedule_host-staff_selected" position="Host staff"/>
@@ -596,6 +594,8 @@ export class Schedule extends Component {
                             {serverRow_selected}
                             <PositionRow positionClass="user_schedule_position" positonRowClass="user_schedule_days" key="schedule_runners_selected" position="Runners"/>
                             {runnerRow_selected}
+                            <PositionRow positionClass="user_schedule_position" positonRowClass="user_schedule_days" key="schedule_baristas_selected" position="Baristas"/>
+                            {baristaRow_selected}
                             <PositionRow positionClass="user_schedule_position" positonRowClass="user_schedule_days" key="schedule_bussers_selected" position="Bussers"/>
                             {busserRow_selected}
                     </div>

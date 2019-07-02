@@ -18,9 +18,12 @@ export class HomePage extends Component {
 	}
 
 	render() {
-	console.log(this.props.currentUser);
 	let username = localStorage.getItem("username");
-	if (this.props.loggedIn) {
+	if (this.props.loggedIn && this.props.currentUser.admin) {
+		return <Redirect to={`/admin`} />;
+	}
+
+	else if (this.props.loggedIn) {
         return <Redirect to={`/my_account/${username}/schedule`} />;
     }
 
@@ -30,7 +33,7 @@ export class HomePage extends Component {
 				text="Sign up"
 				component="RegistrationPage"
 				to='/registration'/>
-			<LoginForm employeeSelected={this.state.employee}/>
+			<LoginForm />
 			<p className="register-redirect">
 				New to <span>shift </span>? Register 
 				<Link to='/registration' style={{'textDecoration': 'none'}}> here </Link>
