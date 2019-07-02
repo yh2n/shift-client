@@ -370,6 +370,9 @@
     flex: 1
 }
 
+.app_name.landing_page_nav {
+    flex: 0
+}
 .landing_page_header_redirect {
     font-size: 15px;
     align-self: flex-end;
