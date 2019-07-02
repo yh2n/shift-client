@@ -30,6 +30,23 @@
     color: white;
 }
 
+
+.contact_availability_shift.breakfast-unavailable:hover {
+    border: solid rgba(38, 165, 106, 0);
+}
+
+.contact_availability_shift.brunch-unavailable:hover {
+    border: solid rgba(242, 201, 79, 0)
+}
+
+.contact_availability_shift.lunch-unavailable:hover {
+    border: solid rgba(93, 135, 191, 0);
+}
+
+.contact_availability_shift.dinner-unavailable:hover {
+    border: solid rgba(242, 201, 79, 0)
+}
+
 .contact_availability_day {
     cursor: text;
     background: #510F59;
