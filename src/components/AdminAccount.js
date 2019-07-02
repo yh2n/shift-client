@@ -36,7 +36,7 @@ export  class AdminAccount extends Component {
             <div>
 				<div>
 				<AccountNav 
-					onClick={() => this.toggleModal()}
+					onClick={this.toggleMenuModal}
 					className={this.state.new_notification === false ? "material-icons no_notification" : "material-icons new_notification"}
 					markAsRead={this.markAsRead}
 					username={localStorage.getItem('username')}

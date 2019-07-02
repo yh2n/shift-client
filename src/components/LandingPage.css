@@ -18,6 +18,7 @@
     margin-bottom: 100px;
 }
 
+.landing_page_app_name
 .bottom_border {
     border-bottom: 10px dotted rgba(38, 165, 106, 65);
     width: 25%;
@@ -361,12 +362,17 @@
     align-items: center;
 }
 
-.landing_page_app_name {
+.app_name {
     font-size: 25px;
+    font-family: 'Allerta Stencil', sans-serif;
     padding: 0 60px 0 10px;
     color: #E9F2ED;  
+    flex: 1
 }
 
+.app_name.landing_page_nav {
+    flex: 0
+}
 .landing_page_header_redirect {
     font-size: 15px;
     align-self: flex-end;
