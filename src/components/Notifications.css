@@ -72,6 +72,16 @@
     animation: blink-animation 2s infinite;
 }
 
+.employee_dashboard_notifications {
+    width: 180px;
+    margin: 55px auto;
+    border-radius: 3px;
+    padding: 15px 20px;
+    background: rgba(242, 201, 79, 95);
+    transition: margin-right 3s;
+    animation: blink-animation 2s infinite;
+}
+
 .notifications-hidden {
     margin-right: -145%;
 

@@ -14,11 +14,13 @@
     max-width: 1200px;
     margin: 100px 0 30px 0;
 }
+
 .contact_availability {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .contact_availability_shift, .contact_availability_day {
     display: flex;
     justify-content: center;
@@ -29,7 +31,6 @@
     border-radius: 2px;
     color: white;
 }
-
 
 .contact_availability_shift.breakfast-unavailable:hover {
     border: solid rgba(38, 165, 106, 0);
