@@ -545,6 +545,13 @@
         width: 284px;
         height: 186px;
     }
+    .animation_nav {
+        margin-bottom: 0;
+    }
+    .animation_schedule {
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
 
     .laptop_keypboard {
         width: 373px;

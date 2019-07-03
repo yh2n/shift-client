@@ -19,7 +19,7 @@ import { fetchEmployees } from '../actions/fetch_employees';
 import './AdminSchedule.css';
 
 
-const currentUser = localStorage.getItem('id');
+// const currentUser = localStorage.getItem('id');
 
 export class Schedule extends Component {
 	constructor(props) {
@@ -37,6 +37,8 @@ export class Schedule extends Component {
             availability_alert: false,
             schedule_alert: false,
             new_notification: false,
+            currentUser: localStorage.getItem('id')
+
 		}
     }
     
@@ -114,7 +116,7 @@ export class Schedule extends Component {
     }
 	render() {
         const employees = this.props.employees.employees;
-        console.log(window.innerWidth, this.state.shiftFormat)
+        const {currentUser} = this.state
         
         let barbacks = employees.filter(employee => employee.position === "Barback")
         let barbackRow = (
