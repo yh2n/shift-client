@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import LandingPageNav from './LandingPageNav';
-import LandingPageIcons from './LandingPageIcons';
-import Background1 from '../images/blurred-background-calendar-cellphone-1893424.jpg';
+import Laptop from './Laptop';
+import InstructionsSentence from './InstructionsSentence';
+import CellPhone from './CellPhone';
+import AnimationsInstructions from './AnimationsInstructions';
+
 
 import './LandingPage.css';
 
@@ -13,7 +16,6 @@ export default class LandingPage extends Component {
 
         this.state = {
             request_alert: false,
-            schedule_alert: false
         }
     }
 
@@ -22,24 +24,50 @@ export default class LandingPage extends Component {
     }
 
     handleRequestAlert = () => {
-        setInterval(() => {
-            this.setState({
-                request_alert: !this.state.request_alert
-            })
-        }, 3000);
+        setInterval(() => this.requestAlert(), 3000);
+    }
+
+    requestAlert = () => {
+        this.setState({
+            request_alert: !this.state.request_alert
+        })
+    }
+
+    componentWillUnmount() {
+        const refreshIntervalId = setInterval(this.requestAlert(), 1000);
+        clearInterval(refreshIntervalId)
     }
     render() {
+        const cellTextArr = ["Receive schedule updates and requests in real-time",
+            "Pick up open shifts",
+             "Keep track of last minutes changes" 
+            ]
+        const cellPhoneText = cellTextArr.map(text => {
+            return (
+                <InstructionsSentence 
+                    key={text}
+                    className="animations_text"
+                    text={text} />
+            )
+        })
+        
+        const laptopTextArr = ["Easily recall previous templates",
+             "Have access to everyone's updated availability and plan accordingly" 
+            ]
+        const laptopText = laptopTextArr.map(text => {
+            return (
+                <InstructionsSentence 
+                    key={text}
+                    className="animations_text"
+                    text={text} />
+            )
+        })
+
+
         return (
             <div className="landing_page">
                 <div className="intro_container">
                     <LandingPageNav />   
-                    {/* <div className="background_images">
-                        <img src={ Background1 } alt="" width="100%" height="100%"/>
-                    </div>
-                    <p className="intro_container_redirect-mobile">
-                        shift
-                    </p>
-                    <LandingPageIcons /> */}
                     <div className="app_presentation_container">
                         <div className="app_presentation left_icons" style={{color: 'purple'}}>
                             <i className="far fa-bell"></i>
@@ -58,133 +86,29 @@ export default class LandingPage extends Component {
                     <div className="landing_page_animations">
                         <div className="animations_container">
                             <div className="laptop_container">
-                                <div className="laptop">
-                                    <div className="laptop_screen">
-                                        <div className="animation_nav">shift</div>
-                                        <div className="animation_schedule">
-                                            <div className="grid_item">Mo</div>
-                                            <div className="grid_item">Tu</div>
-                                            <div className="grid_item">We</div>
-                                            <div className="grid_item">Th</div>
-                                            <div className="grid_item">Fr</div>
-                                            <div className="grid_item">Sa</div>
-                                            <div className="grid_item">Su</div>
-                                        </div>
-                                        <div className="animation_schedule_grid">
-                                            <div className="grid_item blue_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item item_2"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item green_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item purple_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item green_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item red_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item yellow_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item purple"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item green_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item blue_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item red_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item yellow_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item blue_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item  green_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item blue_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item purple_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item blue_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item blue_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item blue_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item red_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item purple_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item"></div>
-                                            <div className="grid_item green_item"></div>
-                                        </div>
-                                    </div>
-                                    <div className="laptop_keypboard">
-                                        <div className="laptop_keyboard_button"></div>
-                                    </div>
-                                </div>
-                                <div className="laptop_instructions">
-                                    <i className="far fa-calendar-alt" style={{'fontSize': '40px', color: '#5D87BF'}}></i>
-                                    <div className="animations_text icon_text">Create new schedule in minutes</div>
-                                    <div className="animations_text">Easily recall previous templates</div>
-                                    <div className="animations_text">Have access to everyone's updated availability and plan accordingly</div>
-                                </div>
+                                <Laptop />
+                                <AnimationsInstructions 
+                                    icon="far fa-calendar-alt"
+                                    style={{'fontSize': '40px', color: '#5D87BF'}}
+                                    instructionsClass=" laptop_instructions"
+                                    centerTextClass="animations_text icon_text"
+                                    centerText="Create new schedule in minutes"
+                                    sentences={laptopText}
+                                />
                             </div>
                         </div>
                         <div className="dotted_bottom_border"></div>
                         <div className="animations_container cell">
                             <div className="cell-phone_container">
-                                <div className="cell-phone">
-                                    <div className="cell-phone_screen">
-                                        <p style={{fontSize: '9px'}}>VeriMo Wi-Fi <i className="fas fa-wifi" ></i></p>
-                                        <div 
-                                            className={!this.state.request_alert ? "cellphone_alert request_alert alert_hidden" : "cellphone_alert request_alert alert_visible"}
-                                        >
-                                            New schedule request!
-                                        </div>
-                                    </div>
-                                    <div className="cell-phone_bottom">
-                                        <div className="cell-phone_home_button"></div>
-                                    </div>
-                                </div>
-                                <div className="cell-phone_instructions">
-                                    <i className="fas fa-bell landing_page_bell" style={{'fontSize': '40px', color: '#5D87BF'}}></i>
-                                    <div className="animations_text icon_text">Get notified</div>
-                                    <div className="animations_text">Receive schedule updates and requests in real-time</div>
-                                    <div className="animations_text">Pick up open shifts</div>
-                                    <div className="animations_text">Keep track of last minutes changes</div>
-                                </div>
+                                <CellPhone requestAlert={this.state.request_alert}/>
+                                <AnimationsInstructions 
+                                    style={{'fontSize': '40px', color: '#5D87BF'}}
+                                    icon="fas fa-bell landing_page_bell"
+                                    instructionsClass="cell-phone_instructions"
+                                    centerTextClass="animations_text icon_text"
+                                    centerText="Get notified"
+                                    sentences={cellPhoneText}
+                                />
                             </div>
                         </div>
                         <div className="dotted_bottom_border"></div>
@@ -196,21 +120,6 @@ export default class LandingPage extends Component {
                                     <div className="dialogue_bubble_left"><i className="far fa-sad-tear" style={{fontSize: '20px'}}></i></div>
                                     <div className="dialogue_bubble_left">Ty</div>
                                 </div>
-                                {/* <div className="dialogue_icon2">
-                                    <i className="fas fa-angry" style={{color: 'red'}}></i>
-                                    <i className="far fa-frown" style={{color: 'orangeRed'}}></i>
-                                    <i className="fas fa-grimace" style={{color: 'blue'}}></i>
-                                    <i className="far fa-comment"></i>
-                                    <i className="fas fa-phone-alt"></i>
-                                    <i className="fas fa-quote-left"></i>
-                                    <i className="fas fa-envelope-open"></i>
-                                    <i className="fas fa-bell"></i>
-                                    <i className="fas fa-voicemail"></i>
-                                    <i className="far fa-flushed"></i>
-                                    <i className="fas fa-mobile-alt"></i>
-                                    <i className="far fa-comments"></i>
-                                    <i className="fas fa-at"></i>
-                                </div> */}
                                 <div className="laptop_instructions">
                                     <div className="last_instructions">
                                         <i className="fas fa-umbrella-beach" style={{'fontSize': '40px', color: '#5D87BF'}}></i>

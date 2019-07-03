@@ -44,10 +44,10 @@ export class InstructionPage extends Component {
                 <div className="instructions">
                     <div className="admin_instructions_div">
                         <ul>
-                            <li>As a manager, log in with one of the usernames below.</li>
-                            <li>Look at the latest updates of your staff availability.</li>
-                            <li>Create new schedules by clicking on 'Breakfast', 'Lunch', 'Brunch' or 'Dinner'</li>
-                            <li>Submit the changes and every staff member will get notified </li>
+                            <li>As a manager, log in with one of the usernames below</li>
+                            <li>Look at the latest updates of your staff availability</li>
+                            <li>Create new schedules by clicking on the shifts you wish to select</li>
+                            <li>Submit your changes: each staff member will get notified </li>
                         </ul>
                     </div>
                     <div className="mock_staff">
@@ -58,16 +58,16 @@ export class InstructionPage extends Component {
                     </div>
                     <div className="staff_instructions_div">
                         <ul> 
-                            <li>As an employee, log in with one the usernames below.</li>
+                            <li>As an employee, log in with one of the usernames below.</li>
                             <li>Keep your availability up to date.</li>
                             <li>
-                                Click on the shift(s) you are requesting coverage for: they will become red and indicate 
-                                your request.
-                                Click on the days off you are willing to work: they will become green and show you are looking to pick up
-                                those shifts.
+                                Click on the shift(s) you are requesting coverage for: they will turn red and indicate 
+                                your request <br/>
+                                Click on the days off you are willing to work: they will turn green and show you are available/looking 
+                                to pick up those shifts
                             </li>
                             <li>
-                                Submit the changes and everyone will get notified of the schedule request(s)
+                                Submit your update(s): everyone will get notified of the latest schedule request(s)
                             </li>
                         </ul>
                     </div>
@@ -79,6 +79,15 @@ export class InstructionPage extends Component {
                     </div>
                     <div >
                         <li className="pw_instructions" style={{'listStyle': 'none'}}>Use <span style={{fontStyle: 'italic', fontWeight: 'bold'}}>'password'</span> for all employees and admin</li>
+                    </div>
+                    <div className="staff_instructions_div">
+                        <ul>
+                            <p>To test the app:</p>
+                            <li> Launch your browser and open a second private window</li>
+                            <li>Log in as manager from one window and as employee from the other</li>
+                            <li>Create and edit schedules, submit your availability and your schedule requests</li>
+                            <li>See instant notifications and schedule changes</li>
+                        </ul>
                     </div>
                 </div>
                 <p className="instructions_page_redirect">
