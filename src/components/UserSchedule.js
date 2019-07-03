@@ -312,7 +312,7 @@ export class Schedule extends Component {
                         name={host.id === currentUser ? host.firstName  : <Link className="contact_links" to={`./contact-availability/${host.id}`}>{host.firstName}</Link>}
                         className={host.id === currentUser ? "user_schedule_name logged_in" : "user_schedule_name"}
                         id={host.id}
-                    shiftFormat={this.state.shiftFormat}
+                        shiftFormat={this.state.shiftFormat}
                         handleScheduleAlert={this.handleAvailabilityAlert}
                         handleAvailabilityAlert={this.handleAvailabilityAlert}
                         selectedWeek={this.state.selectedWeek}
@@ -509,6 +509,7 @@ export class Schedule extends Component {
                         markAsRead={this.markAsRead}
                         username={localStorage.getItem('username')}
                         newNotification={this.state.new_notification}
+                        linkTo={`/my_account/${this.props.username}/schedule`}
                     />
                     <UserMenuModal
                         show={this.state.isOpen}
