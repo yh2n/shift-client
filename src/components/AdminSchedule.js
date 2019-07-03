@@ -239,7 +239,7 @@ export class Schedule extends Component {
 
 
         let captains = employees.filter(employee => employee.position === "Captain")
-        let captainRow = (
+        let baristaRow = (
                 captains.map(captain => (
                         <AdminEmployeeRow
                             key={captain.id}
@@ -258,7 +258,7 @@ export class Schedule extends Component {
                 )
         )
 
-        let captainRow_selected = (
+        let baristaRow_selected = (
                 captains.map(captain => (
                         <AdminEmployeeRowSelected
                             key={`${captain.id}_selected`}
@@ -562,12 +562,6 @@ export class Schedule extends Component {
                         {managerRow}
                         <PositionRow 
                             positionClass="admin_schedule_position" 
-                            positionRowClass="admin_schedule_days"key="schedule_captains" 
-                            position="Captains"
-                        />
-                        {captainRow}
-                        <PositionRow 
-                            positionClass="admin_schedule_position" 
                             positionRowClass="admin_schedule_days"key="schedule_maitre-d" 
                             position="Maître d'"
                         />
@@ -600,6 +594,12 @@ export class Schedule extends Component {
                             positionClass="admin_schedule_position" 
                             positionRowClass="admin_schedule_days"key="schedule_bussers" position="Bussers"/>
                         {busserRow}
+                        <PositionRow 
+                            positionClass="admin_schedule_position" 
+                            positionRowClass="admin_schedule_days"key="schedule_captains" 
+                            position="Baristas"
+                        />
+                        {baristaRow}
                     </div>
                     <div className="selected_month">
                         <div className="admin_select_save">
@@ -628,10 +628,6 @@ export class Schedule extends Component {
                         {managerRow_selected}
                         <PositionRow 
                             positionClass="admin_schedule_position" 
-                            positionRowClass="admin_schedule_days"key="schedule_captains" position="Captains"/>
-                        {captainRow_selected}
-                        <PositionRow 
-                            positionClass="admin_schedule_position" 
                             positionRowClass="admin_schedule_days"key="schedule_maitre-d" position="Maître d'"/>
                         {maitreDRow_selected}
                         <PositionRow 
@@ -644,12 +640,12 @@ export class Schedule extends Component {
                         {sommelierRow_selected}
                         <PositionRow 
                             positionClass="admin_schedule_position" 
-                            positionRowClass="admin_schedule_days"key="schedule_barbacks" position="Barbacks"/>
-                        {barbackRow_selected}
-                        <PositionRow 
-                            positionClass="admin_schedule_position" 
                             positionRowClass="admin_schedule_days"key="schedule_bartenders" position="Bartenders"/>
                         {bartenderRow_selected}
+                        <PositionRow 
+                            positionClass="admin_schedule_position" 
+                            positionRowClass="admin_schedule_days"key="schedule_barbacks" position="Barbacks"/>
+                        {barbackRow_selected}
                         <PositionRow 
                             positionClass="admin_schedule_position" 
                             positionRowClass="admin_schedule_days"key="schedule_servers" position="Servers" />
@@ -662,6 +658,10 @@ export class Schedule extends Component {
                             positionClass="admin_schedule_position" 
                             positionRowClass="admin_schedule_days"key="schedule_bussers" position="Bussers"/>
                         {busserRow_selected}
+                        <PositionRow 
+                            positionClass="admin_schedule_position" 
+                            positionRowClass="admin_schedule_days"key="schedule_captains" position="Baristas"/>
+                        {baristaRow_selected}
                     </div>
                 </div>
             </div>
