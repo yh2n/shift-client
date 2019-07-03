@@ -22,7 +22,7 @@ export class AccountNav extends Component{
         if(this.props.newNotification === false) {
             var Icon = (
                 <i 
-                className={this.props.className}
+                className={ this.props.className }
             >
                 add_alert
             </i>
@@ -30,10 +30,10 @@ export class AccountNav extends Component{
         }
         else {
             var Icon = (
-            <Link to={`/my_account/${this.props.username}/schedule`} >
+            <Link to={ this.props.linkTo } >
                 <i 
-                className={this.props.className}
-                onClick={this.props.markAsRead}
+                className={ this.props.className }
+                onClick={ this.props.markAsRead }
                 >
                 add_alert
                 </i>
@@ -43,14 +43,14 @@ export class AccountNav extends Component{
         let currentUser = localStorage.getItem('currentUser')
         return(
             <div className="account_nav">
-                <div className="menu_icon" onClick={this.props.onClick}>
+                <div className="menu_icon" onClick={ this.props.onClick }>
                     <div></div>
                     <div></div>
                     <div></div>
                 </div>
                 { Icon }
                 <p className="nav_date">{moment().format("dddd, MMMM Do YYYY")}</p>
-                <p className="nav_user_name">{currentUser}</p>
+                <p className="nav_user_name">{ currentUser }</p>
                 <button 
                     className="nav_log-out_button"
                     onClick={() => this.logOut()}
