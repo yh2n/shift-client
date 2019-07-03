@@ -1,3 +1,8 @@
+.info_container {
+    display: flex;
+    flex-direction: column;
+}
+
 .employee_dashboard_background-color {
     background: #E9F2ED;
 }
@@ -8,12 +13,18 @@
     justify-content: center;
     align-items: center;
     font-size: 20px;
+    color: #181E3F;
     height: 100vh;
     margin: 0 10px 20px 10px;
 }
 
 .employee-database_redirect {
-    margin: auto;
+    margin-top: 10px;
+    background: white;
+    color: #181E3F;
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
 }
 
 .admin_employee_dashboard {
