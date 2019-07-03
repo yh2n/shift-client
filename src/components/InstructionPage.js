@@ -44,9 +44,10 @@ export class InstructionPage extends Component {
                 <div className="instructions">
                     <div className="admin_instructions_div">
                         <ul>
-                            <li>As a manager, log in using one of the following usernames.</li>
+                            <li>As a manager, log in with one of the usernames below.</li>
                             <li>Look at the latest updates of your staff availability.</li>
                             <li>Create new schedules by clicking on 'Breakfast', 'Lunch', 'Brunch' or 'Dinner'</li>
+                            <li>Submit the changes and every staff member will get notified </li>
                         </ul>
                     </div>
                     <div className="mock_staff">
@@ -57,12 +58,16 @@ export class InstructionPage extends Component {
                     </div>
                     <div className="staff_instructions_div">
                         <ul> 
-                            <li>As an employee, log in using one the following usernames.</li>
+                            <li>As an employee, log in with one the usernames below.</li>
                             <li>Keep your availability up to date.</li>
                             <li>
-                                Click on the shift(s) you are requesting coverage coverage for and they will be displayed red 
-                                or click on the days off you are willing to work and they will be displayed 
-                                green.
+                                Click on the shift(s) you are requesting coverage for: they will become red and indicate 
+                                your request.
+                                Click on the days off you are willing to work: they will become green and show you are looking to pick up
+                                those shifts.
+                            </li>
+                            <li>
+                                Submit the changes and everyone will get notified of the schedule request(s)
                             </li>
                         </ul>
                     </div>
