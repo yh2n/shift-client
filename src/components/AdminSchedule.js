@@ -238,38 +238,38 @@ export class Schedule extends Component {
         )
 
 
-        let captains = employees.filter(employee => employee.position === "Captain")
+        let baristas = employees.filter(employee => employee.position === "Barista")
         let baristaRow = (
-                captains.map(captain => (
+                baristas.map(barista => (
                         <AdminEmployeeRow
-                            key={captain.id}
-                            className={captain.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
+                            key={barista.id}
+                            className={barista.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={
-                                <Link to ={`/admin/employee/${captain.id}`} 
+                                <Link to ={`/admin/employee/${barista.id}`} 
                                     style={{textDecoration:'none', color:' #E9F2ED '}}>
-                                    {captain.firstName}
+                                    {barista.firstName}
                                 </Link>
                                 }
-                            id={captain.id}
+                            id={barista.id}
                             shiftFormat={this.state.shiftFormat}
-                            schedule={captain.schedule}
+                            schedule={barista.schedule}
                         />
                     )
                 )
         )
 
         let baristaRow_selected = (
-                captains.map(captain => (
+                baristas.map(barista => (
                         <AdminEmployeeRowSelected
-                            key={`${captain.id}_selected`}
-                            className={captain.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
+                            key={`${barista.id}_selected`}
+                            className={barista.id === currentUser ? "admin_schedule_name logged_in" : "admin_schedule_name"}
                             name={
-                                <Link to ={`/admin/employee/${captain.id}`} 
+                                <Link to ={`/admin/employee/${barista.id}`} 
                                     style={{textDecoration:'none', color:' #E9F2ED '}}>
-                                    {captain.firstName}
+                                    {barista.firstName}
                                 </Link>
                                 }
-                            id={captain.id}
+                            id={barista.id}
                             shiftFormat={this.state.shiftFormat}
                             selectedWeek={this.state.selectedWeek}
                             submittedCount={this.state.submittedCount}
@@ -596,7 +596,7 @@ export class Schedule extends Component {
                         {busserRow}
                         <PositionRow 
                             positionClass="admin_schedule_position" 
-                            positionRowClass="admin_schedule_days"key="schedule_captains" 
+                            positionRowClass="admin_schedule_days"key="schedule_baristas" 
                             position="Baristas"
                         />
                         {baristaRow}
@@ -660,7 +660,7 @@ export class Schedule extends Component {
                         {busserRow_selected}
                         <PositionRow 
                             positionClass="admin_schedule_position" 
-                            positionRowClass="admin_schedule_days"key="schedule_captains" position="Baristas"/>
+                            positionRowClass="admin_schedule_days"key="schedule_baristas" position="Baristas"/>
                         {baristaRow_selected}
                     </div>
                 </div>
