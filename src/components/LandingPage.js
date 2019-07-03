@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import LandingPageNav from './LandingPageNav';
 import Laptop from './Laptop';
-import LaptopInstructions from './LaptopInstructions';
+import InstructionsSentence from './InstructionsSentence';
 import CellPhone from './CellPhone';
 import AnimationsInstructions from './AnimationsInstructions';
 
@@ -24,13 +24,46 @@ export default class LandingPage extends Component {
     }
 
     handleRequestAlert = () => {
-        setInterval(() => {
-            this.setState({
-                request_alert: !this.state.request_alert
-            })
-        }, 3000);
+        setInterval(() => this.requestAlert(), 3000);
+    }
+
+    requestAlert = () => {
+        this.setState({
+            request_alert: !this.state.request_alert
+        })
+    }
+
+    componentWillUnmount() {
+        const refreshIntervalId = setInterval(this.requestAlert(), 1000);
+        clearInterval(refreshIntervalId)
     }
     render() {
+        const cellTextArr = ["Receive schedule updates and requests in real-time",
+            "Pick up open shifts",
+             "Keep track of last minutes changes" 
+            ]
+        const cellPhoneText = cellTextArr.map(text => {
+            return (
+                <InstructionsSentence 
+                    key={text}
+                    className="animations_text"
+                    text={text} />
+            )
+        })
+        
+        const laptopTextArr = ["Easily recall previous templates",
+             "Have access to everyone's updated availability and plan accordingly" 
+            ]
+        const laptopText = laptopTextArr.map(text => {
+            return (
+                <InstructionsSentence 
+                    key={text}
+                    className="animations_text"
+                    text={text} />
+            )
+        })
+
+
         return (
             <div className="landing_page">
                 <div className="intro_container">
@@ -54,23 +87,27 @@ export default class LandingPage extends Component {
                         <div className="animations_container">
                             <div className="laptop_container">
                                 <Laptop />
-                                <LaptopInstructions />
+                                <AnimationsInstructions 
+                                    icon="far fa-calendar-alt"
+                                    style={{'fontSize': '40px', color: '#5D87BF'}}
+                                    instructionsClass=" laptop_instructions"
+                                    centerTextClass="animations_text icon_text"
+                                    centerText="Create new schedule in minutes"
+                                    sentences={laptopText}
+                                />
                             </div>
                         </div>
                         <div className="dotted_bottom_border"></div>
                         <div className="animations_container cell">
                             <div className="cell-phone_container">
                                 <CellPhone requestAlert={this.state.request_alert}/>
-                                {/* <div className="cell-phone_instructions">
-                                    <i className="fas fa-bell landing_page_bell" style={{'fontSize': '40px', color: '#5D87BF'}}></i>
-                                    <div className="animations_text icon_text">Get notified</div>
-                                    <div className="animations_text">Receive schedule updates and requests in real-time</div>
-                                    <div className="animations_text">Pick up open shifts</div>
-                                    <div className="animations_text">Keep track of last minutes changes</div>
-                                </div> */}
                                 <AnimationsInstructions 
-                                    classOne="animations_text icon_text"
-                                    textOne="Get notified"
+                                    style={{'fontSize': '40px', color: '#5D87BF'}}
+                                    icon="fas fa-bell landing_page_bell"
+                                    instructionsClass="cell-phone_instructions"
+                                    centerTextClass="animations_text icon_text"
+                                    centerText="Get notified"
+                                    sentences={cellPhoneText}
                                 />
                             </div>
                         </div>
