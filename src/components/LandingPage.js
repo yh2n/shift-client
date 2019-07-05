@@ -38,7 +38,7 @@ export default class LandingPage extends Component {
         clearInterval(refreshIntervalId)
     }
     render() {
-        const cellTextArr = ["Receive schedule updates and requests in real-time",
+        const cellTextArr = ["Receive schedule updates and requests in real time",
             "Pick up open shifts",
              "Keep track of last minutes changes" 
             ]
@@ -73,7 +73,7 @@ export default class LandingPage extends Component {
                             <i className="far fa-bell"></i>
                         </div>
                         <div className="app_presentation center_text">
-                            <p>ADDING REALTIME EXPERIENCE</p>
+                            <p>ADDING REAL-TIME EXPERIENCE</p>
                             <p>TO STAFF MANAGEMENT</p>
                             <p>AND SCHEDULING</p>
                         </div>
@@ -127,7 +127,7 @@ export default class LandingPage extends Component {
                                         <i className="fas fa-sun landing_page_sun" style={{'fontSize': '40px', color: '#26A56A'}}></i>
                                     </div>
                                     <div className="animations_text icon_text">Ease the process...</div>
-                                    <div className="animations_text">...of scheduling, swapping shifts, communicating with every staff member</div>
+                                    <div className="animations_text">...of scheduling, swapping shifts, communicating with every staff member!</div>
                                 </div>
                             </div>
                         </div>
