@@ -9,8 +9,7 @@
 
 .app_presentation_container {
     display: grid;
-    grid-template-columns: 2fr 5fr 2fr;
-    /* border: solid; */
+    grid-template-columns: 2fr 6fr 2fr;
     font-size: 60px;
     max-width: 1400px;
     width: 90%;
@@ -18,7 +17,6 @@
     margin-bottom: 100px;
 }
 
-.landing_page_app_name
 .bottom_border {
     border-bottom: 10px dotted rgba(38, 165, 106, 65);
     width: 25%;
@@ -59,7 +57,6 @@
 
 .landing_page_animations {
     margin-top: 100px;
-    /* border: solid red; */
     max-width: 1400px;
     font-family: 'Fjalla One', sans-serif;
 }
@@ -75,8 +72,6 @@
 
 .animations_container {
     display: flex;
-    /* border: solid purple; */
-    /* border-right: 5px dashed rgba(216, 73, 73, 85); */
     border-right: 5px dashed purple;
     margin-bottom: 30px;
     border-radius: 50%;
@@ -99,7 +94,6 @@
 .laptop_container, .cell-phone_container, .dialogue_container {
     display: flex;
     width: 100%;
-    /* border: solid blueviolet; */
     padding: 15px;
     margin-bottom: 20px;
     align-items: center;
@@ -107,8 +101,6 @@
 .laptop {
     display: flex;
     flex-direction: column;
-    /* border: solid green; */
-    /* color: #8C0368; */
     color: #181E3F;
     padding: 20px;
     margin-right: 10px;
@@ -120,7 +112,6 @@
 .dialogue_icon1 {
     display: flex;
     flex-direction: column;
-    /* border: solid green; */
     color: #181E3F;
     padding: 10px;
     justify-content: center;
@@ -146,7 +137,6 @@
 }
 
 .dialogue_icon2  {
-    /* border: solid green; */
     width: 50%;
     font-size: 40px;
 }
@@ -225,7 +215,6 @@
     border-radius: 5px;
     width: 460px;
     height: 4%;
-    /* background: #181E3F; */
 }
 
 .laptop_keyboard_button {
@@ -281,12 +270,10 @@
     flex-direction: column;
     height: 200px;
     width: 50%;
-    /* border: solid green; */
     padding: 20px;
     margin-right: 10px;
     justify-content: center;
     align-items: center;
-    /* color: #26A56A; */
     color: #181E3F;
 }
 
@@ -445,7 +432,6 @@
 
 @media all and (max-width: 1220px) {
     .landing_page_animations {
-        /* border: solid red; */
         margin-top: 100px;
         max-width: 1000px;
     }
@@ -511,7 +497,6 @@
     .app_presentation_container {
         display: flex;
         flex-direction: column;
-        /* border: solid; */
         font-size: 40px;
         width: 90%;
         margin-top: 150px;
