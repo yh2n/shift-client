@@ -127,7 +127,7 @@ export default class LandingPage extends Component {
                                         <i className="fas fa-sun landing_page_sun" style={{'fontSize': '40px', color: '#26A56A'}}></i>
                                     </div>
                                     <div className="animations_text icon_text">Ease the process...</div>
-                                    <div className="animations_text">...of scheduling, swapping shifts, communicating with every staff member</div>
+                                    <div className="animations_text">...of scheduling, swapping shifts, communicating with every staff member!</div>
                                 </div>
                             </div>
                         </div>

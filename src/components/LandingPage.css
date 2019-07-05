@@ -120,16 +120,18 @@
 }
 .dialogue_icon1  > * {
     margin-bottom: 5px;
-    border: .5px solid;
     padding: 10px;
 }
 .dialogue_bubble_left {
+    background: #E9F2ED;
+    color: #181E3F;
     max-width: 100px;
     border-radius: 8px 8px 8px 0;
     align-self: flex-start
 }
 
 .dialogue_bubble_right {
+    border: .5px solid;
     margin-left: 30px;
     align-self: flex-end;
     max-width: 100px;
@@ -258,6 +260,7 @@
         transform: rotate(360deg)
     }
 }
+
 .cell-phone_container {
     display: flex;
     flex-direction: row-reverse;
@@ -322,6 +325,7 @@
 }
 
 .request_alert {
+    border: red;
     background: red;
     color: white;
     margin-right: -70px;
@@ -338,6 +342,7 @@
 .last_instructions > i {
     margin-right: 10px;
 }
+
 .header {
     box-sizing: border-box;
     display: flex;
@@ -360,24 +365,12 @@
 .app_name.landing_page_nav {
     flex: 0
 }
+
 .landing_page_header_redirect {
     font-size: 15px;
     align-self: flex-end;
     padding-right: 25px;
     color: #26A56A;
-}
-
-.background_images {
-    max-width: 1280px;
-    max-height: 827px;
-    width: 98%;
-    margin: 100px 0 60px 0;
-    animation-name: carousel;
-    animation-duration: 2s;
-}
-
-.background_images img {
-    width: 100%;
 }
 
 .portfolio_gh_redirect {
@@ -416,10 +409,6 @@
     
     .intro_container_redirect-desktop {
         display: none;
-    }
-
-    .background_images {
-        margin: 10px;
     }
 }
 
