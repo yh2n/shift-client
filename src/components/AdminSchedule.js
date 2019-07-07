@@ -105,6 +105,10 @@ export class Schedule extends Component {
         }, 7000);
     }
 
+    markAsRead = () => {
+        this.setState({new_notification: false})
+    }
+    
     componentWillUnmount() {
         window.removeEventListener("resize", this.handleWindowResize);
         this.pusher.disconnect();

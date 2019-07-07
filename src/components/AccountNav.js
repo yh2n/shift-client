@@ -29,7 +29,7 @@ export class AccountNav extends Component{
             )
         }
         else {
-            var Icon = (
+            Icon = (
             <Link to={ this.props.linkTo } >
                 <i 
                 className={ this.props.className }

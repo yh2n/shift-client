@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { reduxForm, Field, focus } from 'redux-form';
 import Input from './Input';
 import { login } from '../actions/auth';
-import { Link } from 'react-router-dom';
 import { required, nonEmpty } from '../validators';
 import './LoginForm.css';
 

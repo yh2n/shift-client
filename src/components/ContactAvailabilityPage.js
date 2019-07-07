@@ -27,7 +27,8 @@ export default class ContactAvailabilityPage extends Component {
 					onClick={() => this.toggleModal()}
 					className={this.state.new_notification === false ? "material-icons no_notification" : "material-icons new_notification"}
 					markAsRead={this.markAsRead}
-					username={localStorage.getItem('username')}
+                    username={localStorage.getItem('username')}
+                    linkTo={`/my_account/${username}/schedule`}
 				/>
 				<UserMenuModal
 					show={this.state.isOpen}

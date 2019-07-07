@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import moment from 'moment';
-import Pusher from 'pusher-js';
 
 import { API_BASE_URL } from '../config';
 

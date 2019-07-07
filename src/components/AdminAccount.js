@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Pusher from 'pusher-js';
+
 import AccountNav from './AccountNav';
 import AdminMenuModal from './AdminMenuModal';
 import Notifications from './Notifications';
@@ -17,19 +19,45 @@ export  class AdminAccount extends Component {
 			isOpen: false,
 			isDisplayed: false,
 			availability_alert: false,
-			schedule_alert: false,
 			new_notification: false
 		};
 	}
 
 	componentDidMount() {
-		this.props.dispatch(fetchEmployees())
+		this.props.dispatch(fetchEmployees());
+		this.pusher = new Pusher('dd4cfaae3504bbdaa2b2', {
+            cluster: 'us2',
+            forceTLS: true
+        });
+
+        this.channel = this.pusher.subscribe('update');
+        this.channel.bind('availability_update', () => {
+            this.handleAvailabilityAlert()
+		})
 	}
 
 	toggleMenuModal = () => {
 		this.setState({
 			isDisplayed: !this.state.isDisplayed
 		});
+	}
+
+	handleAvailabilityAlert = () => {
+        this.setState({
+            availability_alert: true,
+            new_notification: true
+        })
+        setTimeout(() => {
+            this.setState({
+                availability_alert: false
+            })
+            
+        }, 7000);
+	}
+	
+	
+	componentWillUnmount() {
+		this.pusher.disconnect()
 	}
     render() {
         return (
@@ -38,13 +66,17 @@ export  class AdminAccount extends Component {
 				<AccountNav 
 					onClick={this.toggleMenuModal}
 					className={this.state.new_notification === false ? "material-icons no_notification" : "material-icons new_notification"}
-					markAsRead={this.markAsRead}
 					username={localStorage.getItem('username')}
+					linkTo="/admin"
 				/>
-					<AdminMenuModal
-						show={this.state.isDisplayed}
-						onClose={this.toggleMenuModal}
-					/>
+				<AdminMenuModal
+					show={this.state.isDisplayed}
+					onClose={this.toggleMenuModal}
+				/>
+				 <Notifications 
+                        className={this.state.availability_alert ? "employee_dashboard_notifications" : "employee_dashboard_notifications notifications-hidden"}
+                        text="New schedule request!"
+                    />
 				</div>
 				<div className="contact_page">
 					<div className="contact_list_container">

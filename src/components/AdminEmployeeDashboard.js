@@ -39,6 +39,11 @@ export default class AdminEmployeeDashboard extends Component {
 		})
 	}
 
+	toggleModal = () => {
+		this.setState({ isOpen: !this.state.isOpen })
+    }
+    
+
 	loadEmployee() {this.setState({loading: true,error: null})
 		let id = this.props.match.params.id
 		console.log("logging id", id);

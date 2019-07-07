@@ -138,8 +138,8 @@ export default class LandingPage extends Component {
                         <Link to='/instructions' style={{'textDecoration': 'none',  color: '#26A56A'}}>
                             Demo | </Link><Link to='/login' style={{'textDecoration': 'none',  color: '#26A56A'}}>Login</Link>
                     </div>
-                        <div><a href='https://github.com/' target='_blank' rel="noopener noreferrer"><i className="fab fa-github" style={{'textDecoration': 'none',  color: '#26A56A', fontSize: '18px'}}></i></a></div>
-                        <div className="credits" style={{fontSize: '14px'}}>© 2019 <a href='https://yh2n.github.io/portfolio/' target='_blank' rel="noopener noreferrer"style={{textDecoration: 'none', color: '#26A56A'}}>Yohann Potico </a></div>
+                        <div><Link to='//github.com/' target='_blank'><i className="fab fa-github" style={{'textDecoration': 'none',  color: '#26A56A', fontSize: '18px'}}></i></Link></div>
+                        <div className="credits" style={{fontSize: '14px'}}>© 2019 <Link to='//yh2n.github.io/portfolio/' target='_blank' style={{textDecoration: 'none', color: '#26A56A'}}>Yohann Potico </Link></div>
                 </div>  
             </div>
         );

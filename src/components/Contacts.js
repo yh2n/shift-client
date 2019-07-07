@@ -18,7 +18,7 @@ export class Contacts extends Component {
 		super(props);
 
 		this.state = {
-			isOpen : false,
+			isOpen: false,
 			availability_alert: false,
 			schedule_alert: false,
 			new_notification: false
@@ -61,7 +61,6 @@ export class Contacts extends Component {
             this.setState({
                 availability_alert: false
             })
-            
         }, 7000);
     }
 
@@ -87,15 +86,17 @@ export class Contacts extends Component {
 		document.body.classList.remove("background-color");
     }
     render() {
+		let username = localStorage.getItem('username')
         return (
 			<div>
 				<div>
 					<AccountNav 
 						onClick={this.toggleModal}
-						className={this.state.new_notification === false ? "material-icons no_notification" : "material-icons new_notification"}
+						className={!this.state.new_notification ? "material-icons no_notification" : "material-icons new_notification"}
 						markAsRead={this.markAsRead}
-						username={localStorage.getItem('username')}
-                        newNotification={this.state.new_notification}
+						// username={username}
+						newNotification={this.state.new_notification}
+						linkTo={`/my_account/${username}/schedule`}
 					/>
 					<UserMenuModal
 						show={this.state.isOpen}
