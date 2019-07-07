@@ -5,7 +5,7 @@ import Pusher from 'pusher-js';
 
 import UserEmployeeRow from './UserEmployeeRow';
 import UserEmployeeRowSelected from './UserEmployeeRowSelected';
-import AccounttNav from './AccountNav';
+import AccountNav from './AccountNav';
 import Notifications from './Notifications';
 import UserMenuModal from './UserMenuModal';
 import CurrentWeekDayRow from './CurrentWeekDayRow';
@@ -142,6 +142,7 @@ export class Schedule extends Component {
 	render() {
         const employees = this.props.employees.employees;
         let { currentUser } = this.state;
+        const username = localStorage.getItem('username')
 
         let barbacks = employees.filter(employee => employee.position === "Barback")
         let barbackRow = (
@@ -503,13 +504,13 @@ export class Schedule extends Component {
 		return(
 			<div>
                 <div>
-                    <AccounttNav 
+                    <AccountNav 
                         onClick={this.toggleModal}
                         className={this.state.new_notification === false ? "material-icons no_notification" : "material-icons new_notification"}
                         markAsRead={this.markAsRead}
-                        username={localStorage.getItem('username')}
+                        username={ username }
                         newNotification={this.state.new_notification}
-                        linkTo={`/my_account/${this.props.username}/schedule`}
+                        linkTo={`/my_account/${username}/schedule`}
                     />
                     <UserMenuModal
                         show={this.state.isOpen}

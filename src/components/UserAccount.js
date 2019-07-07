@@ -4,7 +4,9 @@ import EmployeeInfoForm from './EmployeeInfoForm';
 import AccountNav from './AccountNav';
 import Notifications from './Notifications';
 import UserMenuModal from './UserMenuModal';
+import { username } from '../utils/currentUser'
 import './UserAccount.css';
+import { isMoment } from 'moment';
 
 export default class UserAccount extends Component {
 	constructor(props) {
@@ -82,6 +84,7 @@ export default class UserAccount extends Component {
 					markAsRead={this.markAsRead}
 					username={localStorage.getItem('username')}
 					newNotification={this.state.new_notification}
+					linkTo={`/my_account/${username}/schedule`}
 				/>
 				<UserMenuModal
 					show={this.state.isOpen}

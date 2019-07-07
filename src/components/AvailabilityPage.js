@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Pusher from 'pusher-js';
 import Availability from './Availability';
 import AccountNav from './AccountNav';
 import Notifications from './Notifications';
 import UserMenuModal from './UserMenuModal';
+
 import './AvailabilityPage.css';
 
 
@@ -77,13 +79,15 @@ export default class AvailabilityPage extends Component {
 
 
 	render() {
+		let username = localStorage.getItem('username')
 		return (
 			<div className="availability_page">
 				<AccountNav 
 					onClick={() => this.toggleModal()}
 					className={this.state.new_notification === false ? "material-icons no_notification" : "material-icons new_notification"}
 					markAsRead={this.markAsRead}
-					username={localStorage.getItem('username')}
+					username={username}
+					linkTo={`/my_account/${username}/schedule`}
 				/>
 				<UserMenuModal
 					show={this.state.isOpen}
