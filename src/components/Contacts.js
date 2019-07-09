@@ -74,7 +74,6 @@ export class Contacts extends Component {
             this.setState({
                 schedule_alert: false
             })
-            
         }, 7000);
     }
 	markAsRead = () => {
@@ -94,7 +93,6 @@ export class Contacts extends Component {
 						onClick={this.toggleModal}
 						className={!this.state.new_notification ? "material-icons no_notification" : "material-icons new_notification"}
 						markAsRead={this.markAsRead}
-						// username={username}
 						newNotification={this.state.new_notification}
 						linkTo={`/my_account/${username}/schedule`}
 					/>
@@ -115,13 +113,13 @@ export class Contacts extends Component {
 					<div className="contact_list_container">
 						<ContactLabels />
 						<ContactRow 
-							className="contacts"
+							className="employee_contact"
 							linkTo={'contact-availability'}
 						/>
 					</div>
 					<div className="contact_list_container-mobile">
 						<ContactRowMobile 
-							className="contacts"
+							className="employee_contact"
 							linkTo={'contact-availability'}
 						/>
 					</div>

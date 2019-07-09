@@ -1,7 +1,15 @@
+.admin_background {
+	background-color: rgba(24, 30, 64, 25);
+}
 .staff_page {
 	display: flex;
 	background: rgba(38, 165, 106, .1);
 	height: 100%;
+}
+
+.contact_row.admin_contact:hover {
+	/* border: rgba(24, 30, 64, 25) */
+	border: red
 }
 
 .staff_member_container {

@@ -22,6 +22,7 @@ export class InstructionPage extends Component {
             let managers = this.props.employees.employees.filter(element => element.admin === true);
             let employees = this.props.employees.employees.filter(element => element.admin === "" || false);
             this.setState({ managers, employees })
+            console.log(this.props.employees.employees)
         }, 300) 
     }
 
