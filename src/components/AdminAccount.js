@@ -24,6 +24,7 @@ export  class AdminAccount extends Component {
 	}
 
 	componentDidMount() {
+		document.body.classList.add("admin_background");
 		this.props.dispatch(fetchEmployees());
 		this.pusher = new Pusher('dd4cfaae3504bbdaa2b2', {
             cluster: 'us2',
@@ -57,11 +58,12 @@ export  class AdminAccount extends Component {
 	
 	
 	componentWillUnmount() {
+		document.body.classList.remove("admin_background");
 		this.pusher.disconnect()
 	}
     render() {
         return (
-            <div>
+            <div className="admin_contacts">
 				<div>
 				<AccountNav 
 					onClick={this.toggleMenuModal}
@@ -82,13 +84,13 @@ export  class AdminAccount extends Component {
 					<div className="contact_list_container">
 						<ContactLabels />
 						<ContactRow 
-							className="contacts"
+							className="admin_contact"
 							linkTo={'employee-availability'}
-						/>
+							/>
 					</div>
 					<div className="contact_list_container-mobile">
 						<ContactRowMobile 
-							className="contacts"
+							className="admin_contact"
 							linkTo={'employee-availability'}
 						/>
 					</div>
