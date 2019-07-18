@@ -1,6 +1,6 @@
 # restaurant-schedule-app
 
-server repo: https://github.com/yh2n/shift-api
+server repo: https://github.com/yh2n/shift-api<br>
 live version: https://shrouded-lake-21155.herokuapp.com/
 
 ## Synopsis
