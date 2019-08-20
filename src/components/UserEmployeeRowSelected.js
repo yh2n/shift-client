@@ -59,16 +59,16 @@ export default class UserEmployeeRowSelected extends Component {
         const MondayShifts = (
                 <div key="mon_shifts_next">
                     <div key="mo_br_next">
-                        {this.state.schedule.Mo_breakfast && this.props.shiftFormat === "mobile" ? "Brkfst" : ""}
-                        {this.state.schedule.Mo_breakfast && this.props.shiftFormat === "desktop" ? "Breakfast" : ""}
+                        {this.state.schedule.Mo_breakfast && this.props.device === "mobile" ? "Brkfst" : ""}
+                        {this.state.schedule.Mo_breakfast && this.props.device === "desktop" ? "Breakfast" : ""}
                     </div>
                     <div key="mo_lu_next">
-                        {this.state.schedule.Mo_lunch && this.props.shiftFormat === "mobile" ? "Lun" : ""}
-                        {this.state.schedule.Mo_lunch && this.props.shiftFormat === "desktop" ? "Lunch" : ""}
+                        {this.state.schedule.Mo_lunch && this.props.device === "mobile" ? "Lun" : ""}
+                        {this.state.schedule.Mo_lunch && this.props.device === "desktop" ? "Lunch" : ""}
                     </div>
                     <div key="mo_di_next">
-                        {this.state.schedule.Mo_dinner && this.props.shiftFormat === "mobile" ? "Din" : ""}
-                        {this.state.schedule.Mo_dinner && this.props.shiftFormat === "desktop" ? "Dinner" : ""}
+                        {this.state.schedule.Mo_dinner && this.props.device === "mobile" ? "Din" : ""}
+                        {this.state.schedule.Mo_dinner && this.props.device === "desktop" ? "Dinner" : ""}
                     </div>
                     <div key="mo_off_next">
                         {!this.state.schedule.Mo_breakfast && !this.state.schedule.Mo_lunch && !this.state.schedule.Mo_dinner ? "OFF" : ""}
@@ -78,16 +78,16 @@ export default class UserEmployeeRowSelected extends Component {
         const TuesdayShifts = (
                 <div key="tue_shifts_next">
                     <div key="tu_br_next">
-                        {this.state.schedule.Tu_breakfast && this.props.shiftFormat === "mobile" ? "Brkfst" : ""}
-                        {this.state.schedule.Tu_breakfast && this.props.shiftFormat === "desktop" ? "Breakfast" : ""}
+                        {this.state.schedule.Tu_breakfast && this.props.device === "mobile" ? "Brkfst" : ""}
+                        {this.state.schedule.Tu_breakfast && this.props.device === "desktop" ? "Breakfast" : ""}
                     </div>
                     <div key="tu_lu_next">
-                        {this.state.schedule.Tu_lunch && this.props.shiftFormat === "mobile" ? "Lun" : ""}
-                        {this.state.schedule.Tu_lunch && this.props.shiftFormat === "desktop" ? "Lunch" : ""}
+                        {this.state.schedule.Tu_lunch && this.props.device === "mobile" ? "Lun" : ""}
+                        {this.state.schedule.Tu_lunch && this.props.device === "desktop" ? "Lunch" : ""}
                     </div>
                     <div key="tu_di_next">
-                        {this.state.schedule.Tu_dinner && this.props.shiftFormat === "mobile" ? "Din" : ""}
-                        {this.state.schedule.Tu_dinner && this.props.shiftFormat === "desktop" ? "Dinner" : ""}
+                        {this.state.schedule.Tu_dinner && this.props.device === "mobile" ? "Din" : ""}
+                        {this.state.schedule.Tu_dinner && this.props.device === "desktop" ? "Dinner" : ""}
                     </div>
                     <div key="tu_off_next">
                         {!this.state.schedule.Tu_breakfast && !this.state.schedule.Tu_lunch && !this.state.schedule.Tu_dinner ? "OFF" : ""}
@@ -97,16 +97,16 @@ export default class UserEmployeeRowSelected extends Component {
         const WednesdayShifts = (
                 <div key="wed_shifts_next">
                     <div key="we_br_next">
-                        {this.state.schedule.We_breakfast && this.props.shiftFormat === "mobile" ? "Brkfst" : ""}
-                        {this.state.schedule.We_breakfast && this.props.shiftFormat === "desktop" ? "Breakfast" : ""}
+                        {this.state.schedule.We_breakfast && this.props.device === "mobile" ? "Brkfst" : ""}
+                        {this.state.schedule.We_breakfast && this.props.device === "desktop" ? "Breakfast" : ""}
                     </div>
                     <div key="we_lu_next">
-                        {this.state.schedule.We_lunch && this.props.shiftFormat === "mobile" ? "Lun" : ""}
-                        {this.state.schedule.We_lunch && this.props.shiftFormat === "desktop" ? "Lunch" : ""}
+                        {this.state.schedule.We_lunch && this.props.device === "mobile" ? "Lun" : ""}
+                        {this.state.schedule.We_lunch && this.props.device === "desktop" ? "Lunch" : ""}
                     </div>
                     <div key="we_di_next">
-                        {this.state.schedule.We_dinner && this.props.shiftFormat === "mobile" ? "Din" : ""}
-                        {this.state.schedule.We_dinner && this.props.shiftFormat === "desktop" ? "Dinner" : ""}
+                        {this.state.schedule.We_dinner && this.props.device === "mobile" ? "Din" : ""}
+                        {this.state.schedule.We_dinner && this.props.device === "desktop" ? "Dinner" : ""}
                     </div>
                     <div key="we_off_next">
                         {!this.state.schedule.We_breakfast && !this.state.schedule.We_lunch && !this.state.schedule.We_dinner ? "OFF" : ""}
@@ -116,16 +116,16 @@ export default class UserEmployeeRowSelected extends Component {
         const ThursdayShifts = (
                 <div key="thu_shifts_next"> 
                     <div key="th_br_next">
-                        {this.state.schedule.Th_breakfast && this.props.shiftFormat === "mobile" ? "Brkfst" : ""}
-                        {this.state.schedule.Th_breakfast && this.props.shiftFormat === "desktop" ? "Breakfast" : ""}
+                        {this.state.schedule.Th_breakfast && this.props.device === "mobile" ? "Brkfst" : ""}
+                        {this.state.schedule.Th_breakfast && this.props.device === "desktop" ? "Breakfast" : ""}
                     </div>
                     <div key="th_lu_next">
-                        {this.state.schedule.Th_lunch && this.props.shiftFormat === "mobile" ? "Lun" : ""}
-                        {this.state.schedule.Th_lunch && this.props.shiftFormat === "desktop" ? "Lunch" : ""}
+                        {this.state.schedule.Th_lunch && this.props.device === "mobile" ? "Lun" : ""}
+                        {this.state.schedule.Th_lunch && this.props.device === "desktop" ? "Lunch" : ""}
                     </div>
                     <div key="th_di_next">
-                        {this.state.schedule.Th_dinner && this.props.shiftFormat === "mobile" ? "Din" : ""}
-                        {this.state.schedule.Th_dinner && this.props.shiftFormat === "desktop" ? "Dinner" : ""}
+                        {this.state.schedule.Th_dinner && this.props.device === "mobile" ? "Din" : ""}
+                        {this.state.schedule.Th_dinner && this.props.device === "desktop" ? "Dinner" : ""}
                     </div>
                     <div key="th_off_next">{!this.state.schedule.Th_breakfast && !this.state.schedule.Th_lunch && !this.state.schedule.Th_dinner ? "OFF" : ""}</div>
                 </div>
@@ -133,16 +133,16 @@ export default class UserEmployeeRowSelected extends Component {
         const FridayShifts = (
                 <div key="fri_shifts_next">
                     <div key="fr_br_next">
-                        {this.state.schedule.Fr_breakfast && this.props.shiftFormat === "mobile" ? "Brkfst" : ""}
-                        {this.state.schedule.Fr_breakfast && this.props.shiftFormat === "desktop" ? "Breakfast" : ""}
+                        {this.state.schedule.Fr_breakfast && this.props.device === "mobile" ? "Brkfst" : ""}
+                        {this.state.schedule.Fr_breakfast && this.props.device === "desktop" ? "Breakfast" : ""}
                     </div>
                     <div key="fr_lu_next">
-                        {this.state.schedule.Fr_lunch && this.props.shiftFormat === "mobile" ? "Lun" : ""}
-                        {this.state.schedule.Fr_lunch && this.props.shiftFormat === "desktop" ? "Lunch" : ""}
+                        {this.state.schedule.Fr_lunch && this.props.device === "mobile" ? "Lun" : ""}
+                        {this.state.schedule.Fr_lunch && this.props.device === "desktop" ? "Lunch" : ""}
                     </div>
                     <div key="fr_di_next">
-                        {this.state.schedule.Fr_dinner && this.props.shiftFormat === "mobile" ? "Din" : ""}
-                        {this.state.schedule.Fr_dinner && this.props.shiftFormat === "desktop" ? "Dinner" : ""}
+                        {this.state.schedule.Fr_dinner && this.props.device === "mobile" ? "Din" : ""}
+                        {this.state.schedule.Fr_dinner && this.props.device === "desktop" ? "Dinner" : ""}
                     </div>
                     <div key="fr_off_next">{!this.state.schedule.Fr_breakfast && !this.state.schedule.Fr_lunch && !this.state.schedule.Fr_dinner ? "OFF" : ""}
                 </div>
@@ -151,16 +151,16 @@ export default class UserEmployeeRowSelected extends Component {
         const SaturdayShifts = (
                 <div key="sat_shifts_next">
                     <div key="sa_br_next">
-                        {this.state.schedule.Sa_breakfast && this.props.shiftFormat === "mobile" ? "Brkfst" : ""}
-                        {this.state.schedule.Sa_breakfast && this.props.shiftFormat === "desktop" ? "Breakfast" : ""}
+                        {this.state.schedule.Sa_breakfast && this.props.device === "mobile" ? "Brkfst" : ""}
+                        {this.state.schedule.Sa_breakfast && this.props.device === "desktop" ? "Breakfast" : ""}
                     </div>
                     <div key="sa_bru_next">
-                        {this.state.schedule.Sa_brunch && this.props.shiftFormat === "mobile" ? "Brun" : ""}
-                        {this.state.schedule.Sa_brunch && this.props.shiftFormat === "desktop" ? "Brunch" : ""}
+                        {this.state.schedule.Sa_brunch && this.props.device === "mobile" ? "Brun" : ""}
+                        {this.state.schedule.Sa_brunch && this.props.device === "desktop" ? "Brunch" : ""}
                     </div>
                     <div key="sa_di_next">
-                        {this.state.schedule.Sa_dinner && this.props.shiftFormat === "mobile" ? "Din" : ""}
-                        {this.state.schedule.Sa_dinner && this.props.shiftFormat === "desktop" ? "Dinner" : ""}
+                        {this.state.schedule.Sa_dinner && this.props.device === "mobile" ? "Din" : ""}
+                        {this.state.schedule.Sa_dinner && this.props.device === "desktop" ? "Dinner" : ""}
                     </div>
                     <div key="sa_off_next">
                         {!this.state.schedule.Sa_breakfast && !this.state.schedule.Sa_brunch && !this.state.schedule.Sa_dinner ? "OFF" : ""}
@@ -170,16 +170,16 @@ export default class UserEmployeeRowSelected extends Component {
         const SundayShifts = (
                 <div key="sun_shifts_next">
                     <div key="su_br_next">
-                        {this.state.schedule.Su_breakfast && this.props.shiftFormat === "mobile" ? "Brkfst" : ""}
-                        {this.state.schedule.Su_breakfast && this.props.shiftFormat === "desktop" ? "Breakfast" : ""}
+                        {this.state.schedule.Su_breakfast && this.props.device === "mobile" ? "Brkfst" : ""}
+                        {this.state.schedule.Su_breakfast && this.props.device === "desktop" ? "Breakfast" : ""}
                     </div>
                     <div key="su_bru_next">
-                        {this.state.schedule.Su_brunch && this.props.shiftFormat === "mobile" ? "Brun" : ""}
-                        {this.state.schedule.Su_brunch && this.props.shiftFormat === "desktop" ? "Brunch" : ""}
+                        {this.state.schedule.Su_brunch && this.props.device === "mobile" ? "Brun" : ""}
+                        {this.state.schedule.Su_brunch && this.props.device === "desktop" ? "Brunch" : ""}
                     </div>
                     <div key="su_di_next">
-                        {this.state.schedule.Su_dinner && this.props.shiftFormat === "mobile" ? "Din" : ""}
-                        {this.state.schedule.Su_dinner && this.props.shiftFormat === "desktop" ? "Dinner" : ""}
+                        {this.state.schedule.Su_dinner && this.props.device === "mobile" ? "Din" : ""}
+                        {this.state.schedule.Su_dinner && this.props.device === "desktop" ? "Dinner" : ""}
                     </div>
                     <div key="su_off_next">
                         {!this.state.schedule.Su_breakfast && !this.state.schedule.Su_brunch && !this.state.schedule.Su_dinner ? "OFF" : ""}

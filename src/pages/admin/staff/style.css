@@ -1,0 +1,116 @@
+.admin_background {
+    background-color: rgba(24, 30, 64, 25);
+}
+.staff_page {
+    display: flex;
+    background: rgba(38, 165, 106, 0.1);
+    height: 100%;
+}
+
+.staff_member_container {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    max-width: 1200px;
+    margin: 250px auto;
+    border-radius: 4px;
+    font-size: 20px;
+    height: auto;
+}
+
+.employee_contact_list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 75%;
+    margin: 0px auto 50px auto;
+    border: solid black;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: #668295;
+    font-size: 20px;
+}
+
+.employee_contact_row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-row-gap: 10px;
+    border: solid black;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: #668295;
+    font-size: 20px;
+}
+
+.contact_list {
+    border-bottom: solid white;
+    text-align: left;
+    height: 30px;
+    padding-left: 8px;
+}
+
+.staff_member_container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-row-gap: 5px;
+    width: 75%;
+    max-width: 1200px;
+    height: auto;
+    margin: 250px auto 50px auto;
+    border-radius: 4px;
+    font-size: 20px;
+    background: #d2f7f3;
+}
+.admin_employee_row {
+    border: solid black;
+    border-radius: 4px;
+    padding: 5px;
+    margin: 3px;
+    background-color: #668295;
+    font-size: 20px;
+}
+
+@media only screen and (min-width: 769px) {
+    .staff_member_container-mobile {
+        display: none;
+    }
+
+    .staff_member_container {
+        width: 90%;
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .staff_member_container {
+        display: none;
+    }
+
+    .staff_member_container-mobile {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .staff_member_container-mobile {
+        width: 95%;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .staff_member_container {
+        width: 85%;
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .staff_member_container {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .staff_member_container {
+        width: 80%;
+    }
+}

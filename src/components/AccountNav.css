@@ -1,6 +1,6 @@
 .account_nav {
     display: flex;
-    background: #181E3F;
+    background: #181e3f;
     align-items: center;
     position: fixed;
     width: 100%;
@@ -26,17 +26,16 @@
     height: 35px;
     margin: 0px 12px 0px 30px;
     color: rgba(216, 73, 73, 85);
-    font-size: 14px
+    font-size: 14px;
 }
 
 .nav_user_name {
-    /* color: rgba(216, 73, 73, 85); */
-    color: white
+    color: white;
 }
 
 .nav_date {
     margin: 0px 25px 0px 30px;
-    color: #26A56A;
+    color: #26a56a;
 }
 
 .material-icons.no_notification {
@@ -49,4 +48,26 @@
 }
 .material-icons.new_notification:hover {
     cursor: pointer;
+}
+
+@media all and (max-width: 414px) {
+    .account_nav {
+        font-size: 12px;
+    }
+
+    .menu_icon {
+        flex-grow: 0;
+    }
+    .menu_icon > * {
+        width: 30px;
+        height: 4px;
+        margin-bottom: 3px;
+    }
+    .nav_log-out_button {
+        width: auto;
+        height: 25px;
+        margin: 0px 12px 0px 30px;
+        color: rgba(216, 73, 73, 85);
+        font-size: 12px;
+    }
 }

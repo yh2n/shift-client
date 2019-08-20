@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 
-import Availability from "./Availability";
+import UserAccount from "./index";
 
-describe("<Availability />", () => {
+describe("<UserAccount />", () => {
     it("Renders without crashing", () => {
-        shallow(<Availability />);
+        shallow(<UserAccount />);
     });
 });
