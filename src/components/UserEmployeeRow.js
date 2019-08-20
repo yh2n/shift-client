@@ -44,7 +44,6 @@ export class UserEmployeeRow extends Component {
         this.setState({
             loading: true,
     })
-        console.log(this.state);
         return fetch(`${API_BASE_URL}/employee/${id}/schedule/${this.state.currentWeek}`, {
             method: 'GET',
             headers: {
@@ -79,7 +78,6 @@ export class UserEmployeeRow extends Component {
     }
 
     setAvailability = () => {
-        let employees = this.props.employees.employees;
         let id = this.props.id;
         this.props.preventSenderAlert()
         console.log(id, this.props.name);
@@ -108,24 +106,24 @@ export class UserEmployeeRow extends Component {
                         className={this.state.schedule.Mo_br_need_cover ? "red" : ""}
                         onClick={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Mo_br_need_cover:!prevState.schedule.Mo_br_need_cover}}})}
                     >
-                        {this.state.schedule.Mo_breakfast && this.props.shiftFormat === "mobile" ? "Brkfst" : ""}
-                        {this.state.schedule.Mo_breakfast && this.props.shiftFormat === "desktop" ? "Breakfast" : ""}
+                        {this.state.schedule.Mo_breakfast && this.props.device === "mobile" ? "Brkfst" : ""}
+                        {this.state.schedule.Mo_breakfast && this.props.device === "desktop" ? "Breakfast" : ""}
                     </div>
                     <div 
                         key="mo_lu"
                         className={this.state.schedule.Mo_lunch_need_cover ? "red" : ""}
                         onClick={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Mo_lunch_need_cover:!prevState.schedule.Mo_lunch_need_cover}}})}
                         >
-                        {this.state.schedule.Mo_lunch && this.props.shiftFormat === "mobile" ? "Lun" : ""}
-                        {this.state.schedule.Mo_lunch && this.props.shiftFormat === "desktop" ? "Lunch" : ""}
+                        {this.state.schedule.Mo_lunch && this.props.device === "mobile" ? "Lun" : ""}
+                        {this.state.schedule.Mo_lunch && this.props.device === "desktop" ? "Lunch" : ""}
                     </div>
                     <div 
                         key="mo_di"
                         className={this.state.schedule.Mo_dinner_need_cover ? "red" : ""}
                         onClick={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Mo_dinner_need_cover:!prevState.schedule.Mo_dinner_need_cover}}})}
                     >
-                        {this.state.schedule.Mo_dinner && this.props.shiftFormat === "mobile" ? "Din" : ""}
-                        {this.state.schedule.Mo_dinner && this.props.shiftFormat === "desktop" ? "Dinner" : ""}
+                        {this.state.schedule.Mo_dinner && this.props.device === "mobile" ? "Din" : ""}
+                        {this.state.schedule.Mo_dinner && this.props.device === "desktop" ? "Dinner" : ""}
                     </div>
                     <div 
                         key="mo_off"
@@ -143,24 +141,24 @@ export class UserEmployeeRow extends Component {
                         className={this.state.schedule.Tu_br_need_cover ? "red" : ""}
                         onClick={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Tu_br_need_cover:!prevState.schedule.Tu_br_need_cover}}})}
                     >
-                        {this.state.schedule.Tu_breakfast && this.props.shiftFormat === "mobile" ? "Brkfst" : ""}
-                        {this.state.schedule.Tu_breakfast && this.props.shiftFormat === "desktop" ? "Breakfast" : ""}
+                        {this.state.schedule.Tu_breakfast && this.props.device === "mobile" ? "Brkfst" : ""}
+                        {this.state.schedule.Tu_breakfast && this.props.device === "desktop" ? "Breakfast" : ""}
                     </div>
                     <div 
                         key="tu_lu"
                         className={this.state.schedule.Tu_lunch_need_cover ? "red" : ""}
                         onClick={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Tu_lunch_need_cover:!prevState.schedule.Tu_lunch_need_cover}}})}
                     >
-                        {this.state.schedule.Tu_lunch && this.props.shiftFormat === "mobile" ? "Lun" : ""}
-                        {this.state.schedule.Tu_lunch && this.props.shiftFormat === "desktop" ? "Lunch" : ""}
+                        {this.state.schedule.Tu_lunch && this.props.device === "mobile" ? "Lun" : ""}
+                        {this.state.schedule.Tu_lunch && this.props.device === "desktop" ? "Lunch" : ""}
                     </div>
                     <div 
                         key="tu_di"
                         className={this.state.schedule.Tu_dinner_need_cover ? "red" : ""}
                         onClick={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Tu_dinner_need_cover:!prevState.schedule.Tu_dinner_need_cover}}})}    
                     >
-                        {this.state.schedule.Tu_dinner && this.props.shiftFormat === "mobile" ? "Din" : ""}
-                        {this.state.schedule.Tu_dinner && this.props.shiftFormat === "desktop" ? "Dinner" : ""}
+                        {this.state.schedule.Tu_dinner && this.props.device === "mobile" ? "Din" : ""}
+                        {this.state.schedule.Tu_dinner && this.props.device === "desktop" ? "Dinner" : ""}
                     </div>
                     <div 
                         key="tu_off"
@@ -178,24 +176,24 @@ export class UserEmployeeRow extends Component {
                         className={this.state.schedule.We_br_need_cover ? "red" : ""}
                         onClick={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, We_br_need_cover:!prevState.schedule.We_br_need_cover}}})}
                     >
-                        {this.state.schedule.We_breakfast && this.props.shiftFormat === "mobile" ? "Brkfst" : ""}
-                        {this.state.schedule.We_breakfast && this.props.shiftFormat === "desktop" ? "Breakfast" : ""}
+                        {this.state.schedule.We_breakfast && this.props.device === "mobile" ? "Brkfst" : ""}
+                        {this.state.schedule.We_breakfast && this.props.device === "desktop" ? "Breakfast" : ""}
                     </div>
                     <div 
                         key="We_lu"
                         className={this.state.schedule.We_lunch_need_cover ? "red" : ""}
                         onClick={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, We_lunch_need_cover:!prevState.schedule.We_lunch_need_cover}}})}
                         >
-                        {this.state.schedule.We_lunch && this.props.shiftFormat === "mobile" ? "Lun" : ""}
-                        {this.state.schedule.We_lunch && this.props.shiftFormat === "desktop" ? "Lunch" : ""}
+                        {this.state.schedule.We_lunch && this.props.device === "mobile" ? "Lun" : ""}
+                        {this.state.schedule.We_lunch && this.props.device === "desktop" ? "Lunch" : ""}
                     </div>
                     <div 
                         key="We_di"
                         className={this.state.schedule.We_dinner_need_cover ? "red" : ""}
                         onClick={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, We_dinner_need_cover:!prevState.schedule.We_dinner_need_cover}}})}
                     >
-                        {this.state.schedule.We_dinner && this.props.shiftFormat === "mobile" ? "Din" : ""}
-                        {this.state.schedule.We_dinner && this.props.shiftFormat === "desktop" ? "Dinner" : ""}
+                        {this.state.schedule.We_dinner && this.props.device === "mobile" ? "Din" : ""}
+                        {this.state.schedule.We_dinner && this.props.device === "desktop" ? "Dinner" : ""}
                     </div>
                     <div 
                         key="We_off"
@@ -213,24 +211,24 @@ export class UserEmployeeRow extends Component {
                         className={this.state.schedule.Th_br_need_cover ? "red" : ""}
                         onClick={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Th_br_need_cover:!prevState.schedule.Th_br_need_cover}}})}
                     >
-                        {this.state.schedule.Th_breakfast && this.props.shiftFormat === "mobile" ? "Brkfst" : ""}
-                        {this.state.schedule.Th_breakfast && this.props.shiftFormat === "desktop" ? "Breakfast" : ""}
+                        {this.state.schedule.Th_breakfast && this.props.device === "mobile" ? "Brkfst" : ""}
+                        {this.state.schedule.Th_breakfast && this.props.device === "desktop" ? "Breakfast" : ""}
                     </div>
                     <div 
                         key="Th_lu"
                         className={this.state.schedule.Th_lunch_need_cover ? "red" : ""}
                         onClick={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Th_lunch_need_cover:!prevState.schedule.Th_lunch_need_cover}}})}
                         >
-                        {this.state.schedule.Th_lunch && this.props.shiftFormat === "mobile" ? "Lun" : ""}
-                        {this.state.schedule.Th_lunch && this.props.shiftFormat === "desktop" ? "Lunch" : ""}
+                        {this.state.schedule.Th_lunch && this.props.device === "mobile" ? "Lun" : ""}
+                        {this.state.schedule.Th_lunch && this.props.device === "desktop" ? "Lunch" : ""}
                     </div>
                     <div 
                         key="Th_di"
                         className={this.state.schedule.Th_dinner_need_cover ? "red" : ""}
                         onClick={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Th_dinner_need_cover:!prevState.schedule.Th_dinner_need_cover}}})}
                     >
-                        {this.state.schedule.Th_dinner && this.props.shiftFormat === "mobile" ? "Din" : ""}
-                        {this.state.schedule.Th_dinner && this.props.shiftFormat === "desktop" ? "Dinner" : ""}
+                        {this.state.schedule.Th_dinner && this.props.device === "mobile" ? "Din" : ""}
+                        {this.state.schedule.Th_dinner && this.props.device === "desktop" ? "Dinner" : ""}
                     </div>
                     <div 
                         key="Th_off"
@@ -248,24 +246,24 @@ export class UserEmployeeRow extends Component {
                         className={this.state.schedule.Fr_br_need_cover ? "red" : ""}
                         onClick={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Fr_br_need_cover:!prevState.schedule.Fr_br_need_cover}}})}
                     >
-                        {this.state.schedule.Fr_breakfast && this.props.shiftFormat === "mobile" ? "Brkfst" : ""}
-                        {this.state.schedule.Fr_breakfast && this.props.shiftFormat === "desktop" ? "Breakfast" : ""}
+                        {this.state.schedule.Fr_breakfast && this.props.device === "mobile" ? "Brkfst" : ""}
+                        {this.state.schedule.Fr_breakfast && this.props.device === "desktop" ? "Breakfast" : ""}
                     </div>
                     <div 
                         key="Fr_lu"
                         className={this.state.schedule.Fr_lunch_need_cover ? "red" : ""}
                         onClick={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Fr_lunch_need_cover:!prevState.schedule.Fr_lunch_need_cover}}})}
                         >
-                        {this.state.schedule.Fr_lunch && this.props.shiftFormat === "mobile" ? "Lun" : ""}
-                        {this.state.schedule.Fr_lunch && this.props.shiftFormat === "desktop" ? "Lunch" : ""}
+                        {this.state.schedule.Fr_lunch && this.props.device === "mobile" ? "Lun" : ""}
+                        {this.state.schedule.Fr_lunch && this.props.device === "desktop" ? "Lunch" : ""}
                     </div>
                     <div 
                         key="Fr_di"
                         className={this.state.schedule.Fr_dinner_need_cover ? "red" : ""}
                         onClick={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Fr_dinner_need_cover:!prevState.schedule.Fr_dinner_need_cover}}})}
                     >
-                        {this.state.schedule.Fr_dinner && this.props.shiftFormat === "mobile" ? "Din" : ""}
-                        {this.state.schedule.Fr_dinner && this.props.shiftFormat === "desktop" ? "Dinner" : ""}
+                        {this.state.schedule.Fr_dinner && this.props.device === "mobile" ? "Din" : ""}
+                        {this.state.schedule.Fr_dinner && this.props.device === "desktop" ? "Dinner" : ""}
                     </div>
                     <div 
                         key="Fr_off"
@@ -283,24 +281,24 @@ export class UserEmployeeRow extends Component {
                         className={this.state.schedule.Sa_br_need_cover ? "red" : ""}
                         onClick={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Sa_br_need_cover:!prevState.schedule.Sa_br_need_cover}}})}
                     >
-                        {this.state.schedule.Sa_breakfast && this.props.shiftFormat === "mobile" ? "Brkfst" : ""}
-                        {this.state.schedule.Sa_breakfast && this.props.shiftFormat === "desktop" ? "Breakfast" : ""}
+                        {this.state.schedule.Sa_breakfast && this.props.device === "mobile" ? "Brkfst" : ""}
+                        {this.state.schedule.Sa_breakfast && this.props.device === "desktop" ? "Breakfast" : ""}
                     </div>
                     <div 
                         key="Sa_bru"
                         className={this.state.schedule.Sa_brunch_need_cover ? "red" : ""}
                         onClick={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Sa_brunch_need_cover:!prevState.schedule.Sa_brunch_need_cover}}})}
                         >
-                        {this.state.schedule.Sa_brunch && this.props.shiftFormat === "mobile" ? "Brun" : ""}
-                        {this.state.schedule.Sa_brunch && this.props.shiftFormat === "desktop" ? "Brunch" : ""}
+                        {this.state.schedule.Sa_brunch && this.props.device === "mobile" ? "Brun" : ""}
+                        {this.state.schedule.Sa_brunch && this.props.device === "desktop" ? "Brunch" : ""}
                     </div>
                     <div 
                         key="Sa_di"
                         className={this.state.schedule.Sa_dinner_need_cover ? "red" : ""}
                         onClick={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Sa_dinner_need_cover:!prevState.schedule.Sa_dinner_need_cover}}})}
                     >
-                        {this.state.schedule.Sa_dinner && this.props.shiftFormat === "mobile" ? "Din" : ""}
-                        {this.state.schedule.Sa_dinner && this.props.shiftFormat === "desktop" ? "Dinner" : ""}
+                        {this.state.schedule.Sa_dinner && this.props.device === "mobile" ? "Din" : ""}
+                        {this.state.schedule.Sa_dinner && this.props.device === "desktop" ? "Dinner" : ""}
                     </div>
                     <div 
                         key="Sa_off"
@@ -318,24 +316,24 @@ export class UserEmployeeRow extends Component {
                         className={this.state.schedule.Su_br_need_cover ? "red" : ""}
                         onClick={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Su_br_need_cover:!prevState.schedule.Su_br_need_cover}}})}
                     >
-                        {this.state.schedule.Su_breakfast && this.props.shiftFormat === "mobile" ? "Brkfst" : ""}
-                        {this.state.schedule.Su_breakfast && this.props.shiftFormat === "desktop" ? "Breakfast" : ""}
+                        {this.state.schedule.Su_breakfast && this.props.device === "mobile" ? "Brkfst" : ""}
+                        {this.state.schedule.Su_breakfast && this.props.device === "desktop" ? "Breakfast" : ""}
                     </div>
                     <div 
                         key="Su_bru"
                         className={this.state.schedule.Su_brunch_need_cover ? "red" : ""}
                         onClick={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Su_brunch_need_cover:!prevState.schedule.Su_brunch_need_cover}}})}
                         >
-                        {this.state.schedule.Su_brunch && this.props.shiftFormat === "mobile" ? "Brun" : ""}
-                        {this.state.schedule.Su_brunch && this.props.shiftFormat === "desktop" ? "Brunch" : ""}
+                        {this.state.schedule.Su_brunch && this.props.device === "mobile" ? "Brun" : ""}
+                        {this.state.schedule.Su_brunch && this.props.device === "desktop" ? "Brunch" : ""}
                     </div>
                     <div 
                         key="Su_di"
                         className={this.state.schedule.Su_dinner_need_cover ? "red" : ""}
                         onClick={() => this.setState((prevState, props) => { return {schedule: {...prevState.schedule, Su_dinner_need_cover:!prevState.schedule.Su_dinner_need_cover}}})}
                     >
-                        {this.state.schedule.Su_dinner && this.props.shiftFormat === "mobile" ? "Din" : ""}
-                        {this.state.schedule.Su_dinner && this.props.shiftFormat === "desktop" ? "Dinner" : ""}
+                        {this.state.schedule.Su_dinner && this.props.device === "mobile" ? "Din" : ""}
+                        {this.state.schedule.Su_dinner && this.props.device === "desktop" ? "Dinner" : ""}
                     </div>
                     <div 
                         key="Su_off"

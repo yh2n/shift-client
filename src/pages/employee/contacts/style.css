@@ -1,0 +1,127 @@
+.background-color {
+    background: #e9f2ed;
+}
+
+.contact_page {
+    display: flex;
+    height: 100%;
+}
+
+.contact_list_container {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    max-width: 1200px;
+    margin: 100px auto;
+    font-size: 20px;
+    height: auto;
+}
+
+.contact_row,
+.contact_labels {
+    background: white;
+    border: solid white;
+    display: grid;
+    grid-template-columns: 2fr 2fr 3fr 2fr 1fr;
+    border-bottom: solid rgba(38, 165, 106, 0.1);
+    color: rgba(24, 30, 64, 25);
+}
+
+.contact_labels {
+    font-weight: 600;
+}
+
+.contact_row {
+    font-weight: 200;
+}
+
+.contact_list {
+    display: flex;
+    padding: 8px 6px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.contact_list_container-mobile {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: auto;
+    margin: 250px auto 50px auto;
+    border-radius: 4px;
+    font-size: 20px;
+}
+
+.contact_card_mobile {
+    border: solid rgba(38, 165, 106, 0);
+    background: white;
+    color: rgba(24, 30, 64, 25);
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+.contact_card_mobile:hover,
+.contact_row:hover {
+    border: solid rgba(38, 165, 106, 0.2);
+}
+
+.contact_label-mobile {
+    margin: 10px 0 0 10px;
+    font-weight: 600;
+}
+
+.contact_info-mobile {
+    font-weight: 200;
+    margin: 5px 10px 10px 10px;
+}
+
+.contact_info-mobile.card_availability,
+.contact_list.availability_redirect {
+    color: rgba(38, 165, 106, 0.7);
+}
+
+@media only screen and (min-width: 769px) {
+    .contact_list_container-mobile {
+        display: none;
+    }
+
+    .contact_list_container {
+        width: 90%;
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .contact_list_container {
+        display: none;
+    }
+
+    .contact_list_container-mobile {
+        max-width: 480px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .contact_list_container-mobile {
+        width: 95%;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .contact_list_container {
+        width: 90%;
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .contact_list_container {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .contact_list_container {
+        width: 80%;
+    }
+}

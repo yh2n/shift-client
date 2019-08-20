@@ -1,10 +1,10 @@
-import React from 'react';
-import {shallow, mount} from 'enzyme';
+import React from "react";
+import { shallow, mount } from "enzyme";
 
-import Availability from './Availability';
+import Availability from "./Availability";
 
-describe('<Availability />', () => {
-    it('Renders without crashing', () => {
+describe("<Availability />", () => {
+    it("Renders without crashing", () => {
         shallow(<Availability />);
     });
 });

@@ -10,7 +10,7 @@ export class WeekShiftButton extends Component {
                     className={this.props.breakfastSelected ? "breakfast_btn off" : "breakfast_btn selected" }
                     onClick={this.props.toggleBreakfast}
                 >
-                    {this.props.shiftFormat === "mobile" ? "Bkfst" : "Breakfast"}
+                    {this.props.device === "mobile" ? "Bkfst" : "Breakfast"}
                 </button>
                 <button 
                     key="lunch"
@@ -18,7 +18,7 @@ export class WeekShiftButton extends Component {
                     className={this.props.lunchSelected ? "lunch_btn off" : "lunch_btn selected" }
                     onClick={this.props.toggleLunch}
                 >
-                    {this.props.shiftFormat === "mobile" ? "Lun" : "Lunch"}
+                    {this.props.device === "mobile" ? "Lun" : "Lunch"}
                 </button>
                 <button
                     key="dinner"
@@ -26,7 +26,7 @@ export class WeekShiftButton extends Component {
                     className={this.props.dinnerSelected ? "dinner_btn off" : "dinner_btn selected" }
                     onClick={this.props.toggleDinner}
                 >
-                    {this.props.shiftFormat === "mobile" ? "Din" : "Dinner"}
+                    {this.props.device === "mobile" ? "Din" : "Dinner"}
                 </button>
             </>
         )
@@ -41,21 +41,21 @@ export class WeekendShiftButton extends Component {
                     className={this.props.breakfastSelected ? "breakfast_btn off" : "breakfast_btn selected"}
                     onClick={this.props.toggleBreakfast}
                 >
-                    {this.props.shiftFormat === "mobile" ? "Bkfst" : "Breakfast"}
+                    {this.props.device === "mobile" ? "Bkfst" : "Breakfast"}
                 </button>
                 <button 
                         key={"brunch"}
                         className={this.props.brunchSelected ? "brunch_btn off" : "brunch_btn selected" }
                         onClick={this.props.toggleBrunch}
                 >
-                    {this.props.shiftFormat === "mobile" ? "Brun" : "Brunch"}
+                    {this.props.device === "mobile" ? "Brun" : "Brunch"}
                 </button>
                 <button 
                         key={"dinner"}
                         className={this.props.dinnerSelected ? "dinner_btn off" : "dinner_btn selected" }
                         onClick={this.props.toggleDinner}
                 >
-                    {this.props.shiftFormat === "mobile" ? "Din" : "Dinner"}
+                    {this.props.device === "mobile" ? "Din" : "Dinner"}
                 </button>
             </>
         )
