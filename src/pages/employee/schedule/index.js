@@ -43,7 +43,7 @@ export class Schedule extends Component {
 		}
 	}	
         
-    componentDidMount() {
+    componentDidMount() { 
         this.props.dispatch(fetchEmployees());
         window.addEventListener("resize", this.handleWindowResize);
         window.innerWidth < 570 ? this.setState({device: "mobile"}) : this.setState({device: "desktop"});
@@ -89,13 +89,10 @@ export class Schedule extends Component {
     }
     
     handleWindowResize = () => {
-        if (window.innerWidth < 570) {
-            this.setState({device: "mobile"})
-        }
-        else {
-            this.setState({device: "desktop"})
-        }
-    }
+        window.innerWidth < 570
+          ? this.setState({ device: "mobile" })
+          : this.setState({ device: "desktop" });
+      };
 
     handleAvailabilityAlert = () => {
         if(!this.state.fromMe) {
@@ -506,6 +503,7 @@ export class Schedule extends Component {
                         onClick={this.toggleModal}
                         className={this.state.new_notification === false ? "material-icons no_notification" : "material-icons new_notification"}
                         markAsRead={this.markAsRead}
+                        device={this.state.device}
                         username={ username }
                         newNotification={this.state.new_notification}
                         linkTo={`/my_account/${username}/schedule`}
