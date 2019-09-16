@@ -50,7 +50,7 @@ export class AccountNav extends Component {
           {this.props.device === "desktop" ? (
             "logout"
           ) : (
-            <i class="fas fa-power-off" />
+            <i className="fas fa-power-off" />
           )}
         </button>
       </div>

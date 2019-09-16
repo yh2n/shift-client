@@ -1,17 +1,18 @@
 .account_nav {
-    display: flex;
-    background: #181e3f;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0px;
+  display: flex;
+  background: #181e3f;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0px;
 }
 
 .menu_icon {
-    margin: 12px 15px;
-    cursor: pointer;
-    flex-grow: 1;
+  margin: 12px 15px;
+  cursor: pointer;
+  flex-grow: 1;
 }
+
 
 .menu_icon>* {
     width: 40px;
@@ -30,28 +31,29 @@
 }
 
 .nav_user_name {
-    color: white;
+  color: white;
 }
 
 .nav_date {
-    margin: 0px 25px 0px 30px;
-    color: #26a56a;
+  margin: 0px 25px 0px 30px;
+  color: #26a56a;
 }
 
 .material-icons.no_notification {
-    color: rgba(242, 201, 79, 95);
+  color: rgba(242, 201, 79, 95);
 }
 
 .material-icons.new_notification {
-    color: rgba(216, 73, 73, 85);
-    filter: brightness(120%);
+  color: rgba(216, 73, 73, 85);
+  filter: brightness(120%);
 }
 
 .material-icons.new_notification:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 @media all and (max-width: 414px) {
+
     .account_nav {
         font-size: 12px;
     }
