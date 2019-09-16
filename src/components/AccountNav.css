@@ -13,20 +13,21 @@
   flex-grow: 1;
 }
 
-.menu_icon > * {
-  width: 40px;
-  height: 5px;
-  background-color: white;
-  margin-bottom: 5px;
-  border-radius: 20%;
+
+.menu_icon>* {
+    width: 40px;
+    height: 5px;
+    background-color: white;
+    margin-bottom: 5px;
+    border-radius: 20%;
 }
 
 .nav_log-out_button {
-  padding: 0 20px;
-  height: 35px;
-  margin: 0px 12px 0px 30px;
-  color: rgba(216, 73, 73, 85);
-  font-size: 14px;
+    height: 35px;
+    margin: 0px 12px 0px 30px;
+    padding: 10px;
+    color: rgba(216, 73, 73, 85);
+    font-size: 14px;
 }
 
 .nav_user_name {
@@ -46,28 +47,29 @@
   color: rgba(216, 73, 73, 85);
   filter: brightness(120%);
 }
+
 .material-icons.new_notification:hover {
   cursor: pointer;
 }
 
 @media all and (max-width: 414px) {
-  .account_nav {
-    font-size: 12px;
-  }
 
-  .menu_icon {
-    flex-grow: 0;
-  }
-  .menu_icon > * {
-    width: 30px;
-    height: 4px;
-    margin-bottom: 3px;
-  }
-  .nav_log-out_button {
-    width: auto;
-    height: 25px;
-    margin: 0px 12px 0px 30px;
-    color: rgba(216, 73, 73, 85);
-    font-size: 12px;
-  }
+    .account_nav {
+        font-size: 12px;
+    }
+    .menu_icon {
+        flex-grow: 0;
+    }
+    .menu_icon>* {
+        width: 30px;
+        height: 4px;
+        margin-bottom: 3px;
+    }
+    .nav_log-out_button {
+        width: auto;
+        height: 25px;
+        margin: 0px 12px 0px 30px;
+        color: rgba(216, 73, 73, 85);
+        font-size: 12px;
+    }
 }

@@ -10,13 +10,14 @@ import "./AccountNav.css";
 
 export class AccountNav extends Component {
   logOut() {
-    console.log("logging out");
+    console.log("logged out");
     this.props.dispatch(clearAuth());
     clearAuthToken();
     localStorage.removeItem("currentUser");
   }
 
   render() {
+    console.log(this.props.device);
     if (!this.props.loggedIn) {
       return <Redirect to="/login" />;
     }
