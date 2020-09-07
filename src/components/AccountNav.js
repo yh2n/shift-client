@@ -58,8 +58,8 @@ export class AccountNav extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  loggedIn: state.auth.currentUser !== null
+const mapStateToProps = (state) => ({
+  loggedIn: state.auth.currentUser !== null,
 });
 
 export default connect(mapStateToProps)(AccountNav);
