@@ -1,9 +1,10 @@
 .admin_schedule_page {
+  height: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: rgba(24, 30, 64, 25);
-  height: 100%;
 }
 
 .admin_schedule_container {
@@ -25,11 +26,12 @@
   align-items: center;
   justify-content: center;
   background: rgba(93, 135, 191, 0.2);
-  color:#D2F7F3;;
+  color: #D2F7F3;
+  ;
   border-bottom: 1px solid grey;
 }
 
-.admin_schedule_position, .admin_schedule_days  {
+.admin_schedule_position, .admin_schedule_days {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,7 +53,8 @@
 }
 
 .admin_schedule_name:hover {
-  color:rgba(242, 201, 79, .9);;
+  color: rgba(242, 201, 79, .9);
+  ;
 }
 
 .admin_schedule_days_name {
@@ -69,7 +72,7 @@
 }
 
 .selected_month {
-  display: flex;  
+  display: flex;
   flex-direction: column;
   align-items: center;
   width: 80%;
@@ -96,15 +99,15 @@
   display: flex;
   align-items: center;
   width: 250px;
-} 
+}
 
-.admin_select_save > .MuiInputBase-root.MuiInput-root.MuiInput-underline {
+.admin_select_save>.MuiInputBase-root.MuiInput-root.MuiInput-underline {
   background: rgba(24, 30, 64, 25);
   color: #D2F7F3;
   flex: 1;
 }
 
-.admin_schedule_select > * {
+.admin_schedule_select>* {
   color: #D2F7F3;
 }
 
@@ -120,11 +123,10 @@
 
 .updated-admin {
   background: rgba(24, 30, 64, 24);
-  
 }
 
 .updating-admin {
-  background:white;
+  background: white;
   filter: brightness(200%);
   color: rgba(24, 30, 64, 24);
 }
@@ -136,7 +138,7 @@
   border-bottom: solid .5px grey;
 }
 
-.admin_schedule_btns > * {
+.admin_schedule_btns>* {
   border-radius: 0;
 }
 
@@ -159,7 +161,7 @@
 .selected {
   opacity: 1;
   color: white;
-  transition: filter .5s; 
+  transition: filter .5s;
 }
 
 .selected:hover {
@@ -170,6 +172,7 @@
   color: white;
   opacity: 0.2
 }
+
 .hidden {
   display: none
 }
@@ -184,6 +187,7 @@
   margin-right: 30px;
   color: #112138;
 }
+
 .admin_day_number {
   color: #2463A1;
 }
@@ -210,20 +214,18 @@
   .admin_schedule_container, .selected_month {
     width: 95%;
   }
-
-  .admin_schedule_container > * {
+  .admin_schedule_container>* {
     font-size: 14px;
   }
-
   .month-current, .month-selected {
     font-size: 35px;
   }
 }
+
 @media only screen and (max-width: 550px) {
-  .admin_schedule_container > * {
+  .admin_schedule_container>* {
     font-size: 13px;
   }
-
   .month-current, .month-selected {
     font-size: 30px;
   }
